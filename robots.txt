@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mzwiki.unimz.org/sitemap.xml

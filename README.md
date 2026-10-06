@@ -1,0 +1,64 @@
+# mzwiki
+
+An English-first mass spectrometry knowledge wiki for beginners and returning practitioners. It connects foundational concepts, instrument principles, experimental methods, and computational reasoning. It is not a publication feed.
+
+**Site:** https://mzwiki.unimz.org · **Repository:** https://github.com/UniMZ/mzwiki
+
+## First collection
+
+Eight English guides, each with a matched Chinese translation:
+
+1. What mass spectrometry measures
+2. m/z, charge & isotopes
+3. How molecules become ions
+4. Mass analyzers & resolution
+5. Fragmentation & tandem MS
+6. Read a spectrum step by step
+7. Acquisition: full scan, DDA, DIA & targeted
+8. From raw data to reliable results
+
+The interface and project documentation are English. EN / ZH switches between separate views of the same article and preserves matching section anchors. Search defaults to English and can search Chinese or both languages.
+
+## Build and preview
+
+Requires Python 3.10+; the build and link checks use only its standard library. There is no package installation step and no remote asset dependency.
+
+```sh
+python3 scripts/build.py
+python3 scripts/check.py
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Open http://127.0.0.1:8000. The generated site is committed at the repository root for GitHub Pages. Do not open HTML through `file://`: search loads its static index over HTTP.
+
+Optional browser checks require Python Playwright and Chromium:
+
+```sh
+python3 scripts/browser_check.py
+```
+
+Start the local server first. Set `MZWIKI_BASE_URL` and `MZWIKI_CHROMIUM` to override the defaults. The checks exercise every article at desktop/mobile sizes, search, language switching, navigation, and reading without JavaScript. Screenshots are saved outside the repository to `/tmp/mzwiki-checks`.
+
+## Source layout
+
+- `content/articles.json`: ordered guide metadata, translation titles, prerequisites, related guides, and reference keys.
+- `content/en/*.html`, `content/zh/*.html`: trusted article-body HTML fragments. Edit these, not the generated pages.
+- `content/references.json`: shared bibliography with verified source identifiers.
+- `scripts/build.py`: shared templates, homepage, article pages, sitemap, and search-index generation.
+- `assets/`: shared CSS, small progressive-enhancement script, favicon, and generated search index.
+- `guides/`, `zh/guides/`: generated paired article pages.
+- `about/`, `search/`, `index.html`, `404.html`: generated supporting pages.
+
+Run the build and checks after each edit and commit the generated output with its source. Article HTML is trusted maintainer content, not user-supplied input. Search renders queries and result text using DOM text APIs.
+
+## GitHub Pages deployment
+
+This version supports **Deploy from a branch → main → / (root)**. The repository root contains `index.html`, `.nojekyll`, and `CNAME` (`mzwiki.unimz.org`). Preserve the custom domain. No credentials or DNS changes are needed in this repository.
+
+The build output is already committed; no Jekyll or Actions build is required. If the existing Pages configuration uses **GitHub Actions** or a different source folder, a repository administrator must select `main` and `/ (root)` or configure an approved deployment workflow. Do not claim publication solely because a push succeeds: inspect the Pages build/deployment and the live domain.
+
+## Editorial approach
+
+Each guide includes prerequisites, worked examples, limitations, references, and related concepts. Sources favor standards, official documentation, and primary methodological publications. The homepage spectrum is an original schematic, not measured data. Foundational examples are educational, not validated operating procedures. Scientific and translation improvements are welcome through issues and pull requests; see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+This reconstructed first edition has a new commit history; it is not the inaccessible earlier implementation commit. No private workspace or Notion content is included. No analytics, external fonts, or client-side accounts are used.

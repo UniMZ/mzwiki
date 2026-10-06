@@ -1,0 +1,22 @@
+name: Content correction or improvement
+description: Improve an explanation, translation, worked example, or reference.
+title: "[Content] "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Article URL and language
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs to change?
+      description: Identify the claim or passage and explain the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Suggested correction and supporting evidence
+      description: Include authoritative references and note whether both language versions are affected.

@@ -1,0 +1,20 @@
+<h2 id="idea">Different physics, the same coordinate</h2>
+<p>An analyzer relates ion motion to <em>m/z</em>. It does not identify a compound by itself. Instruments often combine analyzers: a quadrupole may select a precursor, a collision cell may fragment it, and a time-of-flight or Orbitrap analyzer may measure products.</p>
+<h2 id="comparison">Compare mechanisms</h2>
+<div class="table-wrap"><table><thead><tr><th>Analyzer</th><th>Physical idea</th><th>What to watch</th></tr></thead><tbody>
+<tr><td>Quadrupole</td><td>Radio-frequency and direct-current fields allow selected ion trajectories to remain stable.</td><td>Useful as a mass filter. Isolation width and transmission affect selectivity and sensitivity.</td></tr>
+<tr><td>Time of flight (TOF)</td><td>After controlled acceleration, flight time depends on mass-to-charge ratio.</td><td>Timing, initial energy spread, calibration, and ion optics affect peak width and accuracy.</td></tr>
+<tr><td>Ion trap</td><td>Fields confine ions; controlled excitation or ejection enables analysis and multiple stages of fragmentation.</td><td>Ion capacity, space charge, scan conditions, and accessible mass range matter.</td></tr>
+<tr><td>Orbitrap</td><td>Axial oscillation frequencies in an electrostatic field encode <em>m/z</em>.</td><td>Signal observation time and ion population affect performance.</td></tr>
+<tr><td>FT-ICR</td><td>Cyclotron motion in a magnetic field produces frequencies related to <em>m/z</em>.</td><td>Magnetic field, transient duration, and ion interactions influence resolving power.</td></tr>
+</tbody></table></div>
+<p>IUPAC defines these analyzer families. <a href="#ref-iupac">[1]</a> Makarov's original Orbitrap paper describes the electrostatic trapping and frequency-based mass-analysis principle. <a href="#ref-orbitrap">[2]</a></p>
+<h2 id="example">Worked example: a resolution claim</h2>
+<p>A specification states R = 50,000 at <em>m/z</em> 500 using FWHM. The associated peak width is <code>500 / 50,000 = 0.010</code>. Two ions separated by 0.004 at that location may not be adequately distinguished. Actual separation also depends on peak shape and relative intensity; FWHM arithmetic alone is not a guarantee of baseline separation.</p>
+<h2 id="tradeoffs">Performance is a set of tradeoffs</h2>
+<p>Longer transients can improve frequency discrimination in Fourier-transform measurements, but take time. In an LC experiment, the instrument must still sample the chromatographic peak often enough. Higher nominal resolving power is not automatically the best acquisition choice.</p>
+<p>Mass accuracy concerns deviation from a reference value. Resolving power concerns peak separation. Sensitivity concerns response to analyte amount under a defined method. Dynamic range concerns the usable signal span. Compare them under stated conditions, not as a single ranking of instruments.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does high resolving power eliminate a co-isolated precursor?</summary><p>No. Precursors can enter the same isolation window before high-resolution product measurement. Better product separation can help interpretation, but does not undo the mixed fragmentation event.</p></details>
+<h2 id="next-level">Beyond the basics</h2>
+<p>Centroiding, Fourier processing, calibration, and peak fitting can change the reported peak list. For algorithm evaluation, retain the acquisition settings and distinguish profile data from centroid data. A benchmark on one analyzer and processing pipeline need not transfer unchanged to another.</p>

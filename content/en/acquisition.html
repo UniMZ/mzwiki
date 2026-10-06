@@ -1,0 +1,20 @@
+<h2 id="question">Acquisition is a sampling decision</h2>
+<p>A method specifies which ions the instrument measures, when, and with what settings. It affects the evidence available later; software cannot reliably recover evidence that was never acquired. Begin with the analytical question, expected sample complexity, chromatographic peak width, and required selectivity.</p>
+<h2 id="modes">Compare the main modes</h2>
+<div class="table-wrap"><table><thead><tr><th>Mode</th><th>Selection logic</th><th>Interpretation consequence</th></tr></thead><tbody>
+<tr><td>Full-scan MS1</td><td>Measure a configured <em>m/z</em> range without deliberate precursor fragmentation.</td><td>Provides isotope and feature information; generally less direct structural evidence than MS/MS.</td></tr>
+<tr><td>Data-dependent acquisition (DDA)</td><td>Select precursors using survey-scan signals and rules such as intensity, charge, and exclusion.</td><td>Often produces relatively focused MS/MS spectra, but sampling can vary between runs and low-abundance ions may be missed.</td></tr>
+<tr><td>Data-independent acquisition (DIA)</td><td>Systematically fragment predefined ranges or use another strategy independent of individual survey-peak selection.</td><td>Broad repeated sampling produces mixed product signals that require appropriate computational separation and scoring.</td></tr>
+<tr><td>Targeted SRM/MRM or PRM</td><td>Monitor selected precursor–product transitions (SRM/MRM), or acquire product spectra for selected precursors (PRM).</td><td>Focuses measurement time on a defined target set. Interferences, scheduling, and calibration still require validation.</td></tr>
+</tbody></table></div>
+<p>Gillet and colleagues demonstrated targeted extraction from systematically acquired DIA fragment data, an influential foundation for SWATH-style proteomics. <a href="#ref-dia">[1]</a> IUPAC describes selected-reaction monitoring and related terms. <a href="#ref-iupac">[2]</a></p>
+<h2 id="example">Worked example: cycle time</h2>
+<p>A chromatographic peak is about 12 seconds wide. A method with a 1.2-second cycle gives roughly 10 sampling opportunities across that width; a 3-second cycle gives roughly 4. This is a planning estimate, not a universal acceptance threshold. Peak shape, integration, precision goals, and how width is defined all matter.</p>
+<p>Adding MS/MS scans or DIA windows consumes time. Narrower windows can reduce co-isolation but increase the number of windows needed for the same range. Longer accumulation or transients may improve some measurements while reducing temporal sampling.</p>
+<h2 id="design">Design the experiment around the question</h2>
+<p>For exploratory identification, DDA can provide interpretable precursor-focused spectra. For consistent sampling across cohorts, DIA may be useful with suitable analysis. For a validated set of quantitative targets, a targeted method can allocate time efficiently. None of these labels guarantees better data for every sample or objective.</p>
+<p>Use blanks, pooled quality-control samples where appropriate, standards, and a documented injection sequence. Randomization and blocking can reduce confounding between biology and instrument drift. Record source conditions, scan range, isolation windows, collision energy, cycle timing, and instrument settings.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does DIA mean every molecule will be identified?</summary><p>No. Molecules can be outside the selected range, poorly ionized, below detection, obscured by interference, or unsupported by the analysis model. Systematic acquisition does not guarantee complete identification.</p></details>
+<h2 id="next-level">Beyond the basics</h2>
+<p>DIA analysis connects precursor and fragment traces across retention time, often using predicted or measured libraries. Evaluate interference handling, confidence calibration, and missing values. When comparing acquisition modes, match sample amount, instrument time, and evaluation criteria so the comparison answers a fair question.</p>

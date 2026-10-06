@@ -1,0 +1,160 @@
+[
+  {
+    "slug": "what-ms-measures",
+    "title": "What mass spectrometry measures",
+    "zh_title": "质谱测量的是什么",
+    "summary": "From molecules to ions to evidence: understand what a mass spectrum can—and cannot—tell you.",
+    "zh_summary": "从分子到离子，再到证据：理解质谱能够回答和无法单独回答的问题。",
+    "group": "Foundations",
+    "prereqs": [],
+    "related": [
+      "mz-charge-isotopes",
+      "ionization"
+    ],
+    "refs": [
+      "iupac",
+      "nist"
+    ]
+  },
+  {
+    "slug": "mz-charge-isotopes",
+    "title": "m/z, charge & isotopes",
+    "zh_title": "质荷比、电荷与同位素",
+    "summary": "Calculate ion masses, recognize charge states, and separate accuracy from resolving power.",
+    "zh_summary": "计算离子质量、识别电荷态，并区分质量准确度与分辨本领。",
+    "group": "Foundations",
+    "prereqs": [
+      "what-ms-measures"
+    ],
+    "related": [
+      "analyzers",
+      "spectrum-interpretation"
+    ],
+    "refs": [
+      "iupac",
+      "isotopes"
+    ]
+  },
+  {
+    "slug": "ionization",
+    "title": "How molecules become ions",
+    "zh_title": "分子如何变成离子",
+    "summary": "Compare ESI, MALDI, EI, and APCI by the chemistry they enable—not by a universal ranking.",
+    "zh_summary": "根据电离过程与适用化学性质比较 ESI、MALDI、EI 和 APCI。",
+    "group": "Instruments",
+    "prereqs": [
+      "what-ms-measures",
+      "mz-charge-isotopes"
+    ],
+    "related": [
+      "analyzers",
+      "fragmentation"
+    ],
+    "refs": [
+      "esi",
+      "iupac",
+      "nist"
+    ]
+  },
+  {
+    "slug": "analyzers",
+    "title": "Mass analyzers & resolution",
+    "zh_title": "质量分析器与分辨率",
+    "summary": "Understand quadrupoles, time of flight, ion traps, and frequency-based measurements.",
+    "zh_summary": "理解四极杆、飞行时间、离子阱以及基于频率的测量。",
+    "group": "Instruments",
+    "prereqs": [
+      "mz-charge-isotopes"
+    ],
+    "related": [
+      "fragmentation",
+      "acquisition"
+    ],
+    "refs": [
+      "iupac",
+      "orbitrap"
+    ]
+  },
+  {
+    "slug": "fragmentation",
+    "title": "Fragmentation & tandem MS",
+    "zh_title": "碎裂与串联质谱",
+    "summary": "Follow precursor selection, activation, and product-ion evidence without overcalling a structure.",
+    "zh_summary": "理解前体选择、活化及产物离子证据，避免过度推断结构。",
+    "group": "Methods",
+    "prereqs": [
+      "ionization",
+      "analyzers"
+    ],
+    "related": [
+      "spectrum-interpretation",
+      "acquisition"
+    ],
+    "refs": [
+      "iupac",
+      "etd",
+      "nist"
+    ]
+  },
+  {
+    "slug": "spectrum-interpretation",
+    "title": "Read a spectrum step by step",
+    "zh_title": "逐步解读质谱图",
+    "summary": "Turn a peak list into testable hypotheses using metadata, isotope patterns, and fragment evidence.",
+    "zh_summary": "结合元数据、同位素模式和碎片证据，把峰列表转变为可检验的假设。",
+    "group": "Methods",
+    "prereqs": [
+      "mz-charge-isotopes",
+      "fragmentation"
+    ],
+    "related": [
+      "acquisition",
+      "data-analysis"
+    ],
+    "refs": [
+      "nist",
+      "isotopes"
+    ]
+  },
+  {
+    "slug": "acquisition",
+    "title": "Acquisition: full scan, DDA, DIA & targeted",
+    "zh_title": "采集：全扫描、DDA、DIA 与靶向",
+    "summary": "Choose which evidence to record and understand the consequences for coverage and quantification.",
+    "zh_summary": "理解不同采集方式保留的证据，以及对覆盖度和定量的影响。",
+    "group": "Methods",
+    "prereqs": [
+      "analyzers",
+      "fragmentation"
+    ],
+    "related": [
+      "spectrum-interpretation",
+      "data-analysis"
+    ],
+    "refs": [
+      "dia",
+      "iupac"
+    ]
+  },
+  {
+    "slug": "data-analysis",
+    "title": "From raw data to reliable results",
+    "zh_title": "从原始数据到可靠结果",
+    "summary": "Build a reproducible analysis: features, identification, quantification, quality control, and confidence.",
+    "zh_summary": "构建可复现的分析：特征、鉴定、定量、质量控制和置信度。",
+    "group": "Computation",
+    "prereqs": [
+      "spectrum-interpretation",
+      "acquisition"
+    ],
+    "related": [
+      "mz-charge-isotopes",
+      "fragmentation"
+    ],
+    "refs": [
+      "mzml",
+      "pwiz",
+      "fdr"
+    ]
+  }
+]
