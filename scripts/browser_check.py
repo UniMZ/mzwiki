@@ -326,6 +326,41 @@ with sync_playwright() as p:
         page.locator('#query').fill(q)
         expect(page.locator('#search-results a').first).to_have_attribute('href',path)
         count+=1
+    # Beginner bridge: paired entrances, original signal table, and new terms.
+    for slug,anchor in [('what-ms-measures','spectra-and-traces'),('spectrum-interpretation','context')]:
+        page.goto(BASE+'/guides/'+slug+'/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/'+slug+'/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/'+slug+'/#'+anchor)
+        count+=2
+    for width,height in [(1440,1000),(390,844),(320,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for prefix in ('','/zh'):
+            for route in ('/guides/what-ms-measures/','/guides/spectrum-interpretation/','/terms/mass-spectrum/','/terms/base-peak/'):
+                page.goto(BASE+prefix+route)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(width,prefix,route)
+                for wrapper in page.locator('.prose .table-wrap').all():
+                    wrapper.evaluate('(el) => {el.scrollLeft=el.scrollWidth;}')
+                    assert wrapper.evaluate('(el) => el.scrollWidth <= el.clientWidth || el.scrollLeft > 0')
+                    wrapper.evaluate('(el) => {el.scrollLeft=0;}')
+                for detail in page.locator('.prose details').all():
+                    detail.locator('summary').focus()
+                    page.keyboard.press('Enter')
+                    expect(detail.locator('p').first).to_be_visible()
+                if route=='/guides/what-ms-measures/':
+                    expect(page.locator('.prose tbody tr')).to_have_count(3)
+                    for slug in ('mass-spectrum','base-peak'):
+                        expect(page.locator('.related-links a[href="'+prefix+'/terms/'+slug+'/"]')).to_have_count(1)
+                    page.locator('#spectra-and-traces').scroll_into_view_if_needed()
+                    page.screenshot(path=str(OUT/f'reading-bridge-{prefix.strip("/") or "en"}-{width}.png'))
+                count+=1
+    for lang,q,path in [('en','mass spectrum','/terms/mass-spectrum/'),('en','base peak','/terms/base-peak/'),('zh','质谱图','/zh/terms/mass-spectrum/'),('zh','基峰','/zh/terms/base-peak/')]:
+        page.goto(BASE+'/search/?kind=term&lang='+lang)
+        page.locator('#query').fill(q)
+        expect(page.locator('#search-results a').first).to_have_attribute('href',path)
+        count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')

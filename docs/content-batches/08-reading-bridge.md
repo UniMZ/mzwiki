@@ -21,3 +21,17 @@ IUPAC definitions establish the terminology and intensity denominator; NIST cons
 ## Validation status
 
 Standalone packet validation passes seven arithmetic fixtures, paired numeric tokens, anchor preservation, citation numbering, first-use links, route targets, and preserved baseline suffix checks. Site build, all repository checks, generated content, browser behavior, and deployment must be verified during a separately authorized application. The proposed fixture file needs an added or adapted repository check.
+
+## Repository integration
+
+Integrated the exact authored fragments from `392d3153cb05f2054a126a1fa7f384cca82c2ce0` against main `4981636fdb9660cbc30bdff091ad94545bb7f435`.
+
+- Eight supplied source hashes and four protected suffix hashes pass. Compared with baseline, all other six Guide pairs and all prior 18 term pairs remain byte-identical; the two edited Guide suffixes are also unchanged.
+- Metadata comparison confirms eight Guides, 20 terms, unchanged existing term/reference records, and only the requested appended Guide references and three new bibliography keys.
+- Rebuilt 61 HTML pages with 56 search records. Structural checks pass 5,227 local links/assets/fragments, 28 translation pairs, and 78 bibliography entries.
+- All prior scientific checks pass. `check_reading_bridge.py` recomputes all seven fixtures, verifies adopted constant rounding, published table/equations, bilingual numerical/citation parity, original anchors, generated bodies, and source/suffix hashes.
+- Test-only normalization accounts for translated base-peak formula labels and the existing Chinese “ESI 一级谱” wording. HTML validation accepts the existing void image element; authored content is unchanged.
+- Chromium passes 411 scenarios, including desktop/390px/320px layouts, bilingual search, paired anchors, table scrolling, keyboard disclosures, and no-JavaScript reading. No script errors; English/Chinese narrow-screen screenshots inspected.
+- Repeated build hashes are identical; `git diff --check` passes. Domain and Pages settings are unchanged.
+
+These are local integration results. Source-access limitations remain in `review/reading-bridge/SOURCE-BOUNDARIES.md`; no independent scientific research was performed. Merge, Pages deployment, and live-site verification are separate subsequent steps.
