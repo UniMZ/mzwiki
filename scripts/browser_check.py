@@ -47,7 +47,7 @@ with sync_playwright() as p:
     expect(page.locator('.prose details').first).to_have_attribute('open','');count+=2
     # Live search, language filtering, empty state, query safety, and deep links.
     page.goto(BASE+'/search/')
-    expect(page.locator('#search-results li')).to_have_count(15)
+    expect(page.locator('#search-results li')).to_have_count(len(articles)+len(terms))
     page.locator('#kind-filter').select_option('guide')
     page.locator('#query').fill('isotopes')
     expect(page.locator('#search-results a').first).to_have_text('m/z, charge & isotopes');count+=1
@@ -56,7 +56,7 @@ with sync_playwright() as p:
     page.locator('#query').fill('')
     page.locator('#kind-filter').select_option('all')
     page.locator('#language-filter').select_option('zh')
-    expect(page.locator('#search-results li')).to_have_count(15)
+    expect(page.locator('#search-results li')).to_have_count(len(articles)+len(terms))
     page.locator('#kind-filter').select_option('guide')
     page.locator('#query').fill('同位素')
     expect(page.locator('#search-results a').first).to_have_text('质荷比、电荷与同位素');count+=1
@@ -146,7 +146,7 @@ with sync_playwright() as p:
     for width,height in [(1440,1000),(390,844)]:
         page.set_viewport_size({'width':width,'height':height})
         page.goto(BASE+'/terms/')
-        expect(page.locator('.article-card')).to_have_count(7)
+        expect(page.locator('.article-card')).to_have_count(len(terms))
         page.locator('.article-card').first.click()
         expect(page).to_have_url(BASE+'/terms/mz/')
         expect(page.locator('.eyebrow').last).to_have_text('Terminology')
@@ -164,7 +164,7 @@ with sync_playwright() as p:
         count+=2
     page.goto(BASE+'/search/?kind=term')
     expect(page.locator('#kind-filter')).to_have_value('term')
-    expect(page.locator('#search-results li')).to_have_count(7)
+    expect(page.locator('#search-results li')).to_have_count(len(terms))
     expect(page.locator('#search-results small').first).to_contain_text('Term')
     page.locator('#query').fill('monoisotopic')
     expect(page.locator('#search-results a').first).to_have_attribute('href','/terms/monoisotopic-mass/')
@@ -176,9 +176,9 @@ with sync_playwright() as p:
     expect(page.locator('#language-filter')).to_have_value('zh')
     page.locator('#query').fill('')
     page.locator('#language-filter').select_option('all')
-    expect(page.locator('#search-results li')).to_have_count(14)
+    expect(page.locator('#search-results li')).to_have_count(2*len(terms))
     page.locator('#kind-filter').select_option('guide')
-    expect(page.locator('#search-results li')).to_have_count(16)
+    expect(page.locator('#search-results li')).to_have_count(2*len(articles))
     expect(page.locator('#search-results small').first).to_contain_text('Guide')
     count+=6
     reader.goto(BASE+'/terms/')
@@ -190,6 +190,37 @@ with sync_playwright() as p:
     page.goto(BASE+'/guides/ionization/')
     expect(page.locator('.related-links a[href="/terms/adduct-ion/"]')).to_have_count(1)
     count+=1
+    # Analyzer additions: all new section switches and readable equations/tables.
+    for anchor in ('quadrupole','tof','ion-traps','frequency','orbitrap','fticr','transient-time','hybrids'):
+        page.goto(BASE+'/guides/analyzers/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/analyzers/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/analyzers/#'+anchor)
+        count+=2
+    for width,height in [(1440,1000),(390,844),(320,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for prefix in ('','/zh'):
+            for route in ('/guides/analyzers/','/terms/mass-analyzer/','/terms/transient/'):
+                page.goto(BASE+prefix+route)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(width,prefix,route)
+                for code in page.locator('.prose code').all():
+                    assert code.evaluate('(el) => el.scrollWidth <= el.clientWidth + 1 || getComputedStyle(el).display === "inline"')
+                if route=='/guides/analyzers/':
+                    expect(page.locator('.prose details')).to_have_count(3)
+                    for detail in page.locator('.prose details').all():
+                        detail.locator('summary').click()
+                        expect(detail.locator('p')).to_be_visible()
+                    expect(page.locator('.related-links a[href="'+prefix+'/terms/transient/"]')).to_have_count(1)
+                    page.locator('#tof').scroll_into_view_if_needed()
+                    page.screenshot(path=str(OUT/f'analyzers-{prefix.strip("/") or "en"}-{width}.png'))
+                count+=1
+    for lang,q,path in [('en','transient','/terms/transient/'),('zh','瞬态信号','/zh/terms/transient/')]:
+        page.goto(BASE+'/search/?kind=term&lang='+lang)
+        page.locator('#query').fill(q)
+        expect(page.locator('#search-results a').first).to_have_attribute('href',path)
+        count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')

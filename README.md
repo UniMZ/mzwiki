@@ -90,6 +90,12 @@ python3 scripts/check_terms.py
 
 The structural checker includes both collections, citation numbering, generated-body consistency, and exact sitemap coverage. Browser checks cover the term index, same-term language switches, collection filters, cross-links, and reading without JavaScript.
 
+The analyzer Guide and Mass analyzer/Transient entries use the constructed cases in `review/analyzers/analyzer-arithmetic-fixtures.json`. Validate the ten models and paired published examples with:
+
+```sh
+python3 scripts/check_analyzers.py
+```
+
 ## GitHub Pages deployment
 
 This version supports **Deploy from a branch → main → / (root)**. The repository root contains `index.html`, `.nojekyll`, and `CNAME` (`mzwiki.unimz.org`). Preserve the custom domain. No credentials or DNS changes are needed in this repository.
