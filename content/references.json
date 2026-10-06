@@ -178,5 +178,60 @@
     "title": "IUPAC Gold Book. Resolution in mass spectroscopy, entry R05318 (archived edition).",
     "url": "https://www.old.goldbook.iupac.org/html/R/R05318.html",
     "note": "Documents FWHM and 10% valley conventions. Historical terminology is read alongside the IUPAC Recommendations 2013 discussion, rather than treated as a universal naming rule."
+  },
+  "quadrupole-definition": {
+    "title": "IUPAC Gold Book. Transmission quadrupole mass spectrometer, entry 12602.",
+    "url": "https://goldbook.iupac.org/terms/view/12602",
+    "note": "Definition from IUPAC Recommendations 2013, p. 1597. Supports the four-rod RF/DC stability-filter principle; no product performance claims."
+  },
+  "quadrupole-scanning": {
+    "title": "Shimadzu. Introduction to mass analyzers: Quadrupole MS.",
+    "url": "https://www.ssi.shimadzu.com/service-support/technical-support/analysis-basics/fundamental/mass_analyzers.html",
+    "note": "Official explanation of scanning RF/DC amplitudes and selected-ion monitoring. Used only for the quadrupole scanning mechanism, without generalizing the page's product comparisons or specifications."
+  },
+  "rf-only-definition": {
+    "title": "IUPAC Gold Book. RF-only quadrupole, entry 12560.",
+    "url": "https://goldbook.iupac.org/terms/view/12560",
+    "note": "Definition from IUPAC Recommendations 2013, p. 1587. Supports distinguishing a broad-transmission ion guide with a low-m/z cutoff from an RF/DC mass filter."
+  },
+  "tof-principles": {
+    "title": "JEOL USA. Mass Spectrometry Basics: Time-of-flight and Reflectron.",
+    "url": "https://www.jeolusa.com/RESOURCES/Analytical-Instruments/Mass-Spectrometry-Basics",
+    "note": "Official explanation of time-based mass analysis and energy-spread compensation by a reflectron. Used for mechanisms only; comparative rankings and general performance specifications are excluded."
+  },
+  "linear-ion-trap": {
+    "title": "Schwartz, Senko & Syka (2002). A two-dimensional quadrupole ion trap mass spectrometer. Journal of the American Society for Mass Spectrometry 13, 659–669.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12056566/",
+    "note": "Primary demonstration of mass-selective ejection, resonance excitation, isolation, and MSn in a linear quadrupole ion trap. DOI: 10.1016/S1044-0305(02)00384-7. Results from that instrument are not universal family specifications."
+  },
+  "space-charge-definition": {
+    "title": "IUPAC Gold Book. Space charge effect, entry 12577.",
+    "url": "https://goldbook.iupac.org/terms/view/12577",
+    "note": "Definition from IUPAC Recommendations 2013, p. 1591. Mutual repulsion can perturb ion trajectories, particularly when many ions are confined to a small volume."
+  },
+  "orbitrap-detection": {
+    "title": "Thermo Fisher Scientific. Orbitrap Excedion Series Operating Manual: Measuring principle.",
+    "url": "https://docs.thermofisher.com/r/Orbitrap-Excedion-Series-Operating-Manual/2347228555v1en-US2915461003",
+    "note": "Official documentation of axial oscillations, split-electrode image-current detection, and Fourier transformation. Used only for the measurement principle, not model-specific specifications."
+  },
+  "fticr-origin": {
+    "title": "Comisarow & Marshall (1974). Fourier transform ion cyclotron resonance spectroscopy. Chemical Physics Letters 25, 282–283.",
+    "url": "https://doi.org/10.1016/0009-2614(74)89137-2",
+    "note": "Primary demonstration of pulsed excitation, time-domain detection, and Fourier transformation. Publisher abstract and metadata verified; historical performance numbers are not used as modern specifications."
+  },
+  "fticr-frequency": {
+    "title": "Nagornov, Kozhinov & Tsybin (2017). Fourier Transform Ion Cyclotron Resonance Mass Spectrometry at the Cyclotron Frequency. Journal of the American Society for Mass Spectrometry 28, 768–780.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28213728/",
+    "note": "Primary study distinguishing the unperturbed cyclotron frequency from the reduced cyclotron frequency normally measured in a trapped-ion experiment. DOI: 10.1007/s13361-017-1598-y. Supports the boundary on the introductory ideal equation."
+  },
+  "ftms-processing": {
+    "title": "Michalski et al. (2012). Ultra High Resolution Linear Ion Trap Orbitrap Mass Spectrometer (Orbitrap Elite) Facilitates Top Down LC MS/MS and Versatile Peptide Fragmentation Modes. Molecular & Cellular Proteomics 11, O111.013698.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22159718/",
+    "note": "Primary instrument study showing that field geometry and phase-aware Fourier processing influence resolving power at a given transient duration and that parallel acquisition affects cycle time. DOI: 10.1074/mcp.O111.013698. Used for those dependencies, not product comparisons."
+  },
+  "analyzer-overview": {
+    "title": "Scripps Research. Basics of Mass Spectrometry: Mass Analyzers.",
+    "url": "https://masspec.scripps.edu/learn/ms/index.html",
+    "note": "Institutional tutorial supporting the mass analyzer's role in measuring gas-phase ions by m/z and distinguishing ionization, analysis, and detection. Used for stable principles, not dated rankings or specifications."
   }
 }

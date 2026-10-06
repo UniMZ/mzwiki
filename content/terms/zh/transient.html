@@ -1,0 +1,19 @@
+<h2 id="definition">定义</h2>
+<p>在<strong>傅里叶变换质谱</strong>中，<strong>瞬态信号（transient）</strong>指在有限观察时段内，从运动离子包记录到的时域电信号。Orbitrap 和 FT-ICR 通过镜像电流检测获得振荡信号，再通过傅里叶分析提取频率并换算为 <em>m/z</em>。<a href="#ref-orbitrap-detection">[1]</a> <a href="#ref-fticr-origin">[2]</a></p>
+<p>瞬态信号以时间为横轴；频谱以及校准后的质谱图，是这段记录的后续表示形式。本词条中的 transient 限于 FT-MS 检测语境；在其他情境中，该词也可描述其他随时间变化的信号。</p>
+<h2 id="example">记录时长与补零</h2>
+<p><strong>构造的数字示例：</strong>以 f<sub>s</sub> = 1,000,000 样本/秒的采样频率，记录 N = 100,000 个等间隔样本。按离散变换的记录时长约定，<code>T = N / f_s = 0.10 s</code>。未补零的傅里叶频率网格间距为 <code>Δf_grid = 1 / T = 10 Hz</code>。</p>
+<ul>
+<li>若以相同采样频率记录 200,000 个真实样本，则 T = 0.20 s，网格间距为 5 Hz。</li>
+<li>在原记录后附加 100,000 个零，也会得到 5 Hz 的计算网格，但实际观察信号仍仅持续 0.10 s。</li>
+</ul>
+<p>第二种操作对频率表示进行插值，并没有补上从未测量过的后续离子运动。网格间距本身既不是峰的半高全宽，也不能保证区分两个相近频率。</p>
+<h2 id="confusion">常见混淆</h2>
+<ul>
+<li><strong>观察与累积：</strong>累积离子和观察离子运动是不同阶段。</li>
+<li><strong>瞬态记录与周期：</strong>完整采集周期可能包含装载、选择、活化及其他步骤，部分操作也可能重叠进行。</li>
+<li><strong>时长与性能保证：</strong>有效信号、分析器条件和处理方法都很重要。即使瞬态时长固定，利用相位信息的处理也曾改变所报告的分辨本领。<a href="#ref-ftms-processing">[3]</a></li>
+</ul>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/analyzers/#frequency">理解镜像电流检测</a></li><li><a href="/zh/guides/analyzers/#transient-time">将观察时间与采集时间联系起来</a></li><li><a href="/zh/guides/acquisition/">选择需要采集的证据</a></li></ul>
+

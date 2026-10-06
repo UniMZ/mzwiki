@@ -1,0 +1,140 @@
+{
+  "batch": "04-analyzer-principles",
+  "provenance": "Constructed teaching examples, not experimental measurements or instrument specifications.",
+  "coordinate_convention": "x is the dimensionless numerical m/z coordinate, x = M/(u*abs(z)); u denotes one dalton as a physical mass. Frequencies are in Hz unless the field name states kHz.",
+  "cases": [
+    {
+      "id": "same-coordinate-singly-charged",
+      "model": "x = ion_mass_u / abs(charge_number)",
+      "inputs": {
+        "ion_mass_u": 400,
+        "charge_number": 1
+      },
+      "expected": {
+        "x": 400
+      }
+    },
+    {
+      "id": "same-coordinate-doubly-charged",
+      "model": "x = ion_mass_u / abs(charge_number)",
+      "inputs": {
+        "ion_mass_u": 800,
+        "charge_number": 2
+      },
+      "expected": {
+        "x": 400
+      }
+    },
+    {
+      "id": "tof-base",
+      "model": "tau_us = tau_ref_us * sqrt(x/x_ref)",
+      "inputs": {
+        "x_ref": 100,
+        "tau_ref_us": 10,
+        "x": 100
+      },
+      "expected": {
+        "tau_us": 10
+      }
+    },
+    {
+      "id": "tof-fourfold-coordinate",
+      "model": "tau_us = tau_ref_us * sqrt(x/x_ref)",
+      "inputs": {
+        "x_ref": 100,
+        "tau_ref_us": 10,
+        "x": 400
+      },
+      "expected": {
+        "tau_us": 20
+      }
+    },
+    {
+      "id": "tof-ninefold-coordinate",
+      "model": "tau_us = tau_ref_us * sqrt(x/x_ref)",
+      "inputs": {
+        "x_ref": 100,
+        "tau_ref_us": 10,
+        "x": 900
+      },
+      "expected": {
+        "tau_us": 30
+      }
+    },
+    {
+      "id": "orbitrap-fourfold-coordinate",
+      "model": "frequency_kHz = frequency_ref_kHz * sqrt(x_ref/x)",
+      "inputs": {
+        "x_ref": 200,
+        "frequency_ref_kHz": 100,
+        "x": 800
+      },
+      "expected": {
+        "frequency_kHz": 50
+      }
+    },
+    {
+      "id": "ideal-icr-fourfold-coordinate",
+      "model": "frequency_kHz = frequency_ref_kHz * x_ref/x",
+      "inputs": {
+        "x_ref": 200,
+        "frequency_ref_kHz": 100,
+        "x": 800
+      },
+      "expected": {
+        "frequency_kHz": 25
+      }
+    },
+    {
+      "id": "original-transient",
+      "model": "duration_s = recorded_samples/sampling_rate_Hz; grid_spacing_Hz = sampling_rate_Hz/dft_length",
+      "inputs": {
+        "recorded_samples": 100000,
+        "sampling_rate_Hz": 1000000,
+        "dft_length": 100000
+      },
+      "expected": {
+        "duration_s": 0.1,
+        "grid_spacing_Hz": 10
+      }
+    },
+    {
+      "id": "longer-recorded-transient",
+      "model": "duration_s = recorded_samples/sampling_rate_Hz; grid_spacing_Hz = sampling_rate_Hz/dft_length",
+      "inputs": {
+        "recorded_samples": 200000,
+        "sampling_rate_Hz": 1000000,
+        "dft_length": 200000
+      },
+      "expected": {
+        "duration_s": 0.2,
+        "grid_spacing_Hz": 5
+      }
+    },
+    {
+      "id": "zero-padded-original",
+      "model": "duration_s = recorded_samples/sampling_rate_Hz; grid_spacing_Hz = sampling_rate_Hz/dft_length",
+      "inputs": {
+        "recorded_samples": 100000,
+        "sampling_rate_Hz": 1000000,
+        "dft_length": 200000
+      },
+      "expected": {
+        "duration_s": 0.1,
+        "grid_spacing_Hz": 5
+      }
+    }
+  ],
+  "model_boundaries": [
+    "TOF assumes negligible initial kinetic energy, fixed acceleration potential magnitude and field-free path length, nonrelativistic motion, no collisions, and corrected flight time tau = t - t0.",
+    "Equal acceleration voltage means equal energy per charge. The example does not assume equal total kinetic energy for different charge states.",
+    "Orbitrap f = C/sqrt(x) applies to the ideal axial field; chosen C is illustrative.",
+    "Ideal ICR f_c = e B/(2 pi u x) applies to unperturbed free cyclotron motion in uniform B. Actual trapped-ion detected frequency is generally shifted, including reduced cyclotron motion.",
+    "Orbitrap and ICR examples use separate chosen constants; their identical 100 kHz reference value is not a comparison of actual instrument performance.",
+    "DFT duration convention is N/fs. The time of the last sample relative to the first is (N-1)/fs; this endpoint detail does not change the stated DFT grid relation.",
+    "Fourier grid spacing is not FWHM, a measurement uncertainty, or a guaranteed resolvable frequency separation.",
+    "Zero padding changes DFT length without changing the recorded sample count or physical observation duration.",
+    "Existing resolution, ppm-error, and matching-window examples are retained; existing science checks must still pass."
+  ]
+}
+

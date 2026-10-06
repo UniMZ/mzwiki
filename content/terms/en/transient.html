@@ -1,0 +1,19 @@
+<h2 id="definition">Definition</h2>
+<p>In <strong>Fourier-transform mass spectrometry</strong>, a <strong>transient</strong> is the time-domain electrical signal recorded from moving ion packets over a finite observation period. In Orbitrap and FT-ICR measurements, image-current detection provides an oscillating signal; Fourier analysis extracts frequencies that are converted to <em>m/z</em>. <a href="#ref-orbitrap-detection">[1]</a> <a href="#ref-fticr-origin">[2]</a></p>
+<p>The transient has time on its horizontal axis. A frequency spectrum and a calibrated mass spectrum are subsequent representations of that record. This entry uses “transient” in the FT-MS detection sense; the same word can describe other time-varying signals in other contexts.</p>
+<h2 id="example">Record length versus added zeros</h2>
+<p><strong>Constructed digital example:</strong> record N = 100,000 equally spaced samples at f<sub>s</sub> = 1,000,000 samples per second. Using the discrete-transform record-length convention, <code>T = N / f_s = 0.10 s</code>. The unpadded Fourier grid spacing is <code>Δf_grid = 1 / T = 10 Hz</code>.</p>
+<ul>
+<li>Recording 200,000 real samples at the same sampling rate gives T = 0.20 s and a 5 Hz grid.</li>
+<li>Appending 100,000 zeros to the original record also gives a 5 Hz computed grid, but the observed signal still spans only 0.10 s.</li>
+</ul>
+<p>The second operation interpolates the frequency representation. It does not supply the later ion motion that was never measured. Grid spacing alone is neither the peak's FWHM nor a guarantee of resolving two nearby frequencies.</p>
+<h2 id="confusion">Common confusion</h2>
+<ul>
+<li><strong>Observation versus accumulation:</strong> accumulating ions and observing their motion are different stages.</li>
+<li><strong>Transient versus cycle:</strong> the complete acquisition cycle may contain loading, selection, activation, and other steps; some operations may overlap.</li>
+<li><strong>Duration versus guaranteed performance:</strong> the useful signal, analyzer conditions, and processing matter. Phase-aware processing has changed reported resolving power even at a fixed transient duration. <a href="#ref-ftms-processing">[3]</a></li>
+</ul>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/analyzers/#frequency">Understand image-current detection</a></li><li><a href="/guides/analyzers/#transient-time">Connect observation time to acquisition timing</a></li><li><a href="/guides/acquisition/">Choose what evidence to acquire</a></li></ul>
+
