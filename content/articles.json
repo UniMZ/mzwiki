@@ -53,9 +53,19 @@
       "fragmentation"
     ],
     "refs": [
-      "esi",
       "iupac",
-      "nist"
+      "esi",
+      "esi-mechanisms",
+      "protein-esi",
+      "maldi-mechanisms",
+      "maldi-peptides",
+      "maldi-multicharge",
+      "codata",
+      "isotopes",
+      "esi-suppression",
+      "nist",
+      "maldi-dynamics",
+      "maldi-adducts"
     ]
   },
   {

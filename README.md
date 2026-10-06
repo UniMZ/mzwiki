@@ -70,6 +70,12 @@ python3 scripts/check_science.py
 
 Keep figure inputs, plotted labels, article tables, and both translations synchronized. The numeric checks verify published values and language parity; they do not establish the model's validity for real measurements.
 
+The ionization guide has nine constructed ion-form examples in `tests/fixtures/ionization.json`. After building, check their forward and inverse calculations, ionic constants, and both article tables:
+
+```sh
+python3 scripts/check_ionization.py
+```
+
 ## GitHub Pages deployment
 
 This version supports **Deploy from a branch → main → / (root)**. The repository root contains `index.html`, `.nojekyll`, and `CNAME` (`mzwiki.unimz.org`). Preserve the custom domain. No credentials or DNS changes are needed in this repository.
