@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p><strong>质量准确度</strong>关注测得的质量或 <em>m/z</em> 与被测值有多接近。本词条遵循 VIM 中的计量学区分，将准确度作为定性概念，将相对于参考值的数值差称为<strong>质量误差</strong>。<a href="#ref-vim-accuracy">[1]</a> <a href="#ref-vim-error">[2]</a></p>
+<p>不同资料的用语并不完全一致：IUPAC 的一份表面分析术语表将“质量准确度”用于表示实测质量减去参考质量。报告中也常以这个名称列出 ppm 误差或误差限。因此，应检查具体统计量和测试条件，不能只看名称。<a href="#ref-mass-accuracy-usage">[3]</a></p>
+<h2 id="example">简单示例</h2>
+<p>令 x<sub>obs</sub> 和 x<sub>ref</sub> 分别表示<strong>相同离子形式、电荷及同位素组成</strong>的实测和参考 <em>m/z</em> 坐标。带符号的相对误差定义为 <code>10⁶ × (x_obs − x_ref) / x_ref</code>，以 ppm 表示。</p>
+<p><strong>构造的测量示例：</strong>x<sub>obs</sub> = 250.0010、x<sub>ref</sub> = 250.0000 时，<code>10⁶ × 0.0010 / 250.0000 = +4 ppm</code>。正号表示实测位置偏高。单次这样的结果，不能证明仪器具有 ±4 ppm 的性能限值。</p>
+<h2 id="confusion">常见混淆</h2>
+<ul><li><strong>精密度</strong>描述指定条件下重复测量结果之间的一致程度。结果即使非常集中，也可能整体偏离参考值。<a href="#ref-vim-precision">[4]</a></li><li><strong>分辨本领</strong>关注峰的分离程度或宽度；很窄的峰仍可能出现在错误的位置。</li><li><strong>检索容差</strong>是人为选定的接受窗口，不是实测误差、不确定度估计，也不保证身份归属正确。</li><li><strong>精确质量（exact mass）</strong>由指定同位素组成计算得到；<strong>准确质量（accurate mass）</strong>这一术语指实验测定的离子质量。<a href="#ref-accurate-mass-definition">[5]</a></li></ul>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/analyzers/#resolution-accuracy">比较峰宽、误差与重复性</a></li><li><a href="/zh/guides/analyzers/#tolerance">将 ppm 容差换算为匹配窗口</a></li></ul>

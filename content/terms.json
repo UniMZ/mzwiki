@@ -1,0 +1,150 @@
+[
+  {
+    "slug": "mz",
+    "title": "m/z",
+    "zh_title": "m/z（质荷比）",
+    "summary": "The dimensionless spectral coordinate determined by ion mass and charge.",
+    "zh_summary": "由离子质量与电荷共同确定的无量纲谱图坐标。",
+    "related_guides": [
+      "mz-charge-isotopes",
+      "ionization"
+    ],
+    "related_terms": [
+      "charge-state",
+      "adduct-ion",
+      "monoisotopic-mass"
+    ],
+    "refs": [
+      "iupac"
+    ]
+  },
+  {
+    "slug": "charge-state",
+    "title": "Charge state",
+    "zh_title": "电荷态",
+    "summary": "Read an ion's net charge and understand what isotope spacing can establish.",
+    "zh_summary": "读取离子的净电荷，理解同位素峰间距能够提供的证据。",
+    "related_guides": [
+      "mz-charge-isotopes",
+      "ionization"
+    ],
+    "related_terms": [
+      "mz",
+      "isotopologue",
+      "adduct-ion"
+    ],
+    "refs": [
+      "charge-number",
+      "carbon"
+    ]
+  },
+  {
+    "slug": "adduct-ion",
+    "title": "Adduct ion",
+    "zh_title": "加合离子",
+    "summary": "An attached species changes ion composition and the mass correction you need.",
+    "zh_summary": "附加物种改变离子组成，也改变反推中性质量所需的修正。",
+    "related_guides": [
+      "ionization",
+      "spectrum-interpretation"
+    ],
+    "related_terms": [
+      "mz",
+      "charge-state",
+      "monoisotopic-mass"
+    ],
+    "refs": [
+      "adduct-definition",
+      "iupac",
+      "sodium",
+      "codata"
+    ]
+  },
+  {
+    "slug": "isotopologue",
+    "title": "Isotopologue",
+    "zh_title": "同位素体",
+    "summary": "The same molecular entity with a different isotope composition.",
+    "zh_summary": "同一分子实体中同位素组成不同的形式。",
+    "related_guides": [
+      "mz-charge-isotopes",
+      "spectrum-interpretation"
+    ],
+    "related_terms": [
+      "monoisotopic-mass",
+      "charge-state",
+      "resolving-power"
+    ],
+    "refs": [
+      "isotopologue-definition",
+      "carbon"
+    ]
+  },
+  {
+    "slug": "monoisotopic-mass",
+    "title": "Monoisotopic mass",
+    "zh_title": "单同位素质量",
+    "summary": "A specific exact-mass calculation using the most abundant isotope of each element.",
+    "zh_summary": "选取各元素丰度最高的同位素所计算的特定精确质量。",
+    "related_guides": [
+      "mz-charge-isotopes",
+      "ionization"
+    ],
+    "related_terms": [
+      "isotopologue",
+      "mz",
+      "mass-accuracy"
+    ],
+    "refs": [
+      "monoisotopic-definition",
+      "exact-mass-definition",
+      "hydrogen",
+      "oxygen",
+      "average-mass-definition"
+    ]
+  },
+  {
+    "slug": "mass-accuracy",
+    "title": "Mass accuracy",
+    "zh_title": "质量准确度",
+    "summary": "Separate closeness to the target from signed error, precision, and search tolerance.",
+    "zh_summary": "区分测量的接近程度、带符号误差、精密度与检索容差。",
+    "related_guides": [
+      "analyzers",
+      "spectrum-interpretation"
+    ],
+    "related_terms": [
+      "resolving-power",
+      "monoisotopic-mass",
+      "mz"
+    ],
+    "refs": [
+      "vim-accuracy",
+      "vim-error",
+      "mass-accuracy-usage",
+      "vim-precision",
+      "accurate-mass-definition"
+    ]
+  },
+  {
+    "slug": "resolving-power",
+    "title": "Resolving power",
+    "zh_title": "分辨本领",
+    "summary": "Interpret peak width and separation using an explicit criterion and reference m/z.",
+    "zh_summary": "结合明确的判据与参考 m/z，理解峰宽和峰分离能力。",
+    "related_guides": [
+      "analyzers",
+      "spectrum-interpretation"
+    ],
+    "related_terms": [
+      "mass-accuracy",
+      "mz",
+      "isotopologue"
+    ],
+    "refs": [
+      "resolution-definition",
+      "iupac"
+    ]
+  }
+]
+

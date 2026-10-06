@@ -1,0 +1,28 @@
+{
+  "description": "Independent Decimal arithmetic for constructed teaching examples. The adduct calculation neglects binding-energy corrections. These are not measured spectra.",
+  "examples": {
+    "mz": {
+      "ion_mass_Da": "600.0000",
+      "charge_number": 2,
+      "mz": "300.0000"
+    },
+    "carbon_spacing_charge4": {
+      "C13": "13.00335483507",
+      "C12": "12",
+      "charge_magnitude": 4,
+      "spacing": "0.2508387087675"
+    },
+    "sodium_adduct": {
+      "neutral_mass_Da": "200.000000",
+      "Na23_atom_mass_Da": "22.9897692820",
+      "electron_mass_Da": "0.000548579909",
+      "ionic_mass_Da": "22.989220702091",
+      "mz": "222.989220702091"
+    },
+    "methane_isotopologue_difference_Da": "1.00335483507",
+    "water_monoisotopic_mass_Da": "18.01056468403",
+    "water_O18_exact_mass_Da": "20.01480967732",
+    "mass_error_ppm": "4",
+    "resolving_power_FWHM": "40000"
+  }
+}

@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Resolving power</strong> characterizes the ability to distinguish nearby <em>m/z</em> signals. A common single-peak convention is <strong>full width at half maximum (FWHM)</strong>: for a peak at coordinate <strong>x</strong> with FWHM <strong>w</strong> on the same coordinate scale, <code>R = x / w</code>. R is dimensionless. A larger value means a narrower relative peak width under that convention. <a href="#ref-resolution-definition">[1]</a></p>
+<p>Measure w between the two half-height crossings of the profile peak, using a defined baseline. A centroid stick's drawn thickness is not the experimental FWHM.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed profile peak:</strong> x = 200.000 and w = 0.005 give <code>R = 200.000 / 0.005 = 40,000</code>. Report this as “40,000 at <em>m/z</em> 200, FWHM,” together with the relevant acquisition conditions.</p>
+<p>A second signal 0.005 away is separated by one such peak width. That alone does not guarantee baseline separation: peak shape, relative intensity, and noise affect whether two signals can be distinguished.</p>
+<h2 id="confusion">Common confusion</h2>
+<ul><li><strong>FWHM versus valley:</strong> FWHM describes one peak; a valley criterion describes the overlap between two peaks. Numerical claims made with different criteria are not directly interchangeable. <a href="#ref-resolution-definition">[1]</a></li><li><strong>Resolution versus resolving power:</strong> MS terminology has used both names for a ratio such as R. Always inspect the definition rather than assuming that one word universally means peak width and the other a ratio. <a href="#ref-iupac">[2]</a></li><li><strong>Resolving power versus accuracy:</strong> narrow peaks can still be offset from their reference positions. A high R does not by itself establish a small mass error.</li></ul>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/analyzers/#example">Interpret a resolving-power specification</a></li><li><a href="/guides/spectrum-interpretation/#quality-step">Compare peak width with position error</a></li></ul>

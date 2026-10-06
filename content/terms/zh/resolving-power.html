@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p><strong>分辨本领</strong>用于表征区分相邻 <em>m/z</em> 信号的能力。一种常用的单峰约定是<strong>半高全宽（FWHM）</strong>：若峰位于坐标 <strong>x</strong>，在相同坐标尺度上的半高全宽为 <strong>w</strong>，则 <code>R = x / w</code>。R 为无量纲量。在这种约定下，数值越大，表示相对峰宽越窄。<a href="#ref-resolution-definition">[1]</a></p>
+<p>测量 w 时，应明确基线，并取轮廓峰两侧半峰高交点之间的距离。质心谱棒线绘制得多粗，并不是实验峰的半高全宽。</p>
+<h2 id="example">简单示例</h2>
+<p><strong>构造的轮廓峰：</strong>x = 200.000、w = 0.005 时，<code>R = 200.000 / 0.005 = 40,000</code>。应表述为“在 <em>m/z</em> 200 处，按 FWHM 定义的分辨本领为 40,000”，并注明相关采集条件。</p>
+<p>如果另一个信号相距 0.005，这个距离相当于上述一个峰宽。但这并不保证基线分离：峰形、相对强度和噪声都会影响能否区分两个信号。</p>
+<h2 id="confusion">常见混淆</h2>
+<ul><li><strong>半高全宽与峰谷判据：</strong>FWHM 描述单个峰；峰谷判据描述两个峰的重叠程度。不同判据下的数值不能直接互换。<a href="#ref-resolution-definition">[1]</a></li><li><strong>分辨率与分辨本领：</strong>质谱文献中，resolution 和 resolving power 都曾用于表示 R 这样的比值。应查看具体定义，而不能假定其中一个词总表示峰宽，另一个总表示比值。<a href="#ref-iupac">[2]</a></li><li><strong>分辨本领与准确度：</strong>窄峰仍可能偏离参考位置。高 R 本身不能证明质量误差很小。</li></ul>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/analyzers/#example">解读分辨本领指标</a></li><li><a href="/zh/guides/spectrum-interpretation/#quality-step">比较峰宽与位置误差</a></li></ul>
