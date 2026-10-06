@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p>An <strong>isolation window</strong> is the precursor m/z interval selected before an MS/MS measurement. Specify its boundaries or its center, full width, and any offset. A width of 1.2 means a total span of 1.2, not ±1.2, when the method uses the full-width convention. Confirm how the instrument defines the setting. <a href="#ref-isolation-window">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Ideal rectangular-window arithmetic:</strong> a center of 600.0 and full width 1.2 give <code>600.0 ± 1.2 / 2 = 599.4–600.6</code>. Model ions at 600.0 and 600.4 both pass. Keeping the center but using width 0.4 gives 599.8–600.2, excluding 600.4 in this idealization. An offset of +0.3 applied to the original width instead moves the bounds to 599.7–600.9.</p>
+<p>These are constructed coordinate tests, not measured transmission profiles. Real edges and transmission depend on the instrument and settings. Narrowing can exclude interfering ions but can also lose wanted signal. <a href="#ref-isolation-window">[1]</a></p>
+<h2 id="confusion">Common confusion</h2>
+<p>Isolation is not proof of chemical purity. Different analytes can fall inside one window and form a mixed product spectrum, even in DDA. <a href="#ref-coisolation-primary">[2]</a> Ions with the same m/z cannot be separated just by narrowing this coordinate interval.</p>
+<p>An isolation window is also different from product-ion resolving power, a software extraction tolerance, and a retention-time scheduling window. In sequential-window DIA, narrower windows can mean more events to cover the same precursor range, linking selectivity to cycle planning. <a href="#ref-dia">[3]</a></p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/acquisition/#windows">Distinguish three kinds of window</a></li><li><a href="/guides/acquisition/#example">Calculate window count and cycle time</a></li><li><a href="/guides/fragmentation/#coisolation">Interpret coisolated precursor evidence</a></li></ul>

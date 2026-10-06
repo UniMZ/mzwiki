@@ -1,0 +1,55 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "141264f45b3b4c02a9c99104e999a2c6caa2446d",
+  "replace_complete_fragments": [
+    "content/en/acquisition.html",
+    "content/zh/acquisition.html"
+  ],
+  "add_complete_fragments": [
+    "content/terms/en/acquisition-cycle.html",
+    "content/terms/zh/acquisition-cycle.html",
+    "content/terms/en/isolation-window.html",
+    "content/terms/zh/isolation-window.html",
+    "content/terms/en/extracted-ion-chromatogram.html",
+    "content/terms/zh/extracted-ion-chromatogram.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "replace only object with slug acquisition",
+      "payload": "metadata/acquisition.article.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "append three unique objects; retain separate terminology collection",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "merge eleven new keys only",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/acquisition.json",
+    "payload": "tests/fixtures/acquisition.json",
+    "note": "Proposed content-fixture schema; later engineering must adapt to or extend existing tests. No repository test implementation is included."
+  },
+  "batch_record": {
+    "destination": "docs/content-batches/06-acquisition.md",
+    "payload": "docs/content-batches/06-acquisition.md"
+  },
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "metadata/references.reused.json",
+    "inspection/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No cloud coding task",
+    "No commit, push, build, deployment, or live-site verification"
+  ]
+}

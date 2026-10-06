@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p>An <strong>acquisition cycle</strong> is a repeated measurement sequence. Its cycle time is the elapsed time from a defined point in one sequence to the same point in the next. For windowed DIA, an especially useful definition is the time until the same precursor window is measured again. <a href="#ref-dia">[1]</a> State which event is your reference when a method has several interleaved experiments.</p>
+<p>A cycle can contain one spectrum or many. DDA can limit the number of dependent scans or allocate a time budget, so a method label alone does not specify every actual cycle duration. <a href="#ref-dda-selection">[2]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed serial schedule:</strong> one 0.20 s survey, twenty 0.04 s window measurements, and 0.20 s additional overhead occupy <code>0.20 + 20 × 0.04 + 0.20 = 1.20 s</code>. Assume no overlap between these blocks. There are 21 spectra per cycle, but only one measurement of any particular window.</p>
+<p>A consistently defined 12 s peak width gives <code>12 / 1.20 = 10</code> approximate opportunities for that window. This ratio is not an exact count, an identification count, or a universal quality threshold. Sampling phase and peak-width convention matter. The same planning ratio is used in targeted-method timing. <a href="#ref-targeted-timing">[3]</a></p>
+<h2 id="confusion">Common confusion</h2>
+<p>MS2 describes an analysis stage, not cycle two. A scan's transient or accumulation setting is not necessarily the complete cycle time: some operations overlap, while others add overhead. Check the instrument's actual timestamps. <a href="#ref-ftms-processing">[4]</a> In DDA, a short cycle also does not guarantee that every precursor is selected for MS/MS in each cycle.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/acquisition/#levels">Separate MS level, event, and cycle</a></li><li><a href="/guides/acquisition/#example">Work through the timing budget</a></li><li><a href="/guides/analyzers/#tradeoffs">Connect measurement time to analyzer tradeoffs</a></li></ul>

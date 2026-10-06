@@ -1,0 +1,16 @@
+<h2 id="definition">定义</h2>
+<p><strong>提取离子色谱图</strong>（XIC 或 EIC）显示选定的已记录 m/z 信号随色谱时间的变化，是提取离子时间曲线在色谱中的一种形式。<a href="#ref-extracted-ion-profile">[1]</a> 质谱图的横轴是 m/z，XIC 的横轴是时间。</p>
+<p>提取通常包含选定坐标周围的容差。总离子色谱图汇总所选谱中更广泛的信号，基峰色谱图则在各时刻取最强峰。这些轨迹不一定代表单一化合物。<a href="#ref-xic-traces">[2]</a></p>
+<h2 id="example">简单示例</h2>
+<p><strong>人为构造的质心数据练习：</strong>从正离子 MS1 数据中，以 ±5 ppm 容差提取 m/z 600.000 附近的信号。半宽为 <code>600.000 × 5 / 1000000 = 0.003</code>，所以包含边界的区间是 599.997–600.003。这种容差约定遵循文档中的相对窗口计算。<a href="#ref-xic-settings">[3]</a></p>
+<div class="table-wrap"><table><caption>虚构的任意单位信号；每个 XIC 点汇总区间内质心峰的信号</caption><thead><tr><th>时间 / s</th><th>599.998 处信号</th><th>600.001 处信号</th><th>600.005 处信号</th><th>XIC 总和，±5 ppm</th></tr></thead><tbody>
+<tr><td>0</td><td>10</td><td>20</td><td>100</td><td>30</td></tr>
+<tr><td>1</td><td>20</td><td>50</td><td>200</td><td>70</td></tr>
+<tr><td>2</td><td>10</td><td>20</td><td>100</td><td>30</td></tr>
+</tbody></table></div>
+<p>600.005 的信号被排除。若扩大至 ±10 ppm，边界变为 599.994–600.006，总和依次为 130、270 和 130。这些数字只演示筛选计算，不鉴定任何信号，也不验证积分算法。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>XIC 是处理结果，不是一种采集模式。应报告 MS 级数、极性、m/z 容差及相关前体或隔离筛选条件。<a href="#ref-xic-settings">[3]</a> MS2 产物轨迹应使用对应前体窗口的事件，而不是无关的 MS2 扫描。</p>
+<p>缩窄提取范围无法恢复未采集的数据，也无法撤销前体共隔离。一个峰可能混合未分辨或共洗脱的物种；仅凭其存在或面积不能确定身份或浓度。这里采用质心求和只是教学选择，并非所有轮廓数据处理实现都必须遵循的规则。</p>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/acquisition/#traces">联系质谱图与时间轨迹</a></li><li><a href="/zh/guides/data-analysis/">区分鉴定与定量</a></li><li><a href="/zh/guides/spectrum-interpretation/#quality-step">检查质量容差与测量质量</a></li></ul>

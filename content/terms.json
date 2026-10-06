@@ -252,5 +252,72 @@
       "hydrogen",
       "oxygen"
     ]
+  },
+  {
+    "slug": "acquisition-cycle",
+    "title": "Acquisition cycle",
+    "zh_title": "采集循环",
+    "summary": "A repeated measurement schedule whose duration determines when a channel is revisited.",
+    "zh_summary": "重复执行的测量安排，其时长决定何时再次测量某个通道。",
+    "related_guides": [
+      "acquisition",
+      "analyzers"
+    ],
+    "related_terms": [
+      "isolation-window",
+      "extracted-ion-chromatogram",
+      "transient"
+    ],
+    "refs": [
+      "dia",
+      "dda-selection",
+      "targeted-timing",
+      "ftms-processing"
+    ]
+  },
+  {
+    "slug": "isolation-window",
+    "title": "Isolation window",
+    "zh_title": "隔离窗口",
+    "summary": "The precursor m/z interval selected before an MS/MS measurement, with finite selectivity.",
+    "zh_summary": "在 MS/MS 测量前选取的前体 m/z 区间，其选择性有限。",
+    "related_guides": [
+      "acquisition",
+      "fragmentation"
+    ],
+    "related_terms": [
+      "precursor-ion",
+      "product-ion",
+      "acquisition-cycle",
+      "resolving-power"
+    ],
+    "refs": [
+      "isolation-window",
+      "coisolation-primary",
+      "dia"
+    ]
+  },
+  {
+    "slug": "extracted-ion-chromatogram",
+    "title": "Extracted ion chromatogram",
+    "zh_title": "提取离子色谱图",
+    "summary": "A time trace from selected m/z signals, with explicit extraction and scan filters.",
+    "zh_summary": "从选定 m/z 信号提取的时间轨迹，需要明确提取条件与扫描筛选条件。",
+    "related_guides": [
+      "acquisition",
+      "data-analysis",
+      "spectrum-interpretation"
+    ],
+    "related_terms": [
+      "mz",
+      "isolation-window",
+      "acquisition-cycle",
+      "mass-accuracy"
+    ],
+    "refs": [
+      "extracted-ion-profile",
+      "xic-traces",
+      "xic-settings"
+    ]
   }
 ]

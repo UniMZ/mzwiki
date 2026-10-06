@@ -158,8 +158,8 @@
     "slug": "acquisition",
     "title": "Acquisition: full scan, DDA, DIA & targeted",
     "zh_title": "采集：全扫描、DDA、DIA 与靶向",
-    "summary": "Choose which evidence to record and understand the consequences for coverage and quantification.",
-    "zh_summary": "理解不同采集方式保留的证据，以及对覆盖度和定量的影响。",
+    "summary": "Connect precursor selection, isolation windows, and chromatographic sampling to the evidence recorded by full scan, DDA, DIA, and targeted methods.",
+    "zh_summary": "把前体选择、隔离窗口与色谱采样联系起来，理解全扫描、DDA、DIA 和靶向方法保留的证据。",
     "group": "Methods",
     "prereqs": [
       "analyzers",
@@ -171,7 +171,19 @@
     ],
     "refs": [
       "dia",
-      "iupac"
+      "iupac",
+      "ms-order",
+      "dda-selection",
+      "dynamic-exclusion",
+      "coisolation-primary",
+      "isolation-window",
+      "srm-definition",
+      "prm-primary",
+      "targeted-scheduling",
+      "targeted-timing",
+      "extracted-ion-profile",
+      "xic-traces",
+      "ftms-processing"
     ]
   },
   {
