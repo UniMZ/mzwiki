@@ -1,0 +1,81 @@
+[
+  {
+    "slug": "spatial-resolution",
+    "title": "Spatial resolution",
+    "zh_title": "空间分辨率",
+    "summary": "Distinguishable spatial detail under a stated criterion, separated from nominal sampling pitch.",
+    "zh_summary": "在规定判据下能够区分的空间细节，应与名义采样间距分开。",
+    "related_guides": [
+      "mass-spectrometry-imaging"
+    ],
+    "related_terms": [
+      "ion-image",
+      "resolving-power"
+    ],
+    "refs": [
+      "spatial-resolution-pattern",
+      "spatial-oversampling"
+    ]
+  },
+  {
+    "slug": "ion-image",
+    "title": "Ion image",
+    "zh_title": "离子图像",
+    "summary": "A spatial display of selected ion signals whose extraction and display settings define its meaning.",
+    "zh_summary": "选定离子信号的空间显示，其含义由提取和显示设置界定。",
+    "related_guides": [
+      "mass-spectrometry-imaging",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "spatial-resolution",
+      "mz",
+      "adduct-ion",
+      "isomer"
+    ],
+    "refs": [
+      "spatial-msi-reporting",
+      "spatial-msi-annotation"
+    ]
+  },
+  {
+    "slug": "carrier-channel",
+    "title": "Carrier channel",
+    "zh_title": "载体通道",
+    "summary": "A higher-input isobaric channel that can assist identification without supplying each cell’s quantitative signal.",
+    "zh_summary": "可辅助鉴定的较高输入量等重标记通道，但不提供各细胞本身的定量信号。",
+    "related_guides": [
+      "single-cell-proteomics"
+    ],
+    "related_terms": [
+      "isolation-window",
+      "peptide-spectrum-match",
+      "missing-value"
+    ],
+    "refs": [
+      "spatial-scope2",
+      "spatial-carrier-limit"
+    ]
+  },
+  {
+    "slug": "limit-of-blank",
+    "title": "Limit of blank",
+    "zh_title": "空白限",
+    "summary": "An upper boundary for blank results at a specified probability, distinct from detection and quantification capability.",
+    "zh_summary": "在规定概率下空白结果的上界，与检出及定量能力不同。",
+    "related_guides": [
+      "single-cell-proteomics",
+      "quantitative-calibration",
+      "blanks-carryover"
+    ],
+    "related_terms": [
+      "blank",
+      "limit-of-detection",
+      "limit-of-quantification"
+    ],
+    "refs": [
+      "spatial-clsi-terminology",
+      "spatial-clsi-ep17"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Provenance</strong> is information connecting a result to the entities, activities, and responsible agents involved in producing it. For MS, this includes sample and file relationships, acquisition, conversion, databases, analysis parameters, software versions, and subsequent edits. W3C PROV provides a general model for expressing such histories; it does not replace a mass-spectrometry data format. <a href="#ref-comp-prov">[1]</a></p>
+<h2 id="example">Preserve the route, not just the endpoint</h2>
+<p><strong>Constructed example:</strong> a final peptide table came from a search of a converted spectral file against a particular database release. A useful record links the table to that search, its settings, the converted file, its converter settings, and the original acquisition. Saving only the final filename loses the transformations needed to interpret or repeat the result.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A checksum supports verifying file bytes; it does not prove correct sample attribution, valid identification, or identical downstream interpretation. A repository accession helps locate deposited material, but exact files and versions still matter. ProteomeXchange guidance distinguishes measurement data, results, and metadata for sharing. <a href="#ref-comp-px-guidelines">[2]</a> Keep unavailable history explicitly unknown rather than reconstructing undocumented settings as if they were facts.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/open-formats-provenance/#history">Build a connected analysis history</a></li><li><a href="/guides/benchmarking-computational-ms/#practice">Make a benchmark inspectable</a></li></ul>

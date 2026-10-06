@@ -1,0 +1,7 @@
+{
+  "missingness-benchmark": {
+    "title": "Harris, Fondrie, Oh & Noble (2023). Evaluating Proteomics Imputation Methods with Improved Criteria. Journal of Proteome Research 22, 3427–3438.",
+    "url": "https://doi.org/10.1021/acs.jproteome.3c00205",
+    "note": "Original benchmark across proteomics workflows. Supports experiment- and task-dependent imputation performance and the need for an unimputed comparator. Metadata/abstract and indexed primary PMC text (PMC10949645) verified; direct PMC access encountered a bot check. No method is recommended universally."
+  }
+}

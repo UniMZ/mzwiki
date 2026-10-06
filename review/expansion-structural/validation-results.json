@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-06",
+  "baseline_commit": "ecca2688d1c33ce5485e8497b6c3e8f498376cb3",
+  "baseline_inventory": {
+    "guides": 20,
+    "terms": 44
+  },
+  "guides_added": 3,
+  "terms_added": 6,
+  "fragment_files": 18,
+  "new_reference_keys": 18,
+  "reused_reference_keys": [
+    "prot-ascore",
+    "prot-ptmprophet",
+    "prot-stoichiometry"
+  ],
+  "fixture_cases": 14,
+  "english_word_counts": {
+    "content/en/crosslinking-ms-principles.html": 876,
+    "content/en/glycoproteomics-evidence-ambiguity.html": 986,
+    "content/en/phosphoproteomics-workflow.html": 902,
+    "content/terms/en/crosslinked-peptide.html": 176,
+    "content/terms/en/crosslink-spectrum-match.html": 166,
+    "content/terms/en/glycopeptide.html": 170,
+    "content/terms/en/glycoform.html": 179,
+    "content/terms/en/phosphosite.html": 186,
+    "content/terms/en/site-occupancy.html": 185
+  },
+  "checks": [
+    "Pinned baseline inventory and absence of all nine proposed slugs",
+    "Exact additive metadata schemas; English-only non-translation fields",
+    "No reference key or URL collisions; all new keys use struct- prefix",
+    "Balanced HTML fragments and no document/script wrappers",
+    "Matched EN/ZH tag structure, anchors, citations, normalized links and numeric sequences",
+    "All local routes and in-packet anchors resolve",
+    "Guide prerequisite graph acyclic and related links resolve",
+    "Every new term has a Guide backlink and is linked from a Guide",
+    "All English word counts within requested ranges",
+    "All 14 synthetic logic/arithmetic fixtures pass under explicit assumptions"
+  ],
+  "not_performed": [
+    "Repository mutation, commit, push, build or deployment",
+    "Existing repository test suite",
+    "Generated-page, search or sitemap checks",
+    "Browser layout or accessibility inspection",
+    "Live-site verification",
+    "Experimental or software-performance validation"
+  ]
+}

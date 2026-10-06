@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "crosslinking-ms-principles",
+    "title": "Crosslinking MS: from peptide pairs to structural restraints",
+    "zh_title": "交联质谱：从肽段对到结构约束",
+    "summary": "Trace crosslink chemistry, paired-peptide evidence, error-control levels, and the limits of structural interpretation.",
+    "zh_summary": "追踪交联化学、肽段对证据、错误控制层级以及结构解释的边界。",
+    "group": "Applications",
+    "prereqs": [
+      "bottom-up-proteomics",
+      "peptide-identification-protein-inference",
+      "fragmentation"
+    ],
+    "related": [
+      "ptm-analysis-site-localization",
+      "data-analysis"
+    ],
+    "refs": [
+      "struct-xl-community",
+      "struct-xl-dsso",
+      "struct-xl-target-decoy",
+      "struct-xl-error-levels",
+      "struct-xl-distance",
+      "struct-xl-benchmark"
+    ]
+  },
+  {
+    "slug": "glycoproteomics-evidence-ambiguity",
+    "title": "Glycoproteomics: evidence and ambiguity",
+    "zh_title": "糖蛋白质组学：证据与歧义",
+    "summary": "Separate peptide identity, glycan composition, attachment sites, and structural detail before interpreting glycopeptide signals.",
+    "zh_summary": "解释糖肽信号前，区分肽段身份、糖链组成、连接位点与结构细节。",
+    "group": "Applications",
+    "prereqs": [
+      "ptm-analysis-site-localization",
+      "fragmentation"
+    ],
+    "related": [
+      "bottom-up-proteomics",
+      "phosphoproteomics-workflow",
+      "data-analysis"
+    ],
+    "refs": [
+      "struct-glyco-mirage",
+      "struct-glyco-glycoform",
+      "struct-glyco-fragmentation",
+      "struct-glyco-opair",
+      "struct-glyco-snfg",
+      "struct-glyco-search",
+      "struct-glyco-fdr"
+    ]
+  },
+  {
+    "slug": "phosphoproteomics-workflow",
+    "title": "Phosphoproteomics: enrichment, localization and quantification",
+    "zh_title": "磷酸化蛋白质组学：富集、定位与定量",
+    "summary": "Plan phosphopeptide enrichment, preserve site ambiguity, and distinguish signal changes from protein-adjusted and occupancy measurements.",
+    "zh_summary": "规划磷酸肽富集、保留位点歧义，并区分信号变化、蛋白质校正测量与占有率测量。",
+    "group": "Applications",
+    "prereqs": [
+      "ptm-analysis-site-localization",
+      "experimental-design"
+    ],
+    "related": [
+      "bottom-up-proteomics",
+      "qc-normalization",
+      "glycoproteomics-evidence-ambiguity"
+    ],
+    "refs": [
+      "struct-phospho-enrichment",
+      "struct-phospho-reproducibility",
+      "prot-ascore",
+      "prot-ptmprophet",
+      "struct-phospho-flr",
+      "struct-phospho-dia",
+      "struct-phospho-protein-adjustment",
+      "prot-stoichiometry"
+    ]
+  }
+]

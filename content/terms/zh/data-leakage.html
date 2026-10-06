@@ -1,0 +1,8 @@
+<h2 id="definition">定义</h2>
+<p><strong>数据泄漏</strong>是指在预期预测场景中本来不可用的信息进入模型开发或评估，使测试变得具有误导性地容易。在质谱中，重复谱图、共享肽段序列、重复分子或经过拟合的预处理，都可能跨越预设的训练–测试边界。适当边界取决于所声称的泛化能力。<a href="#ref-comp-multispecies">[1]</a> <a href="#ref-comp-massspecgym">[2]</a></p>
+<h2 id="example">新谱图未必代表新化学对象</h2>
+<p><strong>构造示例：</strong>训练集含有肽段 P 的谱图 A，测试集含有同一序列的谱图 B。若任务是预测已知 P 的另一场测量，这可以是合理设计。但它不能确立对未见肽段序列的表现。不同文件名和不同电荷态，不能消除序列层面的重叠。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>并非所有训练–测试相似性都是泄漏：应定义该主张排除哪种重叠。据此将相关单位放在同一组，并披露剩余的结构或实验相似性。在不使用最终测试信息的情况下拟合归一化参数、进行特征选择及选择超参数。审计预训练模型和谱库，而不只是当前训练文件。物种划分可能共享序列；仪器划分可能共享分子。这些设计回答不同问题，较大的测试集不能弥补边界被破坏的问题。</p>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/spectrum-prediction-generalization/#partitions">选择分子、肽段及仪器划分</a></li><li><a href="/zh/guides/benchmarking-computational-ms/#independence">在评估中保留独立性</a></li></ul>

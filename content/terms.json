@@ -900,5 +900,320 @@
       "small-im-reporting",
       "small-im-interlab"
     ]
+  },
+  {
+    "slug": "crosslinked-peptide",
+    "title": "Crosslinked peptide",
+    "zh_title": "交联肽段",
+    "summary": "A covalently linked peptide product whose chain identities and attachment positions require separate evidence.",
+    "zh_summary": "共价连接的肽段产物，其肽链身份和连接位置需要分别提供证据。",
+    "related_guides": [
+      "crosslinking-ms-principles"
+    ],
+    "related_terms": [
+      "crosslink-spectrum-match",
+      "site-localization",
+      "protein-inference"
+    ],
+    "refs": [
+      "struct-xl-dsso",
+      "struct-xl-community"
+    ]
+  },
+  {
+    "slug": "crosslink-spectrum-match",
+    "title": "Crosslink-spectrum match",
+    "zh_title": "交联–谱图匹配",
+    "summary": "A proposed spectrum-to-crosslink assignment; its confidence does not automatically transfer to residue or protein pairs.",
+    "zh_summary": "候选的谱图与交联对应关系；其置信度不会自动转移到残基对或蛋白质对。",
+    "related_guides": [
+      "crosslinking-ms-principles"
+    ],
+    "related_terms": [
+      "crosslinked-peptide",
+      "peptide-spectrum-match",
+      "false-discovery-rate"
+    ],
+    "refs": [
+      "struct-xl-target-decoy",
+      "struct-xl-error-levels"
+    ]
+  },
+  {
+    "slug": "glycopeptide",
+    "title": "Glycopeptide",
+    "zh_title": "糖肽",
+    "summary": "A peptide carrying one or more glycans, with distinct evidence needs for sequence, composition, and attachment.",
+    "zh_summary": "携带一条或多条糖链的肽段，其序列、组成和连接位置各有不同证据需求。",
+    "related_guides": [
+      "glycoproteomics-evidence-ambiguity",
+      "ptm-analysis-site-localization"
+    ],
+    "related_terms": [
+      "glycoform",
+      "site-localization",
+      "post-translational-modification"
+    ],
+    "refs": [
+      "struct-glyco-fragmentation",
+      "struct-glyco-opair"
+    ]
+  },
+  {
+    "slug": "glycoform",
+    "title": "Glycoform",
+    "zh_title": "糖型",
+    "summary": "A glycoprotein form distinguished by its glycosylation pattern; peptide observations may resolve only part of that pattern.",
+    "zh_summary": "由糖基化模式区别的糖蛋白形式；肽段观察可能只解析该模式的一部分。",
+    "related_guides": [
+      "glycoproteomics-evidence-ambiguity"
+    ],
+    "related_terms": [
+      "glycopeptide",
+      "site-occupancy",
+      "isomer"
+    ],
+    "refs": [
+      "struct-glyco-glycoform",
+      "struct-glyco-mirage"
+    ]
+  },
+  {
+    "slug": "phosphosite",
+    "title": "Phosphosite",
+    "zh_title": "磷酸化位点",
+    "summary": "A residue position bearing a phosphate modification, reported with sequence context and localization evidence.",
+    "zh_summary": "携带磷酸修饰的残基位置，应结合序列背景和定位证据报告。",
+    "related_guides": [
+      "phosphoproteomics-workflow",
+      "ptm-analysis-site-localization"
+    ],
+    "related_terms": [
+      "site-localization",
+      "site-occupancy",
+      "post-translational-modification"
+    ],
+    "refs": [
+      "prot-ascore",
+      "struct-phospho-flr"
+    ]
+  },
+  {
+    "slug": "site-occupancy",
+    "title": "Site occupancy",
+    "zh_title": "位点占有率",
+    "summary": "The fraction of an explicitly defined molecular population modified at a specified site.",
+    "zh_summary": "明确定义的分子群体中，在指定位点发生修饰的比例。",
+    "related_guides": [
+      "phosphoproteomics-workflow",
+      "glycoproteomics-evidence-ambiguity",
+      "ptm-analysis-site-localization"
+    ],
+    "related_terms": [
+      "phosphosite",
+      "glycoform",
+      "site-localization"
+    ],
+    "refs": [
+      "prot-stoichiometry",
+      "struct-phospho-protein-adjustment"
+    ]
+  },
+  {
+    "slug": "spatial-resolution",
+    "title": "Spatial resolution",
+    "zh_title": "空间分辨率",
+    "summary": "Distinguishable spatial detail under a stated criterion, separated from nominal sampling pitch.",
+    "zh_summary": "在规定判据下能够区分的空间细节，应与名义采样间距分开。",
+    "related_guides": [
+      "mass-spectrometry-imaging"
+    ],
+    "related_terms": [
+      "ion-image",
+      "resolving-power"
+    ],
+    "refs": [
+      "spatial-resolution-pattern",
+      "spatial-oversampling"
+    ]
+  },
+  {
+    "slug": "ion-image",
+    "title": "Ion image",
+    "zh_title": "离子图像",
+    "summary": "A spatial display of selected ion signals whose extraction and display settings define its meaning.",
+    "zh_summary": "选定离子信号的空间显示，其含义由提取和显示设置界定。",
+    "related_guides": [
+      "mass-spectrometry-imaging",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "spatial-resolution",
+      "mz",
+      "adduct-ion",
+      "isomer"
+    ],
+    "refs": [
+      "spatial-msi-reporting",
+      "spatial-msi-annotation"
+    ]
+  },
+  {
+    "slug": "carrier-channel",
+    "title": "Carrier channel",
+    "zh_title": "载体通道",
+    "summary": "A higher-input isobaric channel that can assist identification without supplying each cell’s quantitative signal.",
+    "zh_summary": "可辅助鉴定的较高输入量等重标记通道，但不提供各细胞本身的定量信号。",
+    "related_guides": [
+      "single-cell-proteomics"
+    ],
+    "related_terms": [
+      "isolation-window",
+      "peptide-spectrum-match",
+      "missing-value"
+    ],
+    "refs": [
+      "spatial-scope2",
+      "spatial-carrier-limit"
+    ]
+  },
+  {
+    "slug": "limit-of-blank",
+    "title": "Limit of blank",
+    "zh_title": "空白限",
+    "summary": "An upper boundary for blank results at a specified probability, distinct from detection and quantification capability.",
+    "zh_summary": "在规定概率下空白结果的上界，与检出及定量能力不同。",
+    "related_guides": [
+      "single-cell-proteomics",
+      "quantitative-calibration",
+      "blanks-carryover"
+    ],
+    "related_terms": [
+      "blank",
+      "limit-of-detection",
+      "limit-of-quantification"
+    ],
+    "refs": [
+      "spatial-clsi-terminology",
+      "spatial-clsi-ep17"
+    ]
+  },
+  {
+    "slug": "spectral-similarity",
+    "title": "Spectral similarity",
+    "zh_title": "谱图相似度",
+    "summary": "A comparison score defined by spectral representation, preprocessing, and peak-matching rules; not automatically an identity probability.",
+    "zh_summary": "由谱图表示、预处理及峰匹配规则定义的比较分数，不会自动成为身份正确概率。",
+    "related_guides": [
+      "spectrum-prediction-generalization",
+      "benchmarking-computational-ms"
+    ],
+    "related_terms": [
+      "mass-spectrum",
+      "spectral-library",
+      "precursor-ion"
+    ],
+    "refs": [
+      "comp-similarity"
+    ]
+  },
+  {
+    "slug": "retention-time-prediction",
+    "title": "Retention-time prediction",
+    "zh_title": "保留时间预测",
+    "summary": "An estimate of an elution coordinate whose scale, local mapping, and applicability depend on chromatography.",
+    "zh_summary": "对洗脱坐标的估计，其尺度、本地映射和适用范围依赖色谱条件。",
+    "related_guides": [
+      "spectrum-prediction-generalization",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "retention-time",
+      "data-leakage",
+      "calibration-curve"
+    ],
+    "refs": [
+      "comp-deeplc",
+      "comp-irt"
+    ]
+  },
+  {
+    "slug": "data-leakage",
+    "title": "Data leakage",
+    "zh_title": "数据泄漏",
+    "summary": "Information crosses the boundary intended to make a model evaluation representative of its claimed use.",
+    "zh_summary": "信息跨越了用于使模型评估代表其所声称用途的预设边界。",
+    "related_guides": [
+      "spectrum-prediction-generalization",
+      "benchmarking-computational-ms"
+    ],
+    "related_terms": [
+      "spectral-library",
+      "biological-replicate",
+      "provenance"
+    ],
+    "refs": [
+      "comp-multispecies",
+      "comp-massspecgym"
+    ]
+  },
+  {
+    "slug": "target-decoy-competition",
+    "title": "Target-decoy competition",
+    "zh_title": "目标–诱饵竞争",
+    "summary": "Targets compete with constructed decoys under a defined procedure whose assumptions and reporting unit determine valid error control.",
+    "zh_summary": "目标与构造诱饵按明确程序竞争，其假设和报告单位决定错误控制是否有效。",
+    "related_guides": [
+      "benchmarking-computational-ms",
+      "peptide-identification-protein-inference"
+    ],
+    "related_terms": [
+      "false-discovery-rate",
+      "peptide-spectrum-match",
+      "protein-inference"
+    ],
+    "refs": [
+      "fdr",
+      "comp-entrapment",
+      "comp-tdc-bias"
+    ]
+  },
+  {
+    "slug": "controlled-vocabulary",
+    "title": "Controlled vocabulary",
+    "zh_title": "受控词汇表",
+    "summary": "Maintained term identifiers and definitions support shared meaning, while units, versions, and context still require validation.",
+    "zh_summary": "维护中的术语标识符和定义支持共享含义，而单位、版本和上下文仍需验证。",
+    "related_guides": [
+      "open-formats-provenance"
+    ],
+    "related_terms": [
+      "provenance",
+      "retention-time",
+      "mass-spectrum"
+    ],
+    "refs": [
+      "comp-mscv"
+    ]
+  },
+  {
+    "slug": "provenance",
+    "title": "Provenance",
+    "zh_title": "数据溯源",
+    "summary": "The connected history of inputs, transformations, outputs, and responsibility behind a result.",
+    "zh_summary": "结果背后相互连接的输入、转换、输出及责任主体历史。",
+    "related_guides": [
+      "open-formats-provenance",
+      "benchmarking-computational-ms"
+    ],
+    "related_terms": [
+      "controlled-vocabulary",
+      "data-leakage",
+      "feature"
+    ],
+    "refs": [
+      "comp-prov",
+      "comp-px-guidelines"
+    ]
   }
 ]

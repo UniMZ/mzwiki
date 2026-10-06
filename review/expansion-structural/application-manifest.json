@@ -1,0 +1,95 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "ecca2688d1c33ce5485e8497b6c3e8f498376cb3",
+  "status": "Prepared content-only packet; not applied, built or published",
+  "baseline_inventory": {
+    "guides": 20,
+    "terms": 44
+  },
+  "package_additions": {
+    "guides": 3,
+    "terms": 6,
+    "language_pairs": 9,
+    "fragment_files": 18
+  },
+  "add_complete_fragments": [
+    "content/en/crosslinking-ms-principles.html",
+    "content/en/glycoproteomics-evidence-ambiguity.html",
+    "content/en/phosphoproteomics-workflow.html",
+    "content/terms/en/crosslink-spectrum-match.html",
+    "content/terms/en/crosslinked-peptide.html",
+    "content/terms/en/glycoform.html",
+    "content/terms/en/glycopeptide.html",
+    "content/terms/en/phosphosite.html",
+    "content/terms/en/site-occupancy.html",
+    "content/terms/zh/crosslink-spectrum-match.html",
+    "content/terms/zh/crosslinked-peptide.html",
+    "content/terms/zh/glycoform.html",
+    "content/terms/zh/glycopeptide.html",
+    "content/terms/zh/phosphosite.html",
+    "content/terms/zh/site-occupancy.html",
+    "content/zh/crosslinking-ms-principles.html",
+    "content/zh/glycoproteomics-evidence-ambiguity.html",
+    "content/zh/phosphoproteomics-workflow.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "Append these three unique Guide objects; preserve prerequisite order and all existing Guides. Reconcile order with any other approved packets.",
+      "payload": "metadata/articles.additions.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "Append these six unique terminology objects after rechecking current slugs. Keep terminology separate from Guides.",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "Merge the 18 new struct-prefixed reference objects; stop and reconcile any new collision or equivalent existing reference.",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "reused_reference_keys": [
+    "prot-ascore",
+    "prot-ptmprophet",
+    "prot-stoichiometry"
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/structural.json",
+    "payload": "tests/fixtures/structural.json",
+    "note": "Fourteen original scientific logic/arithmetic fixtures. Later engineering must add or adapt a repository check; no existing checker is claimed to consume these fixtures."
+  },
+  "scope_guards": [
+    "No replacement of existing Guide or term fragments",
+    "Existing general PTM Guide and site-localization term are linked rather than duplicated",
+    "Use site-occupancy instead of a duplicate localization-probability entry",
+    "Only baseline or within-packet internal link targets",
+    "All nontranslation metadata remains English",
+    "All numerical/logical examples are explicitly constructed, not truth benchmarks",
+    "No experimental, clinical or software-performance claims"
+  ],
+  "application_preconditions": [
+    "Re-read current main and reconcile any changes since baseline",
+    "Verify all three Guide and six term slugs remain absent",
+    "Merge metadata narrowly and add exactly 18 full fragments",
+    "Rebuild and run every existing repository test plus adapted scientific fixtures",
+    "Verify generated EN/ZH routes, anchors, navigation/counts, language switch, references, search, terminology backlinks and sitemap",
+    "Inspect desktop/mobile reading and keyboard/accessibility behavior before publication"
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "inspection/",
+    "review/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit or push",
+    "No build or deployment",
+    "No live-site verification"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "baseline_commit": "ecca2688d1c33ce5485e8497b6c3e8f498376cb3",
+  "baseline_inventory": {
+    "guides": 20,
+    "terms": 44
+  },
+  "new_guides": 3,
+  "new_terms": 6,
+  "fragment_files": 18,
+  "new_references": 17,
+  "reused_references": [
+    "fdr",
+    "mzml",
+    "mztab-m",
+    "prot-mzidentml",
+    "pwiz"
+  ],
+  "english_word_counts": {
+    "spectrum-prediction-generalization": 960,
+    "benchmarking-computational-ms": 1019,
+    "open-formats-provenance": 1023,
+    "spectral-similarity": 190,
+    "retention-time-prediction": 192,
+    "data-leakage": 201,
+    "target-decoy-competition": 208,
+    "controlled-vocabulary": 187,
+    "provenance": 193
+  },
+  "bilingual_checks": [
+    "HTML tag structure",
+    "section identifiers",
+    "normalized internal link sequence",
+    "citation keys and numbering",
+    "numeric token sequence"
+  ],
+  "fixture_count": 13,
+  "fixture_checks": "Arithmetic executed; logical expectations and content links checked. These checks do not empirically validate a scientific method.",
+  "errors": [],
+  "not_performed": [
+    "repository mutation",
+    "production build",
+    "live-site verification",
+    "browser rendering",
+    "external dataset/model benchmark"
+  ]
+}
