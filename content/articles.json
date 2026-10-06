@@ -190,8 +190,8 @@
     "slug": "data-analysis",
     "title": "From raw data to reliable results",
     "zh_title": "从原始数据到可靠结果",
-    "summary": "Build a reproducible analysis: features, identification, quantification, quality control, and confidence.",
-    "zh_summary": "构建可复现的分析：特征、鉴定、定量、质量控制和置信度。",
+    "summary": "Follow the evidence from spectral peaks to features, identity, and quantity, with explicit assumptions for error control, normalization, missing data, and study design.",
+    "zh_summary": "沿谱峰、特征、身份到定量追踪证据，明确错误控制、归一化、缺失数据和实验设计中的假设。",
     "group": "Computation",
     "prereqs": [
       "spectrum-interpretation",
@@ -204,7 +204,17 @@
     "refs": [
       "mzml",
       "pwiz",
-      "fdr"
+      "fdr",
+      "psi-ms-representation",
+      "msconvert-filters",
+      "feature-finding",
+      "msi-chemical-analysis",
+      "fdr-original",
+      "normalization-comparison",
+      "missingness-benchmark",
+      "mqacc-reporting",
+      "analysis-reporting",
+      "mztab-m"
     ]
   }
 ]

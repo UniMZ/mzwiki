@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>missing value</strong> marks a result that is unavailable for a particular variable and sample under the pipeline's reporting rules. It does not itself explain why. Distinguish missing intensity, missing identification, a measured zero, and a result rejected by a filter. mzTab-M explicitly distinguishes no data from numerical values and discusses ambiguity introduced by feature finding or alignment. <a href="#ref-mztab-m">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Hypothetical table:</strong> areas [100, 100, missing] have an observed-only mean of 100. Zero replacement changes the calculation to <code>(100 + 100 + 0) / 3 ≈ 66.7</code>. This is a changed assumption, not a newly measured third area. The observed-only mean is not automatically unbiased either.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Missing does not always mean absent or below detection. Signal strength, interference, acquisition, identification, and processing can contribute. Imputation estimates unobserved values; it need not improve the intended analysis. <a href="#ref-missingness-benchmark">[2]</a></p>
+<p>Inspect the pattern and likely causes before choosing filtering, modeling, or imputation. Preserve missingness flags and measured values, and report sensitivity to plausible alternatives. No single replacement rule is a universal default.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/data-analysis/#missingness">Reason about missingness before filling cells</a></li><li><a href="/guides/acquisition/">Connect acquisition choices to available evidence</a></li></ul>

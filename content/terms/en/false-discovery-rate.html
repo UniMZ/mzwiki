@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p>The <strong>false discovery rate</strong> (FDR) is the expected fraction of false discoveries among all accepted discoveries. With V false discoveries and R accepted discoveries, write <code>FDR = E[V / max(R, 1)]</code>; the fraction is zero when no discoveries are accepted. The expectation is over repeated data realizations under the procedure and its assumptions. <a href="#ref-fdr-original">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Hypothetical known truth:</strong> a list contains 100 accepted results, of which two are false. Its realized false-discovery proportion is <code>2 / 100 = 2%</code>. One such list does not establish the procedure's FDR. In real identification tables, truth is usually unknown and an error estimate is needed.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A nominal 1% FDR threshold does not make each hit 99% likely to be correct, guarantee exactly one error per 100 hits, or imply a 1% chance of any error in the list.</p>
+<p>Proteomics target–decoy estimates depend on the search and counting rules. Specify the collection and level: PSM, peptide, or protein. Subgroup filtering, site localization, and tests of abundance differences raise separate error-control questions. <a href="#ref-fdr">[2]</a></p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/data-analysis/#error-control">Separate scores, thresholds, estimates, and realized errors</a></li><li><a href="/guides/data-analysis/#example">Explore a repeated-analysis teaching model</a></li></ul>

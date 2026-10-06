@@ -1,0 +1,17 @@
+{
+  "mzml": {
+    "title": "HUPO Proteomics Standards Initiative. mzML specification and documentation.",
+    "url": "https://www.psidev.info/mzML",
+    "note": "Authoritative format specification and controlled-vocabulary resources."
+  },
+  "pwiz": {
+    "title": "Kessner et al. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics 24, 2534–2536.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18606607/",
+    "note": "Primary software publication. DOI: 10.1093/bioinformatics/btn323."
+  },
+  "fdr": {
+    "title": "Elias & Gygi (2007). Target-decoy search strategy for increased confidence in large-scale protein identifications by mass spectrometry. Nature Methods 4, 207–214.",
+    "url": "https://www.nature.com/articles/nmeth1019",
+    "note": "Primary methodological discussion of target–decoy error estimation. DOI: 10.1038/nmeth1019."
+  }
+}

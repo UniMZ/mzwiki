@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p>In this LC-MS context, a <strong>feature</strong> is a detected signal entity with an m/z position, retention time, and abundance measure. A workflow may combine an elution trace with compatible isotope traces and assign a charge. The grouping and reported abundance depend on the software's model. <a href="#ref-feature-finding">[1]</a> State whether a table row represents a trace, an isotope group, a cross-run match, or a molecule-level summary.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Hypothetical feature record:</strong> m/z 500.2000, retention time 300 s, assigned charge 2+, integrated area 120,000 arbitrary units. This is a compact signal description, not a peptide sequence or a chemical structure. The charge assignment and integration boundaries remain claims to inspect in the underlying data.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A centroid is a spectral-peak representation; an LC feature links or groups signal over the experiment. A compound can generate several adduct or charge-state features, while unresolved compounds may share a detected feature. Results formats therefore separate feature evidence from compound summaries. <a href="#ref-mztab-m">[2]</a></p>
+<p>In machine learning, feature can instead mean any predictor variable. That broader usage need not correspond to one LC-MS signal entity.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/data-analysis/#features">Follow the path from spectral peaks to features</a></li><li><a href="/guides/acquisition/">Understand what was sampled</a></li></ul>

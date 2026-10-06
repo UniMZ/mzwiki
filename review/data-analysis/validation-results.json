@@ -1,0 +1,218 @@
+{
+  "published_example_strings": "pass",
+  "status": "PASS",
+  "scope": "Content packet only, no repository build or runtime tests",
+  "baseline_commit": "baad05c164ab2151371732973b324c1ff4ce3ce2",
+  "baseline_guides": 8,
+  "baseline_terms": 15,
+  "new_term_pairs": 3,
+  "resulting_term_count_if_applied": 18,
+  "new_reference_keys": 10,
+  "reused_reference_keys": [
+    "mzml",
+    "pwiz",
+    "fdr"
+  ],
+  "pairs_checked": 4,
+  "preserved_old_anchors": [
+    "layers",
+    "formats",
+    "identification",
+    "example",
+    "qc",
+    "advanced",
+    "practice"
+  ],
+  "numeric_token_parity": "pass",
+  "reference_numbering_and_uniqueness": "pass",
+  "route_targets": "metadata-and-local-anchor checks pass; generated routes untested",
+  "files": [
+    {
+      "file": "content/en/data-analysis.html",
+      "html_balanced": true,
+      "ids": [
+        "layers",
+        "formats",
+        "representation",
+        "features",
+        "identification",
+        "error-control",
+        "example",
+        "quantification",
+        "normalization",
+        "qc",
+        "design",
+        "missingness",
+        "reproducibility",
+        "advanced",
+        "practice"
+      ],
+      "citation_occurrences": 19,
+      "links_checked": 23,
+      "word_count": 1958
+    },
+    {
+      "file": "content/zh/data-analysis.html",
+      "html_balanced": true,
+      "ids": [
+        "layers",
+        "formats",
+        "representation",
+        "features",
+        "identification",
+        "error-control",
+        "example",
+        "quantification",
+        "normalization",
+        "qc",
+        "design",
+        "missingness",
+        "reproducibility",
+        "advanced",
+        "practice"
+      ],
+      "citation_occurrences": 19,
+      "links_checked": 23,
+      "word_count": null
+    },
+    {
+      "file": "content/terms/en/feature.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 4,
+      "word_count": 196
+    },
+    {
+      "file": "content/terms/zh/feature.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 4,
+      "word_count": null
+    },
+    {
+      "file": "content/terms/en/false-discovery-rate.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 4,
+      "word_count": 192
+    },
+    {
+      "file": "content/terms/zh/false-discovery-rate.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 4,
+      "word_count": null
+    },
+    {
+      "file": "content/terms/en/missing-value.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 4,
+      "word_count": 191
+    },
+    {
+      "file": "content/terms/zh/missing-value.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 4,
+      "word_count": null
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "fdr_repeated_model",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "realized_fdp",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "no_discoveries",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "analyte_standard_ratio",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "median_normalization",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "missing_value_zero",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "replicate_hierarchy",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "confounded_design",
+      "status": "pass",
+      "check_type": "arithmetic"
+    },
+    {
+      "id": "feature_record",
+      "status": "pass",
+      "check_type": "asserted semantic boundary; manual review also required"
+    },
+    {
+      "id": "nominal_fdr_does_not_identify_truth",
+      "status": "pass",
+      "check_type": "asserted semantic boundary; manual review also required"
+    }
+  ],
+  "fixture_count": 10,
+  "unrun": [
+    "repository build",
+    "repository structural/scientific checks",
+    "generated search and reciprocal-link checks",
+    "browser rendering and keyboard checks",
+    "deployment",
+    "live-site verification"
+  ]
+}

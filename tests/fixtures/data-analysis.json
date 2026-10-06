@@ -1,0 +1,331 @@
+{
+  "schema": "mzwiki-data-analysis-teaching-fixtures-v1",
+  "status": "Constructed teaching data, not experimental results or a validated analysis recipe",
+  "baseline_commit": "baad05c164ab2151371732973b324c1ff4ce3ce2",
+  "arithmetic": "Calculate before rounding; exact integer or decimal inputs for these toy models. No generic target-decoy counting formula is supplied.",
+  "cases": [
+    {
+      "id": "fdr_repeated_model",
+      "kind": "expected_fdp",
+      "input": {
+        "probabilities": [
+          0.5,
+          0.5
+        ],
+        "accepted": [
+          100,
+          100
+        ],
+        "false": [
+          0,
+          2
+        ]
+      },
+      "expected": {
+        "fdps": [
+          0,
+          0.02
+        ],
+        "fdr": 0.01,
+        "mean_false": 1
+      },
+      "assumptions": [
+        "Two mutually exclusive, exhaustive outcomes with specified probabilities",
+        "The false counts are known teaching truth, not estimated from decoys",
+        "Accepted count is fixed; no general identity E[V/R]=E[V]/E[R] is asserted"
+      ]
+    },
+    {
+      "id": "realized_fdp",
+      "kind": "fdp",
+      "input": {
+        "accepted": 100,
+        "false": 2
+      },
+      "expected": {
+        "fdp": 0.02
+      },
+      "assumptions": [
+        "Truth is known in this invented list; a single FDP does not identify FDR"
+      ]
+    },
+    {
+      "id": "no_discoveries",
+      "kind": "fdp",
+      "input": {
+        "accepted": 0,
+        "false": 0
+      },
+      "expected": {
+        "fdp": 0
+      },
+      "assumptions": [
+        "Standard convention defines FDP as zero when R=0"
+      ]
+    },
+    {
+      "id": "analyte_standard_ratio",
+      "kind": "internal_standard_ratio",
+      "input": {
+        "analyte": [
+          200000,
+          100000
+        ],
+        "standard": [
+          100000,
+          50000
+        ]
+      },
+      "expected": {
+        "raw_ratio": 2,
+        "normalized": [
+          2,
+          2
+        ],
+        "ratio_of_ratios": 1
+      },
+      "assumptions": [
+        "Equal internal-standard amounts",
+        "Standard is suitable for the unwanted response change being considered",
+        "No claim of absolute concentration or universal correction across analytes"
+      ]
+    },
+    {
+      "id": "median_normalization",
+      "kind": "median_scaling",
+      "input": {
+        "reference": [
+          100,
+          200,
+          300
+        ],
+        "test": [
+          200,
+          400,
+          600
+        ]
+      },
+      "expected": {
+        "reference_median": 200,
+        "test_median": 400,
+        "factor": 0.5,
+        "scaled_test": [
+          100,
+          200,
+          300
+        ],
+        "raw_ratios": [
+          2,
+          2,
+          2
+        ],
+        "scaled_ratios": [
+          1,
+          1,
+          1
+        ]
+      },
+      "assumptions": [
+        "Exact hypothetical nonzero areas",
+        "Mathematically identical correction whether the multiplier is technical or genuine; biology is not identifiable from these numbers alone"
+      ]
+    },
+    {
+      "id": "missing_value_zero",
+      "kind": "missing_means",
+      "input": {
+        "values": [
+          100,
+          100,
+          null
+        ]
+      },
+      "expected": {
+        "observed_count": 2,
+        "observed_mean": 100,
+        "zero_filled_count": 3,
+        "zero_filled_mean": 66.66666666666667,
+        "rounded_zero_filled_mean": 66.7
+      },
+      "assumptions": [
+        "A missing value is encoded as JSON null",
+        "Both means are arithmetic descriptions only, not unbiasedness claims"
+      ]
+    },
+    {
+      "id": "replicate_hierarchy",
+      "kind": "replicate_count",
+      "input": {
+        "biological_samples": 6,
+        "injections_per_sample": 2
+      },
+      "expected": {
+        "injections": 12,
+        "independent_biological_samples": 6
+      },
+      "assumptions": [
+        "Six samples are independently generated biological units",
+        "The second injection repeats the same prepared sample, not a new extraction"
+      ]
+    },
+    {
+      "id": "confounded_design",
+      "kind": "design_rank",
+      "input": {
+        "condition": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "batch": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "expected": {
+        "columns": [
+          "intercept",
+          "condition",
+          "batch"
+        ],
+        "rank": 2,
+        "column_count": 3,
+        "separate_condition_and_batch_effects_identifiable": false
+      },
+      "assumptions": [
+        "Additive model intercept + condition + batch",
+        "No other information or identifying constraints",
+        "Illustrates exact confounding, not all imperfectly balanced designs"
+      ]
+    },
+    {
+      "id": "feature_record",
+      "kind": "record_boundary",
+      "input": {
+        "mz": 500.2,
+        "retention_time_s": 300,
+        "assigned_charge": 2,
+        "area_arbitrary_units": 120000,
+        "identified_molecule": null
+      },
+      "expected": {
+        "molecule_identified": false,
+        "concentration_established": false
+      },
+      "assumptions": [
+        "A signal record alone does not establish a molecular identity or concentration"
+      ]
+    },
+    {
+      "id": "nominal_fdr_does_not_identify_truth",
+      "kind": "interpretation",
+      "input": {
+        "accepted_psms": 1000,
+        "nominal_fdr_threshold": 0.01
+      },
+      "expected": {
+        "actual_false_count_known": false,
+        "individual_correct_probability_known": false,
+        "protein_level_fdr_established": false
+      },
+      "assumptions": [
+        "No estimator calibration, individual probabilities, or protein-level procedure supplied"
+      ]
+    }
+  ],
+  "published_checks": [
+    {
+      "file": "content/en/data-analysis.html",
+      "required_strings": [
+        "0.5 × (0 / 100) + 0.5 × (2 / 100) = 0.01 = 1%",
+        "200,000 and 100,000",
+        "100,000 and 50,000",
+        "ratios are both 2",
+        "their ratio is 1",
+        "[100, 200, 300]",
+        "[200, 400, 600]",
+        "200 / 400",
+        "200 / 3 ≈ 66.7",
+        "six independent biological samples injected twice give 12 injections",
+        "all controls are measured on day A and all treated samples on day B",
+        "1,000 PSMs at a nominal 1% threshold"
+      ]
+    },
+    {
+      "file": "content/zh/data-analysis.html",
+      "required_strings": [
+        "0.5 × (0 / 100) + 0.5 × (2 / 100) = 0.01 = 1%",
+        "200,000 和 100,000",
+        "100,000 和 50,000",
+        "比值均为 2",
+        "比为 1",
+        "[100, 200, 300]",
+        "[200, 400, 600]",
+        "200 / 400",
+        "200 / 3 ≈ 66.7",
+        "六个独立生物样品各进样两次",
+        "12 次进样",
+        "全部对照都在 A 日测量",
+        "全部处理样品都在 B 日测量",
+        "名义 1% 阈值下接受 1,000 个 PSM"
+      ]
+    },
+    {
+      "file": "content/terms/en/feature.html",
+      "required_strings": [
+        "500.2000",
+        "300 s",
+        "2+",
+        "120,000",
+        "not a peptide sequence or a chemical structure"
+      ]
+    },
+    {
+      "file": "content/terms/zh/feature.html",
+      "required_strings": [
+        "500.2000",
+        "300 s",
+        "2+",
+        "120,000",
+        "并非肽序列或化学结构"
+      ]
+    },
+    {
+      "file": "content/terms/en/false-discovery-rate.html",
+      "required_strings": [
+        "FDR = E[V / max(R, 1)]",
+        "2 / 100 = 2%",
+        "fraction is zero when no discoveries are accepted"
+      ]
+    },
+    {
+      "file": "content/terms/zh/false-discovery-rate.html",
+      "required_strings": [
+        "FDR = E[V / max(R, 1)]",
+        "2 / 100 = 2%",
+        "没有接受任何发现时，该比例为零"
+      ]
+    },
+    {
+      "file": "content/terms/en/missing-value.html",
+      "required_strings": [
+        "(100 + 100 + 0) / 3 ≈ 66.7",
+        "observed-only mean is not automatically unbiased"
+      ]
+    },
+    {
+      "file": "content/terms/zh/missing-value.html",
+      "required_strings": [
+        "(100 + 100 + 0) / 3 ≈ 66.7",
+        "只用观测值的均值也并非自动无偏"
+      ]
+    }
+  ]
+}
