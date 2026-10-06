@@ -8,13 +8,15 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE=os.environ.get('MZWIKI_BASE_URL','http://127.0.0.1:8000').rstrip('/')
 OUT=Path('/tmp/mzwiki-checks');OUT.mkdir(exist_ok=True)
 articles=json.loads((ROOT/'content/articles.json').read_text())
+terms=json.loads((ROOT/'content/terms.json').read_text())
 count=0
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path=os.environ.get('MZWIKI_CHROMIUM','/usr/bin/chromium'),headless=True,args=['--no-sandbox'])
     context=browser.new_context()
     page=context.new_page();errors=[]
     page.on('pageerror',lambda err:errors.append(str(err)))
-    paths=['/','/about/','/search/','/404.html']+[('/zh' if lang=='zh' else '')+'/guides/'+a['slug']+'/' for a in articles for lang in ('en','zh')]
+    paths=['/','/about/','/search/','/404.html','/terms/']+[('/zh' if lang=='zh' else '')+'/guides/'+a['slug']+'/' for a in articles for lang in ('en','zh')]
+    paths += [('/zh' if lang=='zh' else '')+'/terms/'+t['slug']+'/' for t in terms for lang in ('en','zh')]
     for width,height in [(1440,1000),(390,844)]:
         page.set_viewport_size({'width':width,'height':height})
         for path in paths:
@@ -22,7 +24,7 @@ with sync_playwright() as p:
             assert response.status==200,(path,response.status)
             expect(page.locator('h1')).to_be_visible()
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(path,width,'horizontal overflow')
-            if '/guides/' in path:
+            if '/guides/' in path or (path.startswith(('/terms/','/zh/terms/')) and path!='/terms/'):
                 expect(page.locator('.language')).to_be_visible()
                 expect(page.locator('.prose')).to_be_visible()
             count+=1
@@ -45,14 +47,17 @@ with sync_playwright() as p:
     expect(page.locator('.prose details').first).to_have_attribute('open','');count+=2
     # Live search, language filtering, empty state, query safety, and deep links.
     page.goto(BASE+'/search/')
-    expect(page.locator('#search-results li')).to_have_count(8)
+    expect(page.locator('#search-results li')).to_have_count(15)
+    page.locator('#kind-filter').select_option('guide')
     page.locator('#query').fill('isotopes')
     expect(page.locator('#search-results a').first).to_have_text('m/z, charge & isotopes');count+=1
     page.locator('#query').fill('false discovery')
     expect(page.locator('#search-results a').first).to_have_text('From raw data to reliable results');count+=1
     page.locator('#query').fill('')
+    page.locator('#kind-filter').select_option('all')
     page.locator('#language-filter').select_option('zh')
-    expect(page.locator('#search-results li')).to_have_count(8)
+    expect(page.locator('#search-results li')).to_have_count(15)
+    page.locator('#kind-filter').select_option('guide')
     page.locator('#query').fill('同位素')
     expect(page.locator('#search-results a').first).to_have_text('质荷比、电荷与同位素');count+=1
     page.locator('#query').fill('zzzz-no-match-123')
@@ -137,6 +142,54 @@ with sync_playwright() as p:
         reader.locator('.prose summary').last.click()
         expect(reader.locator('.prose details').last.locator('p')).to_be_visible()
         count+=1
+    # Terminology collection stays separate from the numbered Guide sequence.
+    for width,height in [(1440,1000),(390,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        page.goto(BASE+'/terms/')
+        expect(page.locator('.article-card')).to_have_count(7)
+        page.locator('.article-card').first.click()
+        expect(page).to_have_url(BASE+'/terms/mz/')
+        expect(page.locator('.eyebrow').last).to_have_text('Terminology')
+        page.screenshot(path=str(OUT/f'term-{width}.png'),full_page=True)
+        count+=1
+    for term in terms:
+        slug=term['slug']
+        page.goto(BASE+'/terms/'+slug+'/#example')
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/terms/'+slug+'/#example')
+        expect(page.locator('#example')).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/terms/'+slug+'/#example')
+        expect(page.locator('.related-links a').first).to_have_attribute('href','/guides/'+term['related_guides'][0]+'/')
+        count+=2
+    page.goto(BASE+'/search/?kind=term')
+    expect(page.locator('#kind-filter')).to_have_value('term')
+    expect(page.locator('#search-results li')).to_have_count(7)
+    expect(page.locator('#search-results small').first).to_contain_text('Term')
+    page.locator('#query').fill('monoisotopic')
+    expect(page.locator('#search-results a').first).to_have_attribute('href','/terms/monoisotopic-mass/')
+    page.locator('#language-filter').select_option('zh')
+    page.locator('#query').fill('单同位素质量')
+    expect(page.locator('#search-results a').first).to_have_attribute('href','/zh/terms/monoisotopic-mass/')
+    page.reload()
+    expect(page.locator('#kind-filter')).to_have_value('term')
+    expect(page.locator('#language-filter')).to_have_value('zh')
+    page.locator('#query').fill('')
+    page.locator('#language-filter').select_option('all')
+    expect(page.locator('#search-results li')).to_have_count(14)
+    page.locator('#kind-filter').select_option('guide')
+    expect(page.locator('#search-results li')).to_have_count(16)
+    expect(page.locator('#search-results small').first).to_contain_text('Guide')
+    count+=6
+    reader.goto(BASE+'/terms/')
+    reader.locator('.article-card').first.click()
+    expect(reader).to_have_url(BASE+'/terms/mz/')
+    reader.locator('[data-language-switch]').click()
+    expect(reader).to_have_url(BASE+'/zh/terms/mz/')
+    count+=2
+    page.goto(BASE+'/guides/ionization/')
+    expect(page.locator('.related-links a[href="/terms/adduct-ion/"]')).to_have_count(1)
+    count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')

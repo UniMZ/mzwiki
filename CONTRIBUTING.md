@@ -19,6 +19,12 @@ Prioritize stable concepts, principles, methods, and connections to computationa
 
 Use `content/ARTICLE_TEMPLATE.html` as a structure, not as text to publish unchanged. Add a unique slug and matching English/Chinese content; include prerequisites, related guides, and reference keys in `content/articles.json`. Keep the metadata order appropriate to the learning path. Do not publish a translation stub as a completed translation.
 
+## Edit terminology
+
+Edit the paired fragments in `content/terms/en/` and `content/terms/zh/`, with matching section IDs. Use `content/terms.json` for titles, summaries, ordered references, `related_guides`, and `related_terms`. Keep terms out of the numbered Guide array. The builder generates the English `/terms/` index, separate language views, reciprocal Guide links, and search classifications.
+
+Run the build, structural checks, all scientific fixture checks (`check_science.py`, `check_ionization.py`, and `check_terms.py`), and the browser checks after collection changes. Commit source and generated output together.
+
 ## Scientific standards
 
 - Distinguish an observation, ion assignment, formula hypothesis, and structure identification.
