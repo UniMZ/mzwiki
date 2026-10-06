@@ -1,0 +1,39 @@
+{
+  "description": "Constructed teaching calculations, not experimental data or a proposed molecular formula.",
+  "neutral_mass_da": "300.000000000",
+  "coordinate": "x is the dimensionless numerical m/z coordinate; use n = |z| and report polarity separately.",
+  "forward_formula": "x = (k * neutral_mass_da + delta_da) / n",
+  "inverse_formula": "neutral_mass_da = (n * x - delta_da) / k",
+  "constants_da": {
+    "proton": "1.007276467",
+    "sodium_23_cation": "22.989220702",
+    "ammonium_14N_1H4_cation": "18.033825553",
+    "chlorine_35_anion": "34.969401262"
+  },
+  "constant_assumptions": [
+    "Proton mass rounded from NIST CODATA 2022 value 1.0072764665789 u.",
+    "Other ionic masses calculated from NIST neutral-atom isotope masses with one electron subtracted for cations or added for the chloride anion.",
+    "Electron mass used to derive constants: 0.0005485799090441 u, NIST CODATA 2022.",
+    "Electronic and molecular binding-energy mass corrections are neglected.",
+    "Nine retained decimal places are calculation constants, not claims of nine-decimal physical exactness or instrument accuracy.",
+    "Natural isotope selection uses the most abundant isotope of each listed element; no isotope labeling is modeled.",
+    "Examples assume the monoisotopic assignment is correct and the assigned ion exists; they do not predict relative abundance or occurrence of all ion forms."
+  ],
+  "ions": [
+    {"notation": "[M+H]+", "z": 1, "n": 1, "k": 1, "delta_da": "1.007276467", "x": "301.007276467", "display_x": "301.007276"},
+    {"notation": "[M+Na]+", "z": 1, "n": 1, "k": 1, "delta_da": "22.989220702", "x": "322.989220702", "display_x": "322.989221"},
+    {"notation": "[M+NH4]+", "z": 1, "n": 1, "k": 1, "delta_da": "18.033825553", "x": "318.033825553", "display_x": "318.033826"},
+    {"notation": "[M-H]-", "z": -1, "n": 1, "k": 1, "delta_da": "-1.007276467", "x": "298.992723533", "display_x": "298.992724"},
+    {"notation": "[M+Cl]-", "z": -1, "n": 1, "k": 1, "delta_da": "34.969401262", "x": "334.969401262", "display_x": "334.969401"},
+    {"notation": "[M+2H]2+", "z": 2, "n": 2, "k": 1, "delta_da": "2.014552934", "x": "151.007276467", "display_x": "151.007276"},
+    {"notation": "[M-2H]2-", "z": -2, "n": 2, "k": 1, "delta_da": "-2.014552934", "x": "148.992723533", "display_x": "148.992724"},
+    {"notation": "[M+H+Na]2+", "z": 2, "n": 2, "k": 1, "delta_da": "23.996497169", "x": "161.9982485845", "display_x": "161.998249"},
+    {"notation": "[2M+H]+", "z": 1, "n": 1, "k": 2, "delta_da": "1.007276467", "x": "601.007276467", "display_x": "601.007276"}
+  ],
+  "checks": {
+    "sodium_minus_proton_da": "21.981944235",
+    "sodium_replacing_proton_at_charge_2_delta_x": "10.9909721175",
+    "charge_2_difference_rounded_9_places": "10.990972118",
+    "sodium_peak_misassigned_as_protonated_neutral_mass_da": "321.981944235"
+  }
+}

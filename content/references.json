@@ -63,5 +63,45 @@
     "title": "Waters. The Mass Spectrometry Primer: Mass Accuracy & Resolution.",
     "url": "https://www.waters.com/nextgen/us/en/education/primers/the-mass-spectrometry-primer/mass-accuracy-and-resolution.html",
     "note": "Official manufacturer explanation of calibration, interference, and measurement conditions. Used for principles, not current product performance claims."
+  },
+  "esi-mechanisms": {
+    "title": "Konermann, Ahadi, Rodriguez & Vahidi (2013). Unraveling the mechanism of electrospray ionization. Analytical Chemistry 85, 2–9.",
+    "url": "https://doi.org/10.1021/ac302789c",
+    "note": "Mechanistic review of ion evaporation, charged residue, and chain ejection; models apply to different analyte and experimental regimes. Metadata and abstract verified through PubMed PMID 23134552."
+  },
+  "protein-esi": {
+    "title": "Konermann, Metwally, Duez & Peters (2019). Charging and supercharging of proteins for mass spectrometry: recent insights into the mechanisms of electrospray ionization. Analyst 144, 6157–6171.",
+    "url": "https://doi.org/10.1039/C9AN01201J",
+    "note": "Review connecting native-like and denaturing protein experiments to different charging mechanisms and documenting condition dependence. Metadata and abstract verified through PubMed PMID 31560020."
+  },
+  "maldi-mechanisms": {
+    "title": "Knochenmuss (2006). Ion formation mechanisms in UV-MALDI. Analyst 131, 966–986.",
+    "url": "https://doi.org/10.1039/B605646F",
+    "note": "Critical review distinguishing primary ion generation from subsequent plume reactions and discussing competing mechanistic descriptions. Publisher metadata and abstract, and indexed author-manuscript passages, checked."
+  },
+  "maldi-peptides": {
+    "title": "Sandoval (2014). Matrix-Assisted Laser Desorption/Ionization Time-of-Flight Mass Analysis of Peptides. Current Protocols in Protein Science 77, 16.2.1–16.2.11.",
+    "url": "https://doi.org/10.1002/0471140864.ps1602s77",
+    "note": "Peptide-analysis protocol supporting the qualified expectation of predominantly singly protonated MALDI peptide ions. Does not justify a universal charge-state or salt-tolerance claim. Metadata and abstract verified through PubMed PMID 25081740."
+  },
+  "maldi-multicharge": {
+    "title": "Trimpin, Inutan, Herath & McEwen (2010). Laserspray ionization, a new atmospheric pressure MALDI method for producing highly charged gas-phase ions of peptides and proteins directly from solid solutions. Molecular & Cellular Proteomics 9, 362–367.",
+    "url": "https://doi.org/10.1074/mcp.M900527-MCP200",
+    "note": "Primary experimental counterexample to the claim that all matrix-assisted laser methods produce only singly charged ions. This specialized atmospheric-pressure method is not presented as conventional vacuum MALDI. Metadata and abstract verified through PubMed PMID 19955086."
+  },
+  "esi-suppression": {
+    "title": "King, Bonfiglio, Fernandez-Metzler, Miller-Stein & Olah (2000). Mechanistic investigation of ionization suppression in electrospray ionization. Journal of the American Society for Mass Spectrometry 11, 942–950.",
+    "url": "https://doi.org/10.1016/S1044-0305(00)00163-X",
+    "note": "Primary experiments on biological extracts support a role for nonvolatile solutes and changed droplet properties in ESI suppression. The article does not generalize this into the only suppression mechanism. Publisher metadata and abstract verified."
+  },
+  "maldi-dynamics": {
+    "title": "Knochenmuss (2016). The Coupled Chemical and Physical Dynamics Model of MALDI. Annual Review of Analytical Chemistry 9, 365–385.",
+    "url": "https://doi.org/10.1146/annurev-anchem-071015-041750",
+    "note": "Mechanistic review covering positive and negative ionization, charge-transfer reactions, suppression, and experimental-condition dependence. Its named model is not treated as the sole universally established mechanism. Publisher abstract and metadata verified."
+  },
+  "maldi-adducts": {
+    "title": "Leite, Hajivandi, Diller & Pope (2004). Removal of sodium and potassium adducts using a matrix additive during matrix-associated laser desorption/ionization time-of-flight mass spectrometric analysis of peptides. Rapid Communications in Mass Spectrometry 18, 2953–2959.",
+    "url": "https://doi.org/10.1002/rcm.1711",
+    "note": "Primary peptide experiments document alkali-metal adduct patterns and matrix-cluster interference; used to qualify salt-tolerance claims. Metadata and abstract verified through PubMed PMID 15536629."
   }
 }

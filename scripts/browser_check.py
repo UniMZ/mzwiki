@@ -41,8 +41,8 @@ with sync_playwright() as p:
     page.locator('.mobile-index summary').click()
     page.locator('.mobile-index a').filter(has_text='How molecules become ions').click()
     expect(page).to_have_url(BASE+'/guides/ionization/')
-    page.locator('.prose summary').click()
-    expect(page.locator('.prose details')).to_have_attribute('open','');count+=2
+    page.locator('.prose summary').first.click()
+    expect(page.locator('.prose details').first).to_have_attribute('open','');count+=2
     # Live search, language filtering, empty state, query safety, and deep links.
     page.goto(BASE+'/search/')
     expect(page.locator('#search-results li')).to_have_count(8)
@@ -66,7 +66,7 @@ with sync_playwright() as p:
     # Basic keyboard skip link.
     page.goto(BASE+'/');page.keyboard.press('Tab')
     expect(page.locator('.skip')).to_be_focused();count+=1
-    nojs=browser.new_context(java_script_enabled=False)
+    nojs=browser.new_context(java_script_enabled=False,reduced_motion='reduce')
     reader=nojs.new_page();reader.goto(BASE+'/guides/fragmentation/')
     expect(reader.locator('.prose')).to_be_visible();expect(reader.locator('.language a')).to_be_visible();count+=1
     # Enriched teaching example: figure, local reproduction links, paired section
@@ -96,6 +96,47 @@ with sync_playwright() as p:
     expect(page.locator('#search-results li')).to_have_count(2);count+=1
     reader.goto(BASE+'/zh/guides/spectrum-interpretation/#example')
     expect(reader.locator('.teaching-figure img')).to_be_visible();count+=1
+    # Ion forms: nine-row calculations, all disclosures, paired anchors and search.
+    for width,height in [(1440,1000),(390,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for lang in ('en','zh'):
+            prefix='/zh' if lang=='zh' else ''
+            page.goto(BASE+prefix+'/guides/ionization/#example')
+            table=page.locator('.prose table').nth(3)
+            expect(table.locator('tbody tr')).to_have_count(9)
+            expect(table).to_contain_text('161.998249')
+            wrapper=table.locator('..')
+            wrapper.evaluate('(el) => { el.scrollLeft = el.scrollWidth; }')
+            assert wrapper.evaluate('(el) => el.scrollWidth <= el.clientWidth || el.scrollLeft > 0')
+            wrapper.evaluate('(el) => { el.scrollLeft = 0; }')
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            page.locator('#example').scroll_into_view_if_needed()
+            page.screenshot(path=str(OUT/f'ionization-{lang}-{width}.png'))
+            details=page.locator('.prose details')
+            expect(details).to_have_count(3)
+            for i in range(3):
+                details.nth(i).locator('summary').click()
+                expect(details.nth(i).locator('p')).to_be_visible()
+                details.nth(i).locator('summary').click()
+            count+=1
+    for anchor in ('maldi','ion-forms','mass-recovery','example-negative','misconceptions'):
+        page.goto(BASE+'/guides/ionization/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/ionization/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/ionization/#'+anchor)
+        count+=2
+    for lang,query in [('en','chain ejection'),('zh','链排出')]:
+        page.goto(BASE+'/search/?lang='+lang)
+        page.locator('#query').fill(query)
+        expect(page.locator('#search-results a').first).to_have_attribute('href',('/zh' if lang=='zh' else '')+'/guides/ionization/')
+        count+=1
+    for prefix in ('','/zh'):
+        reader.goto(BASE+prefix+'/guides/ionization/#practice')
+        reader.locator('.prose summary').last.click()
+        expect(reader.locator('.prose details').last.locator('p')).to_be_visible()
+        count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')
