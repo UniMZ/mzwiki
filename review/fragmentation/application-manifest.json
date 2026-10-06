@@ -1,0 +1,49 @@
+{
+  "baseline_commit": "973798e0fa8702ab54690b663d10a67cdde8e561",
+  "replace_complete_fragments": [
+    "content/en/fragmentation.html",
+    "content/zh/fragmentation.html"
+  ],
+  "add_complete_fragments": [
+    "content/terms/en/precursor-ion.html",
+    "content/terms/zh/precursor-ion.html",
+    "content/terms/en/product-ion.html",
+    "content/terms/zh/product-ion.html",
+    "content/terms/en/neutral-loss.html",
+    "content/terms/zh/neutral-loss.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "replace only object with slug fragmentation",
+      "payload": "metadata/fragmentation.article.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "append three unique objects",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "merge seven new keys only",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/fragmentation.json",
+    "payload": "tests/fixtures/fragmentation.json",
+    "note": "Adapt to existing engineering test schema if needed; no executable tests included."
+  },
+  "batch_record": {
+    "destination": "docs/content-batches/05-fragmentation.md",
+    "payload": "docs/content-batches/05-fragmentation.md"
+  },
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "metadata/references.reused.json",
+    "inspection/"
+  ]
+}

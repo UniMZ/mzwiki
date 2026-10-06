@@ -96,6 +96,12 @@ The analyzer Guide and Mass analyzer/Transient entries use the constructed cases
 python3 scripts/check_analyzers.py
 ```
 
+The fragmentation Guide and its three terms use `tests/fixtures/fragmentation.json`. Validate all thirteen mass/charge, neutral-loss, residue-gap and isolation-window cases with:
+
+```sh
+python3 scripts/check_fragmentation.py
+```
+
 ## GitHub Pages deployment
 
 This version supports **Deploy from a branch → main → / (root)**. The repository root contains `index.html`, `.nojekyll`, and `CNAME` (`mzwiki.unimz.org`). Preserve the custom domain. No credentials or DNS changes are needed in this repository.

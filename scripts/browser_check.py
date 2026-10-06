@@ -221,6 +221,42 @@ with sync_playwright() as p:
         page.locator('#query').fill(q)
         expect(page.locator('#search-results a').first).to_have_attribute('href',path)
         count+=1
+    # Fragmentation: reaction-relative terms, paired anchors and charge-aware tables.
+    for anchor in ('measurement','collisions','electrons','residue-gap','conservation','coisolation','evidence'):
+        page.goto(BASE+'/guides/fragmentation/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/fragmentation/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/fragmentation/#'+anchor)
+        count+=2
+    for width,height in [(1440,1000),(390,844),(320,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for prefix in ('','/zh'):
+            for route in ('/guides/fragmentation/','/terms/precursor-ion/','/terms/product-ion/','/terms/neutral-loss/'):
+                page.goto(BASE+prefix+route)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(width,prefix,route)
+                if route=='/guides/fragmentation/':
+                    expect(page.locator('.prose table').nth(1)).to_contain_text('292.0947')
+                    for wrapper in page.locator('.prose .table-wrap').all():
+                        wrapper.evaluate('(el) => {el.scrollLeft=el.scrollWidth;}')
+                        assert wrapper.evaluate('(el) => el.scrollWidth <= el.clientWidth || el.scrollLeft > 0')
+                    for slug in ('precursor-ion','product-ion','neutral-loss'):
+                        expect(page.locator('.related-links a[href="'+prefix+'/terms/'+slug+'/"]')).to_have_count(1)
+                    expect(page.locator('.prose details')).to_have_count(3)
+                    for detail in page.locator('.prose details').all():
+                        detail.locator('summary').focus()
+                        page.keyboard.press('Enter')
+                        expect(detail.locator('p')).to_be_visible()
+                    page.emulate_media(reduced_motion='reduce')
+                    page.locator('#example').scroll_into_view_if_needed()
+                    page.screenshot(path=str(OUT/f'fragmentation-{prefix.strip("/") or "en"}-{width}.png'))
+                count+=1
+    for lang,q,path in [('en','neutral loss','/terms/neutral-loss/'),('zh','中性丢失','/zh/terms/neutral-loss/')]:
+        page.goto(BASE+'/search/?kind=term&lang='+lang)
+        page.locator('#query').fill(q)
+        expect(page.locator('#search-results a').first).to_have_attribute('href',path)
+        count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')

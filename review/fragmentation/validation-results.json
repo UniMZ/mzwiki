@@ -1,0 +1,108 @@
+{
+  "checked_date": "2026-10-06",
+  "baseline_commit": "973798e0fa8702ab54690b663d10a67cdde8e561",
+  "scope": "Local draft-packet content and arithmetic checks only; no repository build or runtime tests.",
+  "article_fragments": 8,
+  "new_terms": 3,
+  "new_reference_keys": 7,
+  "original_anchors_preserved": [
+    "sequence",
+    "activation",
+    "peptides",
+    "example",
+    "interpretation",
+    "practice",
+    "next-level"
+  ],
+  "paired_guide_anchors": [
+    "sequence",
+    "measurement",
+    "activation",
+    "collisions",
+    "electrons",
+    "peptides",
+    "residue-gap",
+    "conservation",
+    "example",
+    "interpretation",
+    "coisolation",
+    "evidence",
+    "practice",
+    "next-level"
+  ],
+  "cross_links_checked": 38,
+  "citation_order": "passed for every cited reference in all 8 fragments",
+  "html_tag_balance": "passed for all 8 fragments",
+  "language_anchor_parity": "passed for all 4 article pairs",
+  "duplicate_term_or_reference_keys": "none against the specified baseline",
+  "fixture_checks": [
+    {
+      "id": "water_exact_mass",
+      "status": "passed"
+    },
+    {
+      "id": "alanine_residue_exact_mass",
+      "status": "passed"
+    },
+    {
+      "id": "water_loss_plus1",
+      "status": "passed"
+    },
+    {
+      "id": "water_loss_plus2",
+      "status": "passed"
+    },
+    {
+      "id": "rounded_gap_plus1",
+      "status": "passed"
+    },
+    {
+      "id": "apparent_18_gap_plus2",
+      "status": "passed"
+    },
+    {
+      "id": "practice_9_gap_plus2",
+      "status": "passed"
+    },
+    {
+      "id": "alanine_gap_plus1",
+      "status": "passed"
+    },
+    {
+      "id": "alanine_gap_plus2",
+      "status": "passed"
+    },
+    {
+      "id": "charge_partition_two_products",
+      "status": "passed"
+    },
+    {
+      "id": "wide_ideal_isolation",
+      "status": "passed"
+    },
+    {
+      "id": "narrow_ideal_isolation",
+      "status": "passed"
+    },
+    {
+      "id": "electron_capture_bookkeeping",
+      "status": "passed"
+    }
+  ],
+  "not_run": [
+    "Repository build",
+    "Repository test suite",
+    "Browser rendering and accessibility QA",
+    "Deployment verification"
+  ],
+  "content_sha256": {
+    "content/en/fragmentation.html": "b4d78b983a71adcc26b7dab58cc2a9e64f6172655f329381997c935ad6727b48",
+    "content/terms/en/precursor-ion.html": "6d1cdaf3a016564a03552fd5514201083d2b393d7323d2d279877fe2d12e2556",
+    "content/terms/en/product-ion.html": "38b5e8b5c5ada608b783bbdf420a23b48a4f6630b6994260c97cade1c6a1f88e",
+    "content/terms/en/neutral-loss.html": "a5e153984c25897d9b48e5c283d8859b9fd05d5629fd6d7b8702bc587e98c1d6",
+    "content/zh/fragmentation.html": "10dae3fbcc0bca22ce1222b1c1b218cebf09d902407b64e3f300442b86a87e7d",
+    "content/terms/zh/precursor-ion.html": "db52300ec5793df44d09d08d66583a9b7fe929b6dc73752e6069effa9fa74a87",
+    "content/terms/zh/product-ion.html": "ab9a0356d093f9b3dc87b1037d736465b91d5ebe46a0e04ca9f04519cbf56011",
+    "content/terms/zh/neutral-loss.html": "a95ab8d5d6221eb58f83c724b8a8e462f5fe36f6947955f4201ec9ace7a419b3"
+  }
+}
