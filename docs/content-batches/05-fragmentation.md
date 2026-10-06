@@ -27,3 +27,9 @@ Substantive terminology was verified in the IUPAC 2013 report via the MSACL-host
 The writing package checks numerical arithmetic, article-local citation order, translated-anchor parity, old-anchor preservation, and linked destinations against the inspected source snapshot. These checks do not constitute a repository build, runtime QA, deployment, or independent experimental validation.
 
 The implementation pass should adapt the supplied fixture data to existing tests, run the full current build and structural/scientific checks, regenerate public pages and search assets, and verify glossary links, language switches, English-primary navigation, keyboard disclosure controls, and narrow-screen readability. Record actual test results and final commit/deployment separately.
+
+## Engineering integration
+
+The supplied source bodies and metadata were retained unchanged. `scripts/check_fragmentation.py` adapts all thirteen fixtures, verifies published values in their intended Guide sections, and checks all eight supplied SHA-256 source hashes. The paired-content tests normalize the English phrase “decreases by one” against a numeric 1 and translate the three equation labels (neutral mass, precursor, product) for comparison; these test normalizations do not alter the article text.
+
+The existing builder regenerates pages, reciprocal links, search and sitemap without framework or domain changes. The browser suite includes the new section switches, three terminology entries, bilingual search, keyboard disclosure controls, and table/equation layout at 1440, 390 and 320 pixels. These are local engineering checks, not a remote CI or publication claim. The parent task handles merging and deployment verification.
