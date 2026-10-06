@@ -1,0 +1,33 @@
+{
+  "iupac": {
+    "title": "Murray et al. (2013). Definitions of terms relating to mass spectrometry (IUPAC Recommendations 2013). Pure and Applied Chemistry 85, 1515–1609.",
+    "url": "https://doi.org/10.1351/PAC-REC-06-04-06",
+    "note": "Terminology and definitions; DOI metadata verified via the authors' university repository."
+  },
+  "nist": {
+    "title": "NIST Standard Reference Database 1A: Mass Spectral Libraries.",
+    "url": "https://www.nist.gov/srd/nist-standard-reference-database-1a",
+    "note": "Official overview of EI and tandem mass-spectral reference collections."
+  },
+  "etd": {
+    "title": "Syka et al. (2004). Peptide and protein sequence analysis by electron transfer dissociation mass spectrometry. PNAS 101, 9528–9533.",
+    "url": "https://doi.org/10.1073/pnas.0402700101",
+    "note": "Primary study of electron-transfer dissociation of peptide cations."
+  },
+  "carbon": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Carbon.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+    "note": "Representative carbon-13 fraction 0.0107 and carbon-13 mass 13.00335483507 Da. Teaching models hold these inputs fixed; natural sample compositions vary."
+  },
+  "hydrogen": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Hydrogen.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
+    "note": "Neutral hydrogen-1 relative atomic mass 1.00782503223, used in the water example."
+  },
+  "oxygen": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Oxygen.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+    "note": "Oxygen-16 and oxygen-18 relative atomic masses 15.99491461957 and 17.99915961286, with representative isotope compositions."
+  }
+}
+

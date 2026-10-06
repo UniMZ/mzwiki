@@ -1,0 +1,217 @@
+{
+  "description": "Constructed fragmentation teaching calculations, not empirical peaks or chemically assigned spectra. Decimal strings preserve the arithmetic inputs. This proposed fixture data has no implied compatibility with the repository test schema.",
+  "checked_date": "2026-10-06",
+  "constants": {
+    "C12_Da": "12",
+    "H1_Da": "1.00782503223",
+    "N14_Da": "14.00307400443",
+    "O16_Da": "15.99491461957"
+  },
+  "constant_reference_keys": [
+    "carbon",
+    "hydrogen",
+    "nitrogen",
+    "oxygen"
+  ],
+  "global_assumptions": [
+    "m/z is the conventional nonnegative numerical spectral coordinate; n is positive charge-number magnitude.",
+    "Masses are conventional isotope-sum masses in Da; chemical binding-energy mass contributions are neglected at the displayed precision.",
+    "Displayed peak positions are exact teaching inputs before stated rounding. No noise, calibration error, instrument transmission, or actual fragmentation yield is modeled.",
+    "No constructed case establishes an empirical spectrum, a molecular formula, a pathway yield, or an identification.",
+    "NIST tabulated central isotope-mass values are fixed teaching constants; their measurement uncertainties are not propagated."
+  ],
+  "cases": [
+    {
+      "id": "water_exact_mass",
+      "operation": "isotope_sum",
+      "atom_counts": {
+        "H1": 2,
+        "O16": 1
+      },
+      "expected_mass_Da": "18.01056468403",
+      "display_4dp": "18.0106",
+      "guide_anchor": "example"
+    },
+    {
+      "id": "alanine_residue_exact_mass",
+      "operation": "isotope_sum",
+      "atom_counts": {
+        "C12": 3,
+        "H1": 5,
+        "N14": 1,
+        "O16": 1
+      },
+      "expected_mass_Da": "71.03711378515",
+      "display_4dp": "71.0371",
+      "assumptions": [
+        "C3H5NO is a peptide residue increment, not free alanine."
+      ],
+      "guide_anchor": "residue-gap"
+    },
+    {
+      "id": "water_loss_plus1",
+      "operation": "same_charge_neutral_loss",
+      "precursor_mz": "301.100000",
+      "precursor_charge": 1,
+      "product_charge": 1,
+      "neutral_mass_Da": "18.01056468403",
+      "expected_mz_decrease": "18.01056468403",
+      "expected_product_mz": "283.08943531597",
+      "product_display_4dp": "283.0894",
+      "assumptions": [
+        "Only neutral 1H2 16O is lost; charge and isotope assignments are consistent; no other species exchanged."
+      ],
+      "guide_anchor": "example"
+    },
+    {
+      "id": "water_loss_plus2",
+      "operation": "same_charge_neutral_loss",
+      "precursor_mz": "301.100000",
+      "precursor_charge": 2,
+      "product_charge": 2,
+      "neutral_mass_Da": "18.01056468403",
+      "expected_mz_decrease": "9.005282342015",
+      "expected_product_mz": "292.094717657985",
+      "product_display_4dp": "292.0947",
+      "assumptions": [
+        "Separate hypothetical case from the +1 row. Only neutral 1H2 16O is lost; charge retained; no other exchange."
+      ],
+      "guide_anchor": "example"
+    },
+    {
+      "id": "rounded_gap_plus1",
+      "operation": "coordinate_difference",
+      "precursor_display": "301.1000",
+      "product_display": "283.0894",
+      "expected_gap": "18.0106",
+      "assumptions": [
+        "Arithmetic on displayed rounded values; not an independent accurate-mass measurement."
+      ],
+      "guide_anchor": "example"
+    },
+    {
+      "id": "apparent_18_gap_plus2",
+      "operation": "loss_mass_from_gap",
+      "mz_gap": "18.0106",
+      "charge_magnitude": 2,
+      "expected_neutral_mass_Da": "36.0212",
+      "assumptions": [
+        "Both ions have charge +2; one simple neutral loss only."
+      ],
+      "guide_anchor": "example"
+    },
+    {
+      "id": "practice_9_gap_plus2",
+      "operation": "loss_mass_from_gap",
+      "mz_gap": "9.0053",
+      "charge_magnitude": 2,
+      "expected_neutral_mass_Da": "18.0106",
+      "assumptions": [
+        "Rounded coordinate difference; simple unchanged-charge neutral-loss model."
+      ],
+      "guide_anchor": "practice"
+    },
+    {
+      "id": "alanine_gap_plus1",
+      "operation": "mass_increment_to_mz_gap",
+      "mass_increment_Da": "71.03711378515",
+      "charge_magnitude": 1,
+      "expected_gap": "71.03711378515",
+      "display_4dp": "71.0371",
+      "assumptions": [
+        "Consecutive correctly assigned ions in one terminal series; both +1; same ion chemistry, no added loss."
+      ],
+      "guide_anchor": "residue-gap"
+    },
+    {
+      "id": "alanine_gap_plus2",
+      "operation": "mass_increment_to_mz_gap",
+      "mass_increment_Da": "71.03711378515",
+      "charge_magnitude": 2,
+      "expected_gap": "35.518556892575",
+      "display_4dp": "35.5186",
+      "assumptions": [
+        "Consecutive correctly assigned ions in one terminal series; both +2; same ion chemistry, no added loss."
+      ],
+      "guide_anchor": "residue-gap"
+    },
+    {
+      "id": "charge_partition_two_products",
+      "operation": "ion_mass_charge_balance",
+      "precursor_mass_Da": "1000.0000",
+      "precursor_charge": 2,
+      "product_masses_Da": [
+        "600.0000",
+        "400.0000"
+      ],
+      "product_charges": [
+        1,
+        1
+      ],
+      "expected_precursor_mz": "500.0000",
+      "expected_product_mz": [
+        "600.0000",
+        "400.0000"
+      ],
+      "expected_mass_balance_residual_Da": "0.0000",
+      "expected_charge_balance_residual": 0,
+      "assumptions": [
+        "Abstract ion masses, not molecular formula predictions. Closed dissociation, two ions only, no neutral or exchanged species."
+      ],
+      "guide_anchor": "conservation"
+    },
+    {
+      "id": "wide_ideal_isolation",
+      "operation": "rectangular_window",
+      "center_mz": "500.2",
+      "full_width_mz": "1.0",
+      "candidate_mz": [
+        "500.2",
+        "500.6"
+      ],
+      "expected_lower": "499.7",
+      "expected_upper": "500.7",
+      "expected_pass": [
+        true,
+        true
+      ],
+      "assumptions": [
+        "Perfect rectangular symmetric transmission; no actual isolation efficiency prediction."
+      ],
+      "guide_anchor": "coisolation"
+    },
+    {
+      "id": "narrow_ideal_isolation",
+      "operation": "rectangular_window",
+      "center_mz": "500.2",
+      "full_width_mz": "0.4",
+      "candidate_mz": [
+        "500.2",
+        "500.6"
+      ],
+      "expected_lower": "500.0",
+      "expected_upper": "500.4",
+      "expected_pass": [
+        true,
+        false
+      ],
+      "assumptions": [
+        "Perfect rectangular symmetric transmission; no guarantee of real chemical purity."
+      ],
+      "guide_anchor": "coisolation"
+    },
+    {
+      "id": "electron_capture_bookkeeping",
+      "operation": "charge_and_composition",
+      "precursor_charge": 3,
+      "incoming_electron_charge": -1,
+      "expected_initial_product_charge": 2,
+      "precursor_added_hydrogen_count": 3,
+      "expected_initial_product_added_hydrogen_count": 3,
+      "assumptions": [
+        "Immediate intact charge-reduced species before later fragmentation; no proton transfer. This is not an exact-mass calculation."
+      ],
+      "guide_anchor": "electrons"
+    }
+  ]
+}

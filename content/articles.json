@@ -103,8 +103,8 @@
     "slug": "fragmentation",
     "title": "Fragmentation & tandem MS",
     "zh_title": "碎裂与串联质谱",
-    "summary": "Follow precursor selection, activation, and product-ion evidence without overcalling a structure.",
-    "zh_summary": "理解前体选择、活化及产物离子证据，避免过度推断结构。",
+    "summary": "Trace precursor isolation, compare activation methods, and interpret charge-aware product and neutral-loss evidence.",
+    "zh_summary": "跟踪前体隔离、比较活化方法，并结合电荷解释产物与中性丢失证据。",
     "group": "Methods",
     "prereqs": [
       "ionization",
@@ -117,7 +117,17 @@
     "refs": [
       "iupac",
       "etd",
-      "nist"
+      "nist",
+      "hcd-primary",
+      "ecd-primary",
+      "etd-supplemental",
+      "peptide-nomenclature",
+      "neutral-loss-definition",
+      "hydrogen",
+      "oxygen",
+      "carbon",
+      "nitrogen",
+      "coisolation-primary"
     ]
   },
   {

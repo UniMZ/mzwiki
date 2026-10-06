@@ -188,5 +188,69 @@
       "fticr-origin",
       "ftms-processing"
     ]
+  },
+  {
+    "slug": "precursor-ion",
+    "title": "Precursor ion",
+    "zh_title": "前体离子",
+    "summary": "The starting ion for a specified reaction, without an assumption of isolation purity.",
+    "zh_summary": "指定反应的起始离子；隔离并不保证其化学纯度。",
+    "related_guides": [
+      "fragmentation",
+      "acquisition"
+    ],
+    "related_terms": [
+      "product-ion",
+      "neutral-loss",
+      "mz",
+      "charge-state"
+    ],
+    "refs": [
+      "iupac",
+      "coisolation-primary"
+    ]
+  },
+  {
+    "slug": "product-ion",
+    "title": "Product ion",
+    "zh_title": "产物离子",
+    "summary": "An ionic reaction outcome, including fragmentation or a change in charge.",
+    "zh_summary": "离子反应的带电产物，可以由碎裂或电荷改变形成。",
+    "related_guides": [
+      "fragmentation",
+      "acquisition"
+    ],
+    "related_terms": [
+      "precursor-ion",
+      "neutral-loss",
+      "charge-state",
+      "mz"
+    ],
+    "refs": [
+      "iupac",
+      "ecd-primary"
+    ]
+  },
+  {
+    "slug": "neutral-loss",
+    "title": "Neutral loss",
+    "zh_title": "中性丢失",
+    "summary": "An uncharged species leaves an ion; interpreting the mass gap requires a charge-aware reaction model.",
+    "zh_summary": "离子失去不带电物种；解释质量间隔需要考虑电荷及反应模型。",
+    "related_guides": [
+      "fragmentation",
+      "mz-charge-isotopes"
+    ],
+    "related_terms": [
+      "precursor-ion",
+      "product-ion",
+      "charge-state",
+      "monoisotopic-mass"
+    ],
+    "refs": [
+      "neutral-loss-definition",
+      "hydrogen",
+      "oxygen"
+    ]
   }
 ]
