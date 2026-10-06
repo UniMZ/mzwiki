@@ -133,7 +133,8 @@ for c in small['cases']:
  check(equal(o,c['expected']),c['id']+': '+str(o))
 
 pairs=0;source_hashes=0
-for packet in sorted((ROOT/'review').glob('expansion-*')):
+for name in ('separation','quantification','proteomics','small-molecules'):
+ packet=ROOT/'review'/('expansion-'+name)
  hashes=json.loads((packet/'packet-files.sha256.json').read_text())
  for path,expected in hashes.items():
   if path.startswith('tests/fixtures/'):

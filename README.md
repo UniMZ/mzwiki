@@ -6,7 +6,7 @@ An English-first mass spectrometry knowledge wiki for beginners and returning pr
 
 ## Learning collection
 
-Twenty English Guides and 44 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
+Twenty-eight English Guides and 60 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
 
 1. What mass spectrometry measures
 2. m/z, charge & isotopes
@@ -28,6 +28,14 @@ Twenty English Guides and 44 terminology entries, each with a matched Chinese tr
 18. Small-molecule annotation: from features to identity
 19. Lipidomics: match structural detail to evidence
 20. Ion mobility and collision cross section
+21. Crosslinking MS: from peptide pairs to structural restraints
+22. Glycoproteomics: evidence and ambiguity
+23. Phosphoproteomics: enrichment, localization and quantification
+24. Mass spectrometry imaging: principles and interpretation
+25. Single-cell proteomics: measurement and statistics
+26. Spectrum prediction and machine-learning generalization
+27. Benchmarking computational mass spectrometry
+28. Open data formats and analysis provenance
 
 The interface and project documentation are English. EN / ZH switches between separate views of the same article and preserves matching section anchors. Search defaults to English and can search Chinese or both languages.
 
@@ -121,6 +129,7 @@ python3 scripts/check_acquisition.py
 python3 scripts/check_data_analysis.py
 python3 scripts/check_reading_bridge.py
 python3 scripts/check_expansion.py
+python3 scripts/check_advanced_expansion.py
 ```
 
 ## GitHub Pages deployment

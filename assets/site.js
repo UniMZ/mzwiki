@@ -24,8 +24,8 @@ if (form) {
       .filter(a => kind.value === 'all' || a.kind === kind.value)
       .map(a => ({a, haystack: normalize(a.title + ' ' + a.summary + ' ' + a.text)}))
       .filter(({haystack}) => terms.every(t => haystack.includes(t)))
-      .map(({a}) => ({a, score: terms.reduce((n,t) => n + (normalize(a.title).includes(t) ? 10 : 0) + (normalize(a.summary).includes(t) ? 3 : 0),0)}))
-      .sort((a,b) => b.score-a.score);
+      .map(({a}) => ({a, exactTitle: normalize(a.title) === query, score: terms.reduce((n,t) => n + (normalize(a.title).includes(t) ? 10 : 0) + (normalize(a.summary).includes(t) ? 3 : 0),0)}))
+      .sort((a,b) => Number(b.exactTitle)-Number(a.exactTitle) || b.score-a.score);
     results.replaceChildren();
     for (const {a} of matches) {
       const item = document.createElement('li');

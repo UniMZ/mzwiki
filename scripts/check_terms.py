@@ -35,7 +35,7 @@ for term in terms:
  for lang in ('en','zh'):
   body=(ROOT/f'content/terms/{lang}/{slug}.html').read_text();texts.append(body)
   root=ET.fromstring('<article>'+body+'</article>')
-  assert [h.get('id') for h in root.findall('h2')] in (['definition','example','confusion','guides'], ['definition','example','limits'])
+  assert [h.get('id') for h in root.findall('h2')] in (['definition','example','confusion','guides'], ['definition','example','limits'], ['definition','example','boundary'])
   assert set(re.findall(r'href="#ref-([^"]+)"',body))==set(term['refs'])
   for v in expected.get(slug,[]):assert v in body,(slug,lang,v)
  assert Counter(re.findall(r'\d+(?:\.\d+)?',texts[0].replace('decreases by one','decreases by 1')))==Counter(re.findall(r'\d+(?:\.\d+)?',texts[1].replace('一级','level-1'))),slug
