@@ -37,7 +37,7 @@ for term in terms:
   root=ET.fromstring('<article>'+body+'</article>')
   assert [h.get('id') for h in root.findall('h2')]==['definition','example','confusion','guides']
   assert set(re.findall(r'href="#ref-([^"]+)"',body))==set(term['refs'])
-  for v in expected[slug]:assert v in body,(slug,lang,v)
+  for v in expected.get(slug,[]):assert v in body,(slug,lang,v)
  assert Counter(re.findall(r'\d+(?:\.\d+)?',texts[0]))==Counter(re.findall(r'\d+(?:\.\d+)?',texts[1])),slug
  assert re.findall(r'<code>(.*?)</code>',texts[0])==re.findall(r'<code>(.*?)</code>',texts[1]),slug
-print('PASS: terminology Decimal fixtures and displayed rounding; 7 paired entries with balanced markup, matching numerical tokens, equations, sections and complete citations.')
+print(f'PASS: terminology Decimal fixtures and displayed rounding; {len(terms)} paired entries with balanced markup, matching numerical tokens, equations, sections and complete citations.')

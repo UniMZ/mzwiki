@@ -145,6 +145,48 @@
       "resolution-definition",
       "iupac"
     ]
+  },
+  {
+    "slug": "mass-analyzer",
+    "title": "Mass analyzer",
+    "zh_title": "质量分析器",
+    "summary": "The instrument component that distinguishes ions by m/z through their motion.",
+    "zh_summary": "利用离子运动按 m/z 区分离子的仪器部件。",
+    "related_guides": [
+      "analyzers",
+      "what-ms-measures"
+    ],
+    "related_terms": [
+      "mz",
+      "charge-state",
+      "resolving-power",
+      "transient"
+    ],
+    "refs": [
+      "analyzer-overview",
+      "quadrupole-definition",
+      "tof-principles",
+      "orbitrap"
+    ]
+  },
+  {
+    "slug": "transient",
+    "title": "Transient",
+    "zh_title": "瞬态信号",
+    "summary": "A finite time-domain ion signal, before frequency analysis and conversion to m/z.",
+    "zh_summary": "在频率分析及 m/z 换算之前记录的有限时域离子信号。",
+    "related_guides": [
+      "analyzers",
+      "acquisition"
+    ],
+    "related_terms": [
+      "mass-analyzer",
+      "resolving-power"
+    ],
+    "refs": [
+      "orbitrap-detection",
+      "fticr-origin",
+      "ftms-processing"
+    ]
   }
 ]
-
