@@ -102,6 +102,12 @@ The fragmentation Guide and its three terms use `tests/fixtures/fragmentation.js
 python3 scripts/check_fragmentation.py
 ```
 
+The acquisition Guide and its three terms use `tests/fixtures/acquisition.json`. Check all sixteen serial schedules, budgets, selection rules, isolation intervals and XIC calculations with:
+
+```sh
+python3 scripts/check_acquisition.py
+```
+
 ## GitHub Pages deployment
 
 This version supports **Deploy from a branch → main → / (root)**. The repository root contains `index.html`, `.nojekyll`, and `CNAME` (`mzwiki.unimz.org`). Preserve the custom domain. No credentials or DNS changes are needed in this repository.

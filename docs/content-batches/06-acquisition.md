@@ -30,3 +30,9 @@ The main serial toy model covers m/z 400–800 with 20 or 40 windows. The assume
 ## Evidence limits
 
 All examples are constructed, not measured data or validated methods. IUPAC, official instrument/software documentation, and primary DIA/PRM/coisolation/parallel-acquisition publications support the stable concepts. Source access limitations are retained in the package's source-boundary record; indexed access is not called a successful direct full-text read.
+
+## Engineering integration
+
+The supplied eight source fragments and metadata remain unchanged. SHA-256 comparisons against source commit `9f17f035ad3dc4fd061b9f5ca4785c982930f505` confirm the article bodies. `scripts/check_acquisition.py` adapts all sixteen fixtures, including the rounded recurring cycle-time ratio, checks displayed timing expressions and XIC table sums, and verifies paired numerical tokens, citations and original Guide anchors. HTML line breaks are normalized only for the XML-based test parser.
+
+The existing builder regenerates the two collections, reciprocal links, search and sitemap; no framework or domain changes are needed. Browser coverage adds all ten new section switches, three term pairs, bilingual search, keyboard disclosures and table scrolling at 1440, 390 and 320 pixels. Local test results are distinct from remote CI and publication; the parent task handles merging and Pages verification.

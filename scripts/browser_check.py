@@ -257,6 +257,42 @@ with sync_playwright() as p:
         page.locator('#query').fill(q)
         expect(page.locator('#search-results a').first).to_have_attribute('href',path)
         count+=1
+    # Acquisition: sampling schedule, isolation and software extraction are distinct.
+    for anchor in ('levels','full-scan','dda','exclusion','dia','windows','targeted','traces','sampling','overheads'):
+        page.goto(BASE+'/guides/acquisition/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/acquisition/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/acquisition/#'+anchor)
+        count+=2
+    for width,height in [(1440,1000),(390,844),(320,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for prefix in ('','/zh'):
+            for route in ('/guides/acquisition/','/terms/acquisition-cycle/','/terms/isolation-window/','/terms/extracted-ion-chromatogram/'):
+                page.goto(BASE+prefix+route)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(width,prefix,route)
+                for wrapper in page.locator('.prose .table-wrap').all():
+                    wrapper.evaluate('(el) => {el.scrollLeft=el.scrollWidth;}')
+                    assert wrapper.evaluate('(el) => el.scrollWidth <= el.clientWidth || el.scrollLeft > 0')
+                    wrapper.evaluate('(el) => {el.scrollLeft=0;}')
+                if route=='/guides/acquisition/':
+                    for slug in ('acquisition-cycle','isolation-window','extracted-ion-chromatogram'):
+                        expect(page.locator('.related-links a[href="'+prefix+'/terms/'+slug+'/"]')).to_have_count(1)
+                    expect(page.locator('.prose details')).to_have_count(5)
+                    for detail in page.locator('.prose details').all():
+                        detail.locator('summary').focus()
+                        page.keyboard.press('Enter')
+                        expect(detail.locator('p')).to_be_visible()
+                if route in ('/guides/acquisition/','/terms/extracted-ion-chromatogram/'):
+                    page.locator('#example').scroll_into_view_if_needed()
+                    page.screenshot(path=str(OUT/f'acquisition-{route.split("/")[-2]}-{prefix.strip("/") or "en"}-{width}.png'))
+                count+=1
+    for lang,q,path in [('en','extracted ion chromatogram','/terms/extracted-ion-chromatogram/'),('zh','提取离子色谱图','/zh/terms/extracted-ion-chromatogram/')]:
+        page.goto(BASE+'/search/?kind=term&lang='+lang)
+        page.locator('#query').fill(q)
+        expect(page.locator('#search-results a').first).to_have_attribute('href',path)
+        count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')
