@@ -43,18 +43,32 @@ def page(title, description, body, path='/', lang='en', alternates=''):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script defer src="/assets/site.js"></script></head>
 <body>{HEADER}{body}{FOOTER}</body></html>\n'''
 
+def guide_groups():
+    groups = {}
+    for article in ARTICLES:
+        groups.setdefault(article['group'], []).append(article)
+    return groups
+
 def navigation(active='', kind='guide'):
-    parts=[]
-    group=None
-    for a in ARTICLES:
-        if a['group'] != group:
-            group=a['group'];parts.append(f'<small>{e(group)}</small>')
-        attrs=' class="active" aria-current="page"' if kind=='guide' and a['slug']==active else ''
-        parts.append(f'<a{attrs} href="{url(a["slug"])}">{e(a["title"])}</a>')
-    parts.append('<small>Terminology</small>')
-    for t in TERMS:
-        attrs=' class="active" aria-current="page"' if kind=='term' and t['slug']==active else ''
-        parts.append(f'<a{attrs} href="{url(t["slug"],kind="term")}">{e(t["title"])}</a>')
+    parts = ['<a class="browse-all" href="/#guides">All Guides</a>']
+    for group, articles in guide_groups().items():
+        opened = ' open' if kind == 'guide' and any(a['slug'] == active for a in articles) else ''
+        links = []
+        for a in articles:
+            attrs = ' class="active" aria-current="page"' if kind == 'guide' and a['slug'] == active else ''
+            links.append(f'<a{attrs} href="{url(a["slug"])}">{e(a["title"])}</a>')
+        parts.append(f'<details class="nav-group"{opened}><summary>{e(group)} <span>{len(articles)}</span></summary>{"".join(links)}</details>')
+    parts.append('<a class="browse-all" href="/terms/">All terminology</a>')
+    for label, lower, upper in [('A–F','a','f'),('G–M','g','m'),('N–S','n','s'),('T–Z','t','z')]:
+        entries = sorted((t for t in TERMS if lower <= t['title'][0].lower() <= upper), key=lambda t:t['title'].lower())
+        if not entries:
+            continue
+        opened = ' open' if kind == 'term' and any(t['slug'] == active for t in entries) else ''
+        links = []
+        for t in entries:
+            attrs = ' class="active" aria-current="page"' if kind == 'term' and t['slug'] == active else ''
+            links.append(f'<a{attrs} href="{url(t["slug"],kind="term")}">{e(t["title"])}</a>')
+        parts.append(f'<details class="nav-group"{opened}><summary>Terms {label} <span>{len(entries)}</span></summary>{"".join(links)}</details>')
     return ''.join(parts)
 
 spectrum='''<figure class="spectrum-card"><div class="figure-top"><span>Reading the invisible</span><span class="figure-tag">MS / 001</span></div>
@@ -64,14 +78,20 @@ spectrum='''<figure class="spectrum-card"><div class="figure-top"><span>Reading 
 <g stroke="#176052" stroke-width="2.5"><path d="M77 221V191M99 221V174M119 221V202M155 221V133M181 221V190M221 221V53M226 221V166M231 221V205M271 221V164M308 221V111M313 221V180M318 221V210M369 221V149M375 221V196M419 221V208"/></g>
 <circle cx="221" cy="53" r="4" fill="#176052"/><path d="M228 49L251 30H310" fill="none" stroke="#176052"/><text x="257" y="23" font-size="11" font-family="monospace" fill="#176052">A peak is evidence.</text></svg>
 <figcaption>Mass-to-charge ratio locates a signal. Context gives it meaning.<br>Illustrative spectrum · not experimental data</figcaption></figure>'''
-cards=''.join(f'''<a class="article-card" href="{url(a['slug'])}"><span class="num">{i:02d}</span><div><h3>{e(a['title'])}</h3><p>{e(a['summary'])}</p><small>{e(a['group']).upper()} · EN + ZH ARTICLES</small></div><span class="arrow" aria-hidden="true">→</span></a>''' for i,a in enumerate(ARTICLES,1))
+cards = ''
+for group, articles in guide_groups().items():
+    group_cards = ''.join(f'<a class="article-card" href="{url(a["slug"])}"><span class="num">{ARTICLES.index(a)+1:02d}</span><div><h3>{e(a["title"])}</h3><p>{e(a["summary"])}</p><small>{e(a["group"]).upper()} · EN + ZH ARTICLES</small></div><span class="arrow" aria-hidden="true">→</span></a>' for a in articles)
+    ident = 'group-' + re.sub(r'[^a-z0-9]+', '-', group.lower()).strip('-')
+    cards += f'<section class="guide-group" id="{ident}" aria-labelledby="{ident}-title"><h3 id="{ident}-title">{e(group)}</h3><div class="article-grid">{group_cards}</div></section>'
+group_jumps = ''.join(f'<a href="#group-{re.sub(r"[^a-z0-9]+", "-", group.lower()).strip("-")}">{e(group)}</a>' for group in guide_groups())
+
 home=f'''<main id="main" class="container"><section class="hero"><div><div class="eyebrow">The fundamentals, connected</div><h1>Make sense<br>of <em>mass spectra.</em></h1><p class="lead">A practical knowledge wiki for understanding ions, instruments, and the evidence in your data. Start with the basics. Build toward better questions.</p><div class="actions"><a class="button" href="{url(ARTICLES[0]['slug'])}">Start learning <span aria-hidden="true">→</span></a><a class="text-link" href="#guides">Browse the guides</a></div></div>{spectrum}</section>
-<div class="stats"><span><strong>08</strong> foundational guides</span><span><strong>02</strong> article languages</span><span>From <strong>first principles</strong> to analysis</span></div>
+<div class="stats"><span><strong>{len(ARTICLES):02d}</strong> learning guides</span><span><strong>02</strong> article languages</span><span>From <strong>first principles</strong> to analysis</span></div>
 <section class="section" aria-labelledby="path-title"><div class="section-head"><div><div class="eyebrow">Find your starting point</div><h2 id="path-title">A path through the spectrum</h2></div><p>Read in order, or pick up the concept you need. Each guide connects to the next.</p></div><div class="path">
 <a class="path-card" href="/guides/what-ms-measures/"><span class="path-number">01 / UNDERSTAND</span><h3>New to mass spectrometry?</h3><p>Start with what we actually measure, then learn to recognize charge states and isotope patterns.</p><span class="path-foot">FOUNDATIONS <span aria-hidden="true">→</span></span></a>
 <a class="path-card" href="/guides/ionization/"><span class="path-number">02 / CONNECT</span><h3>From sample to spectrum</h3><p>Follow ions through the source, analyzer, and fragmentation experiment. See how choices shape evidence.</p><span class="path-foot">INSTRUMENTS &amp; METHODS <span aria-hidden="true">→</span></span></a>
 <a class="path-card" href="/guides/data-analysis/"><span class="path-number">03 / INTERPRET</span><h3>Make your data count</h3><p>Connect acquisition to analysis, confidence, and reproducibility—with routes into computational methods.</p><span class="path-foot">ANALYSIS &amp; COMPUTATION <span aria-hidden="true">→</span></span></a></div></section>
-<section class="section" id="guides" aria-labelledby="guides-title"><div class="section-head"><div><div class="eyebrow">The knowledge base</div><h2 id="guides-title">Explore the guides</h2></div><a class="text-link" href="/search/">Find a concept →</a></div><div class="article-grid">{cards}</div></section>
+<section class="section" id="guides" aria-labelledby="guides-title"><div class="section-head"><div><div class="eyebrow">The knowledge base</div><h2 id="guides-title">Explore the guides</h2></div><a class="text-link" href="/search/">Find a concept →</a></div><nav class="group-jumps" aria-label="Guide topics">{group_jumps}</nav>{cards}</section>
 <aside class="note-band"><h3>Built around understanding.</h3><p>Concepts, principles, and methods are the focus here. Worked examples connect the ideas; references let you go deeper. Chinese translations are available from each article, with the same topic one click away.</p></aside></main>'''
 write('index.html',page('Understand mass spectrometry','A practical mass spectrometry wiki: foundational concepts, instruments, methods, and reliable data analysis.',home))
 search_index=[]

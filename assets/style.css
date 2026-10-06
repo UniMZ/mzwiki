@@ -13,3 +13,17 @@
 
 .article-card.term-card{grid-template-columns:minmax(0,1fr) 20px}
 @media(max-width:380px){.header-inner{padding-inline:12px;gap:8px}.topnav{gap:8px}}
+
+/* Native topic groups keep a growing collection navigable without JavaScript. */
+.sidebar{max-height:calc(100dvh - 130px);overflow-y:auto;overscroll-behavior:contain;padding-right:6px}
+.nav-group{border-bottom:1px solid var(--line);margin:6px 0;padding:6px 0}
+.nav-group summary{cursor:pointer;font-size:12px;font-weight:650;padding:8px 4px;overflow-wrap:anywhere}
+.nav-group summary span{font:10px var(--mono);color:var(--muted);margin-left:6px}
+.nav-group a{overflow-wrap:anywhere}
+.guide-group{margin-top:32px}
+.guide-group>h3{font-size:22px;margin-bottom:16px}
+.group-jumps{display:flex;flex-wrap:wrap;gap:10px}
+.group-jumps a{font-size:13px;border:1px solid var(--line);border-radius:5px;padding:7px 12px;text-decoration:none}
+@media(max-width:760px){.mobile-index[open]{max-height:65dvh;overflow-y:auto;overscroll-behavior:contain}.mobile-index .nav-group a{padding:8px 12px}.mobile-index .browse-all{font-weight:600}.guide-group{margin-top:26px}}
+/* Long reference URLs and article titles must wrap on narrow reading views. */
+.references,.article h1{overflow-wrap:anywhere}
