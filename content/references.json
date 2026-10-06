@@ -373,5 +373,20 @@
     "title": "HUPO-PSI and MSI. mzTab-M 2.0 metabolomics results specification.",
     "url": "https://hupo-psi.github.io/mzTab/2_0-metabolomics-release/mzTab_format_specification_2_0-M_release.html",
     "note": "Official released format specification. Sections 5.2 and 5.4 distinguish samples/assays/runs and missing-data encoding; sections 6.3–6.5 distinguish molecule summaries, features, and identification evidence. A format declaration does not verify biological independence or determine the missing-data mechanism."
+  },
+  "base-peak-definition": {
+    "title": "IUPAC Gold Book. Base peak in mass spectrometry, entry B00608.",
+    "url": "https://goldbook.iupac.org/terms/view/B00608",
+    "note": "Current Gold Book entry retaining the 1991 recommendation: the greatest-intensity peak in a mass spectrum. Official indexed definition verified; direct retrieval returned 403. Does not assign molecular identity."
+  },
+  "relative-intensity-definition": {
+    "title": "IUPAC Gold Book. Intensity (relative to base peak) in mass spectrometry, entry I03073.",
+    "url": "https://goldbook.iupac.org/terms/view/I03073",
+    "note": "Defines the intensity ratio to the strongest resolved peak, conventionally scaled to base peak = 100. Also verified against IUPAC Recommendations 2013, entry 220. Official indexed text verified; direct retrieval returned 403."
+  },
+  "retention-time-definition": {
+    "title": "IUPAC Gold Book. Total retention time in column chromatography, entry 10039.",
+    "url": "https://goldbook.iupac.org/terms/view/10039",
+    "note": "Definition from Terminology of separation methods (IUPAC Recommendations 2017): injection to the relevant peak maximum; includes hold-up time. Official indexed definition verified; direct retrieval returned 403. The short Guide orientation uses this conventional total-retention-time meaning."
   }
 }

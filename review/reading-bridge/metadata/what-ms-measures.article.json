@@ -1,0 +1,22 @@
+{
+  "slug": "what-ms-measures",
+  "title": "What mass spectrometry measures",
+  "zh_title": "质谱测量的是什么",
+  "summary": "From molecules to ions to evidence: understand what a mass spectrum can—and cannot—tell you.",
+  "zh_summary": "从分子到离子，再到证据：理解质谱能够回答和无法单独回答的问题。",
+  "group": "Foundations",
+  "prereqs": [],
+  "related": [
+    "mz-charge-isotopes",
+    "ionization"
+  ],
+  "refs": [
+    "iupac",
+    "nist",
+    "base-peak-definition",
+    "relative-intensity-definition",
+    "extracted-ion-profile",
+    "codata",
+    "sodium"
+  ]
+}

@@ -13,7 +13,12 @@
     ],
     "refs": [
       "iupac",
-      "nist"
+      "nist",
+      "base-peak-definition",
+      "relative-intensity-definition",
+      "extracted-ion-profile",
+      "codata",
+      "sodium"
     ]
   },
   {
@@ -151,7 +156,10 @@
       "nist",
       "isotopes",
       "codata",
-      "carbon"
+      "carbon",
+      "iupac",
+      "ms-order",
+      "retention-time-definition"
     ]
   },
   {

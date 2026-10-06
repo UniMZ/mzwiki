@@ -1,0 +1,42 @@
+{
+  "iupac": {
+    "title": "Murray et al. (2013). Definitions of terms relating to mass spectrometry (IUPAC Recommendations 2013). Pure and Applied Chemistry 85, 1515–1609.",
+    "url": "https://doi.org/10.1351/PAC-REC-06-04-06",
+    "note": "Terminology and definitions; DOI metadata verified via the authors' university repository."
+  },
+  "nist": {
+    "title": "NIST Standard Reference Database 1A: Mass Spectral Libraries.",
+    "url": "https://www.nist.gov/srd/nist-standard-reference-database-1a",
+    "note": "Official overview of EI and tandem mass-spectral reference collections."
+  },
+  "isotopes": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions with Relative Atomic Masses.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl",
+    "note": "Isotope masses and representative compositions; sample abundances can vary."
+  },
+  "codata": {
+    "title": "NIST. CODATA recommended values of the fundamental physical constants: proton mass in u and electron mass in u.",
+    "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+    "note": "Official constants table. Examples round the proton mass to 1.007276467 Da; u and Da name the same mass unit."
+  },
+  "carbon": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Carbon.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+    "note": "Representative carbon-13 fraction 0.0107 and carbon-13 mass 13.00335483507 Da. Teaching models hold these inputs fixed; natural sample compositions vary."
+  },
+  "sodium": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Sodium.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+    "note": "Neutral sodium-23 relative atomic mass 22.9897692820; the example subtracts one electron mass to approximate sodium-cation mass."
+  },
+  "ms-order": {
+    "title": "Thermo Fisher Scientific. Orbitrap Tribrid Series Getting Started Guide: Glossary, scan power.",
+    "url": "https://docs.thermofisher.com/api/khub/documents/jtCzzl_yXUDJlRWIprk5vw/content",
+    "note": "Official glossary, printed p. 145. Supports the common instrument convention MS1, MS2, MS3 as successive stages of mass analysis. Used for notation only; the exponent is not an acquisition-cycle number. Official indexed glossary text verified; direct PDF retrieval failed in this pass."
+  },
+  "extracted-ion-profile": {
+    "title": "IUPAC Gold Book. Extracted ion profile, entry 12410.",
+    "url": "https://goldbook.iupac.org/terms/view/12410",
+    "note": "Definition from IUPAC Recommendations 2013, p. 1542. Explicitly includes extracted ion chromatograms among time-dependent selected-m/z traces. Official indexed definition verified; direct page retrieval returned 403."
+  }
+}
