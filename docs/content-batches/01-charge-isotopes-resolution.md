@@ -28,11 +28,17 @@ The binomial derivation, constructed numerical comparisons, and plots are origin
 ## Reproduction and validation
 
 - `python3 scripts/build.py`: deterministic generation of 20 HTML pages and 16 search records.
-- `python3 scripts/check.py`: 765 local link, asset, and fragment checks; all eight EN/ZH pairs; 13 bibliography entries.
+- `python3 scripts/check.py`: 769 local link, asset, and fragment checks; all eight EN/ZH pairs; 13 bibliography entries.
 - `python3 scripts/check_science.py`: independent Decimal calculations and a probability recurrence verify ion masses, isotope probabilities and ratios, plotted coordinates, mass recovery, ppm errors, tolerance widths, Gaussian half-height behavior, and EN/ZH decimal parity.
 - `scripts/browser_check.py`: 64 passing scenarios covering desktop/mobile navigation and search checks, paired section switching, table/figure containment, image loading and alt text, keyboard access, and no-JavaScript reading.
 - English mobile and Chinese desktop figure screenshots were visually inspected; all enriched h2/h3 section IDs and their order match across languages.
 - Original figure source: `scripts/render_spectrum.py`; documented model: `content/examples/charge-isotope-spectrum.json`; committed outputs: `assets/teaching-spectrum.svg` and `.png`.
+
+## Scientific review follow-up
+
+An independent read-only scientific review of the initial batch reported no blocking calculation errors or English/Chinese mismatch. Two wording fixes were applied in both languages: monoisotopic mass is distinguished from an arbitrary isotopologue's exact mass, and the M+2 example explicitly uses one oxygen-18 replacing oxygen-16. The definitions were checked against the IUPAC recommendations and the oxygen example against NIST's oxygen isotope table. Direct access to the requested Gold Book pages returned HTTP 403; the IUPAC document provided the definition check.
+
+Final preparation also regenerated the website and teaching figure from their sources with no differences from the committed outputs. GitHub reported no PR comments or review threads; scientific review in the task context should not be confused with a submitted GitHub approval. No PR-head CI checks were reported, so validation evidence here and in the PR description is local.
 
 ## Limitations for review
 
