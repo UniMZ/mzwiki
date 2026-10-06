@@ -23,3 +23,16 @@ Add `tests/fixtures/data-analysis.json` and integrate its ten cases into an appr
 Local packet checks pass for balanced HTML, paired structure and numeric tokens, anchor preservation, citation ordering, route slugs, reference uniqueness, and fixture arithmetic/semantics. Scientific/translation review found no substantive scientific issue; its wording correction was applied.
 
 After authorized application, rebuild generated output and run the full current structural/scientific/browser suite plus the new data-analysis check. Verify search classification, reciprocal links, language-switch anchors, no-JavaScript reading, and responsive equation wrapping. No build, deployment, or live-site success is claimed by this content packet.
+
+## Repository integration validation
+
+Integrated against main `baad05c164ab2151371732973b324c1ff4ce3ce2` from the authored source commit `0b5748d8b90edcb67bb7b039adc89d99072bf103`. All eight article sources, shared content metadata, fixtures, and review packet remain byte-for-byte unchanged from that commit.
+
+- Rebuilt 57 HTML pages: 8 Guide pairs, 18 Terminology pairs, and 52 search records
+- Structural check: 4,621 local links/assets/fragments, 26 translation pairs, and 75 bibliography entries passed
+- All existing scientific checks passed; `check_data_analysis.py` independently recomputes eight arithmetic/linear-algebra fixtures and checks two declared semantic boundaries, published examples, paired numeric/citation tokens, old anchors, and generated bodies
+- Full Chromium suite passed 367 scenarios, including desktop, 390px and 320px layouts, English/Chinese search, same-article anchors, related links, keyboard disclosures, and no-JavaScript reading; no script errors
+- English and Chinese 320px screenshots visually inspected; long equations wrap without page overflow
+- Repeated build produced identical file hashes; `git diff --check` passed
+
+Semantic guards protect authored distinctions; they do not independently validate identification evidence, concentration, FDR calibration, or an imputation method. Research source access limitations remain documented in `review/data-analysis/SOURCE-BOUNDARIES.md`. These checks are local; Pages deployment and live-site verification follow an authorized merge separately.

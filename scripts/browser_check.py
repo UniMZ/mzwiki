@@ -293,6 +293,39 @@ with sync_playwright() as p:
         page.locator('#query').fill(q)
         expect(page.locator('#search-results a').first).to_have_attribute('href',path)
         count+=1
+    # Data analysis: evidence levels, missing values and paired article navigation.
+    for anchor in ('representation','features','error-control','quantification','normalization','design','missingness','reproducibility'):
+        page.goto(BASE+'/guides/data-analysis/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/data-analysis/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/data-analysis/#'+anchor)
+        count+=2
+    for width,height in [(1440,1000),(390,844),(320,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for prefix in ('','/zh'):
+            for route in ('/guides/data-analysis/','/terms/feature/','/terms/false-discovery-rate/','/terms/missing-value/'):
+                page.goto(BASE+prefix+route)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(width,prefix,route)
+                for wrapper in page.locator('.prose .table-wrap').all():
+                    wrapper.evaluate('(el) => {el.scrollLeft=el.scrollWidth;}')
+                    assert wrapper.evaluate('(el) => el.scrollWidth <= el.clientWidth || el.scrollLeft > 0')
+                if route=='/guides/data-analysis/':
+                    for slug in ('feature','false-discovery-rate','missing-value'):
+                        expect(page.locator('.related-links a[href="'+prefix+'/terms/'+slug+'/"]')).to_have_count(1)
+                    for detail in page.locator('.prose details').all():
+                        detail.locator('summary').focus()
+                        page.keyboard.press('Enter')
+                        expect(detail.locator('p').first).to_be_visible()
+                    page.locator('#example').scroll_into_view_if_needed()
+                    page.screenshot(path=str(OUT/f'data-analysis-{prefix.strip("/") or "en"}-{width}.png'))
+                count+=1
+    for lang,q,path in [('en','false discovery rate','/terms/false-discovery-rate/'),('zh','缺失值','/zh/terms/missing-value/')]:
+        page.goto(BASE+'/search/?kind=term&lang='+lang)
+        page.locator('#query').fill(q)
+        expect(page.locator('#search-results a').first).to_have_attribute('href',path)
+        count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')
