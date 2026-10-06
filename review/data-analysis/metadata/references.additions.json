@@ -1,0 +1,52 @@
+{
+  "psi-ms-representation": {
+    "title": "HUPO-PSI. PSI-MS controlled vocabulary: peak picking, centroid spectrum, and profile spectrum.",
+    "url": "https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo",
+    "note": "Official controlled vocabulary, inspected data version 4.2.2 (2026-09-18). Entries MS:1000035, MS:1000127, and MS:1000128 support representation boundaries; no universal centroid-intensity algorithm is inferred."
+  },
+  "msconvert-filters": {
+    "title": "ProteoWizard. msconvert technical documentation: peakPicking filter.",
+    "url": "https://proteowizard.sourceforge.io/tools/msconvert.html",
+    "note": "Official software documentation. Supports algorithm and MS-level selection and recording processing choices. Indexed filter text was verified; direct page extraction returned minimal content. No version-dependent command recipe or defaults are prescribed."
+  },
+  "feature-finding": {
+    "title": "OpenMS. FeatureFinderMetabo documentation.",
+    "url": "https://openms.org/documentation/html/TOPP_FeatureFinderMetabo.html",
+    "note": "Official developer documentation of assembling compatible mass traces into metabolite features and separating elution profiles. Used as an implementation example, not a universal definition or parameter prescription. Documentation inspected 2026-10-06."
+  },
+  "msi-chemical-analysis": {
+    "title": "Sumner et al. (2007). Proposed minimum reporting standards for chemical analysis. Metabolomics 3, 211–221.",
+    "url": "https://doi.org/10.1007/s11306-007-0082-2",
+    "note": "MSI Chemical Analysis Working Group reporting recommendations. Supports evidence-specific identification of previously characterized metabolites and calibration/validation reporting. Publisher metadata/abstract, indexed PMC text, and an institutional author manuscript (Fiehn Lab, UC Davis), p. 12, were checked. The institutional manuscript is not the final typeset version. Historical numerical validation thresholds are not adopted."
+  },
+  "fdr-original": {
+    "title": "Benjamini & Hochberg (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society, Series B 57, 289–300.",
+    "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+    "note": "Original definition of FDR as the expectation of the false-discovery proportion, with zero when there are no discoveries. Publisher metadata and abstract verified. The Guide illustrates the definition without prescribing the BH procedure or assuming arbitrary dependence is allowed."
+  },
+  "normalization-comparison": {
+    "title": "Kauko et al. (2015). Label-free quantitative phosphoproteomics with novel pairwise abundance normalization reveals synergistic RAS and CIP2A signaling. Scientific Reports 5, 13099.",
+    "url": "https://www.nature.com/articles/srep13099",
+    "note": "Original phosphoproteomics experiment. DOI: 10.1038/srep13099. Full publisher text supports the risk of centering when genuine global directional changes violate stability assumptions. Its pairwise method and biological conclusions are not generalized to all data."
+  },
+  "missingness-benchmark": {
+    "title": "Harris, Fondrie, Oh & Noble (2023). Evaluating Proteomics Imputation Methods with Improved Criteria. Journal of Proteome Research 22, 3427–3438.",
+    "url": "https://doi.org/10.1021/acs.jproteome.3c00205",
+    "note": "Original benchmark across proteomics workflows. Supports experiment- and task-dependent imputation performance and the need for an unimputed comparator. Metadata/abstract and indexed primary PMC text (PMC10949645) verified; direct PMC access encountered a bot check. No method is recommended universally."
+  },
+  "mqacc-reporting": {
+    "title": "Kirwan et al. (2022). Quality assurance and quality control reporting in untargeted metabolic phenotyping: mQACC recommendations for analytical quality management. Metabolomics 18, 70.",
+    "url": "https://link.springer.com/article/10.1007/s11306-022-01926-3",
+    "note": "Consortium reporting recommendations, not binding regulation. Full publisher text supports distinguishing blanks, pooled/reference QC, suitability tests, placement, acceptance criteria, and drift assessment in untargeted metabolomics."
+  },
+  "analysis-reporting": {
+    "title": "Goodacre et al. (2007). Proposed minimum reporting standards for data analysis in metabolomics. Metabolomics 3, 231–241.",
+    "url": "https://doi.org/10.1007/s11306-007-0081-3",
+    "note": "MSI reporting recommendations. Publisher text supports recording design, acquisition scheduling, preprocessing, algorithms, validation splits, and blind testing. The batch-confounding example and modern audit checklist are explicitly pedagogical reasoning built on those principles."
+  },
+  "mztab-m": {
+    "title": "HUPO-PSI and MSI. mzTab-M 2.0 metabolomics results specification.",
+    "url": "https://hupo-psi.github.io/mzTab/2_0-metabolomics-release/mzTab_format_specification_2_0-M_release.html",
+    "note": "Official released format specification. Sections 5.2 and 5.4 distinguish samples/assays/runs and missing-data encoding; sections 6.3–6.5 distinguish molecule summaries, features, and identification evidence. A format declaration does not verify biological independence or determine the missing-data mechanism."
+  }
+}

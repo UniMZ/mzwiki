@@ -1,0 +1,84 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "baad05c164ab2151371732973b324c1ff4ce3ce2",
+  "status": "Prepared content-only packet; not applied or published",
+  "replace_complete_fragments": [
+    "content/en/data-analysis.html",
+    "content/zh/data-analysis.html"
+  ],
+  "add_complete_fragments": [
+    "content/terms/en/feature.html",
+    "content/terms/zh/feature.html",
+    "content/terms/en/false-discovery-rate.html",
+    "content/terms/zh/false-discovery-rate.html",
+    "content/terms/en/missing-value.html",
+    "content/terms/zh/missing-value.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "replace only object with slug data-analysis; retain position",
+      "payload": "metadata/data-analysis.article.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "append three unique objects; keep separate from Guide array",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "merge ten new keys only; stop and reconcile collisions",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/data-analysis.json",
+    "payload": "tests/fixtures/data-analysis.json",
+    "note": "Proposed teaching-fixture schema. Later engineering must add or adapt a repository check; no existing check is claimed to consume this file."
+  },
+  "batch_record": {
+    "destination": "docs/content-batches/07-data-analysis.md",
+    "payload": "docs/content-batches/07-data-analysis.md"
+  },
+  "preserved_guide_anchors": [
+    "layers",
+    "formats",
+    "identification",
+    "example",
+    "qc",
+    "advanced",
+    "practice"
+  ],
+  "new_guide_anchors": [
+    "representation",
+    "features",
+    "error-control",
+    "quantification",
+    "normalization",
+    "design",
+    "missingness",
+    "reproducibility"
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "metadata/references.reused.json",
+    "inspection/",
+    "packet-files.sha256.json"
+  ],
+  "application_preconditions": [
+    "Re-read current main and reconcile any changes since pinned baseline",
+    "Keep eight numbered Guides and append terms only to Terminology",
+    "Preserve English UI and matched separate article language views",
+    "Use existing builder to generate pages, search, sitemap, and reciprocal links"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No cloud coding task",
+    "No commit or push",
+    "No build or deployment",
+    "No live-site verification"
+  ]
+}

@@ -319,5 +319,64 @@
       "xic-traces",
       "xic-settings"
     ]
+  },
+  {
+    "slug": "feature",
+    "title": "Feature",
+    "zh_title": "特征",
+    "summary": "A detected LC-MS signal entity, whose grouping is not automatically a molecular identity.",
+    "zh_summary": "检测到的 LC-MS 信号实体，其分组并不自动确定分子身份。",
+    "related_guides": [
+      "data-analysis",
+      "acquisition"
+    ],
+    "related_terms": [
+      "extracted-ion-chromatogram",
+      "adduct-ion",
+      "charge-state",
+      "missing-value"
+    ],
+    "refs": [
+      "feature-finding",
+      "mztab-m"
+    ]
+  },
+  {
+    "slug": "false-discovery-rate",
+    "title": "False discovery rate",
+    "zh_title": "错误发现率",
+    "summary": "An expected error fraction for a defined set of discoveries, not a probability for every hit.",
+    "zh_summary": "针对明确定义的发现集合的期望错误比例，并非每条命中的错误概率。",
+    "related_guides": [
+      "data-analysis"
+    ],
+    "related_terms": [
+      "feature",
+      "missing-value"
+    ],
+    "refs": [
+      "fdr-original",
+      "fdr"
+    ]
+  },
+  {
+    "slug": "missing-value",
+    "title": "Missing value",
+    "zh_title": "缺失值",
+    "summary": "An unavailable result whose cause and handling require explicit assumptions.",
+    "zh_summary": "不可获得的结果，其原因及处理需要明确假设。",
+    "related_guides": [
+      "data-analysis",
+      "acquisition"
+    ],
+    "related_terms": [
+      "feature",
+      "false-discovery-rate",
+      "extracted-ion-chromatogram"
+    ],
+    "refs": [
+      "mztab-m",
+      "missingness-benchmark"
+    ]
   }
 ]
