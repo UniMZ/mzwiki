@@ -107,6 +107,7 @@ The acquisition Guide and its three terms use `tests/fixtures/acquisition.json`.
 ```sh
 python3 scripts/check_acquisition.py
 python3 scripts/check_data_analysis.py
+python3 scripts/check_reading_bridge.py
 ```
 
 ## GitHub Pages deployment

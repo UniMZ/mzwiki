@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "mass-spectrum",
+    "title": "Mass spectrum",
+    "zh_title": "质谱图",
+    "summary": "Ion signal plotted against m/z, with a different horizontal axis from a chromatogram.",
+    "zh_summary": "离子信号随 m/z 的分布；其横轴与色谱图不同。",
+    "related_guides": [
+      "what-ms-measures",
+      "spectrum-interpretation",
+      "acquisition"
+    ],
+    "related_terms": [
+      "base-peak",
+      "mz",
+      "extracted-ion-chromatogram"
+    ],
+    "refs": [
+      "iupac",
+      "extracted-ion-profile"
+    ]
+  },
+  {
+    "slug": "base-peak",
+    "title": "Base peak",
+    "zh_title": "基峰",
+    "summary": "The strongest peak in a spectrum and the denominator for base-peak relative intensity.",
+    "zh_summary": "谱图中最强的峰，也是相对于基峰计算强度时的分母。",
+    "related_guides": [
+      "what-ms-measures",
+      "spectrum-interpretation"
+    ],
+    "related_terms": [
+      "mass-spectrum",
+      "extracted-ion-chromatogram",
+      "monoisotopic-mass"
+    ],
+    "refs": [
+      "base-peak-definition",
+      "relative-intensity-definition"
+    ]
+  }
+]

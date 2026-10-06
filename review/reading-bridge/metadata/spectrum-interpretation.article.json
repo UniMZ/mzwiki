@@ -1,0 +1,27 @@
+{
+  "slug": "spectrum-interpretation",
+  "title": "Read a spectrum step by step",
+  "zh_title": "逐步解读质谱图",
+  "summary": "Read an annotated simulated spectrum: infer charge, inspect isotope ratios, and separate narrow peaks from accurate masses.",
+  "zh_summary": "解读带注释的模拟谱图：推断电荷、检查同位素比值，并区分窄峰与准确的质量测量。",
+  "group": "Methods",
+  "prereqs": [
+    "mz-charge-isotopes",
+    "analyzers"
+  ],
+  "related": [
+    "mz-charge-isotopes",
+    "analyzers",
+    "fragmentation",
+    "data-analysis"
+  ],
+  "refs": [
+    "nist",
+    "isotopes",
+    "codata",
+    "carbon",
+    "iupac",
+    "ms-order",
+    "retention-time-definition"
+  ]
+}

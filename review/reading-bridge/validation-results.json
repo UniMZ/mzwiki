@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "scope": "Standalone content-packet checks; no repository build, generated-page, browser, or deployment verification",
+  "baseline_commit": "4981636fdb9660cbc30bdff091ad94545bb7f435",
+  "baseline_guide_count": 8,
+  "baseline_term_count": 18,
+  "new_guide_count": 0,
+  "new_term_pairs": 2,
+  "resulting_term_count_if_applied": 20,
+  "new_reference_keys": [
+    "base-peak-definition",
+    "relative-intensity-definition",
+    "retention-time-definition"
+  ],
+  "reused_reference_keys": [
+    "iupac",
+    "nist",
+    "isotopes",
+    "codata",
+    "carbon",
+    "sodium",
+    "ms-order",
+    "extracted-ion-profile"
+  ],
+  "pairs_checked": 4,
+  "preserved_guide_anchors": {
+    "what-ms-measures": [
+      "idea",
+      "workflow",
+      "example",
+      "limits",
+      "practice",
+      "next-level"
+    ],
+    "spectrum-interpretation": [
+      "context",
+      "groups",
+      "example",
+      "charge-step",
+      "distribution-step",
+      "quality-step",
+      "limits-step",
+      "candidates",
+      "report",
+      "practice",
+      "next-level"
+    ]
+  },
+  "unchanged_suffixes": {
+    "content/en/what-ms-measures.html": {
+      "from_anchor": "limits",
+      "sha256": "c3d3829207d694ad24a44207e2d486ff1c3c84116fce33419d69ee629260c2ce"
+    },
+    "content/zh/what-ms-measures.html": {
+      "from_anchor": "limits",
+      "sha256": "f83d555200ed5855ebc4a30c6b3438f92760857080e5eac95e2ffdb01ba9eb44"
+    },
+    "content/en/spectrum-interpretation.html": {
+      "from_anchor": "groups",
+      "sha256": "c3ec4d3e330462c929aad6f208f7a3dcc08e364626954d94f94e006a619420cb"
+    },
+    "content/zh/spectrum-interpretation.html": {
+      "from_anchor": "groups",
+      "sha256": "689a1849eaefe590d4bad44307e1bc367bb8e956d10193e66b72f7d39c2f20e5"
+    }
+  },
+  "html_structure": "pass",
+  "numeric_token_parity": "pass",
+  "citation_numbering_and_uniqueness": "pass",
+  "route_targets": "metadata and local anchor validation pass; generated routes untested",
+  "first_use_links_and_lesson_order": "pass",
+  "published_table_and_arithmetic": "pass",
+  "files": [
+    {
+      "file": "content/en/what-ms-measures.html",
+      "html_balanced": true,
+      "ids": [
+        "idea",
+        "workflow",
+        "spectra-and-traces",
+        "example",
+        "limits",
+        "practice",
+        "next-level"
+      ],
+      "citation_occurrences": 8,
+      "links_checked": 14,
+      "english_word_count": 873
+    },
+    {
+      "file": "content/zh/what-ms-measures.html",
+      "html_balanced": true,
+      "ids": [
+        "idea",
+        "workflow",
+        "spectra-and-traces",
+        "example",
+        "limits",
+        "practice",
+        "next-level"
+      ],
+      "citation_occurrences": 8,
+      "links_checked": 14,
+      "english_word_count": null
+    },
+    {
+      "file": "content/en/spectrum-interpretation.html",
+      "html_balanced": true,
+      "ids": [
+        "context",
+        "groups",
+        "example",
+        "charge-step",
+        "distribution-step",
+        "quality-step",
+        "limits-step",
+        "candidates",
+        "report",
+        "practice",
+        "next-level"
+      ],
+      "citation_occurrences": 8,
+      "links_checked": 18,
+      "english_word_count": 1178
+    },
+    {
+      "file": "content/zh/spectrum-interpretation.html",
+      "html_balanced": true,
+      "ids": [
+        "context",
+        "groups",
+        "example",
+        "charge-step",
+        "distribution-step",
+        "quality-step",
+        "limits-step",
+        "candidates",
+        "report",
+        "practice",
+        "next-level"
+      ],
+      "citation_occurrences": 8,
+      "links_checked": 18,
+      "english_word_count": null
+    },
+    {
+      "file": "content/terms/en/mass-spectrum.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 8,
+      "english_word_count": 211
+    },
+    {
+      "file": "content/terms/zh/mass-spectrum.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 8,
+      "english_word_count": null
+    },
+    {
+      "file": "content/terms/en/base-peak.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 6,
+      "english_word_count": 213
+    },
+    {
+      "file": "content/terms/zh/base-peak.html",
+      "html_balanced": true,
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 2,
+      "links_checked": 6,
+      "english_word_count": null
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "base-peak-scan-1",
+      "status": "pass"
+    },
+    {
+      "id": "base-peak-scan-2",
+      "status": "pass"
+    },
+    {
+      "id": "base-peak-scan-3",
+      "status": "pass"
+    },
+    {
+      "id": "xic-original-signals",
+      "status": "pass"
+    },
+    {
+      "id": "changing-denominators",
+      "status": "pass"
+    },
+    {
+      "id": "preserved-protonated-mass",
+      "status": "pass"
+    },
+    {
+      "id": "preserved-sodium-adduct-mass",
+      "status": "pass"
+    }
+  ],
+  "fixture_count": 7,
+  "unrun": [
+    "repository build",
+    "repository structural and scientific scripts",
+    "generated term index and reciprocal links",
+    "generated search and sitemap",
+    "browser rendering and keyboard checks",
+    "deployment and live-site verification"
+  ]
+}

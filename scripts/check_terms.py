@@ -39,5 +39,5 @@ for term in terms:
   assert set(re.findall(r'href="#ref-([^"]+)"',body))==set(term['refs'])
   for v in expected.get(slug,[]):assert v in body,(slug,lang,v)
  assert Counter(re.findall(r'\d+(?:\.\d+)?',texts[0].replace('decreases by one','decreases by 1')))==Counter(re.findall(r'\d+(?:\.\d+)?',texts[1])),slug
- assert re.findall(r'<code>(.*?)</code>',texts[0])==re.findall(r'<code>(.*?)</code>',texts[1].replace('\u4e2d\u6027\u8d28\u91cf','neutral mass').replace('\u524d\u4f53','precursor').replace('\u4ea7\u7269','product')),slug
+ assert re.findall(r'<code>(.*?)</code>',texts[0])==re.findall(r'<code>(.*?)</code>',texts[1].replace('相对强度（%）=', 'relative intensity (%) =').replace('基峰强度', 'base-peak intensity').replace('峰强度', 'peak intensity').replace('\u4e2d\u6027\u8d28\u91cf','neutral mass').replace('\u524d\u4f53','precursor').replace('\u4ea7\u7269','product')),slug
 print(f'PASS: terminology Decimal fixtures and displayed rounding; {len(terms)} paired entries with balanced markup, matching numerical tokens, equations, sections and complete citations.')

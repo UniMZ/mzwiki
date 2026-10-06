@@ -1,4 +1,10 @@
 <h2 id="context">1. 看峰之前先看元数据</h2>
+<p>先问两个问题：离子是如何生成的，这张谱图来自哪个测量阶段？离子源名称与 MS 级别描述的是实验的不同环节。</p>
+<ul>
+<li><strong>电子电离（EI）</strong>用高能电子使气相分子电离，常在离子源中产生碎片。<strong>电喷雾电离（ESI）</strong>从溶液的带电液滴生成气相离子，可能产生加合离子和多个电荷态。可先查看<a href="/zh/guides/ionization/#methods">电离方法比较</a>。<a href="#ref-iupac">[5]</a></li>
+<li><strong>MS1</strong>表示第一级质量分析。ESI MS1 谱图不建立经主动前体选择的前体–产物关系，但离子源或传输条件仍可能产生碎片。<strong>产物离子 MS2 谱图</strong>测量前体群体经过选择、活化或反应后的离子；未反应的前体及共隔离物种也可能贡献信号。可沿着<a href="/zh/guides/fragmentation/#sequence">选择 → 活化 → 测量</a>理解过程，再结合<a href="/zh/guides/acquisition/#levels">MS 级别、扫描与循环</a>读取采集元数据。<a href="#ref-iupac">[5]</a> <a href="#ref-ms-order">[6]</a></li>
+</ul>
+<p>采用色谱分离时，<strong>保留时间</strong>是从进样到色谱峰达到最大值所经过的时间。它用于在时间轴上定位信号，并不是质谱图的 <em>m/z</em> 轴。<a href="#ref-retention-time-definition">[7]</a>连接两种坐标轴及基峰强度尺度的入门示例见<a href="/zh/guides/what-ms-measures/#spectra-and-traces">三次扫描、一张谱图与一条 XIC</a>。</p>
 <p>先确认极性、电离方法、扫描级别、质量范围、校准和保留时间；必要时还要查看前体隔离及碰撞能量。EI 谱、ESI 一级谱和产物离子谱需要不同的解释方式。还要确认强度是原始值、归一化值，还是经过其他变换。</p>
 <h2 id="groups">2. 将相关证据分组</h2>
 <p>寻找同位素包络和合理的电荷间距，再考虑加合物关系及共同的色谱轮廓。检查空白：显著的背景峰可能与目标无关。在拥挤区域赋予电荷前，应考虑重叠的同位素包络。</p>

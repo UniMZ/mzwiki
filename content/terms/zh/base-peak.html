@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p><strong>基峰</strong>是指定<a href="/zh/terms/mass-spectrum/">质谱图</a>中强度最高的峰。它描述信号强弱的排序，并不代表某种化学身份。<a href="#ref-base-peak-definition">[1]</a></p>
+<p>相对于基峰的强度按 <code>相对强度（%）= 100 × 峰强度 / 基峰强度</code> 计算。分母是该谱图中最大的峰强度，因此基峰为 100%。分母不是所有峰强度之和。<a href="#ref-relative-intensity-definition">[2]</a></p>
+<h2 id="example">简单示例</h2>
+<p><strong>构造的谱图：</strong><em>m/z</em> 100.000、200.000 和 300.000 处的峰强度分别为 80、40 和 20 任意单位。基峰位于 100.000，强度为 80。将每个强度除以 80，再乘以 100，就得到 100%、50% 和 25%。</p>
+<p>这些百分比之和为 175%，这是合理的：它们是各信号与基峰的比值，并非各自占总量的比例，也不是样品组成的百分比。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>基峰不一定是完整分子离子峰或单同位素峰，也可能是碎片、加合离子或背景信号。其 <em>m/z</em> 和强度可能随扫描改变。如果每次扫描都单独缩放至 100%，就会丢失原始的跨扫描强度尺度。读取 <a href="/zh/terms/extracted-ion-chromatogram/">XIC</a> 时应注意这一区别。</p>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/what-ms-measures/#spectra-and-traces">观察三次扫描中基峰的变化</a></li><li><a href="/zh/guides/spectrum-interpretation/#context">检查强度的处理方式</a></li></ul>

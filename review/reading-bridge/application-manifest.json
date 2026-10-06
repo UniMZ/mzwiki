@@ -1,0 +1,108 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "4981636fdb9660cbc30bdff091ad94545bb7f435",
+  "status": "Prepared content-only packet; not applied or published",
+  "replace_complete_fragments": [
+    "content/en/what-ms-measures.html",
+    "content/zh/what-ms-measures.html",
+    "content/en/spectrum-interpretation.html",
+    "content/zh/spectrum-interpretation.html"
+  ],
+  "add_complete_fragments": [
+    "content/terms/en/mass-spectrum.html",
+    "content/terms/zh/mass-spectrum.html",
+    "content/terms/en/base-peak.html",
+    "content/terms/zh/base-peak.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "replace only object with slug what-ms-measures; retain position and every field except appended refs",
+      "payload": "metadata/what-ms-measures.article.json"
+    },
+    {
+      "destination": "content/articles.json",
+      "operation": "replace only object with slug spectrum-interpretation; retain position and every field except appended refs",
+      "payload": "metadata/spectrum-interpretation.article.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "append exactly two unique objects, only if neither slug exists; keep separate from Guide array",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "merge three new keys only; stop and reconcile collisions",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/reading-bridge.json",
+    "payload": "tests/fixtures/reading-bridge.json",
+    "note": "Proposed teaching-fixture schema. Later engineering must add or adapt a repository check; no existing check is claimed to consume this file."
+  },
+  "batch_record": {
+    "destination": "docs/content-batches/08-reading-bridge.md",
+    "payload": "docs/content-batches/08-reading-bridge.md"
+  },
+  "preserved_guide_anchors": {
+    "what-ms-measures": [
+      "idea",
+      "workflow",
+      "example",
+      "limits",
+      "practice",
+      "next-level"
+    ],
+    "spectrum-interpretation": [
+      "context",
+      "groups",
+      "example",
+      "charge-step",
+      "distribution-step",
+      "quality-step",
+      "limits-step",
+      "candidates",
+      "report",
+      "practice",
+      "next-level"
+    ]
+  },
+  "new_guide_anchors": {
+    "what-ms-measures": [
+      "spectra-and-traces"
+    ],
+    "spectrum-interpretation": []
+  },
+  "scope_guards": [
+    "Keep exactly eight Guides; add only two terminology pairs, bringing the inspected 18 to 20",
+    "Spectrum-interpretation changes are confined to #context; #groups onward remains byte-identical",
+    "What-ms-measures retains #limits, #practice, and #next-level byte-identically",
+    "Keep existing scientific examples, formulas, constants, figures, and fixtures unchanged outside the bounded foundation annotations",
+    "No changes to the other six Guide pairs or the existing 18 term pairs",
+    "English interface and project documentation; Chinese only in paired article translations and their title/summary metadata"
+  ],
+  "application_preconditions": [
+    "Re-read current main and reconcile any changes since pinned baseline",
+    "Verify the two new term slugs are still absent; do not duplicate terms",
+    "Apply complete fragment files and narrowly merge metadata; do not copy inspection snapshots into the repository",
+    "Use the existing builder and run all existing structural/scientific checks plus a new or adapted reading-bridge fixture check",
+    "Verify generated EN/ZH routes, anchor-preserving language switches, term index, reciprocal links, search, sitemap, and desktop/mobile reading before publication"
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "metadata/references.reused.json",
+    "inspection/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit or push",
+    "No build or deployment",
+    "No live-site verification"
+  ]
+}

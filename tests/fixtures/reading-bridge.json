@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "4981636fdb9660cbc30bdff091ad94545bb7f435",
+  "provenance": "Original constructed teaching signals, not experimental data. Existing abstract 300 Da ion-form positions are retained and audited.",
+  "scope": "Arithmetic and publication parity; not chemical validation or a chromatographic integration method.",
+  "assumptions": [
+    "All three scans have the same acquisition settings and arbitrary intensity scale before per-scan normalization.",
+    "The listed signal pairs are all peaks in this constructed dataset.",
+    "XIC aggregation sums included discrete peak signals; no profile-data integration rule is inferred.",
+    "The extraction bounds are inclusive; exactly one signal is inside in each scan.",
+    "No peak has an assigned chemical identity.",
+    "Ion-mass calculations use rounded fixed central-value constants; binding-energy mass corrections and uncertainty propagation are omitted."
+  ],
+  "source_constants": {
+    "proton_mass_da_adopted": 1.007276467,
+    "proton_mass_u_codata_2022_central": 1.007276466578,
+    "electron_mass_da_adopted": 0.000548579909,
+    "electron_mass_u_codata_2022_central": 0.0005485799090441,
+    "neutral_sodium23_mass_da": 22.989769282,
+    "reference_keys": [
+      "codata",
+      "sodium"
+    ]
+  },
+  "cases": [
+    {
+      "id": "base-peak-scan-1",
+      "kind": "base_peak_normalization",
+      "input": {
+        "mz": [
+          100,
+          200,
+          300
+        ],
+        "time_min": 1.0,
+        "intensities": [
+          20,
+          100,
+          10
+        ]
+      },
+      "expected": {
+        "base_peak_mz": 200,
+        "base_peak_intensity": 100,
+        "relative_intensities_percent": [
+          20,
+          100,
+          10
+        ],
+        "relative_sum_percent": 130
+      }
+    },
+    {
+      "id": "base-peak-scan-2",
+      "kind": "base_peak_normalization",
+      "input": {
+        "mz": [
+          100,
+          200,
+          300
+        ],
+        "time_min": 2.0,
+        "intensities": [
+          80,
+          40,
+          20
+        ]
+      },
+      "expected": {
+        "base_peak_mz": 100,
+        "base_peak_intensity": 80,
+        "relative_intensities_percent": [
+          100,
+          50,
+          25
+        ],
+        "relative_sum_percent": 175
+      }
+    },
+    {
+      "id": "base-peak-scan-3",
+      "kind": "base_peak_normalization",
+      "input": {
+        "mz": [
+          100,
+          200,
+          300
+        ],
+        "time_min": 3.0,
+        "intensities": [
+          40,
+          20,
+          80
+        ]
+      },
+      "expected": {
+        "base_peak_mz": 300,
+        "base_peak_intensity": 80,
+        "relative_intensities_percent": [
+          50,
+          25,
+          100
+        ],
+        "relative_sum_percent": 175
+      }
+    },
+    {
+      "id": "xic-original-signals",
+      "kind": "xic",
+      "input": {
+        "center_mz": 100.0,
+        "half_width_mz": 0.01,
+        "inclusive": true,
+        "mz": [
+          100,
+          200,
+          300
+        ],
+        "scans": [
+          {
+            "time_min": 1.0,
+            "intensities": [
+              20,
+              100,
+              10
+            ]
+          },
+          {
+            "time_min": 2.0,
+            "intensities": [
+              80,
+              40,
+              20
+            ]
+          },
+          {
+            "time_min": 3.0,
+            "intensities": [
+              40,
+              20,
+              80
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "lower_mz": 99.99,
+        "upper_mz": 100.01,
+        "included_mz": [
+          100
+        ],
+        "time_min": [
+          1.0,
+          2.0,
+          3.0
+        ],
+        "signals": [
+          20,
+          80,
+          40
+        ]
+      }
+    },
+    {
+      "id": "changing-denominators",
+      "kind": "column_normalization",
+      "input": {
+        "signal": [
+          20,
+          80,
+          40
+        ],
+        "spectrum_maximum": [
+          100,
+          80,
+          80
+        ]
+      },
+      "expected": {
+        "relative_intensities_percent": [
+          20,
+          100,
+          50
+        ],
+        "same_as_original_xic": false
+      }
+    },
+    {
+      "id": "preserved-protonated-mass",
+      "kind": "ion_mass",
+      "input": {
+        "neutral_monoisotopic_mass_da": 300.0,
+        "added_ion_mass_da": 1.007276467,
+        "charge_magnitude": 1
+      },
+      "expected": {
+        "mz": 301.007276467,
+        "display_four_decimals": "301.0073"
+      }
+    },
+    {
+      "id": "preserved-sodium-adduct-mass",
+      "kind": "sodium_ion_mass",
+      "input": {
+        "neutral_monoisotopic_mass_da": 300.0,
+        "neutral_sodium23_mass_da": 22.989769282,
+        "electron_mass_da": 0.000548579909,
+        "charge_magnitude": 1,
+        "binding_energy_mass_corrections": "neglected"
+      },
+      "expected": {
+        "sodium_cation_mass_da": 22.989220702091,
+        "sodium_cation_display_nine_decimals": "22.989220702",
+        "mz": 322.989220702091,
+        "display_four_decimals": "322.9892"
+      }
+    }
+  ]
+}
