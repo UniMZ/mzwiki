@@ -419,5 +419,486 @@
       "base-peak-definition",
       "relative-intensity-definition"
     ]
+  },
+  {
+    "slug": "retention-time",
+    "title": "Retention time",
+    "zh_title": "保留时间",
+    "summary": "Elapsed time from injection to a chromatographic peak maximum, interpreted within a specified method.",
+    "zh_summary": "从进样到色谱峰最大值的时间，需要在指定方法内解释。",
+    "related_guides": [
+      "lc-separation",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "chromatographic-peak",
+      "extracted-ion-chromatogram",
+      "feature"
+    ],
+    "refs": [
+      "retention-time-definition",
+      "sep-retention-factor"
+    ]
+  },
+  {
+    "slug": "chromatographic-peak",
+    "title": "Chromatographic peak",
+    "zh_title": "色谱峰",
+    "summary": "An elution-time signal with a baseline, height, width, and area that need not represent one pure component.",
+    "zh_summary": "具有基线、峰高、峰宽与面积的洗脱时间信号，不一定代表单一纯组分。",
+    "related_guides": [
+      "lc-separation",
+      "acquisition"
+    ],
+    "related_terms": [
+      "retention-time",
+      "extracted-ion-chromatogram",
+      "mass-spectrum",
+      "acquisition-cycle"
+    ],
+    "refs": [
+      "sep-peak-definition",
+      "sep-peak-area"
+    ]
+  },
+  {
+    "slug": "recovery",
+    "title": "Recovery",
+    "zh_title": "回收率",
+    "summary": "Analyte retained through defined preparation steps, separated from matrix-dependent response.",
+    "zh_summary": "分析物经过指定前处理步骤后的保留程度，需要与基质相关响应区分。",
+    "related_guides": [
+      "sample-preparation"
+    ],
+    "related_terms": [
+      "matrix-effect",
+      "blank"
+    ],
+    "refs": [
+      "sep-recovery-matrix",
+      "sep-m10"
+    ]
+  },
+  {
+    "slug": "matrix-effect",
+    "title": "Matrix effect",
+    "zh_title": "基质效应",
+    "summary": "A response change caused by accompanying sample constituents, distinct from extraction loss.",
+    "zh_summary": "伴随样品组分导致的响应变化，与提取损失不同。",
+    "related_guides": [
+      "sample-preparation",
+      "ionization",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "recovery",
+      "blank",
+      "chromatographic-peak"
+    ],
+    "refs": [
+      "sep-matrix-assessment",
+      "sep-recovery-matrix"
+    ]
+  },
+  {
+    "slug": "carryover",
+    "title": "Carryover",
+    "zh_title": "进样残留",
+    "summary": "Previously introduced material contributes to a later measurement; impact depends on the next result.",
+    "zh_summary": "先前引入的物质对后续测量产生贡献，其影响取决于后续结果的水平。",
+    "related_guides": [
+      "blanks-carryover",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "blank",
+      "retention-time",
+      "chromatographic-peak"
+    ],
+    "refs": [
+      "sep-carryover",
+      "sep-m10"
+    ]
+  },
+  {
+    "slug": "blank",
+    "title": "Blank",
+    "zh_title": "空白",
+    "summary": "A control whose contents, treatment, and sequence position define the background question it can answer.",
+    "zh_summary": "一种对照，其内容物、处理方式与序列位置决定它能回答哪种背景问题。",
+    "related_guides": [
+      "blanks-carryover",
+      "sample-preparation",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "carryover",
+      "matrix-effect",
+      "recovery"
+    ],
+    "refs": [
+      "mqacc-reporting"
+    ]
+  },
+  {
+    "slug": "calibration-curve",
+    "title": "Calibration curve",
+    "zh_title": "校准曲线",
+    "summary": "A response–quantity relationship used to calculate results within an established range.",
+    "zh_summary": "用于在已建立范围内计算结果的响应与量值关系。",
+    "related_guides": [
+      "quantitative-calibration",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "internal-standard",
+      "limit-of-detection",
+      "limit-of-quantification",
+      "mass-accuracy"
+    ],
+    "refs": [
+      "quant-vim-curve",
+      "quant-nist-residuals"
+    ]
+  },
+  {
+    "slug": "internal-standard",
+    "title": "Internal standard",
+    "zh_title": "内标",
+    "summary": "An added reference substance whose response can track specified shared measurement variation.",
+    "zh_summary": "加入的参照物质，其响应可跟踪规定的共同测量变异。",
+    "related_guides": [
+      "quantitative-calibration",
+      "qc-normalization",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "calibration-curve",
+      "isotopologue",
+      "batch-effect"
+    ],
+    "refs": [
+      "quant-ich-m10"
+    ]
+  },
+  {
+    "slug": "limit-of-detection",
+    "title": "Limit of detection",
+    "zh_title": "检出限",
+    "summary": "Detection capability defined by a procedure, decision rule, and error probabilities.",
+    "zh_summary": "由程序、判定规则及错误概率界定的检出能力。",
+    "related_guides": [
+      "quantitative-calibration",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "limit-of-quantification",
+      "calibration-curve",
+      "missing-value"
+    ],
+    "refs": [
+      "quant-vim-detection",
+      "quant-ich-q2"
+    ]
+  },
+  {
+    "slug": "limit-of-quantification",
+    "title": "Limit of quantification",
+    "zh_title": "定量限",
+    "summary": "The lower level at which specified quantitative performance is supported.",
+    "zh_summary": "能够支持规定定量性能的低端水平。",
+    "related_guides": [
+      "quantitative-calibration",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "limit-of-detection",
+      "calibration-curve",
+      "missing-value"
+    ],
+    "refs": [
+      "quant-ich-q2"
+    ]
+  },
+  {
+    "slug": "biological-replicate",
+    "title": "Biological replicate",
+    "zh_title": "生物学重复",
+    "summary": "Replication at a stated biological level, whose independence follows the sampling and intervention design.",
+    "zh_summary": "在明确生物学层级上的重复，其独立性由抽样及干预设计决定。",
+    "related_guides": [
+      "experimental-design",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "batch-effect",
+      "false-discovery-rate"
+    ],
+    "refs": [
+      "quant-experimental-units",
+      "quant-nist-nested"
+    ]
+  },
+  {
+    "slug": "batch-effect",
+    "title": "Batch effect",
+    "zh_title": "批次效应",
+    "summary": "Systematic technical variation associated with processing groups or acquisition order.",
+    "zh_summary": "与处理分组或采集顺序相关的系统性技术变异。",
+    "related_guides": [
+      "experimental-design",
+      "qc-normalization",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "biological-replicate",
+      "internal-standard",
+      "missing-value"
+    ],
+    "refs": [
+      "quant-batch-correction",
+      "quant-nist-blocking"
+    ]
+  },
+  {
+    "slug": "peptide-spectrum-match",
+    "title": "Peptide-spectrum match",
+    "zh_title": "肽段–谱图匹配",
+    "summary": "A proposed spectrum-to-peptide association, distinct from a peptide count or a guaranteed identification.",
+    "zh_summary": "提出的谱图与肽段对应关系，不等于肽段计数或确定无误的鉴定。",
+    "related_guides": [
+      "peptide-identification-protein-inference",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "false-discovery-rate",
+      "protein-inference",
+      "site-localization"
+    ],
+    "refs": [
+      "prot-sequest",
+      "prot-peptideprophet"
+    ]
+  },
+  {
+    "slug": "protein-inference",
+    "title": "Protein inference",
+    "zh_title": "蛋白质推断",
+    "summary": "Evaluate parent-protein evidence while retaining shared-peptide ambiguity and protein-group membership.",
+    "zh_summary": "评估母体蛋白质证据，同时保留共享肽段歧义和蛋白质分组成员。",
+    "related_guides": [
+      "peptide-identification-protein-inference",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "peptide-spectrum-match",
+      "proteotypic-peptide",
+      "sequence-coverage"
+    ],
+    "refs": [
+      "prot-proteinprophet",
+      "prot-protein-reporting"
+    ]
+  },
+  {
+    "slug": "proteotypic-peptide",
+    "title": "Proteotypic peptide",
+    "zh_title": "蛋白质代表性肽段",
+    "summary": "A reliably observable peptide in a defined workflow; check sequence specificity separately.",
+    "zh_summary": "在明确流程中能可靠观察的肽段；序列特异性仍须单独检验。",
+    "related_guides": [
+      "bottom-up-proteomics",
+      "peptide-identification-protein-inference"
+    ],
+    "related_terms": [
+      "protein-inference",
+      "peptide-spectrum-match",
+      "sequence-coverage"
+    ],
+    "refs": [
+      "prot-proteotypic",
+      "prot-proteotypic-context"
+    ]
+  },
+  {
+    "slug": "post-translational-modification",
+    "title": "Post-translational modification",
+    "zh_title": "翻译后修饰",
+    "summary": "A protein change after translation, distinguished from preparation chemistry, mass-shift hypotheses, and site assignments.",
+    "zh_summary": "翻译后发生的蛋白质变化，应与制备化学、质量偏移假设和位点指认区分。",
+    "related_guides": [
+      "ptm-analysis-site-localization",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "site-localization",
+      "peptide-spectrum-match",
+      "neutral-loss"
+    ],
+    "refs": [
+      "prot-proforma",
+      "prot-unimod-phospho"
+    ]
+  },
+  {
+    "slug": "site-localization",
+    "title": "Site localization",
+    "zh_title": "位点定位",
+    "summary": "Determine a modification position using evidence that distinguishes competing placements.",
+    "zh_summary": "利用能够区分竞争位置的证据，确定修饰位点。",
+    "related_guides": [
+      "ptm-analysis-site-localization",
+      "peptide-identification-protein-inference"
+    ],
+    "related_terms": [
+      "post-translational-modification",
+      "peptide-spectrum-match",
+      "false-discovery-rate"
+    ],
+    "refs": [
+      "prot-ascore",
+      "prot-ptmprophet"
+    ]
+  },
+  {
+    "slug": "sequence-coverage",
+    "title": "Sequence coverage",
+    "zh_title": "序列覆盖率",
+    "summary": "The fraction of reference residue positions covered by accepted peptide mappings, counting overlaps once.",
+    "zh_summary": "通过筛选的肽段映射所覆盖的参考残基位置比例，重叠位置仅计一次。",
+    "related_guides": [
+      "peptide-identification-protein-inference",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "protein-inference",
+      "peptide-spectrum-match",
+      "site-localization"
+    ],
+    "refs": [
+      "prot-mzidentml",
+      "prot-protein-reporting"
+    ]
+  },
+  {
+    "slug": "molecular-formula",
+    "title": "Molecular formula",
+    "zh_title": "分子式",
+    "summary": "Element counts constrain candidates without specifying connectivity or stereochemistry.",
+    "zh_summary": "元素数目约束候选物，但不指定连接关系或立体化学。",
+    "related_guides": [
+      "small-molecule-annotation",
+      "mz-charge-isotopes"
+    ],
+    "related_terms": [
+      "isomer",
+      "monoisotopic-mass",
+      "adduct-ion"
+    ],
+    "refs": [
+      "small-formula-definition",
+      "small-formula-rules"
+    ]
+  },
+  {
+    "slug": "isomer",
+    "title": "Isomer",
+    "zh_title": "异构体",
+    "summary": "The same molecular formula can describe different structures; isobars are a different distinction.",
+    "zh_summary": "相同分子式可以对应不同结构；同量异位物种涉及另一种区别。",
+    "related_guides": [
+      "small-molecule-annotation",
+      "lipidomics-structural-evidence",
+      "ion-mobility-ccs"
+    ],
+    "related_terms": [
+      "molecular-formula",
+      "isotopologue",
+      "resolving-power"
+    ],
+    "refs": [
+      "small-isomer-definition",
+      "iupac"
+    ]
+  },
+  {
+    "slug": "spectral-library",
+    "title": "Spectral library",
+    "zh_title": "谱库",
+    "summary": "Reference spectra and metadata support comparison without making the top hit automatically correct.",
+    "zh_summary": "参考谱与元数据支持比较，但不会使首位命中自动正确。",
+    "related_guides": [
+      "small-molecule-annotation",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "precursor-ion",
+      "product-ion",
+      "molecular-formula",
+      "isomer"
+    ],
+    "refs": [
+      "small-massbank",
+      "msi-chemical-analysis"
+    ]
+  },
+  {
+    "slug": "lipid-shorthand-notation",
+    "title": "Lipid shorthand notation",
+    "zh_title": "脂质简写命名",
+    "summary": "Encode the lipid structural details actually established by the experiment.",
+    "zh_summary": "编码实验实际建立的脂质结构细节。",
+    "related_guides": [
+      "lipidomics-structural-evidence",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "molecular-formula",
+      "isomer",
+      "adduct-ion"
+    ],
+    "refs": [
+      "small-lipid-notation",
+      "small-lipid-official"
+    ]
+  },
+  {
+    "slug": "ion-mobility",
+    "title": "Ion mobility",
+    "zh_title": "离子淌度",
+    "summary": "Ion motion through gas under an electric field, with coordinate and condition definitions that matter.",
+    "zh_summary": "离子在电场作用下穿过气体的运动；坐标和条件定义至关重要。",
+    "related_guides": [
+      "ion-mobility-ccs"
+    ],
+    "related_terms": [
+      "collision-cross-section",
+      "charge-state",
+      "isomer"
+    ],
+    "refs": [
+      "small-im-definition",
+      "small-im-reporting"
+    ]
+  },
+  {
+    "slug": "collision-cross-section",
+    "title": "Collision cross section",
+    "zh_title": "碰撞截面",
+    "summary": "A model-derived ion–gas collision quantity whose comparability requires specified conditions.",
+    "zh_summary": "由模型推导的离子–气体碰撞量；可比性需要明确条件。",
+    "related_guides": [
+      "ion-mobility-ccs",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "ion-mobility",
+      "adduct-ion",
+      "isomer"
+    ],
+    "refs": [
+      "small-im-reporting",
+      "small-im-interlab"
+    ]
   }
 ]

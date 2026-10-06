@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-06",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "guides_added": 3,
+  "terms_added": 6,
+  "fragment_files": 18,
+  "new_reference_keys": 20,
+  "reused_reference_keys": [
+    "fdr",
+    "etd"
+  ],
+  "fixture_cases": 12,
+  "english_word_counts": {
+    "content/en/bottom-up-proteomics.html": 1020,
+    "content/en/peptide-identification-protein-inference.html": 1037,
+    "content/en/ptm-analysis-site-localization.html": 1017,
+    "content/terms/en/peptide-spectrum-match.html": 185,
+    "content/terms/en/protein-inference.html": 200,
+    "content/terms/en/proteotypic-peptide.html": 206,
+    "content/terms/en/post-translational-modification.html": 197,
+    "content/terms/en/site-localization.html": 199,
+    "content/terms/en/sequence-coverage.html": 199
+  },
+  "checks": [
+    "Baseline inventory and absence of all nine proposed slugs",
+    "Existing JSON metadata schemas and English-only non-translation metadata",
+    "No new reference key collisions; all new keys use prot- prefix",
+    "All HTML fragments balanced and free of document wrappers or script/style",
+    "Exact EN/ZH tag structure, anchor, citation and normalized link pairing",
+    "Exact EN/ZH numeric-sequence pairing",
+    "All citation labels match metadata reference order",
+    "Every local link resolves to pinned-baseline or within-packet route; every linked anchor exists",
+    "All prerequisite and related metadata references resolve; prerequisite graph acyclic",
+    "Every Guide and term meets the requested English word range",
+    "All 12 fixture cases verified with explicit assumptions"
+  ],
+  "not_performed": [
+    "Repository build or existing repository checks",
+    "Generated pages, search index or sitemap validation",
+    "Browser layout or accessibility inspection",
+    "Live-site checks",
+    "Deployment"
+  ]
+}

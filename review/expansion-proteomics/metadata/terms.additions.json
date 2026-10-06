@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "peptide-spectrum-match",
+    "title": "Peptide-spectrum match",
+    "zh_title": "肽段–谱图匹配",
+    "summary": "A proposed spectrum-to-peptide association, distinct from a peptide count or a guaranteed identification.",
+    "zh_summary": "提出的谱图与肽段对应关系，不等于肽段计数或确定无误的鉴定。",
+    "related_guides": [
+      "peptide-identification-protein-inference",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "false-discovery-rate",
+      "protein-inference",
+      "site-localization"
+    ],
+    "refs": [
+      "prot-sequest",
+      "prot-peptideprophet"
+    ]
+  },
+  {
+    "slug": "protein-inference",
+    "title": "Protein inference",
+    "zh_title": "蛋白质推断",
+    "summary": "Evaluate parent-protein evidence while retaining shared-peptide ambiguity and protein-group membership.",
+    "zh_summary": "评估母体蛋白质证据，同时保留共享肽段歧义和蛋白质分组成员。",
+    "related_guides": [
+      "peptide-identification-protein-inference",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "peptide-spectrum-match",
+      "proteotypic-peptide",
+      "sequence-coverage"
+    ],
+    "refs": [
+      "prot-proteinprophet",
+      "prot-protein-reporting"
+    ]
+  },
+  {
+    "slug": "proteotypic-peptide",
+    "title": "Proteotypic peptide",
+    "zh_title": "蛋白质代表性肽段",
+    "summary": "A reliably observable peptide in a defined workflow; check sequence specificity separately.",
+    "zh_summary": "在明确流程中能可靠观察的肽段；序列特异性仍须单独检验。",
+    "related_guides": [
+      "bottom-up-proteomics",
+      "peptide-identification-protein-inference"
+    ],
+    "related_terms": [
+      "protein-inference",
+      "peptide-spectrum-match",
+      "sequence-coverage"
+    ],
+    "refs": [
+      "prot-proteotypic",
+      "prot-proteotypic-context"
+    ]
+  },
+  {
+    "slug": "post-translational-modification",
+    "title": "Post-translational modification",
+    "zh_title": "翻译后修饰",
+    "summary": "A protein change after translation, distinguished from preparation chemistry, mass-shift hypotheses, and site assignments.",
+    "zh_summary": "翻译后发生的蛋白质变化，应与制备化学、质量偏移假设和位点指认区分。",
+    "related_guides": [
+      "ptm-analysis-site-localization",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "site-localization",
+      "peptide-spectrum-match",
+      "neutral-loss"
+    ],
+    "refs": [
+      "prot-proforma",
+      "prot-unimod-phospho"
+    ]
+  },
+  {
+    "slug": "site-localization",
+    "title": "Site localization",
+    "zh_title": "位点定位",
+    "summary": "Determine a modification position using evidence that distinguishes competing placements.",
+    "zh_summary": "利用能够区分竞争位置的证据，确定修饰位点。",
+    "related_guides": [
+      "ptm-analysis-site-localization",
+      "peptide-identification-protein-inference"
+    ],
+    "related_terms": [
+      "post-translational-modification",
+      "peptide-spectrum-match",
+      "false-discovery-rate"
+    ],
+    "refs": [
+      "prot-ascore",
+      "prot-ptmprophet"
+    ]
+  },
+  {
+    "slug": "sequence-coverage",
+    "title": "Sequence coverage",
+    "zh_title": "序列覆盖率",
+    "summary": "The fraction of reference residue positions covered by accepted peptide mappings, counting overlaps once.",
+    "zh_summary": "通过筛选的肽段映射所覆盖的参考残基位置比例，重叠位置仅计一次。",
+    "related_guides": [
+      "peptide-identification-protein-inference",
+      "bottom-up-proteomics"
+    ],
+    "related_terms": [
+      "protein-inference",
+      "peptide-spectrum-match",
+      "site-localization"
+    ],
+    "refs": [
+      "prot-mzidentml",
+      "prot-protein-reporting"
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Protein inference</strong> evaluates which proteins or protein groups are supported by identified peptides, using their sequence mappings, confidence, and explicit inference rules. It is needed because a peptide can occur in several database proteins. ProteinProphet is a foundational probabilistic implementation; its existence does not make every displayed accession independently identified. <a href="#ref-prot-proteinprophet">[1]</a></p>
+<h2 id="example">Shared evidence has multiple explanations</h2>
+<p><strong>Constructed example:</strong> A contains p and q; B contains p and r. Observing only p is consistent with A, B, or both. Ten additional spectra of p do not distinguish its parent. A confidently observed q unique to A supports A, but failure to observe r does not prove B absent.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A parsimonious protein list is a compact explanation of evidence, not proof that all omitted compatible proteins are absent. A protein group may be displayed with a representative accession selected by reporting rules. Preserve alternative members and the peptides supporting each one. Standardized mzIdentML reporting distinguishes leading proteins, group representatives, and shared-evidence relationships. <a href="#ref-prot-protein-reporting">[2]</a></p>
+<p>Uniqueness is relative to the database and chosen level, such as accession or gene. Protein-level error assessment and shared-peptide quantification require their own stated procedures.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/peptide-identification-protein-inference/#shared-peptides">Work through an ambiguous peptide mapping</a></li></ul>

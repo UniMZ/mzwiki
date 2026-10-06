@@ -1,0 +1,9 @@
+<h2 id="definition">定义</h2>
+<p><strong>蛋白质推断</strong>根据已鉴定肽段的序列映射、置信度和明确的推断规则，评估哪些蛋白质或蛋白质分组得到支持。因为一个肽段可能出现在多个数据库蛋白质中，所以需要这一步。ProteinProphet 是一种基础性的概率实现；使用它并不意味着每个显示的登录号都被独立鉴定。<a href="#ref-prot-proteinprophet">[1]</a></p>
+<h2 id="example">共享证据有多种解释</h2>
+<p><strong>构造的例子：</strong>A 含 p 和 q；B 含 p 和 r。只观察到 p 与 A、B 或两者都有均相容。再增加十张 p 的谱图也不能区分母体。可信观察到对 A 唯一的 q 可以支持 A，但未观察到 r 并不能证明 B 不存在。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>简约蛋白质列表是对证据的紧凑解释，不是所有被省略的兼容蛋白质都不存在的证明。蛋白质分组可能用报告规则选出的代表登录号显示。应保留其他可能成员及支持每个成员的肽段。标准化的 mzIdentML 报告区分领先蛋白、分组代表和共享证据关系。<a href="#ref-prot-protein-reporting">[2]</a></p>
+<p>唯一性相对于数据库及所选层级而言，例如登录号或基因。蛋白质层面的错误评估与共享肽段定量也需要各自说明程序。</p>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/peptide-identification-protein-inference/#shared-peptides">分析含歧义的肽段映射</a></li></ul>

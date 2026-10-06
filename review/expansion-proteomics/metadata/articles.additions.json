@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "bottom-up-proteomics",
+    "title": "Bottom-up proteomics: from sample to protein evidence",
+    "zh_title": "自下而上蛋白质组学：从样本到蛋白质证据",
+    "summary": "Follow preparation, digestion, measurement, identification, and quantification while preserving the limits of peptide evidence.",
+    "zh_summary": "沿制备、酶解、测量、鉴定和定量追踪证据，同时保留肽段证据的解释边界。",
+    "group": "Methods",
+    "prereqs": [
+      "acquisition",
+      "data-analysis"
+    ],
+    "related": [
+      "peptide-identification-protein-inference",
+      "ptm-analysis-site-localization",
+      "fragmentation"
+    ],
+    "refs": [
+      "prot-fasp",
+      "prot-sp3",
+      "prot-trypsin",
+      "prot-miape-ms",
+      "prot-mzidentml",
+      "prot-proteotypic",
+      "prot-aqua",
+      "prot-miape-msi"
+    ]
+  },
+  {
+    "slug": "peptide-identification-protein-inference",
+    "title": "Peptide identification and protein inference",
+    "zh_title": "肽段鉴定与蛋白质推断",
+    "summary": "Separate scores, error levels, shared-peptide mappings, protein groups, and sequence coverage using explicit teaching examples.",
+    "zh_summary": "通过明确的教学例子区分分数、错误层级、共享肽段映射、蛋白质分组和序列覆盖率。",
+    "group": "Computation",
+    "prereqs": [
+      "bottom-up-proteomics",
+      "data-analysis"
+    ],
+    "related": [
+      "fragmentation",
+      "ptm-analysis-site-localization",
+      "acquisition"
+    ],
+    "refs": [
+      "prot-sequest",
+      "prot-peptideprophet",
+      "fdr",
+      "prot-proteinprophet",
+      "prot-protein-reporting",
+      "prot-mzidentml",
+      "prot-proforma"
+    ]
+  },
+  {
+    "slug": "ptm-analysis-site-localization",
+    "title": "PTM analysis and site localization",
+    "zh_title": "翻译后修饰分析与位点定位",
+    "summary": "Distinguish mass changes, modified peptides, localized sites, and occupancy with charge-aware and positional examples.",
+    "zh_summary": "通过考虑电荷和修饰位置的例子，区分质量变化、修饰肽段、已定位位点和占有率。",
+    "group": "Methods",
+    "prereqs": [
+      "peptide-identification-protein-inference",
+      "fragmentation"
+    ],
+    "related": [
+      "bottom-up-proteomics",
+      "acquisition",
+      "data-analysis"
+    ],
+    "refs": [
+      "prot-proforma",
+      "prot-unimod-phospho",
+      "prot-enrichment",
+      "prot-ascore",
+      "etd",
+      "prot-ptmprophet",
+      "prot-stoichiometry",
+      "prot-unimod-oxidation"
+    ]
+  }
+]

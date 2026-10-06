@@ -1,0 +1,123 @@
+[
+  {
+    "slug": "molecular-formula",
+    "title": "Molecular formula",
+    "zh_title": "分子式",
+    "summary": "Element counts constrain candidates without specifying connectivity or stereochemistry.",
+    "zh_summary": "元素数目约束候选物，但不指定连接关系或立体化学。",
+    "related_guides": [
+      "small-molecule-annotation",
+      "mz-charge-isotopes"
+    ],
+    "related_terms": [
+      "isomer",
+      "monoisotopic-mass",
+      "adduct-ion"
+    ],
+    "refs": [
+      "small-formula-definition",
+      "small-formula-rules"
+    ]
+  },
+  {
+    "slug": "isomer",
+    "title": "Isomer",
+    "zh_title": "异构体",
+    "summary": "The same molecular formula can describe different structures; isobars are a different distinction.",
+    "zh_summary": "相同分子式可以对应不同结构；同量异位物种涉及另一种区别。",
+    "related_guides": [
+      "small-molecule-annotation",
+      "lipidomics-structural-evidence",
+      "ion-mobility-ccs"
+    ],
+    "related_terms": [
+      "molecular-formula",
+      "isotopologue",
+      "resolving-power"
+    ],
+    "refs": [
+      "small-isomer-definition",
+      "iupac"
+    ]
+  },
+  {
+    "slug": "spectral-library",
+    "title": "Spectral library",
+    "zh_title": "谱库",
+    "summary": "Reference spectra and metadata support comparison without making the top hit automatically correct.",
+    "zh_summary": "参考谱与元数据支持比较，但不会使首位命中自动正确。",
+    "related_guides": [
+      "small-molecule-annotation",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "precursor-ion",
+      "product-ion",
+      "molecular-formula",
+      "isomer"
+    ],
+    "refs": [
+      "small-massbank",
+      "msi-chemical-analysis"
+    ]
+  },
+  {
+    "slug": "lipid-shorthand-notation",
+    "title": "Lipid shorthand notation",
+    "zh_title": "脂质简写命名",
+    "summary": "Encode the lipid structural details actually established by the experiment.",
+    "zh_summary": "编码实验实际建立的脂质结构细节。",
+    "related_guides": [
+      "lipidomics-structural-evidence",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "molecular-formula",
+      "isomer",
+      "adduct-ion"
+    ],
+    "refs": [
+      "small-lipid-notation",
+      "small-lipid-official"
+    ]
+  },
+  {
+    "slug": "ion-mobility",
+    "title": "Ion mobility",
+    "zh_title": "离子淌度",
+    "summary": "Ion motion through gas under an electric field, with coordinate and condition definitions that matter.",
+    "zh_summary": "离子在电场作用下穿过气体的运动；坐标和条件定义至关重要。",
+    "related_guides": [
+      "ion-mobility-ccs"
+    ],
+    "related_terms": [
+      "collision-cross-section",
+      "charge-state",
+      "isomer"
+    ],
+    "refs": [
+      "small-im-definition",
+      "small-im-reporting"
+    ]
+  },
+  {
+    "slug": "collision-cross-section",
+    "title": "Collision cross section",
+    "zh_title": "碰撞截面",
+    "summary": "A model-derived ion–gas collision quantity whose comparability requires specified conditions.",
+    "zh_summary": "由模型推导的离子–气体碰撞量；可比性需要明确条件。",
+    "related_guides": [
+      "ion-mobility-ccs",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "ion-mobility",
+      "adduct-ion",
+      "isomer"
+    ],
+    "refs": [
+      "small-im-reporting",
+      "small-im-interlab"
+    ]
+  }
+]

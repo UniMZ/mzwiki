@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "provenance": "Original constructed teaching examples, not experimental observations or instrument specifications.",
+  "scope": "Arithmetic, reporting boundaries, and English/Chinese parity. These checks do not validate a laboratory method or establish molecular identity.",
+  "source_constants": {
+    "carbon12_da": 12,
+    "hydrogen1_da": 1.00782503223,
+    "oxygen16_da": 15.99491461957,
+    "proton_da_adopted": 1.007276467,
+    "reference_keys": [
+      "carbon",
+      "hydrogen",
+      "oxygen",
+      "codata"
+    ]
+  },
+  "cases": [
+    {
+      "id": "formula-ion-mass",
+      "kind": "monoisotopic_mass",
+      "input": {
+        "formula": {
+          "C": 6,
+          "H": 12,
+          "O": 6
+        },
+        "ion": "[M+H]+",
+        "charge": 1
+      },
+      "expected": {
+        "neutral_mass_da": 180.06338810418,
+        "ion_mz": 181.07066457118,
+        "neutral_display": 180.063388,
+        "ion_display": 181.070665
+      }
+    },
+    {
+      "id": "annotation-mass-error",
+      "kind": "signed_ppm",
+      "input": {
+        "observed_mz": 181.070846,
+        "theoretical_mz_rounded": 181.070665,
+        "search_tolerance_ppm": 5
+      },
+      "expected": {
+        "error_ppm_display": 1.0,
+        "half_width_mz_display": 0.000905,
+        "accepted": true,
+        "identified": false
+      },
+      "qualification": "The example intentionally uses the published six-decimal theoretical coordinate for the displayed ppm arithmetic. A mass match neither proves formula uniqueness nor distinguishes isomers."
+    },
+    {
+      "id": "pc-sum-composition",
+      "kind": "lipid_chain_totals",
+      "assumption": "Simple, unmodified diacyl PC; chain carbon and unsaturation counts exclude the glycerol and headgroup.",
+      "input": {
+        "candidates": {
+          "PC 16:0_18:1": [
+            [
+              16,
+              0
+            ],
+            [
+              18,
+              1
+            ]
+          ],
+          "PC 16:1_18:0": [
+            [
+              16,
+              1
+            ],
+            [
+              18,
+              0
+            ]
+          ],
+          "PC 14:0_20:1": [
+            [
+              14,
+              0
+            ],
+            [
+              20,
+              1
+            ]
+          ]
+        }
+      },
+      "expected": {
+        "carbon_sum": 34,
+        "unsaturation_sum": 1,
+        "sum_label": "PC 34:1",
+        "chains_distinguished_by_sum": false
+      }
+    },
+    {
+      "id": "lipid-structure-boundary",
+      "kind": "evidence_claims",
+      "input": {
+        "class": "PC",
+        "chain_evidence": [
+          "16:0",
+          "18:1"
+        ],
+        "same_precursor_association_validated": true,
+        "sn_evidence": false,
+        "double_bond_location_evidence": false,
+        "double_bond_geometry_evidence": false
+      },
+      "expected": {
+        "supported_label": "PC 16:0_18:1",
+        "unsupported_labels": [
+          "PC 16:0/18:1",
+          "PC 16:0/18:1(9Z)"
+        ]
+      }
+    },
+    {
+      "id": "uniform-field-mobility",
+      "kind": "mobility_calculation",
+      "input": {
+        "length_m": 0.1,
+        "field_v_per_m": 10000,
+        "arrival_time_s": 0.052,
+        "outside_drift_time_s": 0.002,
+        "gas_density_ratio_N_over_N0": 1
+      },
+      "expected": {
+        "drift_time_s": 0.05,
+        "mobility_m2_per_Vs": 0.0002,
+        "mobility_cm2_per_Vs": 2.0,
+        "uncorrected_mobility_cm2_per_Vs": 1.9230769230769231,
+        "uncorrected_bias_percent": -3.8461538461538436,
+        "reduced_mobility_cm2_per_Vs": 2.0
+      },
+      "qualification": "Ideal uniform field; negligible bulk flow along drift; independently established transit correction. No universal 2 ms correction or commercial operating condition is asserted."
+    },
+    {
+      "id": "ccs-relative-difference",
+      "kind": "percent_difference",
+      "input": {
+        "query_A2": 202,
+        "reference_A2": 200
+      },
+      "expected": {
+        "signed_difference_percent": 1.0,
+        "identification_from_difference_alone": false
+      },
+      "qualification": "Requires matching ion composition/charge, gas, temperature, field regime, method/calibration, and an uncertainty-aware validated rule."
+    },
+    {
+      "id": "isomer-versus-isobar",
+      "kind": "terminology_boundary",
+      "expected": {
+        "isomer_same_formula": true,
+        "isomer_distinguished_by_exact_mass_alone": false,
+        "iupac_isobar_same_nominal_mass": true,
+        "iupac_isobar_different_exact_mass": true
+      }
+    }
+  ],
+  "paired_section_ids": {
+    "small-molecule-annotation": [
+      "idea",
+      "signal",
+      "formula",
+      "spectra",
+      "confidence",
+      "example",
+      "report",
+      "practice",
+      "next-level"
+    ],
+    "lipidomics-structural-evidence": [
+      "idea",
+      "hierarchy",
+      "precursor",
+      "chains",
+      "example",
+      "positions",
+      "report",
+      "practice",
+      "next-level"
+    ],
+    "ion-mobility-ccs": [
+      "idea",
+      "mobility",
+      "methods",
+      "example",
+      "ccs",
+      "compare",
+      "limits",
+      "practice",
+      "next-level"
+    ]
+  },
+  "application_note": "Proposed fixture only. No existing repository checker is claimed to consume this new fixture. Integrating engineering must add or adapt a check and run the complete repository suite."
+}

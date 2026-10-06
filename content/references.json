@@ -388,5 +388,330 @@
     "title": "IUPAC Gold Book. Total retention time in column chromatography, entry 10039.",
     "url": "https://goldbook.iupac.org/terms/view/10039",
     "note": "Definition from Terminology of separation methods (IUPAC Recommendations 2017): injection to the relevant peak maximum; includes hold-up time. Official indexed definition verified; direct retrieval returned 403. The short Guide orientation uses this conventional total-retention-time meaning."
+  },
+  "sep-sample-handbook": {
+    "title": "Agilent Technologies. Sample Preparation Fundamentals for Chromatography. Publication 5991-3326EN.",
+    "url": "https://www.agilent.com/cs/library/primers/public/5991-3326EN_SPHB.pdf",
+    "note": "Official manufacturer handbook, cover and full text checked. Used for categories of preparation and general LLE/SPE principles, especially chapters 2, 7 and 10. No product ranking, universal assay requirement, or detailed hazardous procedure is adopted."
+  },
+  "sep-ppt-study": {
+    "title": "Waters (2020). Simple Approach for the Removal of Phospholipids in Small Molecule Quantitative Bioanalysis Using Ostro Sample Preparation Plates.",
+    "url": "https://www.waters.com/nextgen/hr/en/library/application-notes/2020/simple-approach-for-the-removal-of-phospholipids-in-small-molecule-quantitative-bioanalysis-using-ostro-sample-preparation-plates.html",
+    "note": "Official application note, full text checked. Used narrowly for the fact that protein precipitation can leave soluble matrix constituents, including lipids. Product superiority claims, assay performance, and experimental recipes are not generalized or reproduced."
+  },
+  "sep-recovery-matrix": {
+    "title": "Waters (2018). Bioanalytical Sample Preparation and Method Development for Therapeutic and Endogenous Peptides. Reference card 720006298.",
+    "url": "https://www.waters.com/content/dam/waters/en/library/reference-cards/2018/waters-referencecard-OasisPeptideBAEReferenceCard-720006298.pdf",
+    "note": "Official technical reference, full PDF checked. PDF pages 10–12 distinguish pre-extraction, post-extraction and neat comparisons and define recovery and matrix factor; page 2 discusses surface binding. Used for conceptual comparisons only, not peptide-specific preparation recipes or blanket container recommendations. A/B/C numbers in the wiki are original constructed examples."
+  },
+  "sep-m10": {
+    "title": "FDA / ICH (2022). M10 Bioanalytical Method Validation and Study Sample Analysis. Final guidance.",
+    "url": "https://www.fda.gov/media/162903/download",
+    "note": "Official final FDA PDF, November 2022, checked. Sections 3.2.6, 3.2.8 and 7.3 support carryover assessment context, stability evaluation and recovery consistency. Scope is bioanalytical assays supporting drug-development submissions. No universal acceptance limits for unrelated MS applications are claimed."
+  },
+  "sep-matrix-assessment": {
+    "title": "Matuszewski, B. K., Constanzer, M. L. & Chavez-Eng, C. M. (2003). Strategies for the assessment of matrix effect in quantitative bioanalytical methods based on HPLC-MS/MS. Analytical Chemistry 75(13), 3019–3030.",
+    "url": "https://doi.org/10.1021/ac020361s",
+    "note": "Primary study. Author, title, volume, pages, DOI and abstract verified through PubMed PMID 12964746 (https://pubmed.ncbi.nlm.nih.gov/12964746/); ACS full-text retrieval was unavailable. Abstract supports distinguishing matrix effect and true recovery; exact teaching-ratio definitions are independently verified in the official Waters technical reference. No claim of full-paper inspection."
+  },
+  "sep-retention-factor": {
+    "title": "IUPAC Gold Book. Retention factor in column chromatography, entry R05359.",
+    "url": "https://goldbook.iupac.org/terms/view/R05359",
+    "note": "Official indexed definition and legacy official page checked. Adjusted retention time divided by hold-up time. Direct current-page retrieval returned 403; official search-index text supplied the definition. The Guide explicitly bounds its numerical example to an appropriate isocratic model."
+  },
+  "sep-separation-modes": {
+    "title": "Waters. Liquid Chromatography Separation Modes.",
+    "url": "https://www.waters.com/nextgen/en/products/columns/separation-modes.html",
+    "note": "Official manufacturer overview checked. Used for qualitative reversed-phase and HILIC mode distinctions and typical gradient directions. Product lists, popularity claims and numerical solvent recipes are excluded; no universal elution-order claim is made."
+  },
+  "sep-lc-handbook": {
+    "title": "Agilent Technologies. The LC Handbook: Guide to LC Columns and Method Development.",
+    "url": "https://www.agilent.com/cs/library/primers/public/LC-Handbook-Complete-2.pdf",
+    "note": "Official handbook, full PDF checked. Relevant sections cover dwell volume and method transfer, sample injection/extra-column broadening, and LC-MS-compatible mobile phases. Dwell delay is volume divided by flow; a contradictory glossary typo is not adopted. Constructed examples do not reproduce vendor application data or universal operating limits."
+  },
+  "sep-peak-definition": {
+    "title": "IUPAC Gold Book. Peak in chromatography, entry P04451.",
+    "url": "https://goldbook.iupac.org/terms/view/P04451",
+    "note": "Official indexed PDF and legacy official HTML definition checked. Includes unresolved peaks containing multiple components. Direct current-page retrieval returned 403. Used for the elution-time peak concept, not chemical identification or quantification."
+  },
+  "sep-peak-area": {
+    "title": "IUPAC Gold Book. Peak area in chromatography, entry P04453.",
+    "url": "https://goldbook.iupac.org/terms/view/P04453/pdf",
+    "note": "Official indexed PDF definition checked: area enclosed by peak and baseline. Constructed triangle calculations are original teaching examples, not empirical peak models or prescribed integration methods."
+  },
+  "sep-epa-blanks": {
+    "title": "US EPA (2018). SW-846, Chapter Three: Inorganic Analytes, Revision 6, Update VI.",
+    "url": "https://www.epa.gov/sites/default/files/2019-06/documents/chapter_three_update_vi_12-11-2018.pdf",
+    "note": "Official PDF, title/date and section 3.1 definition of method blank checked. Used only for the methodological purpose of testing preparation/equipment/reagent contamination. Inorganic-specific procedures, sampling requirements and acceptance limits are not transferred to LC-MS."
+  },
+  "sep-carryover": {
+    "title": "Waters. Alliance iS System support: Carryover, topic LCI-USG-0023.",
+    "url": "https://help.waters.com/help/en/product-support/alliance-is-system-support/715008450/B69B8F0.html",
+    "note": "Official support page checked. Supports residual previously injected material and sequence-dependent carryover. Instrument-specific carryover specification, wash recipes and timing settings are excluded."
+  },
+  "sep-carryover-diagnostics": {
+    "title": "Waters. What are some tips for troubleshooting carryover or ghost peaks on my LC column? WKB246120.",
+    "url": "https://support.waters.com/KB_Chem/Columns/WKB246120_What_are_some_tips_for_troubleshooting_carryover_or_ghost_peaks_on_my_LC_column",
+    "note": "Official support article checked. Used narrowly for controlled gradient/injection-volume/vial comparisons and multiple possible sources. The Guide does not reproduce the operational procedure or present a diagnostic pattern as unique proof."
+  },
+  "quant-vim-calibration": {
+    "title": "JCGM. International Vocabulary of Metrology, VIM3, entry 2.39: calibration.",
+    "url": "https://jcgm.bipm.org/vim/en/2.39.html",
+    "note": "Official definition distinguishes establishing and using a measurement relationship from instrument adjustment. Concentration-calibration examples are independently constructed."
+  },
+  "quant-vim-curve": {
+    "title": "JCGM. International Vocabulary of Metrology, VIM3, entry 4.31: calibration curve.",
+    "url": "https://jcgm.bipm.org/vim/en/4.31.html",
+    "note": "Official definition and note: a curve relates indication and measured quantity value but does not itself supply measurement uncertainty."
+  },
+  "quant-ich-m10": {
+    "title": "ICH (2022). M10: Bioanalytical Method Validation and Study Sample Analysis. Final version adopted 24 May 2022.",
+    "url": "https://database.ich.org/sites/default/files/M10_Guideline_Step4_2022_0524.pdf",
+    "note": "Official final guideline, sections 1.3, 3.1, 3.2.4–3.2.7. Supports internal-standard suitability, calibration-model reporting, independent QC preparation, and validated dilution. Its regulated drug-bioanalysis scope is stated; numerical regulatory acceptance thresholds are not generalized to exploratory omics. ICH copyright acknowledged; explanations are original and are not ICH-endorsed translations."
+  },
+  "quant-nist-residuals": {
+    "title": "NIST/SEMATECH e-Handbook of Statistical Methods, section 4.4.4: How can I tell if a model fits my data?",
+    "url": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+    "note": "Official statistical guidance supporting residual analysis and the inadequacy of R-squared alone for model validation. The source dataset and figures are not reproduced."
+  },
+  "quant-nist-weighted": {
+    "title": "NIST/SEMATECH e-Handbook of Statistical Methods, section 4.1.4.3: Weighted Least Squares Regression.",
+    "url": "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd143.htm",
+    "note": "Official discussion of nonconstant error variance, relative precision weights, and uncertainty in estimated weights. No automatic concentration-based weighting rule is prescribed."
+  },
+  "quant-ich-q2": {
+    "title": "ICH (2023; error corrections 2025). Q2(R2): Validation of Analytical Procedures.",
+    "url": "https://database.ich.org/sites/default/files/ICH_Q2(R2)_Guideline_2023_1130_ErrorCorrection_2025.pdf",
+    "note": "Official final guideline with 2025 error corrections, sections 3.2.3.3–3.2.3.5: linear-response DL/QL estimates and subsequent performance validation. Its pharmaceutical analytical-procedure scope is not treated as a universal omics rule. EMA current-version listing was checked on 2026-10-06; the ICH-hosted final PDF was read. ICH copyright acknowledged; original teaching explanations are not ICH-endorsed translations."
+  },
+  "quant-vim-detection": {
+    "title": "JCGM. International Vocabulary of Metrology, VIM3, entry 4.18: detection limit.",
+    "url": "https://jcgm.bipm.org/vim/en/4.18.html",
+    "note": "Official definition links detection capability to the measurement procedure and both false-presence and false-absence probabilities. No numerical error probabilities are inferred from the teaching example."
+  },
+  "quant-experimental-units": {
+    "title": "Lazic, Clarke-Williams & Munafò (2018). What exactly is N in cell culture and animal experiments? PLOS Biology 16, e2005282.",
+    "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005282",
+    "note": "Original methodological study defining biological, experimental, and observational units and conditions for genuine replication. DOI: 10.1371/journal.pbio.2005282. Unit hierarchy is applied to independently constructed MS examples; study prevalence figures are not generalized."
+  },
+  "quant-nist-blocking": {
+    "title": "NIST/SEMATECH e-Handbook of Statistical Methods, section 5.3.3.2: Randomized block designs.",
+    "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm",
+    "note": "Official statistical guidance supporting blocking of nuisance factors and randomization within blocks. The 12-unit allocation and rank calculation are independently constructed, not sample-size advice."
+  },
+  "quant-nist-nested": {
+    "title": "NIST/SEMATECH e-Handbook of Statistical Methods, section 5.5.5: How can I account for nested variation (restricted randomization)?",
+    "url": "https://itl.nist.gov/div898/handbook/pri/section5/pri55.htm",
+    "note": "Official guidance distinguishing hierarchical variation and experimental-unit levels. Does not prescribe one statistical model for all biological studies."
+  },
+  "quant-nist-sample-size": {
+    "title": "NIST/SEMATECH e-Handbook of Statistical Methods, section 7.2.2.2: Sample sizes required.",
+    "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm",
+    "note": "Official examples show dependence of sample-size planning on variability, detectable difference, and decision-error probabilities. No universal replicate count or source formula is imposed on MS experiments."
+  },
+  "quant-batch-correction": {
+    "title": "Wehrens et al. (2016). Improved batch correction in untargeted MS-based metabolomics. Metabolomics 12, 88.",
+    "url": "https://link.springer.com/article/10.1007/s11306-016-1015-8",
+    "note": "Primary comparison across three untargeted plant-metabolomics datasets. DOI: 10.1007/s11306-016-1015-8. Supports data-, design-, and QC-dependent correction performance; no method ranking or universal QC frequency is transferred. Publisher full text and PubMed metadata checked."
+  },
+  "prot-fasp": {
+    "title": "Wiśniewski et al. (2009). Universal sample preparation method for proteome analysis. Nature Methods 6, 359–362.",
+    "url": "https://doi.org/10.1038/nmeth.1322",
+    "note": "Primary FASP demonstration. Supports detergent exchange and on-filter digestion as one preparation strategy, not universal superiority."
+  },
+  "prot-sp3": {
+    "title": "Hughes et al. (2014). Ultrasensitive proteome analysis using paramagnetic bead technology. Molecular Systems Biology 10, 757.",
+    "url": "https://doi.org/10.15252/msb.20145625",
+    "note": "Primary SP3 demonstration. Supports bead-based preparation and low-input examples within the tested scope."
+  },
+  "prot-trypsin": {
+    "title": "Olsen, Ong & Mann (2004). Trypsin cleaves exclusively C-terminal to arginine and lysine residues. Molecular & Cellular Proteomics 3, 608–614.",
+    "url": "https://doi.org/10.1074/mcp.T400003-MCP200",
+    "note": "Primary enzyme-specificity study. The Guide uses a separately declared K/R-except-before-P teaching rule and makes no complete-digestion guarantee."
+  },
+  "prot-miape-ms": {
+    "title": "Taylor et al. (2008). Guidelines for reporting the use of mass spectrometry in proteomics. Nature Biotechnology 26, 860–861.",
+    "url": "https://doi.org/10.1038/nbt0808-860",
+    "note": "HUPO-PSI reporting guidance. Reporting requirements do not certify analytical validity."
+  },
+  "prot-mzidentml": {
+    "title": "Vizcaíno et al. (2017). The mzIdentML Data Standard Version 1.2, Supporting Advances in Proteome Informatics. Molecular & Cellular Proteomics 16, 1275–1285.",
+    "url": "https://doi.org/10.1074/mcp.M117.068429",
+    "note": "Standards paper supporting spectrum, peptide, database-sequence and protein-group evidence links. Version 1.2 is cited for these concepts, not asserted to be the newest release."
+  },
+  "prot-proteotypic": {
+    "title": "Mallick et al. (2007). Computational prediction of proteotypic peptides for quantitative proteomics. Nature Biotechnology 25, 125–131.",
+    "url": "https://doi.org/10.1038/nbt1275",
+    "note": "Primary study of preferential peptide observability across platforms. Does not make observability equivalent to sequence uniqueness or a validated assay."
+  },
+  "prot-aqua": {
+    "title": "Gerber et al. (2003). Absolute quantification of proteins and phosphoproteins from cell lysates by tandem MS. PNAS 100, 6940–6945.",
+    "url": "https://doi.org/10.1073/pnas.0832254100",
+    "note": "Primary AQUA demonstration using stable-isotope peptide standards. The recovery-bias example is original teaching arithmetic, not data from this study."
+  },
+  "prot-miape-msi": {
+    "title": "Binz et al. (2008). Guidelines for reporting the use of mass spectrometry informatics in proteomics. Nature Biotechnology 26, 862.",
+    "url": "https://doi.org/10.1038/nbt0808-862",
+    "note": "HUPO-PSI guidance for documenting identification and validation methods."
+  },
+  "prot-sequest": {
+    "title": "Eng et al. (2008). A Fast SEQUEST Cross Correlation Algorithm. Journal of Proteome Research 7, 4598–4602.",
+    "url": "https://doi.org/10.1021/pr800420s",
+    "note": "Primary scoring-method paper. Supports method-specific candidate scoring; scores are not treated as universal probabilities."
+  },
+  "prot-peptideprophet": {
+    "title": "Keller et al. (2002). Empirical statistical model to estimate the accuracy of peptide identifications made by MS/MS and database search. Analytical Chemistry 74, 5383–5392.",
+    "url": "https://doi.org/10.1021/ac025747h",
+    "note": "Primary PeptideProphet paper supporting statistical assignment-confidence modeling and its dependence on model and data."
+  },
+  "prot-proteinprophet": {
+    "title": "Nesvizhskii et al. (2003). A Statistical Model for Identifying Proteins by Tandem Mass Spectrometry. Analytical Chemistry 75, 4646–4658.",
+    "url": "https://doi.org/10.1021/ac0341261",
+    "note": "Primary ProteinProphet paper supporting probabilistic protein inference and handling of shared peptide evidence. Constructed A/B/p/q/r examples are original."
+  },
+  "prot-protein-reporting": {
+    "title": "Seymour et al. (2014). A standardized framing for reporting protein identifications in mzIdentML 1.2. Proteomics 14, 2389–2399.",
+    "url": "https://doi.org/10.1002/pmic.201400080",
+    "note": "Standards guidance distinguishing protein groups, leading proteins and group representatives. Does not equate a representative accession with unique experimental evidence."
+  },
+  "prot-proforma": {
+    "title": "LeDuc et al. (2022). Proteomics Standards Initiative’s ProForma 2.0: Unifying the Encoding of Proteoforms and Peptidoforms. Journal of Proteome Research 21, 1189–1195.",
+    "url": "https://doi.org/10.1021/acs.jproteome.1c00771",
+    "note": "Standards paper covering modified sequences, natural/chemical/artifactual changes and positional ambiguity. No claim that notation validates a chemical identity or that version 2.0 is the latest specification."
+  },
+  "prot-unimod-phospho": {
+    "title": "Unimod. Phospho, accession 21.",
+    "url": "https://www.unimod.org/modifications_view.php?editid1=21",
+    "note": "Official curated modification record; monoisotopic increment 79.966331 Da, composition H O(3) P. Viewed 2026-10-06. The m/z calculations assume unchanged charge and otherwise identical ion composition."
+  },
+  "prot-enrichment": {
+    "title": "Arribas Diez et al. (2021). Zirconium(IV)-IMAC Revisited: Improved Performance and Phosphoproteome Coverage by Magnetic Microparticles for Phosphopeptide Affinity Enrichment. Journal of Proteome Research 20, 453–462.",
+    "url": "https://doi.org/10.1021/acs.jproteome.0c00508",
+    "note": "Primary comparison supports condition-dependent overlap and selectivity among phosphopeptide enrichment chemistries; no universal-best-method claim."
+  },
+  "prot-ascore": {
+    "title": "Beausoleil et al. (2006). A probability-based approach for high-throughput protein phosphorylation analysis and site localization. Nature Biotechnology 24, 1285–1292.",
+    "url": "https://doi.org/10.1038/nbt1240",
+    "note": "Primary Ascore paper supports site-determining fragment evidence. ASSTK is an original, explicitly simplified teaching example, not a spectrum from this paper."
+  },
+  "prot-ptmprophet": {
+    "title": "Shteynberg et al. (2019). PTMProphet: Fast and Accurate Mass Modification Localization for the Trans-Proteomic Pipeline. Journal of Proteome Research 18, 4262–4272.",
+    "url": "https://doi.org/10.1021/acs.jproteome.9b00205",
+    "note": "Primary localization-model paper supporting site probabilities and false localization rate estimation. No numerical cutoff is prescribed universally."
+  },
+  "prot-stoichiometry": {
+    "title": "Wu et al. (2011). A large-scale method to measure absolute protein phosphorylation stoichiometries. Nature Methods 8, 677–683.",
+    "url": "https://doi.org/10.1038/nmeth.1636",
+    "note": "Primary occupancy-method paper supporting the distinction between modified amount, relative occupancy change and absolute stoichiometry; simple 100/200-unit arithmetic is original."
+  },
+  "prot-unimod-oxidation": {
+    "title": "Unimod. Oxidation, accession 35.",
+    "url": "https://www.unimod.org/modifications_view.php?editid1=35",
+    "note": "Official modification database record with multiple residue-specific classifications including post-translational, artifact and chemical derivative. Viewed 2026-10-06. Record-level Verified field is No; used to illustrate representational breadth, not certify biological origin."
+  },
+  "prot-proteotypic-context": {
+    "title": "Wilhelm et al. (2014). Mass-spectrometry-based draft of the human proteome. Nature 509, 582–587.",
+    "url": "https://doi.org/10.1038/nature13319",
+    "note": "Primary study, Extended Data Figure 10b, supports chemical-label dependence of peptide observability. Used for this methodological point only, not for a protein or disease catalog."
+  },
+  "small-formula-rules": {
+    "title": "Kind and Fiehn (2007). Seven Golden Rules for heuristic filtering of molecular formulas obtained by accurate mass spectrometry. BMC Bioinformatics 8, 105.",
+    "url": "https://doi.org/10.1186/1471-2105-8-105",
+    "note": "Primary method paper. Supports formula filtering with isotope, element, and chemical constraints; no benchmark success rate or universal exclusion rule is adopted."
+  },
+  "small-formula-definition": {
+    "title": "IUPAC Gold Book. Molecular formula, entry M03987.",
+    "url": "https://goldbook.iupac.org/terms/view/M03987",
+    "note": "Official definition of molecular formula. Indexed official definition verified; direct HTML retrieval returned 403. The composition-versus-structure teaching distinction is explained in original prose."
+  },
+  "small-isomer-definition": {
+    "title": "IUPAC Gold Book. Isomer, entry I03289.",
+    "url": "https://goldbook.iupac.org/terms/view/I03289",
+    "note": "Official definition: same atomic composition with different constitutional or stereochemical formulas. Official indexed PDF verified; direct HTML retrieval returned 403."
+  },
+  "small-massbank": {
+    "title": "MassBank consortium. About MassBank.",
+    "url": "https://massbank.github.io/MassBank-documentation/about.html",
+    "note": "Official description of a reference spectral library and chemical/experimental record metadata. No coverage or accuracy benchmark is inferred."
+  },
+  "small-lipid-notation": {
+    "title": "Liebisch et al. (2020). Update on LIPID MAPS classification, nomenclature, and shorthand notation for MS-derived lipid structures. Journal of Lipid Research 61, 1539–1555.",
+    "url": "https://doi.org/10.1194/jlr.S120001025",
+    "note": "Community nomenclature standard. Supports evidence-dependent naming, chain composition, sn positions, double-bond information, and DBE qualifications. The simplified examples are restricted to unmodified diacyl PC."
+  },
+  "small-lipid-official": {
+    "title": "LIPID MAPS. Lipid nomenclature and shorthand resources.",
+    "url": "https://www.lipidmaps.org/lipid_nomenclature",
+    "note": "Official current landing page for full nomenclature and fast-track rules. The old shorthand_nomenclature URL returned 404 and is not used."
+  },
+  "small-lipid-checklist-form": {
+    "title": "Lipidomics Standards Initiative. Lipid class description.",
+    "url": "https://lipidomicstandards.org/lipid-class-description/",
+    "note": "Official reporting form: polarity, ion forms, fragments, standards, isotope overlap, background, isomer overlap, and quantification fields. Read-only inspection; no form submitted."
+  },
+  "small-lipid-class-fragments": {
+    "title": "Lipidomics Standards Initiative. Lipid class specific fragments.",
+    "url": "https://lipidomicstandards.org/lipid-class-specific-fragments/",
+    "note": "Official table lists the phosphocholine product near m/z 184.0733 for protonated PC and SM and limits the structural claim to sum composition."
+  },
+  "small-lipid-monitoring": {
+    "title": "Lipidomics Standards Initiative. MS – Lipid ion monitoring.",
+    "url": "https://lipidomicstandards.org/ms-lipid-ion-monitoring/",
+    "note": "Official guidance relating measurement methods to structural detail. Example method labels are not treated as universal sufficiency guarantees."
+  },
+  "small-ozid": {
+    "title": "Thomas et al. (2008). Ozone-induced dissociation: elucidation of double bond position within mass-selected lipid ions. Analytical Chemistry 80, 303–311.",
+    "url": "https://doi.org/10.1021/ac7017684",
+    "note": "Primary methodological report. Used only for the role of ozone-induced dissociation in double-bond localization, not for generalized isomer resolution or quantification claims."
+  },
+  "small-pb": {
+    "title": "Hu, Xia, and Ma (2021). Comprehensive Structural Characterization of Lipids by Coupling Paternò–Büchi Reaction and Tandem Mass Spectrometry. Methods in Molecular Biology 2306, 53–60.",
+    "url": "https://doi.org/10.1007/978-1-0716-1410-5_4",
+    "note": "Original methods chapter by method developers. Abstract verifies double-bond-sensitive photochemical derivatization and diagnostic MS/MS; no protocol conditions or performance claims are reproduced."
+  },
+  "small-lipid-separation": {
+    "title": "Lipidomics Standards Initiative. Separation MS.",
+    "url": "https://lipidomicstandards.org/separation-ms/",
+    "note": "Official guidance on retention context and demonstrating lipid-isomer discrimination with standards or appropriate retention models."
+  },
+  "small-lipid-reporting": {
+    "title": "Kopczynski et al. (2024). The lipidomics reporting checklist a framework for transparency of lipidomic experiments and repurposing resource data. Journal of Lipid Research 65, 100621.",
+    "url": "https://doi.org/10.1016/j.jlr.2024.100621",
+    "note": "Primary community reporting framework. Supports documenting identification, quantification, and quality information; no checklist completion implies automatic analytical validity."
+  },
+  "small-im-reporting": {
+    "title": "Gabelica et al. (2019). Recommendations for reporting ion mobility Mass Spectrometry measurements. Mass Spectrometry Reviews 38, 291–320.",
+    "url": "https://doi.org/10.1002/mas.21585",
+    "note": "Community reporting recommendations. Supports separating arrival time, mobility, and model-derived CCS; reporting ion species, gas, temperature, reduced field, calibration, and uncertainty."
+  },
+  "small-im-definition": {
+    "title": "IUPAC Gold Book. Ion mobility spectrometry, entry 12442.",
+    "url": "https://goldbook.iupac.org/terms/view/12442",
+    "note": "Official definition based on IUPAC Recommendations 2013: gas-phase separation under an electric field."
+  },
+  "small-im-interlab": {
+    "title": "Stow et al. (2017). An Interlaboratory Evaluation of Drift Tube Ion Mobility-Mass Spectrometry Collision Cross Section Measurements. Analytical Chemistry 89, 9048–9055.",
+    "url": "https://doi.org/10.1021/acs.analchem.7b01729",
+    "note": "Primary interlaboratory comparison of stepped-field and calibrated single-field nitrogen CCS. Numerical performance is not generalized to other platforms or methods."
+  },
+  "small-im-twave": {
+    "title": "Shvartsburg and Smith (2008). Fundamentals of Traveling Wave Ion Mobility Spectrometry. Analytical Chemistry 80, 9689–9699.",
+    "url": "https://doi.org/10.1021/ac8016295",
+    "note": "Primary theoretical and numerical study. Supports nonlinear traveling-wave transport versus uniform-field drift motion and method-specific conversion requirements."
+  },
+  "small-im-tims": {
+    "title": "Fernandez-Lima et al. (2011). Gas-phase separation using a trapped ion mobility spectrometer. International Journal for Ion Mobility Spectrometry 14, 93–98.",
+    "url": "https://doi.org/10.1007/s12127-011-0067-8",
+    "note": "Primary TIMS principles paper. Supports opposing gas flow and electric field with controlled release; no commercial resolving-power claim is adopted."
+  },
+  "small-im-dms": {
+    "title": "Krylov et al. (2010). Selection and generation of waveforms for differential mobility spectrometry. Review of Scientific Instruments 81, 024101.",
+    "url": "https://doi.org/10.1063/1.3284507",
+    "note": "Primary theory/experiment paper. Supports separation based on field-dependent mobility and waveform-dependent compensation behavior."
+  },
+  "small-im-database": {
+    "title": "Zheng et al. (2017). A structural examination and collision cross section database for over 500 metabolites and xenobiotics using drift tube ion mobility spectrometry. Chemical Science 8, 7724–7736.",
+    "url": "https://doi.org/10.1039/C7SC03464D",
+    "note": "Primary nitrogen drift-tube CCS study of small molecules and different ion forms. Supports CCS as an additional candidate constraint, not a universal unique identifier."
   }
 }

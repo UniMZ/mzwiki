@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Site localization</strong> determines where a modification is placed within an identified peptide or protein sequence. Alternative positions can have identical precursor masses. Localization therefore evaluates evidence that distinguishes those placements, often site-determining fragment ions, rather than relying only on overall peptide-spectrum agreement. Ascore provides an early probability-based approach to this problem. <a href="#ref-prot-ascore">[1]</a></p>
+<h2 id="example">Ask whether a fragment separates the candidates</h2>
+<p><strong>Constructed example:</strong> in <code>ASSTK</code> with one phosphate allowed at S2 or S3, a modification-retaining b2 fragment contains only S2. Its predicted mass differs between the two placements. A b3 fragment contains both sites and has the same mass under either placement. This simplified example assumes b/y backbone fragmentation without modification loss; it does not guarantee detectable fragments.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Correct peptide identification does not guarantee correct localization. Localization scores, calibrated site probabilities, and estimated false localization rates are different quantities. PTMProphet models positional confidence and shows how it can support localization-error estimation. State the method, allowed positions, threshold, and reporting unit. <a href="#ref-prot-ptmprophet">[2]</a></p>
+<p>Retain ambiguous positions when evidence cannot distinguish them. Even a confidently localized peptide position can map to multiple protein accessions, so protein assignment and residue numbering remain separate checks.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/ptm-analysis-site-localization/#localization">Compare site-determining fragments</a></li></ul>

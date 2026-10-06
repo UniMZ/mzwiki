@@ -1,0 +1,527 @@
+{
+  "schema": "mzwiki-quantification-design-qc-teaching-fixtures-v1",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "status": "Constructed educational examples, not experimental results, validated assay procedures, or regulatory advice",
+  "arithmetic": "Calculate before rounding. Sample SD uses n-1. Rank checks use exact rational arithmetic.",
+  "cases": [
+    {
+      "id": "linear_calibration_inversion",
+      "kind": "calibration",
+      "input": {
+        "concentrations_ng_ml": [
+          1,
+          2,
+          5,
+          10
+        ],
+        "slope_ml_ng": 0.05,
+        "intercept": 0.02,
+        "unknown_response": 0.32,
+        "dilution_factor": 5
+      },
+      "expected": {
+        "responses": [
+          0.07,
+          0.12,
+          0.27,
+          0.52
+        ],
+        "measured_solution_ng_ml": 6.0,
+        "original_sample_ng_ml": 30.0,
+        "zero_intercept_ng_ml": 6.4,
+        "zero_intercept_relative_error_percent": 6.666666666666667
+      },
+      "assumptions": [
+        "The concentration-response relationship is stipulated, not fitted from experimental data",
+        "Supported measured-solution interval is 1–10 ng/mL",
+        "Fivefold dilution is separately validated",
+        "The four table rows illustrate an equation and do not validate a real assay"
+      ]
+    },
+    {
+      "id": "linear_lower_limit_estimates",
+      "kind": "lower_limits",
+      "input": {
+        "response_sd": 0.003,
+        "slope_ml_ng": 0.05,
+        "dl_multiplier": 3.3,
+        "ql_multiplier": 10
+      },
+      "expected": {
+        "dl_ng_ml": 0.198,
+        "ql_ng_ml": 0.6
+      },
+      "assumptions": [
+        "Illustrates ICH Q2(R2) linear-response estimates with an appropriate response standard deviation",
+        "Not new validated limits for the earlier 1–10 ng/mL calibration example",
+        "Does not infer exact detection error probabilities"
+      ]
+    },
+    {
+      "id": "precision_and_reference_difference",
+      "kind": "reference_difference",
+      "input": {
+        "reference_ng_ml": 10.0,
+        "measurements_ng_ml": [
+          9.0,
+          9.1,
+          8.9
+        ]
+      },
+      "expected": {
+        "mean_ng_ml": 9.0,
+        "mean_minus_reference_ng_ml": -1.0,
+        "relative_difference_percent": -10.0
+      },
+      "assumptions": [
+        "Constructed values show repeated agreement need not imply closeness to the reference"
+      ]
+    },
+    {
+      "id": "replicate_hierarchy",
+      "kind": "replicates",
+      "input": {
+        "donors": 8,
+        "preparations_per_donor": 2,
+        "injections_per_preparation": 3
+      },
+      "expected": {
+        "preparations": 16,
+        "injections": 48,
+        "donor_level_units": 8
+      },
+      "assumptions": [
+        "Eight donors are independently sampled",
+        "Higher-level intervention assignments can change the number of experimental units",
+        "Repeat preparations and injections are not new donors"
+      ]
+    },
+    {
+      "id": "balanced_design_rank",
+      "kind": "matrix_rank",
+      "input": {
+        "condition": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "batch": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "C",
+          "C",
+          "C",
+          "C"
+        ]
+      },
+      "expected": {
+        "independent_units": 12,
+        "units_per_condition": 6,
+        "columns": 4,
+        "rank": 4
+      },
+      "assumptions": [
+        "Additive model intercept + condition + indicator(B) + indicator(C)",
+        "Constructed allocation is not a power recommendation or claim that interactions vanish"
+      ]
+    },
+    {
+      "id": "confounded_design_rank",
+      "kind": "matrix_rank",
+      "input": {
+        "condition": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "batch": [
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      "expected": {
+        "columns": 3,
+        "rank": 2,
+        "separate_effects_identifiable": false
+      },
+      "assumptions": [
+        "Additive model intercept + condition + indicator(B)",
+        "No other identifying information"
+      ]
+    },
+    {
+      "id": "paired_estimands",
+      "kind": "paired_changes",
+      "input": {
+        "before": [
+          10,
+          100,
+          1000
+        ],
+        "after": [
+          20,
+          200,
+          2000
+        ]
+      },
+      "expected": {
+        "ratios": [
+          2,
+          2,
+          2
+        ],
+        "log2_ratios": [
+          1,
+          1,
+          1
+        ],
+        "absolute_changes": [
+          10,
+          100,
+          1000
+        ],
+        "mean_absolute_change": 370.0,
+        "donors": 3
+      },
+      "assumptions": [
+        "Same three donors measured twice",
+        "Means of log ratios and absolute differences answer different questions"
+      ]
+    },
+    {
+      "id": "linear_drift_interpolation",
+      "kind": "drift",
+      "input": {
+        "qc_positions": [
+          1,
+          11
+        ],
+        "qc_responses": [
+          100,
+          80
+        ],
+        "sample_position": 6,
+        "sample_response": 72,
+        "reference_response": 100
+      },
+      "expected": {
+        "predicted_qc_response": 90.0,
+        "corrected_response": 80.0
+      },
+      "assumptions": [
+        "Independent evidence stipulates linear multiplicative drift over the interval",
+        "Two endpoints alone do not establish linearity",
+        "This is not a QC-frequency recommendation or concentration calibration"
+      ]
+    },
+    {
+      "id": "median_scaling_ambiguity",
+      "kind": "median_scaling",
+      "input": {
+        "sample_a": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "sample_b": [
+          20,
+          40,
+          60,
+          80
+        ]
+      },
+      "expected": {
+        "median_a": 25.0,
+        "median_b": 50.0,
+        "factor": 0.5,
+        "scaled_b": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "raw_ratios": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "scaled_ratios": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "assumptions": [
+        "Values are positive constructed responses on a fixed sample denominator",
+        "The same arithmetic removes a technical multiplier or a genuine global biological change",
+        "No explanation can be inferred from the arrays alone"
+      ]
+    },
+    {
+      "id": "sample_cv",
+      "kind": "cv",
+      "input": {
+        "qc_responses": [
+          90,
+          100,
+          110
+        ],
+        "sd_divisor": "n-1"
+      },
+      "expected": {
+        "mean": 100.0,
+        "sample_sd": 10.0,
+        "cv_percent": 10.0
+      },
+      "assumptions": [
+        "Positive ratio-scale response",
+        "Descriptive example, not a universal acceptance threshold"
+      ]
+    },
+    {
+      "id": "internal_standard_ratio",
+      "kind": "is_ratio",
+      "input": {
+        "analyte": [
+          30000,
+          18000
+        ],
+        "standard": [
+          15000,
+          9000
+        ]
+      },
+      "expected": {
+        "ratios": [
+          2,
+          2
+        ],
+        "analyte_multiplier": 0.6,
+        "standard_multiplier": 0.6
+      },
+      "assumptions": [
+        "Same added internal-standard amount",
+        "A shared response multiplier is stipulated",
+        "No absolute concentration follows from the ratio alone"
+      ]
+    },
+    {
+      "id": "loq_dilution_scale",
+      "kind": "dilution_limit",
+      "input": {
+        "measured_solution_loq_ng_ml": 1.0,
+        "dilution_factor": 5
+      },
+      "expected": {
+        "original_sample_loq_ng_ml": 5.0
+      },
+      "assumptions": [
+        "Separate example with a validated LOQ and valid dilution procedure"
+      ]
+    },
+    {
+      "id": "batch_multiplier_ambiguity",
+      "kind": "multiplicative_ambiguity",
+      "input": {
+        "biological_multipliers": [
+          1.5,
+          1.0
+        ],
+        "batch_multipliers": [
+          1.0,
+          1.5
+        ]
+      },
+      "expected": {
+        "predicted_group_ratios": [
+          1.5,
+          1.5
+        ],
+        "effects_separable_from_group_means": false
+      },
+      "assumptions": [
+        "Condition is completely confounded with batch",
+        "No independent identifying information"
+      ]
+    }
+  ],
+  "published_checks": [
+    {
+      "file": "content/en/quantitative-calibration.html",
+      "required_strings": [
+        "0.020 + 0.050c",
+        "(0.320 − 0.020) / 0.050 = 6.0 ng/mL",
+        "5 × 6.0 = 30 ng/mL",
+        "0.320 / 0.050 = 6.4 ng/mL",
+        "6.7%",
+        "DL = 0.198 ng/mL",
+        "QL = 0.600 ng/mL",
+        "−10%"
+      ]
+    },
+    {
+      "file": "content/zh/quantitative-calibration.html",
+      "required_strings": [
+        "0.020 + 0.050c",
+        "(0.320 − 0.020) / 0.050 = 6.0 ng/mL",
+        "5 × 6.0 = 30 ng/mL",
+        "0.320 / 0.050 = 6.4 ng/mL",
+        "6.7%",
+        "DL = 0.198 ng/mL",
+        "QL = 0.600 ng/mL",
+        "−10%"
+      ]
+    },
+    {
+      "file": "content/en/experimental-design.html",
+      "required_strings": [
+        "8 × 2 × 3 = 48",
+        "8 × 2 = 16",
+        "[10, 100, 1000]",
+        "[20, 200, 2000]",
+        "1110 / 3 = 370"
+      ]
+    },
+    {
+      "file": "content/zh/experimental-design.html",
+      "required_strings": [
+        "8 × 2 × 3 = 48",
+        "8 × 2 = 16",
+        "[10, 100, 1000]",
+        "[20, 200, 2000]",
+        "1110 / 3 = 370"
+      ]
+    },
+    {
+      "file": "content/en/qc-normalization.html",
+      "required_strings": [
+        "100 + (6 − 1) × (80 − 100) / (11 − 1) = 90",
+        "72 × 100 / 90 = 80",
+        "[10, 20, 30, 40]",
+        "[20, 40, 60, 80]",
+        "25 / 50 = 0.5",
+        "[90, 100, 110]",
+        "10%"
+      ]
+    },
+    {
+      "file": "content/zh/qc-normalization.html",
+      "required_strings": [
+        "100 + (6 − 1) × (80 − 100) / (11 − 1) = 90",
+        "72 × 100 / 90 = 80",
+        "[10, 20, 30, 40]",
+        "[20, 40, 60, 80]",
+        "25 / 50 = 0.5",
+        "[90, 100, 110]",
+        "10%"
+      ]
+    },
+    {
+      "file": "content/terms/en/calibration-curve.html",
+      "required_strings": [
+        "(0.320 − 0.020) / 0.050 = 6.0 ng/mL"
+      ]
+    },
+    {
+      "file": "content/terms/zh/calibration-curve.html",
+      "required_strings": [
+        "(0.320 − 0.020) / 0.050 = 6.0 ng/mL"
+      ]
+    },
+    {
+      "file": "content/terms/en/internal-standard.html",
+      "required_strings": [
+        "30,000/15,000",
+        "18,000/9,000",
+        "0.6"
+      ]
+    },
+    {
+      "file": "content/terms/zh/internal-standard.html",
+      "required_strings": [
+        "30,000/15,000",
+        "18,000/9,000",
+        "0.6"
+      ]
+    },
+    {
+      "file": "content/terms/en/limit-of-detection.html",
+      "required_strings": [
+        "DL = 3.3σ/S",
+        "DL = 0.198 ng/mL"
+      ]
+    },
+    {
+      "file": "content/terms/zh/limit-of-detection.html",
+      "required_strings": [
+        "DL = 3.3σ/S",
+        "DL = 0.198 ng/mL"
+      ]
+    },
+    {
+      "file": "content/terms/en/limit-of-quantification.html",
+      "required_strings": [
+        "QL = 10σ/S",
+        "0.600 ng/mL",
+        "5 × 1.0 = 5.0 ng/mL"
+      ]
+    },
+    {
+      "file": "content/terms/zh/limit-of-quantification.html",
+      "required_strings": [
+        "QL = 10σ/S",
+        "0.600 ng/mL",
+        "5 × 1.0 = 5.0 ng/mL"
+      ]
+    },
+    {
+      "file": "content/terms/en/biological-replicate.html",
+      "required_strings": [
+        "8 × 2 × 3 = 48"
+      ]
+    },
+    {
+      "file": "content/terms/zh/biological-replicate.html",
+      "required_strings": [
+        "8 × 2 × 3 = 48"
+      ]
+    },
+    {
+      "file": "content/terms/en/batch-effect.html",
+      "required_strings": [
+        "1.5"
+      ]
+    },
+    {
+      "file": "content/terms/zh/batch-effect.html",
+      "required_strings": [
+        "1.5"
+      ]
+    }
+  ]
+}

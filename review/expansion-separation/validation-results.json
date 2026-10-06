@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-06",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "guide_pairs": 3,
+  "term_pairs": 6,
+  "html_fragments": 18,
+  "new_references": 13,
+  "reused_references": 4,
+  "word_counts_english": {
+    "sample-preparation": 1126,
+    "lc-separation": 1184,
+    "blanks-carryover": 1169,
+    "retention-time": 203,
+    "chromatographic-peak": 205,
+    "recovery": 210,
+    "matrix-effect": 220,
+    "carryover": 202,
+    "blank": 221
+  },
+  "paired_section_link_numeric_checks": [
+    "sample-preparation",
+    "lc-separation",
+    "blanks-carryover",
+    "retention-time",
+    "chromatographic-peak",
+    "recovery",
+    "matrix-effect",
+    "carryover",
+    "blank"
+  ],
+  "fixture_count": 11,
+  "arithmetic_assertions": 23,
+  "arithmetic_results": [
+    {
+      "id": "sep-amount-volume",
+      "formula": "retained_amount_ng / final_volume_ml",
+      "actual": 150.0,
+      "expected": 150
+    },
+    {
+      "id": "sep-amount-volume",
+      "formula": "retained_amount_ng / final_volume_ml / final_dilution_factor",
+      "actual": 37.5,
+      "expected": 37.5
+    },
+    {
+      "id": "sep-recovery-suppression",
+      "formula": "B_post / A_neat",
+      "actual": 0.8,
+      "expected": 0.8
+    },
+    {
+      "id": "sep-recovery-suppression",
+      "formula": "100 * C_pre / B_post",
+      "actual": 75.0,
+      "expected": 75
+    },
+    {
+      "id": "sep-recovery-suppression",
+      "formula": "100 * C_pre / A_neat",
+      "actual": 60.0,
+      "expected": 60
+    },
+    {
+      "id": "sep-recovery-suppression",
+      "formula": "100 * (1 - B_post / A_neat)",
+      "actual": 19.999999999999996,
+      "expected": 20
+    },
+    {
+      "id": "sep-recovery-enhancement",
+      "formula": "B_post / A_neat",
+      "actual": 1.2,
+      "expected": 1.2
+    },
+    {
+      "id": "sep-recovery-enhancement",
+      "formula": "100 * C_pre / B_post",
+      "actual": 75.0,
+      "expected": 75
+    },
+    {
+      "id": "sep-recovery-enhancement",
+      "formula": "100 * C_pre / A_neat",
+      "actual": 90.0,
+      "expected": 90
+    },
+    {
+      "id": "sep-standard-compensation",
+      "formula": "analyte_MF / tracking_IS_MF",
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "id": "sep-standard-compensation",
+      "formula": "analyte_MF / nontracking_IS_MF",
+      "actual": 0.8,
+      "expected": 0.8
+    },
+    {
+      "id": "sep-retention-factor",
+      "formula": "tR_min - tM_min",
+      "actual": 3.0,
+      "expected": 3.0
+    },
+    {
+      "id": "sep-retention-factor",
+      "formula": "(tR_min - tM_min) / tM_min",
+      "actual": 2.0,
+      "expected": 2.0
+    },
+    {
+      "id": "sep-retention-factor",
+      "formula": "tR_min / tM_min",
+      "actual": 3.0,
+      "expected": 3.0
+    },
+    {
+      "id": "sep-gradient-delay",
+      "formula": "dwell_volume_ml / flow_ml_per_min",
+      "actual": 1.4999999999999998,
+      "expected": 1.5
+    },
+    {
+      "id": "sep-triangle-area",
+      "formula": "0.5 * width_one_s * height_one",
+      "actual": 600.0,
+      "expected": 600
+    },
+    {
+      "id": "sep-triangle-area",
+      "formula": "0.5 * width_two_s * height_two",
+      "actual": 600.0,
+      "expected": 600
+    },
+    {
+      "id": "sep-cycle-intervals",
+      "formula": "defined_interval_s / short_cycle_s",
+      "actual": 12.0,
+      "expected": 12
+    },
+    {
+      "id": "sep-cycle-intervals",
+      "formula": "defined_interval_s / long_cycle_s",
+      "actual": 4.0,
+      "expected": 4
+    },
+    {
+      "id": "sep-carryover-denominators",
+      "formula": "100 * blank_area / high_area",
+      "actual": 0.1,
+      "expected": 0.1
+    },
+    {
+      "id": "sep-carryover-denominators",
+      "formula": "100 * blank_area / low_reference_area",
+      "actual": 50.0,
+      "expected": 50
+    },
+    {
+      "id": "sep-blank-comparison",
+      "formula": "sample_one_area / blank_area",
+      "actual": 3.0,
+      "expected": 3
+    },
+    {
+      "id": "sep-blank-comparison",
+      "formula": "sample_two_area / blank_area",
+      "actual": 6.0,
+      "expected": 6
+    }
+  ],
+  "passed_check_count": 426,
+  "errors": [],
+  "warnings": [],
+  "not_performed": [
+    "Repository build or mutation",
+    "Production test-runner integration",
+    "Browser rendering or accessibility interaction testing",
+    "Deployment or live-site verification"
+  ]
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "slug": "sample-preparation",
+    "title": "Sample preparation & recovery",
+    "zh_title": "样品前处理与回收率",
+    "summary": "Choose a preparation strategy and separate analyte loss, matrix-dependent response, and overall process response using matched comparisons.",
+    "zh_summary": "选择前处理策略，并用匹配比较区分分析物损失、基质相关响应与总过程响应。",
+    "group": "Methods",
+    "prereqs": [
+      "what-ms-measures",
+      "ionization"
+    ],
+    "related": [
+      "lc-separation",
+      "blanks-carryover",
+      "data-analysis"
+    ],
+    "refs": [
+      "sep-sample-handbook",
+      "sep-ppt-study",
+      "sep-recovery-matrix",
+      "sep-m10",
+      "esi-suppression",
+      "sep-matrix-assessment"
+    ]
+  },
+  {
+    "slug": "lc-separation",
+    "title": "Liquid chromatography for MS",
+    "zh_title": "面向质谱的液相色谱分离",
+    "summary": "Connect retention, separation mode, gradient delivery, peak shape, and acquisition timing to the evidence in an LC-MS trace.",
+    "zh_summary": "把保留、分离模式、梯度输送、峰形与采集时序联系起来，理解 LC-MS 轨迹中的证据。",
+    "group": "Methods",
+    "prereqs": [
+      "ionization",
+      "sample-preparation"
+    ],
+    "related": [
+      "acquisition",
+      "data-analysis",
+      "blanks-carryover"
+    ],
+    "refs": [
+      "retention-time-definition",
+      "sep-retention-factor",
+      "sep-separation-modes",
+      "sep-lc-handbook",
+      "sep-peak-definition",
+      "sep-peak-area",
+      "targeted-timing"
+    ]
+  },
+  {
+    "slug": "blanks-carryover",
+    "title": "Blanks, carryover & contamination",
+    "zh_title": "空白、进样残留与污染",
+    "summary": "Choose informative blanks, use sequence history to investigate unexpected signals, and interpret carryover percentages with explicit denominators.",
+    "zh_summary": "选择有信息价值的空白，利用序列历史调查意外信号，并明确分母来解释残留百分比。",
+    "group": "Methods",
+    "prereqs": [
+      "sample-preparation",
+      "lc-separation"
+    ],
+    "related": [
+      "data-analysis",
+      "acquisition"
+    ],
+    "refs": [
+      "mqacc-reporting",
+      "sep-epa-blanks",
+      "sep-carryover",
+      "sep-carryover-diagnostics",
+      "sep-m10"
+    ]
+  }
+]

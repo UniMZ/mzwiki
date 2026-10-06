@@ -1,0 +1,102 @@
+{
+  "small-formula-rules": {
+    "title": "Kind and Fiehn (2007). Seven Golden Rules for heuristic filtering of molecular formulas obtained by accurate mass spectrometry. BMC Bioinformatics 8, 105.",
+    "url": "https://doi.org/10.1186/1471-2105-8-105",
+    "note": "Primary method paper. Supports formula filtering with isotope, element, and chemical constraints; no benchmark success rate or universal exclusion rule is adopted."
+  },
+  "small-formula-definition": {
+    "title": "IUPAC Gold Book. Molecular formula, entry M03987.",
+    "url": "https://goldbook.iupac.org/terms/view/M03987",
+    "note": "Official definition of molecular formula. Indexed official definition verified; direct HTML retrieval returned 403. The composition-versus-structure teaching distinction is explained in original prose."
+  },
+  "small-isomer-definition": {
+    "title": "IUPAC Gold Book. Isomer, entry I03289.",
+    "url": "https://goldbook.iupac.org/terms/view/I03289",
+    "note": "Official definition: same atomic composition with different constitutional or stereochemical formulas. Official indexed PDF verified; direct HTML retrieval returned 403."
+  },
+  "small-massbank": {
+    "title": "MassBank consortium. About MassBank.",
+    "url": "https://massbank.github.io/MassBank-documentation/about.html",
+    "note": "Official description of a reference spectral library and chemical/experimental record metadata. No coverage or accuracy benchmark is inferred."
+  },
+  "small-lipid-notation": {
+    "title": "Liebisch et al. (2020). Update on LIPID MAPS classification, nomenclature, and shorthand notation for MS-derived lipid structures. Journal of Lipid Research 61, 1539–1555.",
+    "url": "https://doi.org/10.1194/jlr.S120001025",
+    "note": "Community nomenclature standard. Supports evidence-dependent naming, chain composition, sn positions, double-bond information, and DBE qualifications. The simplified examples are restricted to unmodified diacyl PC."
+  },
+  "small-lipid-official": {
+    "title": "LIPID MAPS. Lipid nomenclature and shorthand resources.",
+    "url": "https://www.lipidmaps.org/lipid_nomenclature",
+    "note": "Official current landing page for full nomenclature and fast-track rules. The old shorthand_nomenclature URL returned 404 and is not used."
+  },
+  "small-lipid-checklist-form": {
+    "title": "Lipidomics Standards Initiative. Lipid class description.",
+    "url": "https://lipidomicstandards.org/lipid-class-description/",
+    "note": "Official reporting form: polarity, ion forms, fragments, standards, isotope overlap, background, isomer overlap, and quantification fields. Read-only inspection; no form submitted."
+  },
+  "small-lipid-class-fragments": {
+    "title": "Lipidomics Standards Initiative. Lipid class specific fragments.",
+    "url": "https://lipidomicstandards.org/lipid-class-specific-fragments/",
+    "note": "Official table lists the phosphocholine product near m/z 184.0733 for protonated PC and SM and limits the structural claim to sum composition."
+  },
+  "small-lipid-monitoring": {
+    "title": "Lipidomics Standards Initiative. MS – Lipid ion monitoring.",
+    "url": "https://lipidomicstandards.org/ms-lipid-ion-monitoring/",
+    "note": "Official guidance relating measurement methods to structural detail. Example method labels are not treated as universal sufficiency guarantees."
+  },
+  "small-ozid": {
+    "title": "Thomas et al. (2008). Ozone-induced dissociation: elucidation of double bond position within mass-selected lipid ions. Analytical Chemistry 80, 303–311.",
+    "url": "https://doi.org/10.1021/ac7017684",
+    "note": "Primary methodological report. Used only for the role of ozone-induced dissociation in double-bond localization, not for generalized isomer resolution or quantification claims."
+  },
+  "small-pb": {
+    "title": "Hu, Xia, and Ma (2021). Comprehensive Structural Characterization of Lipids by Coupling Paternò–Büchi Reaction and Tandem Mass Spectrometry. Methods in Molecular Biology 2306, 53–60.",
+    "url": "https://doi.org/10.1007/978-1-0716-1410-5_4",
+    "note": "Original methods chapter by method developers. Abstract verifies double-bond-sensitive photochemical derivatization and diagnostic MS/MS; no protocol conditions or performance claims are reproduced."
+  },
+  "small-lipid-separation": {
+    "title": "Lipidomics Standards Initiative. Separation MS.",
+    "url": "https://lipidomicstandards.org/separation-ms/",
+    "note": "Official guidance on retention context and demonstrating lipid-isomer discrimination with standards or appropriate retention models."
+  },
+  "small-lipid-reporting": {
+    "title": "Kopczynski et al. (2024). The lipidomics reporting checklist a framework for transparency of lipidomic experiments and repurposing resource data. Journal of Lipid Research 65, 100621.",
+    "url": "https://doi.org/10.1016/j.jlr.2024.100621",
+    "note": "Primary community reporting framework. Supports documenting identification, quantification, and quality information; no checklist completion implies automatic analytical validity."
+  },
+  "small-im-reporting": {
+    "title": "Gabelica et al. (2019). Recommendations for reporting ion mobility Mass Spectrometry measurements. Mass Spectrometry Reviews 38, 291–320.",
+    "url": "https://doi.org/10.1002/mas.21585",
+    "note": "Community reporting recommendations. Supports separating arrival time, mobility, and model-derived CCS; reporting ion species, gas, temperature, reduced field, calibration, and uncertainty."
+  },
+  "small-im-definition": {
+    "title": "IUPAC Gold Book. Ion mobility spectrometry, entry 12442.",
+    "url": "https://goldbook.iupac.org/terms/view/12442",
+    "note": "Official definition based on IUPAC Recommendations 2013: gas-phase separation under an electric field."
+  },
+  "small-im-interlab": {
+    "title": "Stow et al. (2017). An Interlaboratory Evaluation of Drift Tube Ion Mobility-Mass Spectrometry Collision Cross Section Measurements. Analytical Chemistry 89, 9048–9055.",
+    "url": "https://doi.org/10.1021/acs.analchem.7b01729",
+    "note": "Primary interlaboratory comparison of stepped-field and calibrated single-field nitrogen CCS. Numerical performance is not generalized to other platforms or methods."
+  },
+  "small-im-twave": {
+    "title": "Shvartsburg and Smith (2008). Fundamentals of Traveling Wave Ion Mobility Spectrometry. Analytical Chemistry 80, 9689–9699.",
+    "url": "https://doi.org/10.1021/ac8016295",
+    "note": "Primary theoretical and numerical study. Supports nonlinear traveling-wave transport versus uniform-field drift motion and method-specific conversion requirements."
+  },
+  "small-im-tims": {
+    "title": "Fernandez-Lima et al. (2011). Gas-phase separation using a trapped ion mobility spectrometer. International Journal for Ion Mobility Spectrometry 14, 93–98.",
+    "url": "https://doi.org/10.1007/s12127-011-0067-8",
+    "note": "Primary TIMS principles paper. Supports opposing gas flow and electric field with controlled release; no commercial resolving-power claim is adopted."
+  },
+  "small-im-dms": {
+    "title": "Krylov et al. (2010). Selection and generation of waveforms for differential mobility spectrometry. Review of Scientific Instruments 81, 024101.",
+    "url": "https://doi.org/10.1063/1.3284507",
+    "note": "Primary theory/experiment paper. Supports separation based on field-dependent mobility and waveform-dependent compensation behavior."
+  },
+  "small-im-database": {
+    "title": "Zheng et al. (2017). A structural examination and collision cross section database for over 500 metabolites and xenobiotics using drift tube ion mobility spectrometry. Chemical Science 8, 7724–7736.",
+    "url": "https://doi.org/10.1039/C7SC03464D",
+    "note": "Primary nitrogen drift-tube CCS study of small molecules and different ion forms. Supports CCS as an additional candidate constraint, not a universal unique identifier."
+  }
+}

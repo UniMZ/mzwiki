@@ -1,0 +1,78 @@
+[
+  {
+    "slug": "quantitative-calibration",
+    "title": "Quantitative measurement & calibration",
+    "zh_title": "定量测量与校准",
+    "summary": "Turn response into concentration with a defined calibration model, suitable standards, validated limits, and explicit reporting units.",
+    "zh_summary": "通过明确的校准模型、适当标准、已验证的限值及清楚的报告单位，将响应转换为浓度。",
+    "group": "Methods",
+    "prereqs": [
+      "what-ms-measures",
+      "acquisition"
+    ],
+    "related": [
+      "data-analysis",
+      "experimental-design",
+      "qc-normalization"
+    ],
+    "refs": [
+      "quant-vim-calibration",
+      "quant-vim-curve",
+      "quant-ich-m10",
+      "quant-nist-residuals",
+      "quant-nist-weighted",
+      "quant-ich-q2",
+      "quant-vim-detection",
+      "vim-precision"
+    ]
+  },
+  {
+    "slug": "experimental-design",
+    "title": "Experimental design & replication",
+    "zh_title": "实验设计与重复",
+    "summary": "Define independent units, preserve pairing, balance batches, and plan replication around the comparison you want to make.",
+    "zh_summary": "定义独立单位、保留配对、平衡批次，并围绕预期比较规划重复。",
+    "group": "Methods",
+    "prereqs": [
+      "what-ms-measures",
+      "data-analysis"
+    ],
+    "related": [
+      "quantitative-calibration",
+      "qc-normalization",
+      "data-analysis"
+    ],
+    "refs": [
+      "analysis-reporting",
+      "quant-experimental-units",
+      "quant-nist-blocking",
+      "quant-nist-nested",
+      "quant-nist-sample-size"
+    ]
+  },
+  {
+    "slug": "qc-normalization",
+    "title": "QC, batch effects & normalization",
+    "zh_title": "质控、批次效应与归一化",
+    "summary": "Use controls to diagnose drift, test correction assumptions, and distinguish a cleaner matrix from a more defensible measurement.",
+    "zh_summary": "利用质控诊断漂移、检验校正假设，并区分更整齐的数据矩阵与更有依据的测量。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis",
+      "experimental-design"
+    ],
+    "related": [
+      "quantitative-calibration",
+      "experimental-design",
+      "acquisition"
+    ],
+    "refs": [
+      "mqacc-reporting",
+      "quant-batch-correction",
+      "normalization-comparison",
+      "missingness-benchmark",
+      "analysis-reporting",
+      "vim-precision"
+    ]
+  }
+]
