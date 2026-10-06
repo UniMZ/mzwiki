@@ -103,5 +103,80 @@
     "title": "Leite, Hajivandi, Diller & Pope (2004). Removal of sodium and potassium adducts using a matrix additive during matrix-associated laser desorption/ionization time-of-flight mass spectrometric analysis of peptides. Rapid Communications in Mass Spectrometry 18, 2953–2959.",
     "url": "https://doi.org/10.1002/rcm.1711",
     "note": "Primary peptide experiments document alkali-metal adduct patterns and matrix-cluster interference; used to qualify salt-tolerance claims. Metadata and abstract verified through PubMed PMID 15536629."
+  },
+  "charge-number": {
+    "title": "IUPAC (1994). Quantities and units for electrophoresis in the clinical laboratory. Pure and Applied Chemistry 66, 891–896.",
+    "url": "https://old.iupac.org/publications/pac/1994/pdf/6604x0891.pdf",
+    "note": "Page 893 defines an ion's signed charge number as electric charge divided by the elementary charge; positive for cations, negative for anions."
+  },
+  "adduct-definition": {
+    "title": "IUPAC Gold Book. Adduct ion, entry A00139.",
+    "url": "https://goldbook.iupac.org/terms/view/A00139",
+    "note": "Atom retention and association in the definition of an adduct ion; read alongside the revised 2013 mass-spectrometry recommendations."
+  },
+  "sodium": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Sodium.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+    "note": "Neutral sodium-23 relative atomic mass 22.9897692820; the example subtracts one electron mass to approximate sodium-cation mass."
+  },
+  "isotopologue-definition": {
+    "title": "IUPAC (1994). Glossary of terms used in physical organic chemistry: isotopologue and isotopomer.",
+    "url": "https://iupac.qmul.ac.uk/gtpoc/I.html",
+    "note": "Definitions distinguish isotope composition from isotope positions. The linked IUPAC glossary provides both entries."
+  },
+  "monoisotopic-definition": {
+    "title": "IUPAC Gold Book. Monoisotopic mass, entry 12495.",
+    "url": "https://goldbook.iupac.org/terms/view/12495",
+    "note": "Defines the isotope choice as the most abundant isotope of each element; derived from IUPAC Recommendations 2013."
+  },
+  "exact-mass-definition": {
+    "title": "IUPAC Gold Book. Exact mass, entry 12407.",
+    "url": "https://goldbook.iupac.org/terms/view/12407",
+    "note": "A calculated mass for a specified isotope composition; not synonymous with experimentally measured accurate mass."
+  },
+  "hydrogen": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Hydrogen.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
+    "note": "Neutral hydrogen-1 relative atomic mass 1.00782503223, used in the water example."
+  },
+  "oxygen": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Oxygen.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+    "note": "Oxygen-16 and oxygen-18 relative atomic masses 15.99491461957 and 17.99915961286, with representative isotope compositions."
+  },
+  "average-mass-definition": {
+    "title": "IUPAC Gold Book. Average mass, entry 12341.",
+    "url": "https://goldbook.iupac.org/terms/view/12341",
+    "note": "Mass weighted by isotopic composition; distinct from monoisotopic mass."
+  },
+  "vim-accuracy": {
+    "title": "JCGM. International Vocabulary of Metrology, VIM3, entry 2.13: measurement accuracy.",
+    "url": "https://jcgm.bipm.org/vim/en/2.13.html",
+    "note": "Accuracy is a qualitative concept and is distinguished from precision; the entry includes informative annotations."
+  },
+  "vim-error": {
+    "title": "JCGM. International Vocabulary of Metrology, VIM3, entry 2.16: measurement error.",
+    "url": "https://jcgm.bipm.org/vim/en/2.16.html",
+    "note": "Defines error as measured value minus reference value; basis of the explicitly signed example."
+  },
+  "mass-accuracy-usage": {
+    "title": "IUPAC Gold Book. Mass accuracy, entry 09406.",
+    "url": "https://goldbook.iupac.org/terms/view/09406",
+    "note": "Surface-analysis terminology from IUPAC Recommendations 2020 uses measured mass minus reference mass; included to make differing conventions explicit."
+  },
+  "vim-precision": {
+    "title": "JCGM. International Vocabulary of Metrology, VIM3, entry 2.15: measurement precision.",
+    "url": "https://jcgm.bipm.org/vim/en/2.15.html",
+    "note": "Agreement among replicate measurements under specified conditions; not a synonym for accuracy."
+  },
+  "accurate-mass-definition": {
+    "title": "IUPAC Gold Book. Accurate mass, entry 12326.",
+    "url": "https://goldbook.iupac.org/terms/view/12326",
+    "note": "Experimentally determined ion mass of known charge; distinguishes measured accurate mass from calculated exact mass."
+  },
+  "resolution-definition": {
+    "title": "IUPAC Gold Book. Resolution in mass spectroscopy, entry R05318 (archived edition).",
+    "url": "https://www.old.goldbook.iupac.org/html/R/R05318.html",
+    "note": "Documents FWHM and 10% valley conventions. Historical terminology is read alongside the IUPAC Recommendations 2013 discussion, rather than treated as a universal naming rule."
   }
 }

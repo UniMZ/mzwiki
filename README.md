@@ -43,6 +43,8 @@ Start the local server first. Set `MZWIKI_BASE_URL` and `MZWIKI_CHROMIUM` to ove
 
 - `content/articles.json`: ordered guide metadata, translation titles, prerequisites, related guides, and reference keys.
 - `content/en/*.html`, `content/zh/*.html`: trusted article-body HTML fragments. Edit these, not the generated pages.
+- `content/terms.json` and `content/terms/{en,zh}/*.html`: the separate Terminology collection and paired term bodies.
+- `terms/`, `zh/terms/`: generated terminology index and paired term pages.
 - `content/references.json`: shared bibliography with verified source identifiers.
 - `scripts/build.py`: shared templates, homepage, article pages, sitemap, and search-index generation.
 - `assets/`: shared CSS, small progressive-enhancement script, favicon, and generated search index.
@@ -75,6 +77,18 @@ The ionization guide has nine constructed ion-form examples in `tests/fixtures/i
 ```sh
 python3 scripts/check_ionization.py
 ```
+
+## Terminology integration
+
+Terminology entries are a separate collection from the eight numbered Guides. Their metadata defines ordered references, `related_guides`, and `related_terms`. Guide pages derive reciprocal term links from that metadata; Guide source prose remains unchanged. Search records include `kind: "guide"` or `kind: "term"`, and the search page can filter by collection and language.
+
+After building, validate the supplied terminology fixtures and paired examples:
+
+```sh
+python3 scripts/check_terms.py
+```
+
+The structural checker includes both collections, citation numbering, generated-body consistency, and exact sitemap coverage. Browser checks cover the term index, same-term language switches, collection filters, cross-links, and reading without JavaScript.
 
 ## GitHub Pages deployment
 

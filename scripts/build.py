@@ -9,12 +9,14 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = 'https://mzwiki.unimz.org'
 REPO = 'https://github.com/UniMZ/mzwiki'
 ARTICLES = json.loads((ROOT / 'content/articles.json').read_text())
+TERMS = json.loads((ROOT / 'content/terms.json').read_text())
+TERM_BY_SLUG = {a['slug']: a for a in TERMS}
 REFS = json.loads((ROOT / 'content/references.json').read_text())
 BY_SLUG = {a['slug']: a for a in ARTICLES}
 e = html.escape
 
-def url(slug, lang='en'):
-    return ('/zh' if lang == 'zh' else '') + '/guides/' + slug + '/'
+def url(slug, lang='en', kind='guide'):
+    return ('/zh' if lang == 'zh' else '') + ('/terms/' if kind == 'term' else '/guides/') + slug + '/'
 
 def plain(text):
     return re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', ' ', text))).strip()
@@ -28,7 +30,7 @@ HEADER = f'''<a class="skip" href="#main">Skip to content</a>
 <header class="header" lang="en"><div class="header-inner">
 <a class="brand" href="/" aria-label="mzwiki home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><em>mz</em>wiki</span></a>
 <span class="tagline">A mass spectrometry<br>knowledge commons</span>
-<nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search <span aria-hidden="true">/</span></a></nav>
+<nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/terms/">Terminology</a><a class="about-nav" href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search <span aria-hidden="true">/</span></a></nav>
 </div></header>'''
 FOOTER = f'''<footer lang="en"><div class="container footer-inner"><span><strong>mzwiki</strong> · A UniMZ knowledge project</span><div class="footer-links"><a href="/about/">About &amp; editorial approach</a><a href="{REPO}/blob/main/CONTRIBUTING.md">Contribute</a><a href="{REPO}">Source →</a></div></div></footer>'''
 
@@ -41,14 +43,18 @@ def page(title, description, body, path='/', lang='en', alternates=''):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script defer src="/assets/site.js"></script></head>
 <body>{HEADER}{body}{FOOTER}</body></html>\n'''
 
-def navigation(active=''):
+def navigation(active='', kind='guide'):
     parts=[]
     group=None
     for a in ARTICLES:
         if a['group'] != group:
             group=a['group'];parts.append(f'<small>{e(group)}</small>')
-        attrs=' class="active" aria-current="page"' if a['slug']==active else ''
+        attrs=' class="active" aria-current="page"' if kind=='guide' and a['slug']==active else ''
         parts.append(f'<a{attrs} href="{url(a["slug"])}">{e(a["title"])}</a>')
+    parts.append('<small>Terminology</small>')
+    for t in TERMS:
+        attrs=' class="active" aria-current="page"' if kind=='term' and t['slug']==active else ''
+        parts.append(f'<a{attrs} href="{url(t["slug"],kind="term")}">{e(t["title"])}</a>')
     return ''.join(parts)
 
 spectrum='''<figure class="spectrum-card"><div class="figure-top"><span>Reading the invisible</span><span class="figure-tag">MS / 001</span></div>
@@ -69,22 +75,35 @@ home=f'''<main id="main" class="container"><section class="hero"><div><div class
 <aside class="note-band"><h3>Built around understanding.</h3><p>Concepts, principles, and methods are the focus here. Worked examples connect the ideas; references let you go deeper. Chinese translations are available from each article, with the same topic one click away.</p></aside></main>'''
 write('index.html',page('Understand mass spectrometry','A practical mass spectrometry wiki: foundational concepts, instruments, methods, and reliable data analysis.',home))
 search_index=[]
-for a in ARTICLES:
+for kind,a in [('guide',a) for a in ARTICLES]+[('term',t) for t in TERMS]:
     for lang in ('en','zh'):
         slug=a['slug'];title=a['title'] if lang=='en' else a['zh_title'];summary=a['summary'] if lang=='en' else a['zh_summary']
-        body=(ROOT/'content'/lang/(slug+'.html')).read_text()
+        source=Path('content')/('terms' if kind=='term' else '')/lang/(slug+'.html')
+        body=(ROOT/source).read_text()
         heads=re.findall(r'<h2 id="([^"]+)">(.*?)</h2>',body)
         toc=''.join(f'<a href="#{ident}">{e(plain(label))}</a>' for ident,label in heads)
-        prereqs=', '.join(f'<a href="{url(s,lang)}">{e(BY_SLUG[s]["title"] if lang=="en" else BY_SLUG[s]["zh_title"])}</a>' for s in a['prereqs']) or 'No prior MS knowledge needed.'
+        prereqs=', '.join(f'<a href="{url(s,lang)}">{e(BY_SLUG[s]["title"] if lang=="en" else BY_SLUG[s]["zh_title"])}</a>' for s in a.get('prereqs',[])) or 'No prior MS knowledge needed.'
         refs=''.join(f'<li id="ref-{r}"><a href="{e(REFS[r]["url"],quote=True)}">{e(REFS[r]["title"])}</a><p>{e(REFS[r]["note"])}</p></li>' for r in a['refs'])
-        related=''.join(f'<a href="{url(s,lang)}">{e(BY_SLUG[s]["title"] if lang=="en" else BY_SLUG[s]["zh_title"])} →</a>' for s in a['related'])
-        languages=''.join(f'<strong aria-current="page">{label}</strong>' if l==lang else f'<a data-language-switch href="{url(slug,l)}" hreflang="{l}" lang="{l}" aria-label="Read this article in {"English" if l=="en" else "Chinese"}">{label}</a>' for l,label in [('en','EN'),('zh','ZH')])
-        alternates=''.join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{url(slug,l)}">' for l in ('en','zh'))+f'<link rel="alternate" hreflang="x-default" href="{SITE}{url(slug)}">'
-        article=f'''<div class="page-layout"><aside class="sidebar" lang="en" aria-label="Guide navigation"><p class="sidebar-title">Explore the guides</p>{navigation(slug)}</aside><main id="main" class="article"><details class="mobile-index"><summary>All guides</summary>{navigation(slug)}</details><div class="breadcrumb"><a href="/">Home</a> / <a href="/#guides">Guides</a> / {e(a['group'])}</div><div class="eyebrow">Guide {ARTICLES.index(a)+1:02d} · {e(a['group'])}</div><h1 lang="{lang}">{e(title)}</h1><p class="article-lead" lang="{lang}">{e(summary)}</p><div class="article-meta" lang="en"><span>FOUNDATIONAL GUIDE · OCT 2026</span><nav class="language" aria-label="Article language">{languages}</nav></div><div class="prerequisites"><strong>Before you begin: </strong>{prereqs}</div><div class="prose" lang="{lang}">{body}</div><section class="references" lang="en" aria-labelledby="references"><h2 id="references">References &amp; further reading</h2><ol>{refs}</ol></section><section class="related"><h2>Continue exploring</h2><div class="related-links">{related}</div></section><div class="article-end"><span>Help make this guide clearer.</span><a href="{REPO}/edit/main/content/{lang}/{slug}.html">Edit this article →</a><a href="{REPO}/issues/new?template=content.yml">Suggest a correction →</a></div></main><aside class="toc" aria-label="On this page"><p class="sidebar-title">On this page</p>{toc}<a href="#references">References</a></aside></div>'''
-        write(url(slug,lang).strip('/')+'/index.html',page(title,summary,article,url(slug,lang),lang,alternates))
-        search_index.append(dict(title=title,summary=summary,url=url(slug,lang),lang=lang,group=a['group'],text=plain(body)))
+        related=''.join(f'<a href="{url(s,lang)}">{e(BY_SLUG[s]["title"] if lang=="en" else BY_SLUG[s]["zh_title"])} →</a>' for s in a.get('related',a.get('related_guides',[])))
+        term_slugs=a['related_terms'] if kind=='term' else [t['slug'] for t in TERMS if slug in t['related_guides']]
+        term_links=''.join(f'<a href="{url(t,lang,"term")}">{e(TERM_BY_SLUG[t]["title"] if lang=="en" else TERM_BY_SLUG[t]["zh_title"])} →</a>' for t in term_slugs)
+        related_section=f'<section class="related"><h2>{"Related Guides" if kind=="term" else "Continue exploring"}</h2><div class="related-links">{related}</div></section>'
+        if term_links:
+            related_section+=f'<section class="related"><h2>Related terminology</h2><div class="related-links">{term_links}</div></section>'
+        prereq_section=f'<div class="prerequisites"><strong>Before you begin: </strong>{prereqs}</div>' if kind=='guide' else ''
+        collection='Terminology' if kind=='term' else 'Guides'
+        collection_url='/terms/' if kind=='term' else '/#guides'
+        eyebrow='Terminology' if kind=='term' else f'Guide {ARTICLES.index(a)+1:02d} · {e(a["group"])}'
+        languages=''.join(f'<strong aria-current="page">{label}</strong>' if l==lang else f'<a data-language-switch href="{url(slug,l,kind)}" hreflang="{l}" lang="{l}" aria-label="Read this article in {"English" if l=="en" else "Chinese"}">{label}</a>' for l,label in [('en','EN'),('zh','ZH')])
+        alternates=''.join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{url(slug,l,kind)}">' for l in ('en','zh'))+f'<link rel="alternate" hreflang="x-default" href="{SITE}{url(slug,kind=kind)}">'
+        article=f'''<div class="page-layout"><aside class="sidebar" lang="en" aria-label="Knowledge navigation"><p class="sidebar-title">Explore the wiki</p>{navigation(slug,kind)}</aside><main id="main" class="article"><details class="mobile-index"><summary>Guides &amp; terminology</summary>{navigation(slug,kind)}</details><div class="breadcrumb"><a href="/">Home</a> / <a href="{collection_url}">{collection}</a></div><div class="eyebrow">{eyebrow}</div><h1 lang="{lang}">{e(title)}</h1><p class="article-lead" lang="{lang}">{e(summary)}</p><div class="article-meta" lang="en"><span>{"TERM ENTRY" if kind=="term" else "FOUNDATIONAL GUIDE"} · OCT 2026</span><nav class="language" aria-label="Article language">{languages}</nav></div>{prereq_section}<div class="prose" lang="{lang}">{body}</div><section class="references" lang="en" aria-labelledby="references"><h2 id="references">References &amp; further reading</h2><ol>{refs}</ol></section>{related_section}<div class="article-end"><span>Help make this article clearer.</span><a href="{REPO}/edit/main/{source.as_posix()}">Edit this article →</a><a href="{REPO}/issues/new?template=content.yml">Suggest a correction →</a></div></main><aside class="toc" aria-label="On this page"><p class="sidebar-title">On this page</p>{toc}<a href="#references">References</a></aside></div>'''
+        write(url(slug,lang,kind).strip('/')+'/index.html',page(title,summary,article,url(slug,lang,kind),lang,alternates))
+        search_index.append(dict(title=title,summary=summary,url=url(slug,lang,kind),lang=lang,group=a.get('group','Terminology'),kind=kind,text=plain(body)))
+term_cards=''.join(f'<a class="article-card term-card" href="{url(t["slug"],kind="term")}"><div><h3>{e(t["title"])}</h3><p>{e(t["summary"])}</p><small>TERM · EN + ZH ARTICLES</small></div><span class="arrow" aria-hidden="true">→</span></a>' for t in TERMS)
+term_index=f'<main id="main" class="simple"><div class="eyebrow">Look up a concept</div><h1>Terminology</h1><p class="lead">Short definitions and examples, connected to the <a href="/#guides">Guides</a>. Each entry has a matching Chinese translation.</p><div class="article-grid">{term_cards}</div></main>'
+write('terms/index.html',page('Terminology','Mass spectrometry terms with definitions, examples, and links to the Guides.',term_index,'/terms/'))
 write('assets/search-index.json',json.dumps(search_index,ensure_ascii=False,separators=(',',':'))+'\n')
-search='''<main id="main" class="simple"><div class="eyebrow">Find a concept</div><h1>Search the wiki</h1><p class="lead">Search titles and full article text. Try “isotopes”, “DIA”, or “false discovery”.</p><form class="search-form" role="search"><label class="sr-only" for="query">Search articles</label><input id="query" type="search" name="q" placeholder="What would you like to understand?" autocomplete="off"><label class="sr-only" for="language-filter">Article language</label><select id="language-filter" name="lang"><option value="en">English articles</option><option value="zh">Chinese articles</option><option value="all">All articles</option></select></form><p id="search-status" class="search-status" role="status" aria-live="polite">Loading the article index…</p><ul id="search-results" class="search-results"></ul><noscript><p>Search requires JavaScript. All guides remain available in the <a href="/#guides">article index</a>.</p></noscript></main>'''
+search='''<main id="main" class="simple"><div class="eyebrow">Find a concept</div><h1>Search the wiki</h1><p class="lead">Search titles and full article text. Try “isotopes”, “DIA”, or “false discovery”.</p><form class="search-form" role="search"><label class="sr-only" for="query">Search articles</label><input id="query" type="search" name="q" placeholder="What would you like to understand?" autocomplete="off"><label class="sr-only" for="language-filter">Article language</label><select id="language-filter" name="lang"><option value="en">English articles</option><option value="zh">Chinese articles</option><option value="all">All articles</option></select><label class="sr-only" for="kind-filter">Content type</label><select id="kind-filter" name="kind"><option value="all">Guides and terms</option><option value="guide">Guides</option><option value="term">Terminology</option></select></form><p id="search-status" class="search-status" role="status" aria-live="polite">Loading the article index…</p><ul id="search-results" class="search-results"></ul><noscript><p>Search requires JavaScript. Browse the <a href="/#guides">Guides</a> or <a href="/terms/">Terminology index</a>.</p></noscript></main>'''
 write('search/index.html',page('Search','Search all mass spectrometry guides in English and Chinese.',search,'/search/'))
 about=f'''<main id="main" class="simple"><div class="eyebrow">About the project</div><h1>Knowledge that connects.</h1><p class="lead">mzwiki is a UniMZ knowledge project for learning mass spectrometry and revisiting its underlying principles.</p><div class="prose"><h2 id="scope">What belongs here</h2><p>Clear explanations of concepts, instrument principles, experimental methods, and computational reasoning. The first collection moves from ions and spectra to acquisition, interpretation, and reproducible analysis. It is a learning resource, not an instrument operating procedure or a publication feed.</p><h2 id="approach">How to read the guides</h2><p>Start with prerequisites, work through the examples, and use the questions to test your understanding. Examples labeled as constructed are educational illustrations. Follow the references for definitions and original methods; a citation is not an endorsement of every application.</p><h2 id="languages">One article, two languages</h2><p>The site interface and project documentation are English-first. Each guide has a matched Chinese translation. Use EN / ZH on an article to switch to the same topic. The translations are separate reading views, with corresponding sections and references.</p><h2 id="standards">Editorial standards</h2><p>Explain assumptions, separate observations from identifications, and qualify limits. Prefer standards, official documentation, and primary methodological sources. Do not reproduce copyrighted spectra, figures, or large passages without permission. This first edition is open to corrections; automated checks do not substitute for expert scientific review.</p><h2 id="contribute">Contribute a clearer explanation</h2><p>Fix a factual error, improve an example, update a reference, or refine a translation. Use the edit link on any article, or <a href="{REPO}/issues/new?template=content.yml">report an issue</a>. Read the <a href="{REPO}/blob/main/CONTRIBUTING.md">contribution guide</a> for the content structure and checks.</p><h2 id="privacy">A quiet reading experience</h2><p>The site uses no analytics, advertising, accounts, or third-party fonts. Search runs in your browser using a static article index. Hosting infrastructure may maintain its own access logs. External references open only when you follow their links.</p></div></main>'''
 write('about/index.html',page('About','The scope, editorial approach, and contribution process for mzwiki.',about,'/about/'))
@@ -92,6 +111,6 @@ write('404.html',page('Page not found','Find your way back to the mass spectrome
 write('CNAME','mzwiki.unimz.org\n')
 write('.nojekyll','')
 write('robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-paths=['/','/about/','/search/']+[url(a['slug'],l) for a in ARTICLES for l in ('en','zh')]
+paths=['/','/about/','/search/','/terms/']+[url(a['slug'],l,k) for k,collection in [('guide',ARTICLES),('term',TERMS)] for a in collection for l in ('en','zh')]
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{SITE}{p}</loc></url>' for p in paths)+'</urlset>\n')
-print(f'Built {len(ARTICLES)} paired guides, 20 HTML pages, and {len(search_index)} search records.')
+print(f'Built {len(ARTICLES)} paired guides, {len(TERMS)} paired terms, {len(paths)+1} HTML pages, and {len(search_index)} search records.')
