@@ -20,8 +20,8 @@
     "slug": "mz-charge-isotopes",
     "title": "m/z, charge & isotopes",
     "zh_title": "质荷比、电荷与同位素",
-    "summary": "Calculate ion masses, recognize charge states, and separate accuracy from resolving power.",
-    "zh_summary": "计算离子质量、识别电荷态，并区分质量准确度与分辨本领。",
+    "summary": "Calculate charged-ion masses and build an isotope distribution, then connect both to measurement quality.",
+    "zh_summary": "计算带电离子的质量并构建同位素分布，再将二者与测量质量联系起来。",
     "group": "Foundations",
     "prereqs": [
       "what-ms-measures"
@@ -32,7 +32,9 @@
     ],
     "refs": [
       "iupac",
-      "isotopes"
+      "isotopes",
+      "codata",
+      "carbon"
     ]
   },
   {
@@ -60,19 +62,21 @@
     "slug": "analyzers",
     "title": "Mass analyzers & resolution",
     "zh_title": "质量分析器与分辨率",
-    "summary": "Understand quadrupoles, time of flight, ion traps, and frequency-based measurements.",
-    "zh_summary": "理解四极杆、飞行时间、离子阱以及基于频率的测量。",
+    "summary": "Compare analyzer principles and distinguish peak width, resolving power, mass error, and precision.",
+    "zh_summary": "比较分析器原理，区分峰宽、分辨本领、质量误差和精密度。",
     "group": "Instruments",
     "prereqs": [
       "mz-charge-isotopes"
     ],
     "related": [
-      "fragmentation",
+      "mz-charge-isotopes",
+      "spectrum-interpretation",
       "acquisition"
     ],
     "refs": [
       "iupac",
-      "orbitrap"
+      "orbitrap",
+      "measurement"
     ]
   },
   {
@@ -100,20 +104,24 @@
     "slug": "spectrum-interpretation",
     "title": "Read a spectrum step by step",
     "zh_title": "逐步解读质谱图",
-    "summary": "Turn a peak list into testable hypotheses using metadata, isotope patterns, and fragment evidence.",
-    "zh_summary": "结合元数据、同位素模式和碎片证据，把峰列表转变为可检验的假设。",
+    "summary": "Read an annotated simulated spectrum: infer charge, inspect isotope ratios, and separate narrow peaks from accurate masses.",
+    "zh_summary": "解读带注释的模拟谱图：推断电荷、检查同位素比值，并区分窄峰与准确的质量测量。",
     "group": "Methods",
     "prereqs": [
       "mz-charge-isotopes",
-      "fragmentation"
+      "analyzers"
     ],
     "related": [
-      "acquisition",
+      "mz-charge-isotopes",
+      "analyzers",
+      "fragmentation",
       "data-analysis"
     ],
     "refs": [
       "nist",
-      "isotopes"
+      "isotopes",
+      "codata",
+      "carbon"
     ]
   },
   {

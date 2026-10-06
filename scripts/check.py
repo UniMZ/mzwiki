@@ -63,4 +63,4 @@ for a in articles:
 assert (ROOT/'CNAME').read_text().strip()=='mzwiki.unimz.org'
 assert (ROOT/'.nojekyll').exists()
 assert not re.search(r'[\u4e00-\u9fff]',(ROOT/'index.html').read_text()),'Homepage must be English'
-print(f'PASS: {len(pages)} pages, {links} local links/assets/fragments, 8 translation pairs, 16 full-text search records, 10 bibliography entries, and Pages files.')
+print(f'PASS: {len(pages)} pages, {links} local links/assets/fragments, 8 translation pairs, 16 full-text search records, {len(refs)} bibliography entries, and Pages files.')

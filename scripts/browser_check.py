@@ -69,6 +69,33 @@ with sync_playwright() as p:
     nojs=browser.new_context(java_script_enabled=False)
     reader=nojs.new_page();reader.goto(BASE+'/guides/fragmentation/')
     expect(reader.locator('.prose')).to_be_visible();expect(reader.locator('.language a')).to_be_visible();count+=1
+    # Enriched teaching example: figure, local reproduction links, paired section
+    # anchors, readable tables, and scientific terms in the full-text index.
+    for width,height in [(1440,1000),(390,844)]:
+        page.set_viewport_size({'width':width,'height':height})
+        for lang in ('en','zh'):
+            prefix='/zh' if lang=='zh' else ''
+            page.goto(BASE+prefix+'/guides/spectrum-interpretation/#example')
+            figure=page.locator('.teaching-figure')
+            expect(figure.locator('img')).to_be_visible()
+            assert figure.locator('img').evaluate('(img) => img.complete && img.naturalWidth > 0')
+            assert len(figure.locator('img').get_attribute('alt'))>50
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            expect(page.locator('.prose')).to_contain_text('501.009276')
+            figure.screenshot(path=str(OUT/f'spectrum-{lang}-{width}.png'))
+            count+=1
+    for slug,anchor in [('mz-charge-isotopes','distribution'),('analyzers','resolution-accuracy'),('spectrum-interpretation','quality-step')]:
+        page.goto(BASE+'/guides/'+slug+'/#'+anchor)
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/zh/guides/'+slug+'/#'+anchor)
+        expect(page.locator('#'+anchor)).to_be_visible()
+        page.locator('[data-language-switch]').click()
+        expect(page).to_have_url(BASE+'/guides/'+slug+'/#'+anchor)
+        count+=2
+    page.goto(BASE+'/search/?q=binomial')
+    expect(page.locator('#search-results li')).to_have_count(2);count+=1
+    reader.goto(BASE+'/zh/guides/spectrum-interpretation/#example')
+    expect(reader.locator('.teaching-figure img')).to_be_visible();count+=1
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')

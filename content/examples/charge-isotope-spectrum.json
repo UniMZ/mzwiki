@@ -1,0 +1,28 @@
+{
+  "kind": "simulated teaching spectrum, not experimental data",
+  "neutral_mass_da": 1000.0,
+  "charge_magnitude": 2,
+  "ion_type": "[M+2H]2+",
+  "polarity": "positive",
+  "proton_mass_da": 1.007276467,
+  "carbon_isotope_shift_da": 1.00335483507,
+  "carbon_count": 50,
+  "carbon13_fraction": 0.0107,
+  "displayed_carbon13_counts": [0, 1, 2],
+  "coordinate_offset": 0.002,
+  "fwhm_coordinate": 0.010,
+  "source_urls": [
+    "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+    "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C"
+  ],
+  "assumptions": [
+    "Neutral mass and carbon count are abstract model inputs, not an assigned molecular formula or named compound.",
+    "Only carbon isotopes vary; all other atoms and added protons are fixed isotopically.",
+    "Independent carbon isotope probabilities; the representative abundance is held fixed.",
+    "Equal response per molecule for displayed isotopologues; peak heights are relative to k=0, not total probability.",
+    "Only k=0,1,2 are displayed; higher isotope classes still exist in the probability model.",
+    "Each peak is Gaussian with the same FWHM; no noise, interference, saturation, or baseline is simulated.",
+    "A constant additive m/z-coordinate offset is applied to all displayed peaks; this is not a universal model of calibration error.",
+    "Binding-energy mass corrections are neglected at the stated teaching precision."
+  ]
+}
