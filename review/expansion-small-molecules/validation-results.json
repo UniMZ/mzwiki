@@ -1,0 +1,117 @@
+{
+  "status": "passed",
+  "scope": "Packet-only content checks; not repository build/tests or live-site verification.",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "new_guide_pairs": 3,
+  "new_term_pairs": 6,
+  "complete_fragments": 18,
+  "new_reference_keys": 20,
+  "english_word_counts": {
+    "small-molecule-annotation": 990,
+    "lipidomics-structural-evidence": 986,
+    "ion-mobility-ccs": 992,
+    "molecular-formula": 206,
+    "isomer": 208,
+    "spectral-library": 210,
+    "lipid-shorthand-notation": 197,
+    "ion-mobility": 206,
+    "collision-cross-section": 204
+  },
+  "english_word_count_total": 4199,
+  "paired_ids": {
+    "small-molecule-annotation": [
+      "idea",
+      "signal",
+      "formula",
+      "spectra",
+      "confidence",
+      "example",
+      "report",
+      "practice",
+      "next-level"
+    ],
+    "lipidomics-structural-evidence": [
+      "idea",
+      "hierarchy",
+      "precursor",
+      "chains",
+      "example",
+      "positions",
+      "report",
+      "practice",
+      "next-level"
+    ],
+    "ion-mobility-ccs": [
+      "idea",
+      "mobility",
+      "methods",
+      "example",
+      "ccs",
+      "compare",
+      "limits",
+      "practice",
+      "next-level"
+    ],
+    "molecular-formula": [
+      "definition",
+      "example",
+      "confusion",
+      "guides"
+    ],
+    "isomer": [
+      "definition",
+      "example",
+      "confusion",
+      "guides"
+    ],
+    "spectral-library": [
+      "definition",
+      "example",
+      "confusion",
+      "guides"
+    ],
+    "lipid-shorthand-notation": [
+      "definition",
+      "example",
+      "confusion",
+      "guides"
+    ],
+    "ion-mobility": [
+      "definition",
+      "example",
+      "confusion",
+      "guides"
+    ],
+    "collision-cross-section": [
+      "definition",
+      "example",
+      "confusion",
+      "guides"
+    ]
+  },
+  "internal_links_checked": 50,
+  "citation_instances_checked": 78,
+  "checks": [
+    "JSON parsing and existing metadata schema",
+    "Unique slugs absent from pinned main",
+    "New reference key collision check",
+    "Reference existence and metadata citation numbering",
+    "Balanced HTML fragments",
+    "EN/ZH section-ID, citation-sequence, and numeral-multiset parity (normalizing level-1 versus Chinese ordinal wording)",
+    "English Guide and term length bounds",
+    "Chinese full-body presence and English-body language restriction",
+    "Metadata relationships target baseline or this packet only",
+    "Same-language internal links and in-packet anchors",
+    "Formula/adduct arithmetic, ppm error, and tolerance window",
+    "Lipid chain-sum arithmetic and explicit evidence boundaries",
+    "Mobility time correction, unit conversion, bias, and CCS percent difference"
+  ],
+  "not_run": [
+    "Repository build",
+    "Existing repository structural and science tests",
+    "Future integration fixture consumer",
+    "Browser/rendering QA",
+    "Live-site/deployment verification"
+  ],
+  "scientific_review_note": "Automated checks verify internal consistency; they do not establish scientific truth or replace expert review."
+}

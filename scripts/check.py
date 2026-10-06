@@ -41,9 +41,18 @@ articles=json.loads((ROOT/'content/articles.json').read_text())
 terms=json.loads((ROOT/'content/terms.json').read_text())
 refs=json.loads((ROOT/'content/references.json').read_text())
 index=json.loads((ROOT/'assets/search-index.json').read_text())
-assert len(articles)==8 and len(index)==2*(len(articles)+len(terms))
+assert articles and len(index)==2*(len(articles)+len(terms))
+assert len(pages)==5+2*(len(articles)+len(terms))
 slugs={a['slug'] for a in articles}
 assert len(slugs)==len(articles)
+# Prerequisites must remain a usable acyclic learning path as collections grow.
+by_slug={a['slug']:a for a in articles}
+def visit(slug,stack=()):
+    assert slug not in stack,('prerequisite cycle',stack,slug)
+    for prerequisite in by_slug[slug].get('prereqs',[]):
+        assert prerequisite in by_slug,(slug,prerequisite)
+        visit(prerequisite,stack+(slug,))
+for slug in by_slug:visit(slug)
 term_slugs={a['slug'] for a in terms}
 assert len(term_slugs)==len(terms)
 for kind,a in [('guide',a) for a in articles]+[('term',t) for t in terms]:

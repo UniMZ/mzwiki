@@ -1,0 +1,9 @@
+<h2 id="definition">定义</h2>
+<p><strong>肽段–谱图匹配</strong>（PSM）是实验 MS/MS 谱图与某个肽段解释之间提出的对应关系，包括相关序列、修饰和电荷。检索分数衡量特定方法和候选集合下的一致性。最高排名的 PSM 并不自动等于通过筛选的鉴定或经过校准的概率。<a href="#ref-prot-sequest">[1]</a></p>
+<h2 id="example">明确计数单位</h2>
+<p><strong>构造的例子：</strong>五张谱图指认到同一肽段，会产生五条 PSM，却只有一个不同的未修饰肽段序列。如果其中两条指认提出氧化形式，序列数可以仍为一，而修饰形式数变为二。应报告所用定义，不要把这些计数当作可互换。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>一张谱图可能包含共同隔离的物种，某个指认也未必解释每个峰。即使在测试的候选中得分最高，PSM 仍可能错误。统计后处理可以估计指认置信度，但这种置信度依赖模型。<a href="#ref-prot-peptideprophet">[2]</a></p>
+<p>PSM 层面的错误控制不会自动带来肽段、蛋白质或位点定位层面的错误控制。应保留源谱图标识、候选解释、检索设置、分数和筛选结果。</p>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/peptide-identification-protein-inference/#error-levels">比较 PSM 和肽段错误比例</a></li></ul>

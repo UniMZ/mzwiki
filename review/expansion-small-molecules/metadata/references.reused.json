@@ -1,0 +1,37 @@
+{
+  "carbon": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Carbon.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+    "note": "Representative carbon-13 fraction 0.0107 and carbon-13 mass 13.00335483507 Da. Teaching models hold these inputs fixed; natural sample compositions vary."
+  },
+  "codata": {
+    "title": "NIST. CODATA recommended values of the fundamental physical constants: proton mass in u and electron mass in u.",
+    "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+    "note": "Official constants table. Examples round the proton mass to 1.007276467 Da; u and Da name the same mass unit."
+  },
+  "hydrogen": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Hydrogen.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
+    "note": "Neutral hydrogen-1 relative atomic mass 1.00782503223, used in the water example."
+  },
+  "iupac": {
+    "title": "Murray et al. (2013). Definitions of terms relating to mass spectrometry (IUPAC Recommendations 2013). Pure and Applied Chemistry 85, 1515–1609.",
+    "url": "https://doi.org/10.1351/PAC-REC-06-04-06",
+    "note": "Terminology and definitions; DOI metadata verified via the authors' university repository."
+  },
+  "msi-chemical-analysis": {
+    "title": "Sumner et al. (2007). Proposed minimum reporting standards for chemical analysis. Metabolomics 3, 211–221.",
+    "url": "https://doi.org/10.1007/s11306-007-0082-2",
+    "note": "MSI Chemical Analysis Working Group reporting recommendations. Supports evidence-specific identification of previously characterized metabolites and calibration/validation reporting. Publisher metadata/abstract, indexed PMC text, and an institutional author manuscript (Fiehn Lab, UC Davis), p. 12, were checked. The institutional manuscript is not the final typeset version. Historical numerical validation thresholds are not adopted."
+  },
+  "mztab-m": {
+    "title": "HUPO-PSI and MSI. mzTab-M 2.0 metabolomics results specification.",
+    "url": "https://hupo-psi.github.io/mzTab/2_0-metabolomics-release/mzTab_format_specification_2_0-M_release.html",
+    "note": "Official released format specification. Sections 5.2 and 5.4 distinguish samples/assays/runs and missing-data encoding; sections 6.3–6.5 distinguish molecule summaries, features, and identification evidence. A format declaration does not verify biological independence or determine the missing-data mechanism."
+  },
+  "oxygen": {
+    "title": "NIST. Atomic Weights and Isotopic Compositions for Oxygen.",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+    "note": "Oxygen-16 and oxygen-18 relative atomic masses 15.99491461957 and 17.99915961286, with representative isotope compositions."
+  }
+}

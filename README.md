@@ -4,9 +4,9 @@ An English-first mass spectrometry knowledge wiki for beginners and returning pr
 
 **Site:** https://mzwiki.unimz.org · **Repository:** https://github.com/UniMZ/mzwiki
 
-## First collection
+## Learning collection
 
-Eight English guides, each with a matched Chinese translation:
+Twenty English Guides and 44 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
 
 1. What mass spectrometry measures
 2. m/z, charge & isotopes
@@ -16,6 +16,18 @@ Eight English guides, each with a matched Chinese translation:
 6. Read a spectrum step by step
 7. Acquisition: full scan, DDA, DIA & targeted
 8. From raw data to reliable results
+9. Sample preparation & recovery
+10. Liquid chromatography for MS
+11. Blanks, carryover & contamination
+12. Quantitative measurement & calibration
+13. Experimental design & replication
+14. QC, batch effects & normalization
+15. Bottom-up proteomics: from sample to protein evidence
+16. Peptide identification and protein inference
+17. PTM analysis and site localization
+18. Small-molecule annotation: from features to identity
+19. Lipidomics: match structural detail to evidence
+20. Ion mobility and collision cross section
 
 The interface and project documentation are English. EN / ZH switches between separate views of the same article and preserves matching section anchors. Search defaults to English and can search Chinese or both languages.
 
@@ -80,7 +92,7 @@ python3 scripts/check_ionization.py
 
 ## Terminology integration
 
-Terminology entries are a separate collection from the eight numbered Guides. Their metadata defines ordered references, `related_guides`, and `related_terms`. Guide pages derive reciprocal term links from that metadata; Guide source prose remains unchanged. Search records include `kind: "guide"` or `kind: "term"`, and the search page can filter by collection and language.
+Terminology entries are a separate collection from the numbered Guides. Their metadata defines ordered references, `related_guides`, and `related_terms`. Guide pages derive reciprocal term links from that metadata; Guide source prose remains unchanged. Search records include `kind: "guide"` or `kind: "term"`, and the search page can filter by collection and language.
 
 After building, validate the supplied terminology fixtures and paired examples:
 
@@ -108,6 +120,7 @@ The acquisition Guide and its three terms use `tests/fixtures/acquisition.json`.
 python3 scripts/check_acquisition.py
 python3 scripts/check_data_analysis.py
 python3 scripts/check_reading_bridge.py
+python3 scripts/check_expansion.py
 ```
 
 ## GitHub Pages deployment

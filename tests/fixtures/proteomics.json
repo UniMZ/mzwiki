@@ -1,0 +1,242 @@
+{
+  "scope": "Original constructed teaching cases only. These are not experimental observations, fitted probabilities, empirical error estimates, or executable analysis defaults.",
+  "cases": [
+    {
+      "id": "prot-digestion-rule",
+      "guide": "bottom-up-proteomics",
+      "anchor": "digestion",
+      "sequence": "AKPEPTIDERAAK",
+      "rule": "Cleavage after K or R except before P; complete cleavage at all eligible internal bonds.",
+      "eligible_internal_cleavage_after_positions": [
+        10
+      ],
+      "complete_products": [
+        "AKPEPTIDER",
+        "AAK"
+      ],
+      "one_missed_cleavage_product": "AKPEPTIDERAAK",
+      "missed_cleavage_count": 1,
+      "guard": "The K at position 2 precedes P and is excluded by the stated teaching rule. The terminal K is not an internal bond. This is not a claim of complete experimental digestion."
+    },
+    {
+      "id": "prot-recovery-ratio",
+      "guide": "bottom-up-proteomics",
+      "anchor": "quantity",
+      "starting_amounts": [
+        100,
+        100
+      ],
+      "recovery_fractions": [
+        0.8,
+        0.4
+      ],
+      "recovered_amounts": [
+        80,
+        40
+      ],
+      "starting_ratio": 1,
+      "measured_ratio_with_equal_downstream_response": 2,
+      "guard": "A standard added after losses cannot directly measure the preceding recovery."
+    },
+    {
+      "id": "prot-variable-site-count",
+      "guide": "peptide-identification-protein-inference",
+      "anchor": "search-space",
+      "eligible_sites": 4,
+      "states_per_site": 2,
+      "unrestricted_states": 16,
+      "maximum_one_modified_site_states": 5,
+      "guard": "Independent binary modification possibilities, no other constraints; not biological probabilities."
+    },
+    {
+      "id": "prot-psm-peptide-error-levels",
+      "guide": "peptide-identification-protein-inference",
+      "anchor": "error-levels",
+      "known_truth": true,
+      "correct_psms_same_peptide": 99,
+      "incorrect_psms_distinct_peptide": 1,
+      "total_psms": 100,
+      "psm_false_fraction": 0.01,
+      "distinct_peptide_sequences": 2,
+      "false_peptide_sequences": 1,
+      "peptide_false_fraction": 0.5,
+      "guard": "Realized known-truth proportions, not FDR estimates or target-decoy formulas."
+    },
+    {
+      "id": "prot-shared-peptide-logic",
+      "guide": "peptide-identification-protein-inference",
+      "anchor": "shared-peptides",
+      "proteins": {
+        "A": [
+          "p",
+          "q"
+        ],
+        "B": [
+          "p",
+          "r"
+        ]
+      },
+      "only_p_compatible_nonempty_parent_sets": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "p_and_q_compatible_nonempty_parent_sets": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "guard": "Absence of a detected peptide is not absence of its protein. Repetition of p adds no distinguishing sequence. q is unique only within the stated database."
+    },
+    {
+      "id": "prot-coverage-union",
+      "guide": "peptide-identification-protein-inference",
+      "anchor": "coverage",
+      "reference_length": 100,
+      "inclusive_intervals": [
+        [
+          1,
+          10
+        ],
+        [
+          6,
+          15
+        ]
+      ],
+      "covered_positions_count": 15,
+      "coverage_percent": 15,
+      "incorrect_length_sum_percent": 20,
+      "guard": "Count positions in the union once; repeated PSMs do not extend coverage."
+    },
+    {
+      "id": "prot-phosphorylation-mz",
+      "guide": "ptm-analysis-site-localization",
+      "anchor": "chemistry",
+      "mass_increment_da": "79.966331",
+      "charge": 2,
+      "delta_mz_exact": "39.9831655",
+      "delta_mz_rounded_6dp": "39.983166",
+      "guard": "Same isotope convention, ion composition otherwise unchanged, charge unchanged. Does not identify the chemistry or its position."
+    },
+    {
+      "id": "prot-localization-fragments",
+      "guide": "ptm-analysis-site-localization",
+      "anchor": "localization",
+      "peptide": "ASSTK",
+      "candidate_modified_positions": [
+        2,
+        3
+      ],
+      "number_modifications": 1,
+      "assumptions": [
+        "Only S2 or S3 is allowed, despite T4 in the sequence.",
+        "Fragments retain modification.",
+        "b/y backbone fragment convention.",
+        "Product charge +1."
+      ],
+      "fragment_positions": {
+        "b2": [
+          1,
+          2
+        ],
+        "y3": [
+          3,
+          4,
+          5
+        ],
+        "b3": [
+          1,
+          2,
+          3
+        ]
+      },
+      "modification_count_for_S2_S3": {
+        "b2": [
+          1,
+          0
+        ],
+        "y3": [
+          0,
+          1
+        ],
+        "b3": [
+          1,
+          1
+        ]
+      },
+      "site_determining_fragments": [
+        "b2",
+        "y3"
+      ],
+      "not_site_determining_fragments": [
+        "b3"
+      ],
+      "guard": "Theoretical relationships only, not a claimed measured spectrum or guaranteed fragment yield."
+    },
+    {
+      "id": "prot-localization-error-level",
+      "guide": "ptm-analysis-site-localization",
+      "anchor": "error-control",
+      "known_truth": true,
+      "accepted_spectra": 100,
+      "wrong_sequence_or_modification_count": 0,
+      "wrong_site_assignments": 10,
+      "peptide_assignment_false_fraction": 0,
+      "site_assignment_false_fraction": 0.1,
+      "guard": "One counted localization assignment per spectrum in this teaching case. Not an estimator for unknown data."
+    },
+    {
+      "id": "prot-occupancy-amount",
+      "guide": "ptm-analysis-site-localization",
+      "anchor": "quantification",
+      "total_amounts": [
+        100,
+        200
+      ],
+      "occupancies": [
+        0.2,
+        0.2
+      ],
+      "modified_amounts": [
+        20,
+        40
+      ],
+      "modified_amount_ratio": 2,
+      "occupancy_ratio": 1,
+      "guard": "Assumed known amounts; no signal-response equality is inferred. Relative occupancy is not absolute occupancy."
+    },
+    {
+      "id": "prot-psm-sequence-form-count",
+      "term": "peptide-spectrum-match",
+      "anchor": "example",
+      "psms": 5,
+      "one_unmodified_sequence": 1,
+      "unmodified_form_psms": 3,
+      "oxidized_form_psms": 2,
+      "distinct_forms": 2,
+      "guard": "The two forms share the same amino acid sequence."
+    },
+    {
+      "id": "prot-observability-vs-specificity",
+      "term": "proteotypic-peptide",
+      "anchor": "example",
+      "injections": 10,
+      "peptide_p_detections": 9,
+      "peptide_p_parent_count": 2,
+      "peptide_q_detections": 2,
+      "peptide_q_parent_count": 1,
+      "guard": "Empirical observed counts in a constructed experiment, not a validated assay or detection probability estimate."
+    }
+  ]
+}

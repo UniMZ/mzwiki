@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "small-molecule-annotation",
+    "title": "Small-molecule annotation: from features to identity",
+    "zh_title": "小分子注释：从特征到身份",
+    "summary": "Build ion, formula, and structure hypotheses, compare reference evidence, and report what remains unresolved.",
+    "zh_summary": "建立离子、分子式和结构假设，比较参考证据，并报告尚未解决的问题。",
+    "group": "Applications",
+    "prereqs": [
+      "data-analysis",
+      "fragmentation"
+    ],
+    "related": [
+      "lipidomics-structural-evidence",
+      "ion-mobility-ccs",
+      "spectrum-interpretation"
+    ],
+    "refs": [
+      "mztab-m",
+      "small-formula-rules",
+      "carbon",
+      "hydrogen",
+      "oxygen",
+      "codata",
+      "small-massbank",
+      "msi-chemical-analysis"
+    ]
+  },
+  {
+    "slug": "lipidomics-structural-evidence",
+    "title": "Lipidomics: match structural detail to evidence",
+    "zh_title": "脂质组学：让结构细节与证据相匹配",
+    "summary": "Distinguish lipid class, sum composition, chains, sn positions, and double-bond evidence without overnaming a signal.",
+    "zh_summary": "区分脂质类别、总组成、链、sn 位置和双键证据，避免给信号赋予过度具体的名称。",
+    "group": "Applications",
+    "prereqs": [
+      "small-molecule-annotation",
+      "fragmentation"
+    ],
+    "related": [
+      "small-molecule-annotation",
+      "ion-mobility-ccs",
+      "acquisition"
+    ],
+    "refs": [
+      "small-lipid-notation",
+      "small-lipid-official",
+      "small-lipid-class-fragments",
+      "small-lipid-checklist-form",
+      "small-lipid-monitoring",
+      "small-ozid",
+      "small-pb",
+      "small-lipid-separation",
+      "small-lipid-reporting"
+    ]
+  },
+  {
+    "slug": "ion-mobility-ccs",
+    "title": "Ion mobility and collision cross section",
+    "zh_title": "离子淌度与碰撞截面",
+    "summary": "Separate measured mobility coordinates from derived CCS and compare ions with explicit gas, temperature, and calibration context.",
+    "zh_summary": "区分实测淌度坐标与推导的 CCS，在明确气体、温度和校准背景下比较离子。",
+    "group": "Methods",
+    "prereqs": [
+      "analyzers",
+      "mz-charge-isotopes"
+    ],
+    "related": [
+      "small-molecule-annotation",
+      "lipidomics-structural-evidence",
+      "acquisition"
+    ],
+    "refs": [
+      "small-im-reporting",
+      "small-im-interlab",
+      "small-im-twave",
+      "small-im-tims",
+      "small-im-dms",
+      "small-im-database"
+    ]
+  }
+]

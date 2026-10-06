@@ -1,0 +1,93 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "status": "Prepared content-only packet; not applied, built or published",
+  "baseline_inventory": {
+    "guides": 8,
+    "terms": 20
+  },
+  "package_additions": {
+    "guides": 3,
+    "terms": 6,
+    "language_pairs": 9,
+    "fragment_files": 18
+  },
+  "add_complete_fragments": [
+    "content/en/bottom-up-proteomics.html",
+    "content/en/peptide-identification-protein-inference.html",
+    "content/en/ptm-analysis-site-localization.html",
+    "content/terms/en/peptide-spectrum-match.html",
+    "content/terms/en/post-translational-modification.html",
+    "content/terms/en/protein-inference.html",
+    "content/terms/en/proteotypic-peptide.html",
+    "content/terms/en/sequence-coverage.html",
+    "content/terms/en/site-localization.html",
+    "content/terms/zh/peptide-spectrum-match.html",
+    "content/terms/zh/post-translational-modification.html",
+    "content/terms/zh/protein-inference.html",
+    "content/terms/zh/proteotypic-peptide.html",
+    "content/terms/zh/sequence-coverage.html",
+    "content/terms/zh/site-localization.html",
+    "content/zh/bottom-up-proteomics.html",
+    "content/zh/peptide-identification-protein-inference.html",
+    "content/zh/ptm-analysis-site-localization.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "Append these three unique Guide objects in the listed prerequisite order; reconcile order with other approved expansion packets. Do not replace existing Guides.",
+      "payload": "metadata/articles.additions.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "Append these six unique terminology objects only after checking current slugs; keep them separate from the Guide array.",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "Merge the 20 new prot-prefixed keys; stop and reconcile any collision or equivalent existing reference.",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "reused_reference_keys": [
+    "fdr",
+    "etd"
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/proteomics.json",
+    "payload": "tests/fixtures/proteomics.json",
+    "note": "Content-only scientific fixture proposal. A later engineering task must add or adapt a repository check; no existing checker is claimed to consume these fixtures."
+  },
+  "scope_guards": [
+    "No replacement of any existing Guide or term fragment.",
+    "No disease, diagnostic-marker, or product-ranking catalog.",
+    "DDA/DIA acquisition principles are linked rather than duplicated.",
+    "No links to unseen parallel expansion content.",
+    "All interface/documentation text and metadata keys remain English; Chinese appears only in paired article translations and zh_title/zh_summary.",
+    "All numerical or logical examples are labeled constructed."
+  ],
+  "application_preconditions": [
+    "Re-read current main and reconcile changes since the pinned baseline.",
+    "Verify all 3 Guide and 6 term slugs remain absent.",
+    "Merge metadata narrowly and copy the 18 complete fragments; do not copy inspection or review tooling into production.",
+    "Rebuild with existing repository tools and run every existing structural/scientific check plus a new or adapted proteomics-fixture check.",
+    "Verify generated EN/ZH routes and anchors, navigation order, reciprocal Guide-term links, terminology index, search and sitemap.",
+    "Check desktop/mobile reading, citation anchors, language switching and keyboard behavior before publication."
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "inspection/",
+    "review/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit or push",
+    "No build or deployment",
+    "No live-site verification"
+  ]
+}

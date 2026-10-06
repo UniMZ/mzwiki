@@ -1,0 +1,22 @@
+{
+  "esi-suppression": {
+    "title": "King, Bonfiglio, Fernandez-Metzler, Miller-Stein & Olah (2000). Mechanistic investigation of ionization suppression in electrospray ionization. Journal of the American Society for Mass Spectrometry 11, 942–950.",
+    "url": "https://doi.org/10.1016/S1044-0305(00)00163-X",
+    "note": "Primary experiments on biological extracts support a role for nonvolatile solutes and changed droplet properties in ESI suppression. The article does not generalize this into the only suppression mechanism. Publisher metadata and abstract verified."
+  },
+  "mqacc-reporting": {
+    "title": "Kirwan et al. (2022). Quality assurance and quality control reporting in untargeted metabolic phenotyping: mQACC recommendations for analytical quality management. Metabolomics 18, 70.",
+    "url": "https://link.springer.com/article/10.1007/s11306-022-01926-3",
+    "note": "Consortium reporting recommendations, not binding regulation. Full publisher text supports distinguishing blanks, pooled/reference QC, suitability tests, placement, acceptance criteria, and drift assessment in untargeted metabolomics."
+  },
+  "retention-time-definition": {
+    "title": "IUPAC Gold Book. Total retention time in column chromatography, entry 10039.",
+    "url": "https://goldbook.iupac.org/terms/view/10039",
+    "note": "Definition from Terminology of separation methods (IUPAC Recommendations 2017): injection to the relevant peak maximum; includes hold-up time. Official indexed definition verified; direct retrieval returned 403. The short Guide orientation uses this conventional total-retention-time meaning."
+  },
+  "targeted-timing": {
+    "title": "SCIEX. How to choose the appropriate dwell time/cycle time in an MRM and sMRM method to get enough points per chromatographic peak.",
+    "url": "https://sciex.com/support/knowledge-base-articles/how-to-choose-the-appropriate-dwell-time-cycle-time-in-an-mrm-and-smrm-method-to-get-enough-points-per-chromatographic-peak_en_us",
+    "note": "Official timing equations for dwell, pause, active transitions, and cycle time. Used for the simplified serial model; platform-specific defaults and universal sampling thresholds are excluded."
+  }
+}

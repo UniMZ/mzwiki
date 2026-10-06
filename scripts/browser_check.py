@@ -12,7 +12,7 @@ terms=json.loads((ROOT/'content/terms.json').read_text())
 count=0
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path=os.environ.get('MZWIKI_CHROMIUM','/usr/bin/chromium'),headless=True,args=['--no-sandbox'])
-    context=browser.new_context()
+    context=browser.new_context(reduced_motion='reduce')
     page=context.new_page();errors=[]
     page.on('pageerror',lambda err:errors.append(str(err)))
     paths=['/','/about/','/search/','/404.html','/terms/']+[('/zh' if lang=='zh' else '')+'/guides/'+a['slug']+'/' for a in articles for lang in ('en','zh')]
@@ -40,7 +40,8 @@ with sync_playwright() as p:
     page.locator('[data-language-switch]').click()
     expect(page).to_have_url(BASE+'/guides/mz-charge-isotopes/#example');count+=2
     # Native mobile guide navigation and disclosure answer.
-    page.locator('.mobile-index summary').click()
+    page.locator('.mobile-index > summary').click()
+    page.locator('.mobile-index .nav-group').filter(has=page.locator('summary',has_text='Instruments')).locator('summary').click()
     page.locator('.mobile-index a').filter(has_text='How molecules become ions').click()
     expect(page).to_have_url(BASE+'/guides/ionization/')
     page.locator('.prose summary').first.click()
@@ -360,6 +361,79 @@ with sync_playwright() as p:
         page.goto(BASE+'/search/?kind=term&lang='+lang)
         page.locator('#query').fill(q)
         expect(page.locator('#search-results a').first).to_have_attribute('href',path)
+        count+=1
+    # Expansion: exercise every new article, section switch and exact-title search.
+    additions=[]
+    for packet in sorted((ROOT/'review').glob('expansion-*')):
+        for kind,filename in [('guide','articles'),('term','terms')]:
+            additions.extend((kind,a) for a in json.loads((packet/f'metadata/{filename}.additions.json').read_text()))
+    for kind,a in additions:
+        collection='guides' if kind=='guide' else 'terms'
+        route='/'+collection+'/'+a['slug']+'/'
+        source=ROOT/'content'/('terms' if kind=='term' else '')/'en'/(a['slug']+'.html')
+        import re
+        for anchor in re.findall(r'<h[23] id="([^"]+)"',source.read_text()):
+            page.goto(BASE+route+'#'+anchor)
+            page.locator('[data-language-switch]').click()
+            expect(page).to_have_url(BASE+'/zh'+route+'#'+anchor)
+            expect(page.locator('#'+anchor)).to_be_visible()
+            page.locator('[data-language-switch]').click()
+            expect(page).to_have_url(BASE+route+'#'+anchor)
+            count+=2
+        for lang in ('en','zh'):
+            prefix='/zh' if lang=='zh' else ''
+            for width in (1440,390,320):
+                page.set_viewport_size({'width':width,'height':844})
+                page.goto(BASE+prefix+route)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(route,lang,width)
+                for wrapper in page.locator('.prose .table-wrap').all():
+                    wrapper.evaluate('(el) => {el.scrollLeft=el.scrollWidth;}')
+                    assert wrapper.evaluate('(el) => el.scrollWidth <= el.clientWidth || el.scrollLeft > 0')
+                for detail in page.locator('.prose details').all():
+                    detail.locator('summary').focus()
+                    page.keyboard.press('Enter')
+                    expect(detail).to_have_attribute('open','')
+                    expect(detail.locator('p').first).to_be_visible()
+                nav=page.locator('.sidebar' if width==1440 else '.mobile-index')
+                if width!=1440:
+                    nav.locator(':scope > summary').focus()
+                    page.keyboard.press('Enter')
+                expect(nav.locator('a[aria-current="page"]')).to_be_visible()
+                assert nav.evaluate('(el) => el.clientHeight <= innerHeight'),(route,width,'navigation height')
+                if width==320 and kind=='guide':
+                    nav.locator(':scope > summary').click()
+                    page.locator('h1').scroll_into_view_if_needed()
+                    page.screenshot(path=str(OUT/f'expansion-{a["slug"]}-{lang}-320.png'))
+                count+=1
+            page.goto(BASE+'/search/?kind='+kind+'&lang='+lang)
+            page.locator('#query').fill(a['title'] if lang=='en' else a['zh_title'])
+            expect(page.locator('#search-results a').first).to_have_attribute('href',prefix+route)
+            count+=1
+            reader.goto(BASE+prefix+route)
+            expect(reader.locator('.prose')).to_be_visible()
+            count+=1
+    # Long navigation lists: every group opens by keyboard; links retain English labels.
+    for width in (1440,320):
+        page.set_viewport_size({'width':width,'height':844})
+        page.goto(BASE+'/guides/what-ms-measures/')
+        nav=page.locator('.sidebar' if width==1440 else '.mobile-index')
+        if width==320:nav.locator(':scope > summary').click()
+        for group in nav.locator('.nav-group').all():
+            if group.get_attribute('open') is None:
+                group.locator('summary').focus()
+                page.keyboard.press('Enter')
+            expect(group.locator('a').last).to_be_visible()
+            group.locator('summary').focus()
+            page.keyboard.press('Enter')
+            assert group.get_attribute('open') is None
+            count+=1
+        page.goto(BASE+'/')
+        expect(page.locator('#guides .article-card')).to_have_count(len(articles))
+        expect(page.locator('.stats')).to_contain_text(str(len(articles)))
+        expect(page.locator('.group-jumps a')).to_have_count(len(set(a['group'] for a in articles)))
+        page.locator('.group-jumps a').last.click()
+        expect(page.locator('.guide-group').last).to_be_visible()
+        page.screenshot(path=str(OUT/f'expansion-home-{width}.png'))
         count+=1
     assert not errors,errors
     browser.close()

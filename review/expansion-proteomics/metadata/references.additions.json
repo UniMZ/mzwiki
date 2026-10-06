@@ -1,0 +1,102 @@
+{
+  "prot-fasp": {
+    "title": "Wiśniewski et al. (2009). Universal sample preparation method for proteome analysis. Nature Methods 6, 359–362.",
+    "url": "https://doi.org/10.1038/nmeth.1322",
+    "note": "Primary FASP demonstration. Supports detergent exchange and on-filter digestion as one preparation strategy, not universal superiority."
+  },
+  "prot-sp3": {
+    "title": "Hughes et al. (2014). Ultrasensitive proteome analysis using paramagnetic bead technology. Molecular Systems Biology 10, 757.",
+    "url": "https://doi.org/10.15252/msb.20145625",
+    "note": "Primary SP3 demonstration. Supports bead-based preparation and low-input examples within the tested scope."
+  },
+  "prot-trypsin": {
+    "title": "Olsen, Ong & Mann (2004). Trypsin cleaves exclusively C-terminal to arginine and lysine residues. Molecular & Cellular Proteomics 3, 608–614.",
+    "url": "https://doi.org/10.1074/mcp.T400003-MCP200",
+    "note": "Primary enzyme-specificity study. The Guide uses a separately declared K/R-except-before-P teaching rule and makes no complete-digestion guarantee."
+  },
+  "prot-miape-ms": {
+    "title": "Taylor et al. (2008). Guidelines for reporting the use of mass spectrometry in proteomics. Nature Biotechnology 26, 860–861.",
+    "url": "https://doi.org/10.1038/nbt0808-860",
+    "note": "HUPO-PSI reporting guidance. Reporting requirements do not certify analytical validity."
+  },
+  "prot-mzidentml": {
+    "title": "Vizcaíno et al. (2017). The mzIdentML Data Standard Version 1.2, Supporting Advances in Proteome Informatics. Molecular & Cellular Proteomics 16, 1275–1285.",
+    "url": "https://doi.org/10.1074/mcp.M117.068429",
+    "note": "Standards paper supporting spectrum, peptide, database-sequence and protein-group evidence links. Version 1.2 is cited for these concepts, not asserted to be the newest release."
+  },
+  "prot-proteotypic": {
+    "title": "Mallick et al. (2007). Computational prediction of proteotypic peptides for quantitative proteomics. Nature Biotechnology 25, 125–131.",
+    "url": "https://doi.org/10.1038/nbt1275",
+    "note": "Primary study of preferential peptide observability across platforms. Does not make observability equivalent to sequence uniqueness or a validated assay."
+  },
+  "prot-aqua": {
+    "title": "Gerber et al. (2003). Absolute quantification of proteins and phosphoproteins from cell lysates by tandem MS. PNAS 100, 6940–6945.",
+    "url": "https://doi.org/10.1073/pnas.0832254100",
+    "note": "Primary AQUA demonstration using stable-isotope peptide standards. The recovery-bias example is original teaching arithmetic, not data from this study."
+  },
+  "prot-miape-msi": {
+    "title": "Binz et al. (2008). Guidelines for reporting the use of mass spectrometry informatics in proteomics. Nature Biotechnology 26, 862.",
+    "url": "https://doi.org/10.1038/nbt0808-862",
+    "note": "HUPO-PSI guidance for documenting identification and validation methods."
+  },
+  "prot-sequest": {
+    "title": "Eng et al. (2008). A Fast SEQUEST Cross Correlation Algorithm. Journal of Proteome Research 7, 4598–4602.",
+    "url": "https://doi.org/10.1021/pr800420s",
+    "note": "Primary scoring-method paper. Supports method-specific candidate scoring; scores are not treated as universal probabilities."
+  },
+  "prot-peptideprophet": {
+    "title": "Keller et al. (2002). Empirical statistical model to estimate the accuracy of peptide identifications made by MS/MS and database search. Analytical Chemistry 74, 5383–5392.",
+    "url": "https://doi.org/10.1021/ac025747h",
+    "note": "Primary PeptideProphet paper supporting statistical assignment-confidence modeling and its dependence on model and data."
+  },
+  "prot-proteinprophet": {
+    "title": "Nesvizhskii et al. (2003). A Statistical Model for Identifying Proteins by Tandem Mass Spectrometry. Analytical Chemistry 75, 4646–4658.",
+    "url": "https://doi.org/10.1021/ac0341261",
+    "note": "Primary ProteinProphet paper supporting probabilistic protein inference and handling of shared peptide evidence. Constructed A/B/p/q/r examples are original."
+  },
+  "prot-protein-reporting": {
+    "title": "Seymour et al. (2014). A standardized framing for reporting protein identifications in mzIdentML 1.2. Proteomics 14, 2389–2399.",
+    "url": "https://doi.org/10.1002/pmic.201400080",
+    "note": "Standards guidance distinguishing protein groups, leading proteins and group representatives. Does not equate a representative accession with unique experimental evidence."
+  },
+  "prot-proforma": {
+    "title": "LeDuc et al. (2022). Proteomics Standards Initiative’s ProForma 2.0: Unifying the Encoding of Proteoforms and Peptidoforms. Journal of Proteome Research 21, 1189–1195.",
+    "url": "https://doi.org/10.1021/acs.jproteome.1c00771",
+    "note": "Standards paper covering modified sequences, natural/chemical/artifactual changes and positional ambiguity. No claim that notation validates a chemical identity or that version 2.0 is the latest specification."
+  },
+  "prot-unimod-phospho": {
+    "title": "Unimod. Phospho, accession 21.",
+    "url": "https://www.unimod.org/modifications_view.php?editid1=21",
+    "note": "Official curated modification record; monoisotopic increment 79.966331 Da, composition H O(3) P. Viewed 2026-10-06. The m/z calculations assume unchanged charge and otherwise identical ion composition."
+  },
+  "prot-enrichment": {
+    "title": "Arribas Diez et al. (2021). Zirconium(IV)-IMAC Revisited: Improved Performance and Phosphoproteome Coverage by Magnetic Microparticles for Phosphopeptide Affinity Enrichment. Journal of Proteome Research 20, 453–462.",
+    "url": "https://doi.org/10.1021/acs.jproteome.0c00508",
+    "note": "Primary comparison supports condition-dependent overlap and selectivity among phosphopeptide enrichment chemistries; no universal-best-method claim."
+  },
+  "prot-ascore": {
+    "title": "Beausoleil et al. (2006). A probability-based approach for high-throughput protein phosphorylation analysis and site localization. Nature Biotechnology 24, 1285–1292.",
+    "url": "https://doi.org/10.1038/nbt1240",
+    "note": "Primary Ascore paper supports site-determining fragment evidence. ASSTK is an original, explicitly simplified teaching example, not a spectrum from this paper."
+  },
+  "prot-ptmprophet": {
+    "title": "Shteynberg et al. (2019). PTMProphet: Fast and Accurate Mass Modification Localization for the Trans-Proteomic Pipeline. Journal of Proteome Research 18, 4262–4272.",
+    "url": "https://doi.org/10.1021/acs.jproteome.9b00205",
+    "note": "Primary localization-model paper supporting site probabilities and false localization rate estimation. No numerical cutoff is prescribed universally."
+  },
+  "prot-stoichiometry": {
+    "title": "Wu et al. (2011). A large-scale method to measure absolute protein phosphorylation stoichiometries. Nature Methods 8, 677–683.",
+    "url": "https://doi.org/10.1038/nmeth.1636",
+    "note": "Primary occupancy-method paper supporting the distinction between modified amount, relative occupancy change and absolute stoichiometry; simple 100/200-unit arithmetic is original."
+  },
+  "prot-unimod-oxidation": {
+    "title": "Unimod. Oxidation, accession 35.",
+    "url": "https://www.unimod.org/modifications_view.php?editid1=35",
+    "note": "Official modification database record with multiple residue-specific classifications including post-translational, artifact and chemical derivative. Viewed 2026-10-06. Record-level Verified field is No; used to illustrate representational breadth, not certify biological origin."
+  },
+  "prot-proteotypic-context": {
+    "title": "Wilhelm et al. (2014). Mass-spectrometry-based draft of the human proteome. Nature 509, 582–587.",
+    "url": "https://doi.org/10.1038/nature13319",
+    "note": "Primary study, Extended Data Figure 10b, supports chemical-label dependence of peptide observability. Used for this methodological point only, not for a protein or disease catalog."
+  }
+}

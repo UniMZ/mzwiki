@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "calibration-curve",
+    "title": "Calibration curve",
+    "zh_title": "校准曲线",
+    "summary": "A response–quantity relationship used to calculate results within an established range.",
+    "zh_summary": "用于在已建立范围内计算结果的响应与量值关系。",
+    "related_guides": [
+      "quantitative-calibration",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "internal-standard",
+      "limit-of-detection",
+      "limit-of-quantification",
+      "mass-accuracy"
+    ],
+    "refs": [
+      "quant-vim-curve",
+      "quant-nist-residuals"
+    ]
+  },
+  {
+    "slug": "internal-standard",
+    "title": "Internal standard",
+    "zh_title": "内标",
+    "summary": "An added reference substance whose response can track specified shared measurement variation.",
+    "zh_summary": "加入的参照物质，其响应可跟踪规定的共同测量变异。",
+    "related_guides": [
+      "quantitative-calibration",
+      "qc-normalization",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "calibration-curve",
+      "isotopologue",
+      "batch-effect"
+    ],
+    "refs": [
+      "quant-ich-m10"
+    ]
+  },
+  {
+    "slug": "limit-of-detection",
+    "title": "Limit of detection",
+    "zh_title": "检出限",
+    "summary": "Detection capability defined by a procedure, decision rule, and error probabilities.",
+    "zh_summary": "由程序、判定规则及错误概率界定的检出能力。",
+    "related_guides": [
+      "quantitative-calibration",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "limit-of-quantification",
+      "calibration-curve",
+      "missing-value"
+    ],
+    "refs": [
+      "quant-vim-detection",
+      "quant-ich-q2"
+    ]
+  },
+  {
+    "slug": "limit-of-quantification",
+    "title": "Limit of quantification",
+    "zh_title": "定量限",
+    "summary": "The lower level at which specified quantitative performance is supported.",
+    "zh_summary": "能够支持规定定量性能的低端水平。",
+    "related_guides": [
+      "quantitative-calibration",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "limit-of-detection",
+      "calibration-curve",
+      "missing-value"
+    ],
+    "refs": [
+      "quant-ich-q2"
+    ]
+  },
+  {
+    "slug": "biological-replicate",
+    "title": "Biological replicate",
+    "zh_title": "生物学重复",
+    "summary": "Replication at a stated biological level, whose independence follows the sampling and intervention design.",
+    "zh_summary": "在明确生物学层级上的重复，其独立性由抽样及干预设计决定。",
+    "related_guides": [
+      "experimental-design",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "batch-effect",
+      "false-discovery-rate"
+    ],
+    "refs": [
+      "quant-experimental-units",
+      "quant-nist-nested"
+    ]
+  },
+  {
+    "slug": "batch-effect",
+    "title": "Batch effect",
+    "zh_title": "批次效应",
+    "summary": "Systematic technical variation associated with processing groups or acquisition order.",
+    "zh_summary": "与处理分组或采集顺序相关的系统性技术变异。",
+    "related_guides": [
+      "experimental-design",
+      "qc-normalization",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "biological-replicate",
+      "internal-standard",
+      "missing-value"
+    ],
+    "refs": [
+      "quant-batch-correction",
+      "quant-nist-blocking"
+    ]
+  }
+]

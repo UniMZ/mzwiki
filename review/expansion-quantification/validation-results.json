@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "guide_pairs": 3,
+  "term_pairs": 6,
+  "new_references": 12,
+  "reused_references": 5,
+  "html_fragments": 18,
+  "validated_links": 104,
+  "numerical_cases": 13,
+  "published_checks": 18,
+  "english_word_counts": {
+    "content/en/quantitative-calibration.html": 915,
+    "content/en/experimental-design.html": 1050,
+    "content/en/qc-normalization.html": 1110,
+    "content/terms/en/calibration-curve.html": 203,
+    "content/terms/en/internal-standard.html": 210,
+    "content/terms/en/limit-of-detection.html": 201,
+    "content/terms/en/limit-of-quantification.html": 211,
+    "content/terms/en/biological-replicate.html": 203,
+    "content/terms/en/batch-effect.html": 201
+  },
+  "checks": [
+    "Pinned-baseline slug and reference collision checks",
+    "Exact reused-reference equality",
+    "Well-nested HTML tags and unique IDs",
+    "Guide/term word ranges",
+    "EN/ZH section, citation, and internal-link parity",
+    "All metadata references cited with correct numbers",
+    "All links resolve to pinned-baseline or packet-owned topics",
+    "Independent numeric calculations including exact rational design-matrix ranks",
+    "Published bilingual numeric string checks"
+  ],
+  "not_performed": [
+    "Full repository build, generated-page checks, or browser rendering; integration owner must perform them",
+    "External peer review or analytical method validation"
+  ]
+}

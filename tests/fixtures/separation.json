@@ -1,0 +1,294 @@
+{
+  "scope": "Constructed teaching arithmetic only; not empirical data, validated methods, acceptance limits, or executable laboratory procedures.",
+  "fixtures": [
+    {
+      "id": "sep-amount-volume",
+      "article": "sample-preparation",
+      "section": "losses",
+      "inputs": {
+        "starting_amount_ng": 100,
+        "retained_amount_ng": 75,
+        "final_volume_ml": 0.5,
+        "final_dilution_factor": 4
+      },
+      "calculations": [
+        {
+          "formula": "retained_amount_ng / final_volume_ml",
+          "expected": 150,
+          "unit": "ng/mL"
+        },
+        {
+          "formula": "retained_amount_ng / final_volume_ml / final_dilution_factor",
+          "expected": 37.5,
+          "unit": "ng/mL"
+        }
+      ],
+      "assumptions": [
+        "Fourfold dilution means final volume is four times the aliquot volume.",
+        "Mass balance is separate from instrument calibration."
+      ]
+    },
+    {
+      "id": "sep-recovery-suppression",
+      "article": "sample-preparation",
+      "section": "example",
+      "inputs": {
+        "A_neat": 1000,
+        "B_post": 800,
+        "C_pre": 600
+      },
+      "calculations": [
+        {
+          "formula": "B_post / A_neat",
+          "expected": 0.8,
+          "unit": "dimensionless"
+        },
+        {
+          "formula": "100 * C_pre / B_post",
+          "expected": 75,
+          "unit": "percent recovery"
+        },
+        {
+          "formula": "100 * C_pre / A_neat",
+          "expected": 60,
+          "unit": "percent overall response"
+        },
+        {
+          "formula": "100 * (1 - B_post / A_neat)",
+          "expected": 20,
+          "unit": "percent lower response"
+        }
+      ],
+      "assumptions": [
+        "Equal nominal final analyte amounts and matched final solvents/injection conditions.",
+        "Comparable extracted matrix in B and C.",
+        "Linear response; no endogenous analyte or unresolved interference; adequate blank correction."
+      ]
+    },
+    {
+      "id": "sep-recovery-enhancement",
+      "article": "sample-preparation",
+      "section": "example",
+      "inputs": {
+        "A_neat": 1000,
+        "B_post": 1200,
+        "C_pre": 900
+      },
+      "calculations": [
+        {
+          "formula": "B_post / A_neat",
+          "expected": 1.2,
+          "unit": "dimensionless"
+        },
+        {
+          "formula": "100 * C_pre / B_post",
+          "expected": 75,
+          "unit": "percent recovery"
+        },
+        {
+          "formula": "100 * C_pre / A_neat",
+          "expected": 90,
+          "unit": "percent overall response"
+        }
+      ],
+      "assumptions": [
+        "Same matched-comparison assumptions as sep-recovery-suppression."
+      ]
+    },
+    {
+      "id": "sep-standard-compensation",
+      "article": "sample-preparation",
+      "section": "standards",
+      "inputs": {
+        "analyte_MF": 0.8,
+        "tracking_IS_MF": 0.8,
+        "nontracking_IS_MF": 1.0
+      },
+      "calculations": [
+        {
+          "formula": "analyte_MF / tracking_IS_MF",
+          "expected": 1.0,
+          "unit": "dimensionless"
+        },
+        {
+          "formula": "analyte_MF / nontracking_IS_MF",
+          "expected": 0.8,
+          "unit": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "Ratios illustrate tracking; they do not establish suitable calibration or reliable low signal measurement."
+      ]
+    },
+    {
+      "id": "sep-retention-factor",
+      "article": "lc-separation",
+      "section": "retention",
+      "inputs": {
+        "tR_min": 4.5,
+        "tM_min": 1.5
+      },
+      "calculations": [
+        {
+          "formula": "tR_min - tM_min",
+          "expected": 3.0,
+          "unit": "min"
+        },
+        {
+          "formula": "(tR_min - tM_min) / tM_min",
+          "expected": 2.0,
+          "unit": "dimensionless"
+        },
+        {
+          "formula": "tR_min / tM_min",
+          "expected": 3.0,
+          "unit": "dimensionless; intentionally incorrect retention-factor alternative"
+        }
+      ],
+      "assumptions": [
+        "Appropriate isocratic model and compatible retention/hold-up conventions.",
+        "Not a fixed equilibrium description across a gradient."
+      ]
+    },
+    {
+      "id": "sep-gradient-delay",
+      "article": "lc-separation",
+      "section": "gradient",
+      "inputs": {
+        "dwell_volume_ml": 0.3,
+        "flow_ml_per_min": 0.2
+      },
+      "calculations": [
+        {
+          "formula": "dwell_volume_ml / flow_ml_per_min",
+          "expected": 1.5,
+          "unit": "min"
+        }
+      ],
+      "assumptions": [
+        "Ideal transport estimate from mixing point to column.",
+        "Not analyte retention time; real gradient can be dispersed."
+      ]
+    },
+    {
+      "id": "sep-triangle-area",
+      "article": "lc-separation",
+      "section": "peaks",
+      "inputs": {
+        "width_one_s": 12,
+        "height_one": 100,
+        "width_two_s": 6,
+        "height_two": 200
+      },
+      "calculations": [
+        {
+          "formula": "0.5 * width_one_s * height_one",
+          "expected": 600,
+          "unit": "arbitrary signal unit*s"
+        },
+        {
+          "formula": "0.5 * width_two_s * height_two",
+          "expected": 600,
+          "unit": "arbitrary signal unit*s"
+        }
+      ],
+      "assumptions": [
+        "Artificial triangular shapes above baseline.",
+        "No claim that area is concentration or that real peaks are triangles."
+      ]
+    },
+    {
+      "id": "sep-cycle-intervals",
+      "article": "lc-separation",
+      "section": "ms",
+      "inputs": {
+        "defined_interval_s": 12,
+        "short_cycle_s": 1.0,
+        "long_cycle_s": 3.0
+      },
+      "calculations": [
+        {
+          "formula": "defined_interval_s / short_cycle_s",
+          "expected": 12,
+          "unit": "cycle intervals"
+        },
+        {
+          "formula": "defined_interval_s / long_cycle_s",
+          "expected": 4,
+          "unit": "cycle intervals"
+        }
+      ],
+      "assumptions": [
+        "Channel-specific revisit periods.",
+        "Approximate sampling opportunity, not exact count of points or universal adequacy threshold."
+      ]
+    },
+    {
+      "id": "sep-carryover-denominators",
+      "article": "blanks-carryover",
+      "section": "example",
+      "inputs": {
+        "blank_area": 1000,
+        "high_area": 1000000,
+        "low_reference_area": 2000
+      },
+      "calculations": [
+        {
+          "formula": "100 * blank_area / high_area",
+          "expected": 0.1,
+          "unit": "percent of high area"
+        },
+        {
+          "formula": "100 * blank_area / low_reference_area",
+          "expected": 50,
+          "unit": "percent of low-level reference area"
+        }
+      ],
+      "assumptions": [
+        "Uncorrected arbitrary area ratios; no empirical acceptance limit."
+      ]
+    },
+    {
+      "id": "sep-history-pattern",
+      "article": "blanks-carryover",
+      "section": "sequence",
+      "inputs": {
+        "pre_challenge_blank": 20,
+        "high_sample": 1000000,
+        "post_challenge_blanks": [
+          1000,
+          200,
+          25
+        ]
+      },
+      "interpretation": "A decreasing history-dependent pattern is consistent with a residual contribution but does not uniquely locate its source.",
+      "calculations": []
+    },
+    {
+      "id": "sep-blank-comparison",
+      "article": "blanks-carryover",
+      "section": "filtering",
+      "inputs": {
+        "sample_one_area": 600,
+        "sample_two_area": 1200,
+        "blank_area": 200
+      },
+      "calculations": [
+        {
+          "formula": "sample_one_area / blank_area",
+          "expected": 3,
+          "unit": "dimensionless"
+        },
+        {
+          "formula": "sample_two_area / blank_area",
+          "expected": 6,
+          "unit": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "No filtering threshold is prescribed.",
+        "Division by a reported blank zero is undefined, not infinite confidence."
+      ]
+    }
+  ]
+}

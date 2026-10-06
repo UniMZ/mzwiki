@@ -1,0 +1,83 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "status": "Prepared content-only packet; not applied, committed, built, deployed, or live-site verified.",
+  "add_complete_fragments": [
+    "content/en/small-molecule-annotation.html",
+    "content/zh/small-molecule-annotation.html",
+    "content/en/lipidomics-structural-evidence.html",
+    "content/zh/lipidomics-structural-evidence.html",
+    "content/en/ion-mobility-ccs.html",
+    "content/zh/ion-mobility-ccs.html",
+    "content/terms/en/molecular-formula.html",
+    "content/terms/zh/molecular-formula.html",
+    "content/terms/en/isomer.html",
+    "content/terms/zh/isomer.html",
+    "content/terms/en/spectral-library.html",
+    "content/terms/zh/spectral-library.html",
+    "content/terms/en/lipid-shorthand-notation.html",
+    "content/terms/zh/lipid-shorthand-notation.html",
+    "content/terms/en/ion-mobility.html",
+    "content/terms/zh/ion-mobility.html",
+    "content/terms/en/collision-cross-section.html",
+    "content/terms/zh/collision-cross-section.html"
+  ],
+  "replace_complete_fragments": [],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "Merge three new unique Guide objects; preserve existing objects. Suggested placement: ion-mobility-ccs in Methods after acquisition, then small-molecule-annotation and lipidomics-structural-evidence together under Applications after existing core material. Reconcile order with the larger expansion.",
+      "payload": "metadata/articles.additions.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "Append six unique term objects only if slugs remain absent; never insert these objects into the Guide array.",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "Merge 20 new small- prefixed keys only; stop and reconcile any collision. Existing reference objects remain unchanged.",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/small-molecules-expansion.json",
+    "payload": "tests/fixtures/small-molecules-expansion.json",
+    "note": "Proposed teaching-fixture schema; no existing repository checker is claimed to consume it."
+  },
+  "batch_record": {
+    "destination": "docs/content-batches/small-molecules-expansion.md",
+    "payload": "docs/content-batches/small-molecules-expansion.md"
+  },
+  "scope_guards": [
+    "Add exactly three complete Guide pairs and six complete term pairs.",
+    "Do not replace or duplicate existing adduct-ion or isotopologue entries.",
+    "English interface and project documentation; Chinese only in matched article bodies and title/summary metadata.",
+    "All cross-links target the pinned baseline or this packet; no links rely on other parallel expansion packets.",
+    "No disease catalogue, instrument ranking, copied spectra, experimental dataset, or unsupported structural identification."
+  ],
+  "application_preconditions": [
+    "Re-read current main and reconcile changes since the pinned baseline.",
+    "Verify all nine new slugs are still absent.",
+    "Integrate only application-listed fragments, metadata merges, and the agreed fixture/documentation; inspection snapshots are not repository replacements.",
+    "Use the existing builder and run all repository checks plus the added/adapted fixture check.",
+    "Update any hard-coded Guide-count copy as part of the larger expansion; the inspected builder contains an 08 foundational guides string.",
+    "Verify generated routes, term index, reciprocal links, search, sitemap, anchor-preserving EN/ZH switches, and desktop/mobile reading."
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "metadata/references.reused.json",
+    "inspection/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit or push",
+    "No build or deployment",
+    "No live-site verification"
+  ]
+}

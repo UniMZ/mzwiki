@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "retention-time",
+    "title": "Retention time",
+    "zh_title": "保留时间",
+    "summary": "Elapsed time from injection to a chromatographic peak maximum, interpreted within a specified method.",
+    "zh_summary": "从进样到色谱峰最大值的时间，需要在指定方法内解释。",
+    "related_guides": [
+      "lc-separation",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "chromatographic-peak",
+      "extracted-ion-chromatogram",
+      "feature"
+    ],
+    "refs": [
+      "retention-time-definition",
+      "sep-retention-factor"
+    ]
+  },
+  {
+    "slug": "chromatographic-peak",
+    "title": "Chromatographic peak",
+    "zh_title": "色谱峰",
+    "summary": "An elution-time signal with a baseline, height, width, and area that need not represent one pure component.",
+    "zh_summary": "具有基线、峰高、峰宽与面积的洗脱时间信号，不一定代表单一纯组分。",
+    "related_guides": [
+      "lc-separation",
+      "acquisition"
+    ],
+    "related_terms": [
+      "retention-time",
+      "extracted-ion-chromatogram",
+      "mass-spectrum",
+      "acquisition-cycle"
+    ],
+    "refs": [
+      "sep-peak-definition",
+      "sep-peak-area"
+    ]
+  },
+  {
+    "slug": "recovery",
+    "title": "Recovery",
+    "zh_title": "回收率",
+    "summary": "Analyte retained through defined preparation steps, separated from matrix-dependent response.",
+    "zh_summary": "分析物经过指定前处理步骤后的保留程度，需要与基质相关响应区分。",
+    "related_guides": [
+      "sample-preparation"
+    ],
+    "related_terms": [
+      "matrix-effect",
+      "blank"
+    ],
+    "refs": [
+      "sep-recovery-matrix",
+      "sep-m10"
+    ]
+  },
+  {
+    "slug": "matrix-effect",
+    "title": "Matrix effect",
+    "zh_title": "基质效应",
+    "summary": "A response change caused by accompanying sample constituents, distinct from extraction loss.",
+    "zh_summary": "伴随样品组分导致的响应变化，与提取损失不同。",
+    "related_guides": [
+      "sample-preparation",
+      "ionization",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "recovery",
+      "blank",
+      "chromatographic-peak"
+    ],
+    "refs": [
+      "sep-matrix-assessment",
+      "sep-recovery-matrix"
+    ]
+  },
+  {
+    "slug": "carryover",
+    "title": "Carryover",
+    "zh_title": "进样残留",
+    "summary": "Previously introduced material contributes to a later measurement; impact depends on the next result.",
+    "zh_summary": "先前引入的物质对后续测量产生贡献，其影响取决于后续结果的水平。",
+    "related_guides": [
+      "blanks-carryover",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "blank",
+      "retention-time",
+      "chromatographic-peak"
+    ],
+    "refs": [
+      "sep-carryover",
+      "sep-m10"
+    ]
+  },
+  {
+    "slug": "blank",
+    "title": "Blank",
+    "zh_title": "空白",
+    "summary": "A control whose contents, treatment, and sequence position define the background question it can answer.",
+    "zh_summary": "一种对照，其内容物、处理方式与序列位置决定它能回答哪种背景问题。",
+    "related_guides": [
+      "blanks-carryover",
+      "sample-preparation",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "carryover",
+      "matrix-effect",
+      "recovery"
+    ],
+    "refs": [
+      "mqacc-reporting"
+    ]
+  }
+]

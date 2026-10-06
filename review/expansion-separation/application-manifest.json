@@ -1,0 +1,73 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "package_type": "Content-only additive expansion; not a repository patch or build",
+  "add_complete_fragments": [
+    "content/en/sample-preparation.html",
+    "content/zh/sample-preparation.html",
+    "content/en/lc-separation.html",
+    "content/zh/lc-separation.html",
+    "content/en/blanks-carryover.html",
+    "content/zh/blanks-carryover.html",
+    "content/terms/en/retention-time.html",
+    "content/terms/zh/retention-time.html",
+    "content/terms/en/chromatographic-peak.html",
+    "content/terms/zh/chromatographic-peak.html",
+    "content/terms/en/recovery.html",
+    "content/terms/zh/recovery.html",
+    "content/terms/en/matrix-effect.html",
+    "content/terms/zh/matrix-effect.html",
+    "content/terms/en/carryover.html",
+    "content/terms/zh/carryover.html",
+    "content/terms/en/blank.html",
+    "content/terms/zh/blank.html"
+  ],
+  "replace_complete_fragments": [],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "Append three unique Guide objects in the order shown, or insert together after the existing Methods Guides while preserving prerequisites. Do not replace the existing eight Guides.",
+      "payload": "metadata/articles.additions.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "Append six unique term objects; preserve the separate terminology collection and every existing term.",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "Merge thirteen sep- keys after checking for collisions. Reuse the four existing keys unchanged.",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/separation.json",
+    "payload": "tests/fixtures/separation.json",
+    "note": "Content fixture proposal with eleven original examples. The later integration must adapt a scientific test runner; package inspection validator is not repository production code."
+  },
+  "batch_record": {
+    "destination": "docs/content-batches/09-separation.md",
+    "payload": "docs/content-batches/09-separation.md",
+    "note": "Suggested path; renumber only if another batch already owns it."
+  },
+  "integration_checks": [
+    "Compare current main against the pinned baseline and reconcile any new slug/reference collision.",
+    "Run the existing repository build and structural/scientific checks after integration, extending assertions to cover new counts and example fixtures.",
+    "Confirm generated English and Chinese views, reciprocal Guide links, terminology indexes, search entries and narrow-screen table layout.",
+    "Do not count this package as published until repository application, generated output and live-site verification are separately complete."
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "metadata/references.reused.json",
+    "inspection/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit, push, build, deployment or live-site verification"
+  ]
+}

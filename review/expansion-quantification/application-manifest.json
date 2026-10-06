@@ -1,0 +1,166 @@
+{
+  "schema": "mzwiki-content-additions-packet-v1",
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "41af17b09a188ed7c884fcb99cfcea4efd1ef2a5",
+  "packet": "quantification-design-qc-expansion",
+  "status": "Ready for integration; no repository writes performed",
+  "expected_delta": {
+    "guide_pairs": 3,
+    "term_pairs": 6,
+    "article_fragments": 18,
+    "reference_keys": 12
+  },
+  "copy_files": [
+    {
+      "source": "content/en/experimental-design.html",
+      "destination": "content/en/experimental-design.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/en/qc-normalization.html",
+      "destination": "content/en/qc-normalization.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/en/quantitative-calibration.html",
+      "destination": "content/en/quantitative-calibration.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/en/batch-effect.html",
+      "destination": "content/terms/en/batch-effect.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/en/biological-replicate.html",
+      "destination": "content/terms/en/biological-replicate.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/en/calibration-curve.html",
+      "destination": "content/terms/en/calibration-curve.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/en/internal-standard.html",
+      "destination": "content/terms/en/internal-standard.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/en/limit-of-detection.html",
+      "destination": "content/terms/en/limit-of-detection.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/en/limit-of-quantification.html",
+      "destination": "content/terms/en/limit-of-quantification.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/zh/batch-effect.html",
+      "destination": "content/terms/zh/batch-effect.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/zh/biological-replicate.html",
+      "destination": "content/terms/zh/biological-replicate.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/zh/calibration-curve.html",
+      "destination": "content/terms/zh/calibration-curve.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/zh/internal-standard.html",
+      "destination": "content/terms/zh/internal-standard.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/zh/limit-of-detection.html",
+      "destination": "content/terms/zh/limit-of-detection.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/terms/zh/limit-of-quantification.html",
+      "destination": "content/terms/zh/limit-of-quantification.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/zh/experimental-design.html",
+      "destination": "content/zh/experimental-design.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/zh/qc-normalization.html",
+      "destination": "content/zh/qc-normalization.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "content/zh/quantitative-calibration.html",
+      "destination": "content/zh/quantitative-calibration.html",
+      "operation": "add-new-file"
+    },
+    {
+      "source": "tests/fixtures/quantification-design-qc.json",
+      "destination": "tests/fixtures/quantification-design-qc.json",
+      "operation": "add-new-file"
+    }
+  ],
+  "metadata_merges": [
+    {
+      "source": "metadata/articles.additions.json",
+      "destination": "content/articles.json",
+      "operation": "append-array-items-by-unique-slug",
+      "slugs": [
+        "quantitative-calibration",
+        "experimental-design",
+        "qc-normalization"
+      ]
+    },
+    {
+      "source": "metadata/terms.additions.json",
+      "destination": "content/terms.json",
+      "operation": "append-array-items-by-unique-slug",
+      "slugs": [
+        "calibration-curve",
+        "internal-standard",
+        "limit-of-detection",
+        "limit-of-quantification",
+        "biological-replicate",
+        "batch-effect"
+      ]
+    },
+    {
+      "source": "metadata/references.additions.json",
+      "destination": "content/references.json",
+      "operation": "merge-object-keys-reject-collisions"
+    }
+  ],
+  "reused_reference_verification": "metadata/references.reused.json",
+  "optional_repository_documentation": [
+    "docs/content-batches/quantification-design-qc-expansion.md"
+  ],
+  "local_validation_command": "python3 inspection/validate_packet.py",
+  "validation_report": "validation-results.json",
+  "source_boundaries": "SOURCE-BOUNDARIES.md",
+  "do_not_apply": [
+    "inspection/",
+    "metadata/references.reused.json",
+    "validation-results.json",
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "application-manifest.json",
+    "packet-files.sha256.json"
+  ],
+  "integration_requirements": [
+    "Recheck current-main slugs and reference keys before merging",
+    "Merge metadata additions rather than overwriting entire collections",
+    "Keep article prerequisites in a sensible learning-path order",
+    "Keep existing English UI and shared builder",
+    "Build generated pages and search index",
+    "Run existing full structural/scientific tests and check new fixtures",
+    "Check paired articles, search, citation anchors, navigation, and mobile rendering",
+    "Do not claim deployment until independently confirmed"
+  ]
+}

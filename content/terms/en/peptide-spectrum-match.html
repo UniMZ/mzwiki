@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>peptide-spectrum match</strong> (PSM) is a proposed association between an experimental MS/MS spectrum and a peptide interpretation, including relevant sequence, modifications, and charge. A search score measures agreement under a particular method and candidate set. A top-ranked PSM is not automatically an accepted identification or a calibrated probability. <a href="#ref-prot-sequest">[1]</a></p>
+<h2 id="example">Count the reporting unit</h2>
+<p><strong>Constructed example:</strong> five spectra assigned to the same peptide produce five PSMs but only one distinct unmodified peptide sequence. If two assignments propose an oxidized form, the sequence count can remain one while the modified-form count becomes two. Report which definition was used rather than treating these counts as interchangeable.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A spectrum may contain coisolated species, and an assignment need not explain every peak. A PSM can also be wrong even when it has the highest score among tested candidates. Statistical post-processing can estimate assignment confidence, but that confidence is model-dependent. <a href="#ref-prot-peptideprophet">[2]</a></p>
+<p>PSM-level error control does not automatically provide peptide-, protein-, or site-localization error control. Retain the source spectrum identifier, candidate interpretation, search settings, score, and filtering result.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/peptide-identification-protein-inference/#error-levels">Compare PSM and peptide error fractions</a></li></ul>

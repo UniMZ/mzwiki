@@ -1,0 +1,9 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>spectral library</strong> is a collection of reference spectra linked to compound or ion descriptions and acquisition metadata. In small-molecule MS, the reference may be an EI spectrum or an MS/MS spectrum of a specified precursor. Libraries such as MassBank retain chemical and experimental information with their peak lists. <a href="#ref-small-massbank">[1]</a> Measured and predicted spectra should be labeled distinctly.</p>
+<h2 id="example">A simple example</h2>
+<p>A constructed query is positive-mode [M+H]<sup>+</sup> MS/MS. Before accepting a library hit, check that the reference describes the intended ion and a compatible fragmentation experiment. Compare informative peaks and substantial unexplained signals, not only the displayed rank. Save the library accession, release, preprocessing, tolerances, and scoring method so someone else can reproduce the comparison.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>The highest-scoring entry is the best match among the searched entries under that algorithm; it need not be the correct structure. Missing candidates, similar isomers, and mixed experimental spectra can mislead. A similarity score is not automatically a calibrated probability or an error-rate estimate.</p>
+<p>An external-library match alone is insufficient for MSI level-1 identification of a known metabolite, which requires comparison with an authentic compound under matching experimental conditions and appropriate orthogonal evidence. <a href="#ref-msi-chemical-analysis">[2]</a> Report both the matching evidence and the confidence framework.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/small-molecule-annotation/#spectra">Evaluate spectral matches</a></li></ul>
