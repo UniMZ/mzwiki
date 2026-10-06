@@ -1,0 +1,376 @@
+{
+  "schema": "mzwiki-acquisition-teaching-fixtures-v1",
+  "status": "Constructed teaching data, not instrument performance or experimental signals",
+  "baseline_commit": "141264f45b3b4c02a9c99104e999a2c6caa2446d",
+  "arithmetic": "Treat decimal inputs as exact for these models, calculate before rounding, and use seconds unless milliseconds are stated.",
+  "assumptions": [
+    "Serial schedules do not overlap accumulation and detection.",
+    "Survey and additional overhead are separate from each per-window block.",
+    "Peak-width/cycle-time ratios are approximate opportunities, not exact point counts or universal acceptance limits.",
+    "DDA opportunities do not imply a target is selected in every cycle.",
+    "Isolation windows are ideal rectangles; real transmission profiles are not inferred.",
+    "XIC examples use invented centroid signals, inclusive numeric extraction bounds, positive-ion MS1, and direct summation only."
+  ],
+  "cases": [
+    {
+      "id": "dia_20",
+      "kind": "serial_dia",
+      "input": {
+        "range": [
+          400,
+          800
+        ],
+        "window_width": 20,
+        "survey_s": 0.2,
+        "window_block_s": 0.04,
+        "overhead_s": 0.2,
+        "peak_width_s": 12
+      },
+      "expected": {
+        "window_count": 20,
+        "cycle_s": 1.2,
+        "approx_opportunities": 10,
+        "spectra_per_cycle": 21,
+        "measurements_per_window_per_cycle": 1
+      }
+    },
+    {
+      "id": "dia_40",
+      "kind": "serial_dia",
+      "input": {
+        "range": [
+          400,
+          800
+        ],
+        "window_width": 10,
+        "survey_s": 0.2,
+        "window_block_s": 0.04,
+        "overhead_s": 0.2,
+        "peak_width_s": 12
+      },
+      "expected": {
+        "window_count": 40,
+        "cycle_s": 2,
+        "approx_opportunities": 6,
+        "spectra_per_cycle": 41,
+        "measurements_per_window_per_cycle": 1
+      }
+    },
+    {
+      "id": "fixed_budget_40",
+      "kind": "budget_per_window",
+      "input": {
+        "cycle_budget_s": 1.2,
+        "survey_s": 0.2,
+        "overhead_s": 0.2,
+        "window_count": 40
+      },
+      "expected": {
+        "window_block_s": 0.02
+      },
+      "caveat": "Feasibility and adequate ion statistics are not established."
+    },
+    {
+      "id": "dda_top10",
+      "kind": "serial_dda",
+      "input": {
+        "survey_s": 0.2,
+        "dependent_count": 10,
+        "dependent_block_s": 0.09,
+        "overhead_s": 0.1,
+        "peak_width_s": 12
+      },
+      "expected": {
+        "cycle_s": 1.2,
+        "approx_survey_opportunities": 10,
+        "spectra_per_cycle": 11
+      },
+      "target_ms2_count": "Not determined by these timing inputs"
+    },
+    {
+      "id": "legacy_3s",
+      "kind": "opportunities",
+      "input": {
+        "peak_width_s": 12,
+        "revisit_s": 3
+      },
+      "expected": {
+        "approx_opportunities": 4
+      }
+    },
+    {
+      "id": "mrm_40",
+      "kind": "serial_mrm",
+      "input": {
+        "transitions": 40,
+        "dwell_ms": 20,
+        "pause_ms": 5,
+        "other_overhead_ms": 0,
+        "peak_width_s": 12
+      },
+      "expected": {
+        "cycle_ms": 1000,
+        "approx_opportunities": 12
+      }
+    },
+    {
+      "id": "mrm_80",
+      "kind": "serial_mrm",
+      "input": {
+        "transitions": 80,
+        "dwell_ms": 20,
+        "pause_ms": 5,
+        "other_overhead_ms": 0,
+        "peak_width_s": 12
+      },
+      "expected": {
+        "cycle_ms": 2000,
+        "approx_opportunities": 6
+      }
+    },
+    {
+      "id": "mrm_fixed_budget",
+      "kind": "budget_dwell",
+      "input": {
+        "transitions": 80,
+        "cycle_budget_ms": 1000,
+        "pause_ms": 5,
+        "other_overhead_ms": 0
+      },
+      "expected": {
+        "dwell_ms": 7.5
+      }
+    },
+    {
+      "id": "isolation_wide",
+      "kind": "isolation_bounds",
+      "input": {
+        "center": 600,
+        "full_width": 1.2,
+        "offset": 0,
+        "ions": [
+          600,
+          600.4
+        ]
+      },
+      "expected": {
+        "bounds": [
+          599.4,
+          600.6
+        ],
+        "included": [
+          600,
+          600.4
+        ]
+      }
+    },
+    {
+      "id": "isolation_narrow",
+      "kind": "isolation_bounds",
+      "input": {
+        "center": 600,
+        "full_width": 0.4,
+        "offset": 0,
+        "ions": [
+          600,
+          600.4
+        ]
+      },
+      "expected": {
+        "bounds": [
+          599.8,
+          600.2
+        ],
+        "included": [
+          600
+        ]
+      }
+    },
+    {
+      "id": "isolation_offset",
+      "kind": "isolation_bounds",
+      "input": {
+        "center": 600,
+        "full_width": 1.2,
+        "offset": 0.3,
+        "ions": [
+          600,
+          600.4
+        ]
+      },
+      "expected": {
+        "bounds": [
+          599.7,
+          600.9
+        ],
+        "included": [
+          600,
+          600.4
+        ]
+      }
+    },
+    {
+      "id": "xic_5ppm",
+      "kind": "centroid_xic",
+      "input": {
+        "target": 600,
+        "ppm": 5,
+        "times_s": [
+          0,
+          1,
+          2
+        ],
+        "centroids": [
+          599.998,
+          600.001,
+          600.005
+        ],
+        "signals": [
+          [
+            10,
+            20,
+            100
+          ],
+          [
+            20,
+            50,
+            200
+          ],
+          [
+            10,
+            20,
+            100
+          ]
+        ]
+      },
+      "expected": {
+        "half_width": 0.003,
+        "bounds": [
+          599.997,
+          600.003
+        ],
+        "included_indices": [
+          0,
+          1
+        ],
+        "xic": [
+          30,
+          70,
+          30
+        ]
+      }
+    },
+    {
+      "id": "xic_10ppm",
+      "kind": "centroid_xic",
+      "input": {
+        "target": 600,
+        "ppm": 10,
+        "times_s": [
+          0,
+          1,
+          2
+        ],
+        "centroids": [
+          599.998,
+          600.001,
+          600.005
+        ],
+        "signals": [
+          [
+            10,
+            20,
+            100
+          ],
+          [
+            20,
+            50,
+            200
+          ],
+          [
+            10,
+            20,
+            100
+          ]
+        ]
+      },
+      "expected": {
+        "half_width": 0.006,
+        "bounds": [
+          599.994,
+          600.006
+        ],
+        "included_indices": [
+          0,
+          1,
+          2
+        ],
+        "xic": [
+          130,
+          270,
+          130
+        ]
+      }
+    },
+    {
+      "id": "dda_exclusion",
+      "kind": "selection",
+      "input": {
+        "ranked_eligible": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "top_n": 2,
+        "excluded_next_cycle": [
+          "A",
+          "B"
+        ]
+      },
+      "expected": {
+        "first_cycle": [
+          "A",
+          "B"
+        ],
+        "next_with_exclusion": [
+          "C",
+          "D"
+        ],
+        "next_without_exclusion": [
+          "A",
+          "B"
+        ]
+      },
+      "caveat": "Static rank, no other candidates or filters, and exclusions last for the entire next cycle."
+    },
+    {
+      "id": "ms_level_not_event_count",
+      "kind": "interpretation",
+      "input": {
+        "ms1_events": 1,
+        "ms2_events": 20
+      },
+      "expected": {
+        "spectra_per_cycle": 21,
+        "max_ms_level": 2,
+        "not_ms_level": 21
+      }
+    },
+    {
+      "id": "dia_halving_width",
+      "kind": "ratio",
+      "input": {
+        "wide_cycle_s": 1.2,
+        "narrow_cycle_s": 2,
+        "wide_windows": 20,
+        "narrow_windows": 40
+      },
+      "expected": {
+        "window_count_ratio": 2,
+        "cycle_time_ratio": 1.6666666666666667
+      },
+      "caveat": "The fixed 0.40 s survey-plus-overhead contribution is unchanged."
+    }
+  ]
+}

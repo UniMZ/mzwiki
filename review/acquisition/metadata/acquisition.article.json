@@ -1,0 +1,32 @@
+{
+  "slug": "acquisition",
+  "title": "Acquisition: full scan, DDA, DIA & targeted",
+  "zh_title": "采集：全扫描、DDA、DIA 与靶向",
+  "summary": "Connect precursor selection, isolation windows, and chromatographic sampling to the evidence recorded by full scan, DDA, DIA, and targeted methods.",
+  "zh_summary": "把前体选择、隔离窗口与色谱采样联系起来，理解全扫描、DDA、DIA 和靶向方法保留的证据。",
+  "group": "Methods",
+  "prereqs": [
+    "analyzers",
+    "fragmentation"
+  ],
+  "related": [
+    "spectrum-interpretation",
+    "data-analysis"
+  ],
+  "refs": [
+    "dia",
+    "iupac",
+    "ms-order",
+    "dda-selection",
+    "dynamic-exclusion",
+    "coisolation-primary",
+    "isolation-window",
+    "srm-definition",
+    "prm-primary",
+    "targeted-scheduling",
+    "targeted-timing",
+    "extracted-ion-profile",
+    "xic-traces",
+    "ftms-processing"
+  ]
+}

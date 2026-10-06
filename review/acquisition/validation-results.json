@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "scope": "Local packet only; no repository build or runtime tests",
+  "baseline_commit": "141264f45b3b4c02a9c99104e999a2c6caa2446d",
+  "old_term_count": 12,
+  "new_term_pairs": 3,
+  "new_reference_keys": 11,
+  "pairs_checked": 4,
+  "old_acquisition_anchors_preserved": [
+    "question",
+    "modes",
+    "example",
+    "design",
+    "practice",
+    "next-level"
+  ],
+  "numeric_token_parity": "pass",
+  "reference_uniqueness": "pass",
+  "files": [
+    {
+      "file": "content/en/acquisition.html",
+      "ids": [
+        "question",
+        "levels",
+        "modes",
+        "full-scan",
+        "dda",
+        "exclusion",
+        "dia",
+        "windows",
+        "targeted",
+        "traces",
+        "example",
+        "sampling",
+        "overheads",
+        "design",
+        "practice",
+        "next-level"
+      ],
+      "citation_occurrences": 17,
+      "links_checked": 23,
+      "html_balanced": true
+    },
+    {
+      "file": "content/zh/acquisition.html",
+      "ids": [
+        "question",
+        "levels",
+        "modes",
+        "full-scan",
+        "dda",
+        "exclusion",
+        "dia",
+        "windows",
+        "targeted",
+        "traces",
+        "example",
+        "sampling",
+        "overheads",
+        "design",
+        "practice",
+        "next-level"
+      ],
+      "citation_occurrences": 17,
+      "links_checked": 23,
+      "html_balanced": true
+    },
+    {
+      "file": "content/terms/en/acquisition-cycle.html",
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 4,
+      "links_checked": 7,
+      "html_balanced": true
+    },
+    {
+      "file": "content/terms/zh/acquisition-cycle.html",
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 4,
+      "links_checked": 7,
+      "html_balanced": true
+    },
+    {
+      "file": "content/terms/en/isolation-window.html",
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 4,
+      "links_checked": 7,
+      "html_balanced": true
+    },
+    {
+      "file": "content/terms/zh/isolation-window.html",
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 4,
+      "links_checked": 7,
+      "html_balanced": true
+    },
+    {
+      "file": "content/terms/en/extracted-ion-chromatogram.html",
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 4,
+      "links_checked": 7,
+      "html_balanced": true
+    },
+    {
+      "file": "content/terms/zh/extracted-ion-chromatogram.html",
+      "ids": [
+        "definition",
+        "example",
+        "confusion",
+        "guides"
+      ],
+      "citation_occurrences": 4,
+      "links_checked": 7,
+      "html_balanced": true
+    }
+  ],
+  "fixture_count": 16,
+  "fixtures": [
+    {
+      "id": "dia_20",
+      "status": "pass"
+    },
+    {
+      "id": "dia_40",
+      "status": "pass"
+    },
+    {
+      "id": "fixed_budget_40",
+      "status": "pass"
+    },
+    {
+      "id": "dda_top10",
+      "status": "pass"
+    },
+    {
+      "id": "legacy_3s",
+      "status": "pass"
+    },
+    {
+      "id": "mrm_40",
+      "status": "pass"
+    },
+    {
+      "id": "mrm_80",
+      "status": "pass"
+    },
+    {
+      "id": "mrm_fixed_budget",
+      "status": "pass"
+    },
+    {
+      "id": "isolation_wide",
+      "status": "pass"
+    },
+    {
+      "id": "isolation_narrow",
+      "status": "pass"
+    },
+    {
+      "id": "isolation_offset",
+      "status": "pass"
+    },
+    {
+      "id": "xic_5ppm",
+      "status": "pass"
+    },
+    {
+      "id": "xic_10ppm",
+      "status": "pass"
+    },
+    {
+      "id": "dda_exclusion",
+      "status": "pass"
+    },
+    {
+      "id": "ms_level_not_event_count",
+      "status": "pass"
+    },
+    {
+      "id": "dia_halving_width",
+      "status": "pass"
+    }
+  ],
+  "unrun": [
+    "repository build",
+    "repository scientific checks",
+    "browser checks",
+    "search regeneration",
+    "deployment",
+    "live-site verification"
+  ]
+}

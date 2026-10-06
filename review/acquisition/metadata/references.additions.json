@@ -1,0 +1,57 @@
+{
+  "ms-order": {
+    "title": "Thermo Fisher Scientific. Orbitrap Tribrid Series Getting Started Guide: Glossary, scan power.",
+    "url": "https://docs.thermofisher.com/api/khub/documents/jtCzzl_yXUDJlRWIprk5vw/content",
+    "note": "Official glossary, printed p. 145. Supports the common instrument convention MS1, MS2, MS3 as successive stages of mass analysis. Used for notation only; the exponent is not an acquisition-cycle number. Official indexed glossary text verified; direct PDF retrieval failed in this pass."
+  },
+  "dda-selection": {
+    "title": "Thermo Fisher Scientific. Orbitrap Tribrid Apex Small Molecule Method Editor Help: Data-dependent properties pane.",
+    "url": "https://docs.thermofisher.com/r/Orbitrap-Tribrid-Apex-Small-Molecule-Method-Editor-Help/1563029131v2en-US2328462859",
+    "note": "Official explanation of Top N as an upper number of dependent scans and cycle-time-limited acquisition as a different scheduling mode. No default settings or product-performance claims are transferred."
+  },
+  "dynamic-exclusion": {
+    "title": "Thermo Fisher Scientific. Orbitrap Ascend Method Editor Help: Dynamic Exclusion filter.",
+    "url": "https://docs.thermofisher.com/r/Orbitrap-Ascend-Method-Editor-Help/1563095179v2en-US2332177675",
+    "note": "Official documentation of repeat count, exclusion duration, and mass matching. Used to explain temporary precursor-selection exclusion, not to recommend universal parameters."
+  },
+  "isolation-window": {
+    "title": "Thermo Fisher Scientific. Orbitrap Exploris 120 Software Manual: Data-Dependent MS2 Properties pane.",
+    "url": "https://docs.thermofisher.com/r/Orbitrap-Exploris-120-Software-Manual/2101051915v2en-US",
+    "note": "Official explanation of isolation full width and offset, sensitivity/interference tradeoffs, and the distinction between maximum injection time and actual accumulation. Numeric teaching windows are independently constructed."
+  },
+  "srm-definition": {
+    "title": "IUPAC Gold Book. Selected reaction monitoring, entry 12568.",
+    "url": "https://goldbook.iupac.org/terms/view/12568",
+    "note": "Definition from IUPAC Recommendations 2013, p. 1589; includes the relationship to multiple reaction monitoring. Official indexed definition verified; direct page retrieval was unavailable during this research pass."
+  },
+  "prm-primary": {
+    "title": "Peterson et al. (2012). Parallel reaction monitoring for high resolution and high mass accuracy quantitative, targeted proteomics. Molecular & Cellular Proteomics 11, 1475–1488.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22865924/",
+    "note": "Primary PRM study, DOI: 10.1074/mcp.O112.020131. Supports recording a product spectrum for a selected precursor and extracting product signals afterward. Official PubMed metadata and indexed PMC text verified; study-specific comparisons are not universal rankings."
+  },
+  "targeted-scheduling": {
+    "title": "AB SCIEX (2012). Scheduled MRM Algorithm Tutorial, Analyst 1.6.1 Software.",
+    "url": "https://sciex.com/content/dam/SCIEX/pdf/customer-docs/user-guide/Scheduled-MRM-Algorithm-Tutorial.pdf",
+    "note": "Official tutorial, especially printed pp. 3–7, explains retention-time scheduling and the need to cover both the peak and retention-time variation. No source screenshot, recommended starting setting, or vendor throughput claim is reproduced."
+  },
+  "targeted-timing": {
+    "title": "SCIEX. How to choose the appropriate dwell time/cycle time in an MRM and sMRM method to get enough points per chromatographic peak.",
+    "url": "https://sciex.com/support/knowledge-base-articles/how-to-choose-the-appropriate-dwell-time-cycle-time-in-an-mrm-and-smrm-method-to-get-enough-points-per-chromatographic-peak_en_us",
+    "note": "Official timing equations for dwell, pause, active transitions, and cycle time. Used for the simplified serial model; platform-specific defaults and universal sampling thresholds are excluded."
+  },
+  "extracted-ion-profile": {
+    "title": "IUPAC Gold Book. Extracted ion profile, entry 12410.",
+    "url": "https://goldbook.iupac.org/terms/view/12410",
+    "note": "Definition from IUPAC Recommendations 2013, p. 1542. Explicitly includes extracted ion chromatograms among time-dependent selected-m/z traces. Official indexed definition verified; direct page retrieval returned 403."
+  },
+  "xic-traces": {
+    "title": "Thermo Fisher Scientific. Compound Discoverer 3.4 User Guide: Chromatograms view traces.",
+    "url": "https://docs.thermofisher.com/r/Compound-Discoverer-3.4-User-Guide/2139106443v1en-US2139135499",
+    "note": "Official explanation of total-ion, base-peak, and extracted-ion chromatograms. Supports the distinction between a spectrum and a selected-m/z trace; no software workflow is prescribed."
+  },
+  "xic-settings": {
+    "title": "Thermo Fisher Scientific. Compound Discoverer 3.4 User Guide: Create Mass Trace node.",
+    "url": "https://docs.thermofisher.com/r/Compound-Discoverer-3.4-User-Guide/2011657483v1en-US2022806795",
+    "note": "Official definitions of MS-order/polarity filters and ppm extraction bounds. Supports the constructed centroid-summation example; the example is not experimental data or a recommended tolerance."
+  }
+}
