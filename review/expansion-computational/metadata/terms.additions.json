@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "spectral-similarity",
+    "title": "Spectral similarity",
+    "zh_title": "谱图相似度",
+    "summary": "A comparison score defined by spectral representation, preprocessing, and peak-matching rules; not automatically an identity probability.",
+    "zh_summary": "由谱图表示、预处理及峰匹配规则定义的比较分数，不会自动成为身份正确概率。",
+    "related_guides": [
+      "spectrum-prediction-generalization",
+      "benchmarking-computational-ms"
+    ],
+    "related_terms": [
+      "mass-spectrum",
+      "spectral-library",
+      "precursor-ion"
+    ],
+    "refs": [
+      "comp-similarity"
+    ]
+  },
+  {
+    "slug": "retention-time-prediction",
+    "title": "Retention-time prediction",
+    "zh_title": "保留时间预测",
+    "summary": "An estimate of an elution coordinate whose scale, local mapping, and applicability depend on chromatography.",
+    "zh_summary": "对洗脱坐标的估计，其尺度、本地映射和适用范围依赖色谱条件。",
+    "related_guides": [
+      "spectrum-prediction-generalization",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "retention-time",
+      "data-leakage",
+      "calibration-curve"
+    ],
+    "refs": [
+      "comp-deeplc",
+      "comp-irt"
+    ]
+  },
+  {
+    "slug": "data-leakage",
+    "title": "Data leakage",
+    "zh_title": "数据泄漏",
+    "summary": "Information crosses the boundary intended to make a model evaluation representative of its claimed use.",
+    "zh_summary": "信息跨越了用于使模型评估代表其所声称用途的预设边界。",
+    "related_guides": [
+      "spectrum-prediction-generalization",
+      "benchmarking-computational-ms"
+    ],
+    "related_terms": [
+      "spectral-library",
+      "biological-replicate",
+      "provenance"
+    ],
+    "refs": [
+      "comp-multispecies",
+      "comp-massspecgym"
+    ]
+  },
+  {
+    "slug": "target-decoy-competition",
+    "title": "Target-decoy competition",
+    "zh_title": "目标–诱饵竞争",
+    "summary": "Targets compete with constructed decoys under a defined procedure whose assumptions and reporting unit determine valid error control.",
+    "zh_summary": "目标与构造诱饵按明确程序竞争，其假设和报告单位决定错误控制是否有效。",
+    "related_guides": [
+      "benchmarking-computational-ms",
+      "peptide-identification-protein-inference"
+    ],
+    "related_terms": [
+      "false-discovery-rate",
+      "peptide-spectrum-match",
+      "protein-inference"
+    ],
+    "refs": [
+      "fdr",
+      "comp-entrapment",
+      "comp-tdc-bias"
+    ]
+  },
+  {
+    "slug": "controlled-vocabulary",
+    "title": "Controlled vocabulary",
+    "zh_title": "受控词汇表",
+    "summary": "Maintained term identifiers and definitions support shared meaning, while units, versions, and context still require validation.",
+    "zh_summary": "维护中的术语标识符和定义支持共享含义，而单位、版本和上下文仍需验证。",
+    "related_guides": [
+      "open-formats-provenance"
+    ],
+    "related_terms": [
+      "provenance",
+      "retention-time",
+      "mass-spectrum"
+    ],
+    "refs": [
+      "comp-mscv"
+    ]
+  },
+  {
+    "slug": "provenance",
+    "title": "Provenance",
+    "zh_title": "数据溯源",
+    "summary": "The connected history of inputs, transformations, outputs, and responsibility behind a result.",
+    "zh_summary": "结果背后相互连接的输入、转换、输出及责任主体历史。",
+    "related_guides": [
+      "open-formats-provenance",
+      "benchmarking-computational-ms"
+    ],
+    "related_terms": [
+      "controlled-vocabulary",
+      "data-leakage",
+      "feature"
+    ],
+    "refs": [
+      "comp-prov",
+      "comp-px-guidelines"
+    ]
+  }
+]

@@ -534,5 +534,216 @@
       "small-im-dms",
       "small-im-database"
     ]
+  },
+  {
+    "slug": "crosslinking-ms-principles",
+    "title": "Crosslinking MS: from peptide pairs to structural restraints",
+    "zh_title": "交联质谱：从肽段对到结构约束",
+    "summary": "Trace crosslink chemistry, paired-peptide evidence, error-control levels, and the limits of structural interpretation.",
+    "zh_summary": "追踪交联化学、肽段对证据、错误控制层级以及结构解释的边界。",
+    "group": "Applications",
+    "prereqs": [
+      "bottom-up-proteomics",
+      "peptide-identification-protein-inference",
+      "fragmentation"
+    ],
+    "related": [
+      "ptm-analysis-site-localization",
+      "data-analysis"
+    ],
+    "refs": [
+      "struct-xl-community",
+      "struct-xl-dsso",
+      "struct-xl-target-decoy",
+      "struct-xl-error-levels",
+      "struct-xl-distance",
+      "struct-xl-benchmark"
+    ]
+  },
+  {
+    "slug": "glycoproteomics-evidence-ambiguity",
+    "title": "Glycoproteomics: evidence and ambiguity",
+    "zh_title": "糖蛋白质组学：证据与歧义",
+    "summary": "Separate peptide identity, glycan composition, attachment sites, and structural detail before interpreting glycopeptide signals.",
+    "zh_summary": "解释糖肽信号前，区分肽段身份、糖链组成、连接位点与结构细节。",
+    "group": "Applications",
+    "prereqs": [
+      "ptm-analysis-site-localization",
+      "fragmentation"
+    ],
+    "related": [
+      "bottom-up-proteomics",
+      "phosphoproteomics-workflow",
+      "data-analysis"
+    ],
+    "refs": [
+      "struct-glyco-mirage",
+      "struct-glyco-glycoform",
+      "struct-glyco-fragmentation",
+      "struct-glyco-opair",
+      "struct-glyco-snfg",
+      "struct-glyco-search",
+      "struct-glyco-fdr"
+    ]
+  },
+  {
+    "slug": "phosphoproteomics-workflow",
+    "title": "Phosphoproteomics: enrichment, localization and quantification",
+    "zh_title": "磷酸化蛋白质组学：富集、定位与定量",
+    "summary": "Plan phosphopeptide enrichment, preserve site ambiguity, and distinguish signal changes from protein-adjusted and occupancy measurements.",
+    "zh_summary": "规划磷酸肽富集、保留位点歧义，并区分信号变化、蛋白质校正测量与占有率测量。",
+    "group": "Applications",
+    "prereqs": [
+      "ptm-analysis-site-localization",
+      "experimental-design"
+    ],
+    "related": [
+      "bottom-up-proteomics",
+      "qc-normalization",
+      "glycoproteomics-evidence-ambiguity"
+    ],
+    "refs": [
+      "struct-phospho-enrichment",
+      "struct-phospho-reproducibility",
+      "prot-ascore",
+      "prot-ptmprophet",
+      "struct-phospho-flr",
+      "struct-phospho-dia",
+      "struct-phospho-protein-adjustment",
+      "prot-stoichiometry"
+    ]
+  },
+  {
+    "slug": "mass-spectrometry-imaging",
+    "title": "Mass spectrometry imaging: principles and interpretation",
+    "zh_title": "质谱成像：原理与解释",
+    "summary": "Separate spatial sampling, ion-image specificity, intensity interpretation, and independent biological units.",
+    "zh_summary": "区分空间采样、离子图像特异性、强度解释及独立生物学单位。",
+    "group": "Applications",
+    "prereqs": [
+      "ionization",
+      "small-molecule-annotation"
+    ],
+    "related": [
+      "single-cell-proteomics",
+      "data-analysis",
+      "experimental-design"
+    ],
+    "refs": [
+      "spatial-msi-reporting",
+      "spatial-msi-preparation",
+      "spatial-resolution-pattern",
+      "spatial-oversampling",
+      "spatial-msi-annotation",
+      "spatial-msi-normalization",
+      "spatial-autocorrelation",
+      "spatial-imzml"
+    ]
+  },
+  {
+    "slug": "single-cell-proteomics",
+    "title": "Single-cell proteomics: measurement and statistics",
+    "zh_title": "单细胞蛋白质组学：测量与统计",
+    "summary": "Follow low-input peptide evidence, carrier-assisted identification, quantitative quality, and donor-aware inference.",
+    "zh_summary": "追踪低输入肽段证据、载体辅助鉴定、定量质量及考虑供体结构的推断。",
+    "group": "Applications",
+    "prereqs": [
+      "bottom-up-proteomics",
+      "experimental-design"
+    ],
+    "related": [
+      "mass-spectrometry-imaging",
+      "peptide-identification-protein-inference",
+      "qc-normalization"
+    ],
+    "refs": [
+      "spatial-scp-recommendations",
+      "spatial-scope2",
+      "spatial-carrier-limit",
+      "spatial-scp-accuracy",
+      "spatial-clsi-ep17",
+      "missingness-benchmark",
+      "spatial-pseudoreplication"
+    ]
+  },
+  {
+    "slug": "spectrum-prediction-generalization",
+    "title": "Spectrum prediction and machine-learning generalization",
+    "zh_title": "谱图预测与机器学习泛化",
+    "summary": "Define prediction targets, split by the intended generalization unit, and separate similarity, retention transfer, ranking, and confidence calibration.",
+    "zh_summary": "定义预测目标，按预期泛化单位划分数据，并区分相似度、保留行为迁移、排序及置信度校准。",
+    "group": "Computation",
+    "prereqs": [
+      "fragmentation",
+      "data-analysis"
+    ],
+    "related": [
+      "benchmarking-computational-ms",
+      "small-molecule-annotation",
+      "peptide-identification-protein-inference"
+    ],
+    "refs": [
+      "comp-prosit",
+      "comp-massformer",
+      "comp-multispecies",
+      "comp-massspecgym",
+      "comp-similarity",
+      "comp-deeplc",
+      "comp-irt",
+      "comp-calibration"
+    ]
+  },
+  {
+    "slug": "benchmarking-computational-ms",
+    "title": "Benchmarking computational mass spectrometry",
+    "zh_title": "计算质谱方法的基准评估",
+    "summary": "Build fair comparisons with independent reference evidence, declared preprocessing and partitions, task-matched metrics, and checked error-control assumptions.",
+    "zh_summary": "利用独立参考证据、明确预处理与划分、对应任务的指标及经过检查的错误控制假设，建立公平比较。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis",
+      "spectrum-prediction-generalization"
+    ],
+    "related": [
+      "experimental-design",
+      "peptide-identification-protein-inference",
+      "open-formats-provenance"
+    ],
+    "refs": [
+      "comp-benchmark-guidelines",
+      "comp-synthetic",
+      "comp-similarity",
+      "comp-calibration",
+      "fdr",
+      "comp-tdc-bias",
+      "comp-entrapment"
+    ]
+  },
+  {
+    "slug": "open-formats-provenance",
+    "title": "Open data formats and analysis provenance",
+    "zh_title": "开放数据格式与分析溯源",
+    "summary": "Choose mzML, mzIdentML, and mzTab for their respective information layers, then preserve sample relationships, vocabulary meaning, and transformation history.",
+    "zh_summary": "根据各自信息层级选择 mzML、mzIdentML 和 mzTab，并保留样本关系、词汇含义及转换历史。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis"
+    ],
+    "related": [
+      "benchmarking-computational-ms",
+      "experimental-design",
+      "peptide-identification-protein-inference"
+    ],
+    "refs": [
+      "mzml",
+      "prot-mzidentml",
+      "comp-mztab",
+      "mztab-m",
+      "comp-mscv",
+      "comp-sdrf",
+      "comp-prov",
+      "pwiz",
+      "comp-px-guidelines"
+    ]
   }
 ]

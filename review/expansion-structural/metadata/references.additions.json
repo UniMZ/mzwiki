@@ -1,0 +1,92 @@
+{
+  "struct-xl-community": {
+    "title": "Leitner et al. (2020). Toward Increased Reliability, Transparency, and Accessibility in Cross-linking Mass Spectrometry. Structure 28, 1259–1268.",
+    "url": "https://doi.org/10.1016/j.str.2020.09.011",
+    "note": "Community reporting recommendations. Supports explicit chemistry, reporting levels, data accessibility, and separate treatment of self and heteromeric link categories. Not a universal distance-cutoff or performance standard."
+  },
+  "struct-xl-dsso": {
+    "title": "Kao et al. (2011). Development of a Novel Cross-linking Strategy for Fast and Accurate Identification of Cross-linked Peptides of Protein Complexes. Molecular & Cellular Proteomics 10, M110.002212.",
+    "url": "https://doi.org/10.1074/mcp.M110.002212",
+    "note": "Primary DSSO method. Supports distinguishable interlink, intralink/loop, and dead-end products and MS-cleavable-linker-assisted partner identification. Does not establish a guarantee for every candidate spectrum."
+  },
+  "struct-xl-target-decoy": {
+    "title": "Walzthoeni et al. (2012). False discovery rate estimation for cross-linked peptides identified by mass spectrometry. Nature Methods 9, 901–903.",
+    "url": "https://doi.org/10.1038/nmeth.2103",
+    "note": "Primary target-decoy strategy for crosslinked-peptide assignments. The candidate-pair arithmetic is original, and no universal target-decoy counting formula is supplied."
+  },
+  "struct-xl-error-levels": {
+    "title": "Fischer and Rappsilber (2017). Quirks of Error Estimation in Cross-Linking/Mass Spectrometry. Analytical Chemistry 89, 3829–3833.",
+    "url": "https://doi.org/10.1021/acs.analchem.6b03745",
+    "note": "Primary analysis of error at different aggregation levels, particularly residue and protein pairs. The 90/10 CSM illustration is invented known-label arithmetic, not paper data or an FDR estimator."
+  },
+  "struct-xl-distance": {
+    "title": "Bullock et al. (2016). The Importance of Non-accessible Crosslinks and Solvent Accessible Surface Distance in Modeling Proteins with Restraints From Crosslinking Mass Spectrometry. Molecular & Cellular Proteomics 15, 2491–2500.",
+    "url": "https://doi.org/10.1074/mcp.M116.058560",
+    "note": "Primary modeling study comparing distance representations and accessibility. Used for restraint interpretation, without reproducing benchmark outcomes or adopting a fixed distance cutoff."
+  },
+  "struct-xl-benchmark": {
+    "title": "Beveridge et al. (2020). A synthetic peptide library for benchmarking crosslinking-mass spectrometry search engines for proteins and protein complexes. Nature Communications 11, 742.",
+    "url": "https://doi.org/10.1038/s41467-020-14608-2",
+    "note": "Primary experimental reference-library study. Cited only to distinguish genuine benchmark materials from this packet’s original logic examples; no search-engine ranking or performance rate is reproduced."
+  },
+  "struct-glyco-mirage": {
+    "title": "Lisacek et al. (2026; published online 2025). Update and New Implementation of the MIRAGE Reporting Guidelines for Mass Spectrometry Experiments in Glycoscience. Molecular & Cellular Proteomics 25, 101473.",
+    "url": "https://doi.org/10.1016/j.mcpro.2025.101473",
+    "note": "Updated community reporting guidance with explicit glycoproteomics scope, composition/structure uncertainty, microheterogeneity and site occupancy. Online publication 2025-11-24; collection date February 2026. Not a claim that reporting compliance proves identification."
+  },
+  "struct-glyco-glycoform": {
+    "title": "IUPAC Gold Book. Glycoform, entry 09815.",
+    "url": "https://goldbook.iupac.org/terms/view/09815",
+    "note": "Official definition, based on IUPAC Recommendations 2018. Supports whole-glycoprotein glycosylation-pattern meaning and heterogeneity from structures or site occupancy. Viewed 2026-10-06."
+  },
+  "struct-glyco-fragmentation": {
+    "title": "Riley et al. (2020). Optimal Dissociation Methods Differ for N- and O-Glycopeptides. Journal of Proteome Research 19, 3286–3301.",
+    "url": "https://doi.org/10.1021/acs.jproteome.0c00218",
+    "note": "Primary comparison of collision-, electron-, and hybrid-fragmentation evidence. Supports the distinct requirements of peptide identity and glycosite evidence. No universal optimal energy, platform ranking, or identification yield is adopted."
+  },
+  "struct-glyco-opair": {
+    "title": "Lu et al. (2020). O-Pair Search with MetaMorpheus for O-glycopeptide characterization. Nature Methods 17, 1133–1138.",
+    "url": "https://doi.org/10.1038/s41592-020-00985-5",
+    "note": "Primary method separating peptide identification and O-glycosite localization with paired spectra and probability-based inference. ASTK is an original fragment-membership example, not study data."
+  },
+  "struct-glyco-snfg": {
+    "title": "Symbol Nomenclature for Glycans (SNFG). Official notation guidance hosted by NCBI.",
+    "url": "https://www.ncbi.nlm.nih.gov/glycans/snfg.html",
+    "note": "Official standard resource, including conventions for ambiguous monosaccharides, linkages and mixtures. Used to preserve uncertainty in representations; a valid drawing is not analytical proof."
+  },
+  "struct-glyco-search": {
+    "title": "Polasky et al. (2020). Fast and comprehensive N- and O-glycoproteomics analysis with MSFragger-Glyco. Nature Methods 17, 1125–1132.",
+    "url": "https://doi.org/10.1038/s41592-020-0967-9",
+    "note": "Primary search method supports documenting glycan candidate sets and effects of expanding searches. No speed or identification gain is reproduced or generalized."
+  },
+  "struct-glyco-fdr": {
+    "title": "Liu et al. (2017). pGlyco 2.0 enables precision N-glycoproteomics with comprehensive quality control and one-step mass spectrometry for intact glycopeptide identification. Nature Communications 8, 438.",
+    "url": "https://doi.org/10.1038/s41467-017-00535-2",
+    "note": "Primary method explicitly treating peptide-component, glycan-component and joint errors in glycopeptide-spectrum matches (GPSMs). Distinct-entity aggregation, site localization and glycan linkage claims require separate consideration; this is not a universal guarantee for newer workflows."
+  },
+  "struct-phospho-enrichment": {
+    "title": "Yue, Schunter, and Hummon (2015). Comparing Multistep Immobilized Metal Affinity Chromatography and Multistep TiO2 Methods for Phosphopeptide Enrichment. Analytical Chemistry 87, 8837–8844.",
+    "url": "https://doi.org/10.1021/acs.analchem.5b01833",
+    "note": "Primary enrichment comparison supports condition-dependent and complementary coverage. Selectivity-versus-recovery arithmetic is original, not a result of the paper; no universal best method is declared."
+  },
+  "struct-phospho-reproducibility": {
+    "title": "Tape et al. (2014). Reproducible Automated Phosphopeptide Enrichment Using Magnetic TiO2 and Ti-IMAC. Analytical Chemistry 86, 10296–10302.",
+    "url": "https://doi.org/10.1021/ac5025842",
+    "note": "Primary work measuring recovery and preparation reproducibility. Used to motivate assessing both, not to transfer reported performance to a different preparation."
+  },
+  "struct-phospho-flr": {
+    "title": "Ramsbottom et al. (2022). Method for Independent Estimation of the False Localization Rate for Phosphoproteomics. Journal of Proteome Research 21, 1603–1615.",
+    "url": "https://doi.org/10.1021/acs.jproteome.1c00827",
+    "note": "Primary decoy-residue localization-error methodology. Supports independent FLR assessment and care over aggregation. No threshold is presented as universally calibrated."
+  },
+  "struct-phospho-dia": {
+    "title": "Bekker-Jensen et al. (2020). Rapid and site-specific deep phosphoproteome profiling by data-independent acquisition without the need for spectral libraries. Nature Communications 11, 787.",
+    "url": "https://doi.org/10.1038/s41467-020-14609-1",
+    "note": "Primary DIA method incorporating fragment and chromatographic information into phosphorylation localization. Not evidence that every DIA assignment or transferred library entry is localized."
+  },
+  "struct-phospho-protein-adjustment": {
+    "title": "Wu et al. (2011). Correct Interpretation of Comprehensive Phosphorylation Dynamics Requires Normalization by Protein Expression Changes. Molecular & Cellular Proteomics 10, M111.009654.",
+    "url": "https://doi.org/10.1074/mcp.M111.009654",
+    "note": "Primary study showing the contribution of parent-protein abundance to phosphopeptide change. The 3/2 ratio and occupancy alternatives are original examples under constant response and recovery."
+  }
+}

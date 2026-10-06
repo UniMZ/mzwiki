@@ -1,0 +1,8 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Retention-time prediction</strong> estimates a compound's or peptide's chromatographic elution coordinate using its molecular description and a model tied to relevant separation conditions. Outputs may be minutes or a reference scale requiring local mapping. DeepLC is one peptide example; iRT provides a reference-based retention framework. Neither makes retention independent of chromatography. <a href="#ref-comp-deeplc">[1]</a> <a href="#ref-comp-irt">[2]</a></p>
+<h2 id="example">Correlation does not reveal every error</h2>
+<p><strong>Constructed example:</strong> measured times [10, 20, 30] minutes and predicted times [15, 25, 35] minutes have Pearson correlation 1, but every prediction is 5 minutes late. Their mean absolute error is 5 minutes. The example shows why correlation alone cannot establish an accurate scheduling window or acceptable prediction error.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Retention agreement supports a candidate but does not prove identity. Different analytes can coelute, and an unfamiliar modification, gradient, stationary phase, or temperature can challenge transfer. Separate anchors used to fit a local mapping from targets used to evaluate that mapping. Report the output scale, calibration data, residual errors, and applicability limits. This coordinate calibration is distinct from calibrating identification probabilities or converting detector response to concentration.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/spectrum-prediction-generalization/#retention">Evaluate retention predictions in context</a></li><li><a href="/guides/lc-separation/">Connect predictions to chromatographic separation</a></li></ul>

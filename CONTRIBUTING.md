@@ -23,7 +23,7 @@ Use `content/ARTICLE_TEMPLATE.html` as a structure, not as text to publish uncha
 
 Edit the paired fragments in `content/terms/en/` and `content/terms/zh/`, with matching section IDs. Use `content/terms.json` for titles, summaries, ordered references, `related_guides`, and `related_terms`. Keep terms out of the numbered Guide array. The builder generates the English `/terms/` index, separate language views, reciprocal Guide links, and search classifications.
 
-Run the build, structural checks, all scientific fixture checks (`check_science.py`, `check_ionization.py`, `check_terms.py`, `check_analyzers.py`, `check_fragmentation.py`, `check_acquisition.py`, `check_data_analysis.py`, `check_reading_bridge.py`, and `check_expansion.py`), and the browser checks after collection changes. Commit source and generated output together.
+Run the build, structural checks, all scientific fixture checks (`check_science.py`, `check_ionization.py`, `check_terms.py`, `check_analyzers.py`, `check_fragmentation.py`, `check_acquisition.py`, `check_data_analysis.py`, `check_reading_bridge.py`, `check_expansion.py`, and `check_advanced_expansion.py`), and the browser checks after collection changes. Commit source and generated output together.
 
 ## Scientific standards
 

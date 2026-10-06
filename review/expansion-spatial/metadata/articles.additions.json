@@ -1,0 +1,55 @@
+[
+  {
+    "slug": "mass-spectrometry-imaging",
+    "title": "Mass spectrometry imaging: principles and interpretation",
+    "zh_title": "质谱成像：原理与解释",
+    "summary": "Separate spatial sampling, ion-image specificity, intensity interpretation, and independent biological units.",
+    "zh_summary": "区分空间采样、离子图像特异性、强度解释及独立生物学单位。",
+    "group": "Applications",
+    "prereqs": [
+      "ionization",
+      "small-molecule-annotation"
+    ],
+    "related": [
+      "single-cell-proteomics",
+      "data-analysis",
+      "experimental-design"
+    ],
+    "refs": [
+      "spatial-msi-reporting",
+      "spatial-msi-preparation",
+      "spatial-resolution-pattern",
+      "spatial-oversampling",
+      "spatial-msi-annotation",
+      "spatial-msi-normalization",
+      "spatial-autocorrelation",
+      "spatial-imzml"
+    ]
+  },
+  {
+    "slug": "single-cell-proteomics",
+    "title": "Single-cell proteomics: measurement and statistics",
+    "zh_title": "单细胞蛋白质组学：测量与统计",
+    "summary": "Follow low-input peptide evidence, carrier-assisted identification, quantitative quality, and donor-aware inference.",
+    "zh_summary": "追踪低输入肽段证据、载体辅助鉴定、定量质量及考虑供体结构的推断。",
+    "group": "Applications",
+    "prereqs": [
+      "bottom-up-proteomics",
+      "experimental-design"
+    ],
+    "related": [
+      "mass-spectrometry-imaging",
+      "peptide-identification-protein-inference",
+      "qc-normalization"
+    ],
+    "refs": [
+      "spatial-scp-recommendations",
+      "spatial-scope2",
+      "spatial-carrier-limit",
+      "spatial-scp-accuracy",
+      "spatial-clsi-ep17",
+      "missingness-benchmark",
+      "spatial-pseudoreplication"
+    ]
+  }
+]

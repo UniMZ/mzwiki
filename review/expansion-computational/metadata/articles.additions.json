@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "spectrum-prediction-generalization",
+    "title": "Spectrum prediction and machine-learning generalization",
+    "zh_title": "谱图预测与机器学习泛化",
+    "summary": "Define prediction targets, split by the intended generalization unit, and separate similarity, retention transfer, ranking, and confidence calibration.",
+    "zh_summary": "定义预测目标，按预期泛化单位划分数据，并区分相似度、保留行为迁移、排序及置信度校准。",
+    "group": "Computation",
+    "prereqs": [
+      "fragmentation",
+      "data-analysis"
+    ],
+    "related": [
+      "benchmarking-computational-ms",
+      "small-molecule-annotation",
+      "peptide-identification-protein-inference"
+    ],
+    "refs": [
+      "comp-prosit",
+      "comp-massformer",
+      "comp-multispecies",
+      "comp-massspecgym",
+      "comp-similarity",
+      "comp-deeplc",
+      "comp-irt",
+      "comp-calibration"
+    ]
+  },
+  {
+    "slug": "benchmarking-computational-ms",
+    "title": "Benchmarking computational mass spectrometry",
+    "zh_title": "计算质谱方法的基准评估",
+    "summary": "Build fair comparisons with independent reference evidence, declared preprocessing and partitions, task-matched metrics, and checked error-control assumptions.",
+    "zh_summary": "利用独立参考证据、明确预处理与划分、对应任务的指标及经过检查的错误控制假设，建立公平比较。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis",
+      "spectrum-prediction-generalization"
+    ],
+    "related": [
+      "experimental-design",
+      "peptide-identification-protein-inference",
+      "open-formats-provenance"
+    ],
+    "refs": [
+      "comp-benchmark-guidelines",
+      "comp-synthetic",
+      "comp-similarity",
+      "comp-calibration",
+      "fdr",
+      "comp-tdc-bias",
+      "comp-entrapment"
+    ]
+  },
+  {
+    "slug": "open-formats-provenance",
+    "title": "Open data formats and analysis provenance",
+    "zh_title": "开放数据格式与分析溯源",
+    "summary": "Choose mzML, mzIdentML, and mzTab for their respective information layers, then preserve sample relationships, vocabulary meaning, and transformation history.",
+    "zh_summary": "根据各自信息层级选择 mzML、mzIdentML 和 mzTab，并保留样本关系、词汇含义及转换历史。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis"
+    ],
+    "related": [
+      "benchmarking-computational-ms",
+      "experimental-design",
+      "peptide-identification-protein-inference"
+    ],
+    "refs": [
+      "mzml",
+      "prot-mzidentml",
+      "comp-mztab",
+      "mztab-m",
+      "comp-mscv",
+      "comp-sdrf",
+      "comp-prov",
+      "pwiz",
+      "comp-px-guidelines"
+    ]
+  }
+]

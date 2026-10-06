@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-06",
+  "baseline_commit": "ecca2688d1c33ce5485e8497b6c3e8f498376cb3",
+  "baseline_inventory": {
+    "guides": 20,
+    "terms": 44
+  },
+  "guides_added": 2,
+  "terms_added": 4,
+  "fragment_files": 12,
+  "new_reference_keys": 15,
+  "reused_reference_keys": [
+    "missingness-benchmark"
+  ],
+  "fixture_cases": 12,
+  "english_word_counts": {
+    "content/en/mass-spectrometry-imaging.html": 986,
+    "content/en/single-cell-proteomics.html": 1004,
+    "content/terms/en/spatial-resolution.html": 171,
+    "content/terms/en/ion-image.html": 167,
+    "content/terms/en/carrier-channel.html": 177,
+    "content/terms/en/limit-of-blank.html": 167
+  },
+  "checks": [
+    "Pinned baseline inventory and absence of all six proposed slugs",
+    "Exact additive metadata schemas; English-only non-translation fields",
+    "No reference key or URL collisions; all new keys use spatial- prefix",
+    "Balanced HTML fragments and no document/script wrappers",
+    "Matched EN/ZH tag structure, anchors, citations, normalized links and numeric sequences",
+    "All local routes and in-packet anchors resolve",
+    "Guide prerequisite graph acyclic and related links resolve",
+    "Every new term has a Guide backlink and is linked from a Guide",
+    "All English word counts within requested ranges",
+    "All 12 synthetic logic/arithmetic fixtures pass under explicit assumptions"
+  ],
+  "not_performed": [
+    "Repository mutation, commit, push, build or deployment",
+    "Existing repository test suite",
+    "Generated-page, search or sitemap checks",
+    "Browser layout or accessibility inspection",
+    "Live-site verification",
+    "Experimental or software-performance validation"
+  ]
+}

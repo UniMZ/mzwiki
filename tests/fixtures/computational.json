@@ -1,0 +1,217 @@
+{
+  "purpose": "Original teaching checks for computational MS generalization, metrics, format scope, and provenance",
+  "status": "Synthetic arithmetic and logic fixtures; not experimental data, a validated error-control method, or an empirical software benchmark",
+  "cases": [
+    {
+      "id": "comp-spectrum-split",
+      "guide": "spectrum-prediction-generalization#partitions",
+      "peptides": 100,
+      "spectra_per_peptide": 10,
+      "train_per_peptide": 8,
+      "test_per_peptide": 2,
+      "expected_train_spectra": 800,
+      "expected_test_spectra": 200,
+      "expected_unseen_test_sequences": 0,
+      "assumptions": [
+        "Every peptide has the stated repeated spectra",
+        "Both portions include every peptide",
+        "Only exact peptide-sequence novelty is assessed"
+      ]
+    },
+    {
+      "id": "comp-peptide-split",
+      "guide": "spectrum-prediction-generalization#partitions",
+      "peptides": 100,
+      "spectra_per_peptide": 10,
+      "heldout_peptides": 20,
+      "expected_train_spectra": 800,
+      "expected_test_spectra": 200,
+      "expected_unseen_test_sequences": 20,
+      "assumptions": [
+        "All spectra of a held-out sequence remain outside training",
+        "No duplicate underlying sequence or pretraining overlap",
+        "No inference about structural-family or instrument novelty"
+      ]
+    },
+    {
+      "id": "comp-cosine-scale",
+      "guide": "spectrum-prediction-generalization#similarity",
+      "term": "spectral-similarity#example",
+      "a": [
+        1,
+        2
+      ],
+      "b": [
+        2,
+        4
+      ],
+      "expected_cosine": 1,
+      "expected_total_a": 3,
+      "expected_total_b": 6,
+      "identity_proven": false,
+      "assumptions": [
+        "Coordinates already aligned",
+        "No omitted peaks",
+        "Positive intensity scaling",
+        "Synthetic vectors do not establish molecular identity"
+      ]
+    },
+    {
+      "id": "comp-confidence-bin",
+      "guide": "spectrum-prediction-generalization#confidence",
+      "assignments": 100,
+      "reported_probability": 0.9,
+      "correct_assignments": 70,
+      "expected_observed_fraction": 0.7,
+      "expected_observed_gap": 0.2,
+      "assumptions": [
+        "Truth labels known by construction",
+        "This bin is descriptive and retains sampling uncertainty",
+        "No implication that ranking is poor"
+      ]
+    },
+    {
+      "id": "comp-precision-recall",
+      "guide": "benchmarking-computational-ms#metrics",
+      "method_a": {
+        "correct_calls": 90,
+        "incorrect_calls": 10
+      },
+      "method_b": {
+        "correct_calls": 60,
+        "incorrect_calls": 0
+      },
+      "expected": {
+        "a_precision": 0.9,
+        "a_recall": 0.9,
+        "b_precision": 1,
+        "b_recall": 0.6
+      },
+      "assumptions": [
+        "One known correct answer per constructed identification case",
+        "At most one reported candidate per case",
+        "Incorrect calls do not count as recovered correct identities",
+        "Known labels are synthetic",
+        "False-call counts are not decoy counts"
+      ],
+      "known_identification_cases": 100
+    },
+    {
+      "id": "comp-tdc-count-expression",
+      "guide": "benchmarking-computational-ms#decoys",
+      "term": "target-decoy-competition#example",
+      "decoy_winners": 9,
+      "target_winners": 1000,
+      "expected_expression": 0.01,
+      "actual_false_target_count": null,
+      "assumptions": [
+        "Illustrated expression is (D+1)/max(T,1)",
+        "An appropriate equal-opportunity competition and reporting unit would be required for inferential use",
+        "Fixture checks arithmetic only; no FDR guarantee",
+        "Threshold-selection procedure is not simulated"
+      ]
+    },
+    {
+      "id": "comp-retention-offset",
+      "term": "retention-time-prediction#example",
+      "measured_minutes": [
+        10,
+        20,
+        30
+      ],
+      "predicted_minutes": [
+        15,
+        25,
+        35
+      ],
+      "expected_pearson_correlation": 1,
+      "expected_mean_absolute_error_minutes": 5,
+      "assumptions": [
+        "Paired nonconstant arrays",
+        "No calibration or model fitting implied"
+      ]
+    },
+    {
+      "id": "comp-retention-units",
+      "guide": "open-formats-provenance#vocabulary",
+      "term": "controlled-vocabulary#example",
+      "minutes": 12,
+      "seconds_per_minute": 60,
+      "expected_seconds": 720,
+      "other_record_seconds": 12,
+      "expected_ratio": 60,
+      "assumptions": [
+        "First record is explicitly minutes",
+        "Second record is explicitly seconds",
+        "Equal numeric strings do not imply equal quantities"
+      ]
+    },
+    {
+      "id": "comp-sdrf-relations",
+      "guide": "open-formats-provenance#samples",
+      "samples": 3,
+      "fractions": 2,
+      "expected_ms_files": 2,
+      "expected_sample_file_relations": 6,
+      "expected_biological_replicates_from_relation_count": null,
+      "assumptions": [
+        "All three labeled samples occur in each of two fractions",
+        "One acquisition file per fraction",
+        "Sample-to-file relationship count is not biological replication"
+      ]
+    },
+    {
+      "id": "comp-format-scope",
+      "guide": "open-formats-provenance#formats",
+      "roles": {
+        "mzML": "spectra and chromatograms with acquisition/processing metadata",
+        "mzIdentML": "identification evidence linked to spectra",
+        "mzTab": "identification/quantification results with metadata and evidence links",
+        "mzTab-M": "metabolomics/lipidomics result layers"
+      },
+      "expected_interchangeable": false,
+      "expected_format_conformance_proves_scientific_validity": false,
+      "assumptions": [
+        "Roles describe primary scope, not every optional extension",
+        "Versions and actual exporter behavior remain relevant"
+      ]
+    },
+    {
+      "id": "comp-provenance-bytes",
+      "guide": "open-formats-provenance#history",
+      "term": "provenance#confusion",
+      "same_bytes": true,
+      "different_analysis_parameters": true,
+      "expected_same_downstream_result_guaranteed": false,
+      "expected_correct_sample_attribution_guaranteed": false,
+      "assumptions": [
+        "A checksum comparison concerns bytes",
+        "Scientific interpretation requires additional context"
+      ]
+    },
+    {
+      "id": "comp-known-peptide-new-spectrum",
+      "term": "data-leakage#example",
+      "train_sequence": "P",
+      "test_sequence": "P",
+      "different_spectra": true,
+      "expected_valid_for_unseen_sequence_claim": false,
+      "expected_may_suit_known_sequence_repeat_prediction": true,
+      "assumptions": [
+        "No other claim is being tested",
+        "Distinct scan IDs do not imply distinct sequences"
+      ]
+    },
+    {
+      "id": "comp-generalization-axes",
+      "guide": "spectrum-prediction-generalization#practice",
+      "molecule_disjoint": true,
+      "instrument_heldout": false,
+      "expected_demonstrated_instrument_transfer": false,
+      "assumptions": [
+        "Molecular novelty and instrument novelty are separate design axes",
+        "Instrument-transfer adaptation must be disclosed when used"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Spectral similarity</strong> is a numerical comparison of spectra under an explicit representation and scoring rule. It can compare two measured spectra or a measured and predicted spectrum. The value depends on peak alignment, mass tolerance or bin width, intensity transformation, normalization, and treatment of unmatched peaks. Different similarity functions need not rank candidates identically. <a href="#ref-comp-similarity">[1]</a></p>
+<h2 id="example">A score can ignore absolute scale</h2>
+<p><strong>Constructed example:</strong> after matching two coordinates, vectors [1, 2] and [2, 4] have cosine similarity 1. Their total intensities are 3 and 6. Cosine measures direction rather than absolute signal magnitude. This arithmetic assumes the same coordinates and no omitted peaks; it does not show that either spectrum uniquely identifies a molecule.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A similarity of 0.9 is not automatically a 90% probability of correctness. A shared dominant fragment, missing diagnostic ions, coisolation, or a restricted candidate library can affect interpretation. Scores are comparable only with sufficiently matched definitions and evaluation conditions. A published metric advantage applies to the studied task; there is no universal best score for all analytes and instruments.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/spectrum-prediction-generalization/#similarity">Interpret similarity and preprocessing together</a></li><li><a href="/guides/benchmarking-computational-ms/#metrics">Choose metrics for the claim</a></li></ul>

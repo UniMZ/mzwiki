@@ -1,0 +1,8 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>controlled vocabulary</strong> is a maintained collection of identified terms with agreed meanings. In MS data standards, PSI-MS supplies accessions and definitions for concepts such as instruments, acquisition parameters, processing operations, and scores. Terms may also specify value types, units, or relationships to other concepts. This supports machine-readable meaning across files and software. <a href="#ref-comp-mscv">[1]</a></p>
+<h2 id="example">A label is only part of the record</h2>
+<p><strong>Constructed example:</strong> two records both display a retention value of 12. One uses minutes and the other seconds. They represent 720 seconds and 12 seconds, respectively. A shared label or numeric value does not make the measurements equivalent. Preserve the term identity, applicable value, unit, and vocabulary version where supported.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A controlled term does not certify that its value was measured correctly. Structural validation asks whether a file follows its grammar; semantic validation can check that a term and unit are appropriate in context. Neither detects every scientific or sample-labeling error. Vocabulary releases evolve, so preserve the version used and check obsolete or replacement terms rather than silently substituting a similarly named entry.</p>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/open-formats-provenance/#vocabulary">Preserve meaning through interchange</a></li></ul>

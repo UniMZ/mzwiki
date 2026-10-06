@@ -1,0 +1,27 @@
+{
+  "fdr": {
+    "title": "Elias & Gygi (2007). Target-decoy search strategy for increased confidence in large-scale protein identifications by mass spectrometry. Nature Methods 4, 207–214.",
+    "url": "https://www.nature.com/articles/nmeth1019",
+    "note": "Primary methodological discussion of target–decoy error estimation. DOI: 10.1038/nmeth1019."
+  },
+  "mzml": {
+    "title": "HUPO Proteomics Standards Initiative. mzML specification and documentation.",
+    "url": "https://www.psidev.info/mzML",
+    "note": "Authoritative format specification and controlled-vocabulary resources."
+  },
+  "mztab-m": {
+    "title": "HUPO-PSI and MSI. mzTab-M 2.0 metabolomics results specification.",
+    "url": "https://hupo-psi.github.io/mzTab/2_0-metabolomics-release/mzTab_format_specification_2_0-M_release.html",
+    "note": "Official released format specification. Sections 5.2 and 5.4 distinguish samples/assays/runs and missing-data encoding; sections 6.3–6.5 distinguish molecule summaries, features, and identification evidence. A format declaration does not verify biological independence or determine the missing-data mechanism."
+  },
+  "prot-mzidentml": {
+    "title": "Vizcaíno et al. (2017). The mzIdentML Data Standard Version 1.2, Supporting Advances in Proteome Informatics. Molecular & Cellular Proteomics 16, 1275–1285.",
+    "url": "https://doi.org/10.1074/mcp.M117.068429",
+    "note": "Standards paper supporting spectrum, peptide, database-sequence and protein-group evidence links. Version 1.2 is cited for these concepts, not asserted to be the newest release."
+  },
+  "pwiz": {
+    "title": "Kessner et al. (2008). ProteoWizard: open source software for rapid proteomics tools development. Bioinformatics 24, 2534–2536.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18606607/",
+    "note": "Primary software publication. DOI: 10.1093/bioinformatics/btn323."
+  }
+}

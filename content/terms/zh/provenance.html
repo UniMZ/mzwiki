@@ -1,0 +1,8 @@
+<h2 id="definition">定义</h2>
+<p><strong>数据溯源</strong>是将结果与其生成过程中涉及的实体、活动及责任主体连接起来的信息。对于质谱，这包括样本与文件关系、采集、转换、数据库、分析参数、软件版本及后续编辑。W3C PROV 提供表达这类历史的一般模型，但不能取代质谱数据格式。<a href="#ref-comp-prov">[1]</a></p>
+<h2 id="example">保留路径，而不只是终点</h2>
+<p><strong>构造示例：</strong>最终肽段表来自对转换后谱图文件的搜索，所用数据库为某个特定版本。有用的记录将该表连接到搜索过程及其设置、转换后文件及其转换设置，再连接到原始采集。只保存最终文件名，会丢失解释或重复结果所需的转换信息。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>校验和支持核验文件字节，不能证明样本归属正确、鉴定有效或下游解释相同。仓库登录号有助于定位存档材料，但确切文件及版本仍然重要。ProteomeXchange 指南在共享时区分测量数据、结果和元数据。<a href="#ref-comp-px-guidelines">[2]</a>应将无法获得的历史明确标记为未知，而不是把推测的未记录设置当成事实。</p>
+<h2 id="guides">在指南中应用</h2>
+<ul><li><a href="/zh/guides/open-formats-provenance/#history">构建相互关联的分析历史</a></li><li><a href="/zh/guides/benchmarking-computational-ms/#practice">让基准评估可供检查</a></li></ul>

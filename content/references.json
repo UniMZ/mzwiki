@@ -713,5 +713,255 @@
     "title": "Zheng et al. (2017). A structural examination and collision cross section database for over 500 metabolites and xenobiotics using drift tube ion mobility spectrometry. Chemical Science 8, 7724–7736.",
     "url": "https://doi.org/10.1039/C7SC03464D",
     "note": "Primary nitrogen drift-tube CCS study of small molecules and different ion forms. Supports CCS as an additional candidate constraint, not a universal unique identifier."
+  },
+  "struct-xl-community": {
+    "title": "Leitner et al. (2020). Toward Increased Reliability, Transparency, and Accessibility in Cross-linking Mass Spectrometry. Structure 28, 1259–1268.",
+    "url": "https://doi.org/10.1016/j.str.2020.09.011",
+    "note": "Community reporting recommendations. Supports explicit chemistry, reporting levels, data accessibility, and separate treatment of self and heteromeric link categories. Not a universal distance-cutoff or performance standard."
+  },
+  "struct-xl-dsso": {
+    "title": "Kao et al. (2011). Development of a Novel Cross-linking Strategy for Fast and Accurate Identification of Cross-linked Peptides of Protein Complexes. Molecular & Cellular Proteomics 10, M110.002212.",
+    "url": "https://doi.org/10.1074/mcp.M110.002212",
+    "note": "Primary DSSO method. Supports distinguishable interlink, intralink/loop, and dead-end products and MS-cleavable-linker-assisted partner identification. Does not establish a guarantee for every candidate spectrum."
+  },
+  "struct-xl-target-decoy": {
+    "title": "Walzthoeni et al. (2012). False discovery rate estimation for cross-linked peptides identified by mass spectrometry. Nature Methods 9, 901–903.",
+    "url": "https://doi.org/10.1038/nmeth.2103",
+    "note": "Primary target-decoy strategy for crosslinked-peptide assignments. The candidate-pair arithmetic is original, and no universal target-decoy counting formula is supplied."
+  },
+  "struct-xl-error-levels": {
+    "title": "Fischer and Rappsilber (2017). Quirks of Error Estimation in Cross-Linking/Mass Spectrometry. Analytical Chemistry 89, 3829–3833.",
+    "url": "https://doi.org/10.1021/acs.analchem.6b03745",
+    "note": "Primary analysis of error at different aggregation levels, particularly residue and protein pairs. The 90/10 CSM illustration is invented known-label arithmetic, not paper data or an FDR estimator."
+  },
+  "struct-xl-distance": {
+    "title": "Bullock et al. (2016). The Importance of Non-accessible Crosslinks and Solvent Accessible Surface Distance in Modeling Proteins with Restraints From Crosslinking Mass Spectrometry. Molecular & Cellular Proteomics 15, 2491–2500.",
+    "url": "https://doi.org/10.1074/mcp.M116.058560",
+    "note": "Primary modeling study comparing distance representations and accessibility. Used for restraint interpretation, without reproducing benchmark outcomes or adopting a fixed distance cutoff."
+  },
+  "struct-xl-benchmark": {
+    "title": "Beveridge et al. (2020). A synthetic peptide library for benchmarking crosslinking-mass spectrometry search engines for proteins and protein complexes. Nature Communications 11, 742.",
+    "url": "https://doi.org/10.1038/s41467-020-14608-2",
+    "note": "Primary experimental reference-library study. Cited only to distinguish genuine benchmark materials from this packet’s original logic examples; no search-engine ranking or performance rate is reproduced."
+  },
+  "struct-glyco-mirage": {
+    "title": "Lisacek et al. (2026; published online 2025). Update and New Implementation of the MIRAGE Reporting Guidelines for Mass Spectrometry Experiments in Glycoscience. Molecular & Cellular Proteomics 25, 101473.",
+    "url": "https://doi.org/10.1016/j.mcpro.2025.101473",
+    "note": "Updated community reporting guidance with explicit glycoproteomics scope, composition/structure uncertainty, microheterogeneity and site occupancy. Online publication 2025-11-24; collection date February 2026. Not a claim that reporting compliance proves identification."
+  },
+  "struct-glyco-glycoform": {
+    "title": "IUPAC Gold Book. Glycoform, entry 09815.",
+    "url": "https://goldbook.iupac.org/terms/view/09815",
+    "note": "Official definition, based on IUPAC Recommendations 2018. Supports whole-glycoprotein glycosylation-pattern meaning and heterogeneity from structures or site occupancy. Viewed 2026-10-06."
+  },
+  "struct-glyco-fragmentation": {
+    "title": "Riley et al. (2020). Optimal Dissociation Methods Differ for N- and O-Glycopeptides. Journal of Proteome Research 19, 3286–3301.",
+    "url": "https://doi.org/10.1021/acs.jproteome.0c00218",
+    "note": "Primary comparison of collision-, electron-, and hybrid-fragmentation evidence. Supports the distinct requirements of peptide identity and glycosite evidence. No universal optimal energy, platform ranking, or identification yield is adopted."
+  },
+  "struct-glyco-opair": {
+    "title": "Lu et al. (2020). O-Pair Search with MetaMorpheus for O-glycopeptide characterization. Nature Methods 17, 1133–1138.",
+    "url": "https://doi.org/10.1038/s41592-020-00985-5",
+    "note": "Primary method separating peptide identification and O-glycosite localization with paired spectra and probability-based inference. ASTK is an original fragment-membership example, not study data."
+  },
+  "struct-glyco-snfg": {
+    "title": "Symbol Nomenclature for Glycans (SNFG). Official notation guidance hosted by NCBI.",
+    "url": "https://www.ncbi.nlm.nih.gov/glycans/snfg.html",
+    "note": "Official standard resource, including conventions for ambiguous monosaccharides, linkages and mixtures. Used to preserve uncertainty in representations; a valid drawing is not analytical proof."
+  },
+  "struct-glyco-search": {
+    "title": "Polasky et al. (2020). Fast and comprehensive N- and O-glycoproteomics analysis with MSFragger-Glyco. Nature Methods 17, 1125–1132.",
+    "url": "https://doi.org/10.1038/s41592-020-0967-9",
+    "note": "Primary search method supports documenting glycan candidate sets and effects of expanding searches. No speed or identification gain is reproduced or generalized."
+  },
+  "struct-glyco-fdr": {
+    "title": "Liu et al. (2017). pGlyco 2.0 enables precision N-glycoproteomics with comprehensive quality control and one-step mass spectrometry for intact glycopeptide identification. Nature Communications 8, 438.",
+    "url": "https://doi.org/10.1038/s41467-017-00535-2",
+    "note": "Primary method explicitly treating peptide-component, glycan-component and joint errors in glycopeptide-spectrum matches (GPSMs). Distinct-entity aggregation, site localization and glycan linkage claims require separate consideration; this is not a universal guarantee for newer workflows."
+  },
+  "struct-phospho-enrichment": {
+    "title": "Yue, Schunter, and Hummon (2015). Comparing Multistep Immobilized Metal Affinity Chromatography and Multistep TiO2 Methods for Phosphopeptide Enrichment. Analytical Chemistry 87, 8837–8844.",
+    "url": "https://doi.org/10.1021/acs.analchem.5b01833",
+    "note": "Primary enrichment comparison supports condition-dependent and complementary coverage. Selectivity-versus-recovery arithmetic is original, not a result of the paper; no universal best method is declared."
+  },
+  "struct-phospho-reproducibility": {
+    "title": "Tape et al. (2014). Reproducible Automated Phosphopeptide Enrichment Using Magnetic TiO2 and Ti-IMAC. Analytical Chemistry 86, 10296–10302.",
+    "url": "https://doi.org/10.1021/ac5025842",
+    "note": "Primary work measuring recovery and preparation reproducibility. Used to motivate assessing both, not to transfer reported performance to a different preparation."
+  },
+  "struct-phospho-flr": {
+    "title": "Ramsbottom et al. (2022). Method for Independent Estimation of the False Localization Rate for Phosphoproteomics. Journal of Proteome Research 21, 1603–1615.",
+    "url": "https://doi.org/10.1021/acs.jproteome.1c00827",
+    "note": "Primary decoy-residue localization-error methodology. Supports independent FLR assessment and care over aggregation. No threshold is presented as universally calibrated."
+  },
+  "struct-phospho-dia": {
+    "title": "Bekker-Jensen et al. (2020). Rapid and site-specific deep phosphoproteome profiling by data-independent acquisition without the need for spectral libraries. Nature Communications 11, 787.",
+    "url": "https://doi.org/10.1038/s41467-020-14609-1",
+    "note": "Primary DIA method incorporating fragment and chromatographic information into phosphorylation localization. Not evidence that every DIA assignment or transferred library entry is localized."
+  },
+  "struct-phospho-protein-adjustment": {
+    "title": "Wu et al. (2011). Correct Interpretation of Comprehensive Phosphorylation Dynamics Requires Normalization by Protein Expression Changes. Molecular & Cellular Proteomics 10, M111.009654.",
+    "url": "https://doi.org/10.1074/mcp.M111.009654",
+    "note": "Primary study showing the contribution of parent-protein abundance to phosphopeptide change. The 3/2 ratio and occupancy alternatives are original examples under constant response and recovery."
+  },
+  "spatial-msi-reporting": {
+    "title": "McDonnell et al. (2015; published online 2014). Discussion point: reporting guidelines for mass spectrometry imaging. Analytical and Bioanalytical Chemistry 407, 2035–2045.",
+    "url": "https://doi.org/10.1007/s00216-014-8322-6",
+    "note": "Community reporting proposal. Supports reporting preparation, acquisition, extraction, normalization, scales and image processing. Institutional full-text PDF inspected. Not a certification that an image represents concentration or a clinical conclusion."
+  },
+  "spatial-resolution-pattern": {
+    "title": "Fagerer et al. (2015). Resolution pattern for mass spectrometry imaging. Rapid Communications in Mass Spectrometry 29, 1019–1024.",
+    "url": "https://doi.org/10.1002/rcm.7191",
+    "note": "Primary resolution-test-pattern study; publisher abstract and metadata verified. Supports testing actual feature separation. The packet does not impose a universal terminology convention, edge criterion, or resolution limit."
+  },
+  "spatial-oversampling": {
+    "title": "Duncan and Lanekoff (2018). Oversampling To Improve Spatial Resolution for Liquid Extraction Mass Spectrometry Imaging. Analytical Chemistry 90, 2451–2455.",
+    "url": "https://doi.org/10.1021/acs.analchem.7b04687",
+    "note": "Primary nano-DESI study demonstrating conditional benefit of oversampling. Publisher abstract inspected. No universal improvement, depletion mechanism, pixel pitch, or instrument capability is inferred."
+  },
+  "spatial-msi-annotation": {
+    "title": "Palmer et al. (2017; published online 2016). FDR-controlled metabolite annotation for high-resolution imaging mass spectrometry. Nature Methods 14, 57–60.",
+    "url": "https://doi.org/10.1038/nmeth.4072",
+    "note": "Primary framework for molecular-sum-formula-level annotation. PubMed abstract and publisher metadata checked; direct publisher open encountered an access redirect. No unique-isomer or concentration claim is inferred from formula-level FDR."
+  },
+  "spatial-msi-normalization": {
+    "title": "Deininger et al. (2011). Normalization in MALDI-TOF imaging datasets of proteins: practical considerations. Analytical and Bioanalytical Chemistry 401, 167–181.",
+    "url": "https://doi.org/10.1007/s00216-011-4929-z",
+    "note": "Primary analysis of normalization artifacts. Publisher full text and indexed PMC text inspected; direct PMC access encountered a bot check. Supports denominator-dependent distortion, not a universal ranking of normalization procedures. The 10/100 and 10/200 example is original."
+  },
+  "spatial-autocorrelation": {
+    "title": "Cassese et al. (2016). Spatial Autocorrelation in Mass Spectrometry Imaging. Analytical Chemistry 88, 5871–5878.",
+    "url": "https://doi.org/10.1021/acs.analchem.6b00672",
+    "note": "Primary within-sample statistical study; publisher abstract and metadata checked. Supports spatial dependence of neighboring MSI observations. No numerical discovery-rate improvement or mandatory model is transferred to this guide."
+  },
+  "spatial-imzml": {
+    "title": "Schramm et al. (2012). imzML—a common data format for the flexible exchange and processing of mass spectrometry imaging data. Journal of Proteomics 75, 5106–5110.",
+    "url": "https://doi.org/10.1016/j.jprot.2012.07.026",
+    "note": "Original community format description; PubMed indexed abstract/metadata and official imzML repository inspected. Supports exchange of metadata and spectral data, not validation of chemical identity or biological conclusions."
+  },
+  "spatial-scp-recommendations": {
+    "title": "Gatto et al. (2023). Initial recommendations for performing, benchmarking and reporting single-cell proteomics experiments. Nature Methods 20, 375–386.",
+    "url": "https://doi.org/10.1038/s41592-023-01785-3",
+    "note": "Original community recommendations/Perspective. Supports randomization, quantitative quality, negative controls, missingness and filtering sensitivity. Public primary text inspected during research; publisher open may redirect. Not an experimental performance benchmark or mandatory universal threshold."
+  },
+  "spatial-scope2": {
+    "title": "Specht et al. (2021). Single-cell proteomic and transcriptomic analysis of macrophage heterogeneity using SCoPE2. Genome Biology 22, 50.",
+    "url": "https://doi.org/10.1186/s13059-021-02267-5",
+    "note": "Primary method; publisher full text inspected. Supports isobaric channel workflow, carrier versus reference roles, reporter-ion quantification and coisolation. Diluted bulk standards are distinguished from real single cells; no dataset-wide coverage is attributed to every cell."
+  },
+  "spatial-carrier-limit": {
+    "title": "Cheung et al. (2021; published online 2020). Defining the carrier proteome limit for single-cell proteomics. Nature Methods 18, 76–83.",
+    "url": "https://doi.org/10.1038/s41592-020-01002-5",
+    "note": "Primary controlled carrier and ion-sampling study, verified through public primary records. Supports setup-dependent quantitative tradeoffs; no universal carrier ratio is recommended. The Poisson calculation is an independent idealized model, not experimental counts from the paper."
+  },
+  "spatial-scp-accuracy": {
+    "title": "Ctortecka et al. (2022). Quantitative Accuracy and Precision in Multiplexed Single-Cell Proteomics. Analytical Chemistry 94, 2434–2443.",
+    "url": "https://doi.org/10.1021/acs.analchem.1c04174",
+    "note": "Primary analytical study using low-input bulk HeLa digest aliquots, not individually isolated cells. PubMed metadata and public primary full text verified. Supports separating identification counts from quantitative usability; no numerical carrier limit or method ranking is generalized."
+  },
+  "spatial-clsi-ep17": {
+    "title": "CLSI (2012). EP17-A2: Evaluation of Detection Capability for Clinical Laboratory Measurement Procedures; Approved Guideline—Second Edition.",
+    "url": "https://clsi.org/shop/standards/ep17/",
+    "note": "Official standard overview and public scope verified; second edition published 2012 and reaffirmed 2017. Full paid standard not claimed to have been inspected. Supports distinguishing blank, detection and quantification capability; not a universal discovery-proteomics acceptance rule."
+  },
+  "spatial-pseudoreplication": {
+    "title": "Zimmerman, Espeland and Langefeld (2021). A practical solution to pseudoreplication bias in single-cell studies. Nature Communications 12, 738.",
+    "url": "https://doi.org/10.1038/s41467-021-21038-1",
+    "note": "Primary analysis in single-cell RNA sequencing. Only the hierarchical experimental-unit principle is transferred to proteomics. No RNA-specific model, power result or threshold is transferred. Donor/cell counts are original teaching examples."
+  },
+  "spatial-clsi-terminology": {
+    "title": "CLSI Harmonized Terminology Database. Limit of blank entry.",
+    "url": "https://htd.clsi.org/listterms.asp?button=Submit&searchdterm=8",
+    "note": "Official term-specific public entry inspected directly on 2026-10-06. Supports a probability-defined upper boundary for blank results and distinction from detection capability. The known-normal percentile arithmetic is original and explicitly excludes finite-sample estimation uncertainty."
+  },
+  "spatial-msi-preparation": {
+    "title": "Yang and Caprioli (2011). Matrix Sublimation/Recrystallization for Imaging Proteins by Mass Spectrometry at High Spatial Resolution. Analytical Chemistry 83, 5728–5734.",
+    "url": "https://doi.org/10.1021/ac200998a",
+    "note": "Primary preparation study; publisher abstract and indexed public full text inspected. Examines washing, section thickness, matrix amount and recrystallization. No numerical protocol, universal preparation optimum or resolution specification is transferred."
+  },
+  "comp-prosit": {
+    "title": "Gessulat et al. (2019). Prosit: proteome-wide prediction of peptide tandem mass spectra by deep learning. Nature Methods 16, 509–518.",
+    "url": "https://doi.org/10.1038/s41592-019-0426-7",
+    "note": "Primary peptide-intensity and retention prediction study. Used as a defined model example, not a universal performance guarantee or identification-confidence calibration."
+  },
+  "comp-massformer": {
+    "title": "Young, Röst & Wang (2024). Tandem mass spectrum prediction for small molecules using graph transformers. Nature Machine Intelligence 6, 404–416.",
+    "url": "https://doi.org/10.1038/s42256-024-00816-8",
+    "note": "Primary small-molecule spectrum-prediction study. Supports the distinction between molecular-graph prediction and peptide-specific models; no reported superiority is extrapolated."
+  },
+  "comp-multispecies": {
+    "title": "Wen & Noble (2024). A multi-species benchmark for training and validating mass spectrometry proteomics machine learning models. Scientific Data 11, 1207.",
+    "url": "https://doi.org/10.1038/s41597-024-04068-4",
+    "note": "Primary benchmark with explicit removal of shared peptide sequences across species. Search-derived labels are not presented here as independently known molecular truth."
+  },
+  "comp-massspecgym": {
+    "title": "Bushuiev et al. (2024). MassSpecGym: A benchmark for the discovery and identification of molecules. NeurIPS Datasets and Benchmarks Track.",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf",
+    "note": "Primary benchmark defining molecular retrieval, generation, spectrum simulation, and a generalization-demanding split. Dataset scope is not a guarantee for all structures or acquisition settings."
+  },
+  "comp-similarity": {
+    "title": "Li et al. (2021). Spectral entropy outperforms MS/MS dot product similarity for small-molecule compound identification. Nature Methods 18, 1524–1531.",
+    "url": "https://doi.org/10.1038/s41592-021-01331-z",
+    "note": "Primary spectral-similarity comparison. The educational text does not transfer reported cutoffs, error rates, or metric superiority beyond the studied comparisons. Vector examples are original constructed arithmetic."
+  },
+  "comp-deeplc": {
+    "title": "Bouwmeester et al. (2021). DeepLC can predict retention times for peptides that carry as-yet unseen modifications. Nature Methods 18, 1363–1369.",
+    "url": "https://doi.org/10.1038/s41592-021-01301-5",
+    "note": "Primary retention-prediction study using composition-based modification representation. Does not support unrestricted transfer to every modification or chromatographic setup."
+  },
+  "comp-irt": {
+    "title": "Escher et al. (2012). Using iRT, a normalized retention time for more targeted measurement of peptides. Proteomics 12, 1111–1121.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22577012/",
+    "note": "Primary reference-scale approach for peptide retention. DOI: 10.1002/pmic.201100463. Dimensionless reference values require mapping to local chromatographic time."
+  },
+  "comp-calibration": {
+    "title": "Guo, Pleiss, Sun & Weinberger (2017). On Calibration of Modern Neural Networks. Proceedings of Machine Learning Research 70, 1321–1330.",
+    "url": "https://proceedings.mlr.press/v70/guo17a.html",
+    "note": "Primary general machine-learning calibration methodology; experiments concern image and document classification, not validation of an MS workflow. The confidence-bin example is original and synthetic."
+  },
+  "comp-benchmark-guidelines": {
+    "title": "Weber et al. (2019). Essential guidelines for computational method benchmarking. Genome Biology 20, 125.",
+    "url": "https://doi.org/10.1186/s13059-019-1738-8",
+    "note": "Authors’ original methodological guidelines for designing benchmarks. Used for scope, fairness, and reproducibility principles, not as an experimental comparison of MS tools."
+  },
+  "comp-synthetic": {
+    "title": "Zolg et al. (2017). Building ProteomeTools based on a complete synthetic human proteome. Nature Methods 14, 259–262.",
+    "url": "https://doi.org/10.1038/nmeth.4153",
+    "note": "Primary synthetic-peptide resource. Intended synthesis identities alone do not establish purity or the identity of every acquired spectrum."
+  },
+  "comp-tdc-bias": {
+    "title": "Danilova et al. (2019). Bias in False Discovery Rate Estimation in Mass-Spectrometry-Based Peptide Identification. Journal of Proteome Research 18, 2354–2358.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30983355/",
+    "note": "Primary methodological analysis of false-target/decoy behavior, biased scoring and correlated spectra. DOI: 10.1021/acs.jproteome.8b00991. Metadata and abstract verified; no uninspected numerical results are claimed."
+  },
+  "comp-entrapment": {
+    "title": "Wen et al. (2025). Assessment of false discovery rate control in tandem mass spectrometry analysis using entrapment. Nature Methods 22, 1454–1463.",
+    "url": "https://doi.org/10.1038/s41592-025-02719-x",
+    "note": "Primary methodological study defining entrapment estimators and their assumptions, and stating a conservative target-decoy thresholding procedure. The packet’s counts are synthetic and do not validate its assumptions."
+  },
+  "comp-mztab": {
+    "title": "HUPO-PSI. mzTab: Reporting MS-based Proteomics and Metabolomics Results.",
+    "url": "https://hupo-psi.github.io/mzTab/",
+    "note": "Official format overview with the mzTab 1.0 and mzTab-M 2.0 resources. Supports lightweight result exchange and links to detailed evidence; no claim that every mzTab variant is interchangeable."
+  },
+  "comp-mscv": {
+    "title": "Mayer et al. (2013). The HUPO proteomics standards initiative—mass spectrometry controlled vocabulary. Database 2013, bat009.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23482073/",
+    "note": "Original PSI-MS controlled-vocabulary publication. DOI: 10.1093/database/bat009. Supports semantic annotation and stable concept identifiers; conformance does not establish scientific truth."
+  },
+  "comp-sdrf": {
+    "title": "Dai et al. (2021). A proteomics sample metadata representation for multiomics integration and big data analysis. Nature Communications 12, 5854.",
+    "url": "https://doi.org/10.1038/s41467-021-26111-3",
+    "note": "Primary MAGE-TAB/SDRF-Proteomics standard describing sample-to-file relationships, multiplexing, fractions, and experimental factors. The packet’s 3-sample/2-fraction example is constructed."
+  },
+  "comp-prov": {
+    "title": "W3C (2013). PROV-DM: The PROV Data Model. W3C Recommendation, 30 April 2013.",
+    "url": "https://www.w3.org/TR/prov-dm/",
+    "note": "Official domain-independent provenance model of entities, activities, derivation, and responsibility. It is not an MS file format or a requirement to use a particular workflow engine."
+  },
+  "comp-px-guidelines": {
+    "title": "ProteomeXchange Consortium (2019). Data Submission Guidelines, version 3.0.1, 13 October 2019.",
+    "url": "https://www.proteomexchange.org/docs/guidelines_px.pdf",
+    "note": "Official published guidance distinguishing raw data, result files, and metadata and explaining linked submissions. Cited for durable concepts, not asserted to supersede current repository-specific requirements."
   }
 }

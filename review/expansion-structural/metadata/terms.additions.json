@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "crosslinked-peptide",
+    "title": "Crosslinked peptide",
+    "zh_title": "交联肽段",
+    "summary": "A covalently linked peptide product whose chain identities and attachment positions require separate evidence.",
+    "zh_summary": "共价连接的肽段产物，其肽链身份和连接位置需要分别提供证据。",
+    "related_guides": [
+      "crosslinking-ms-principles"
+    ],
+    "related_terms": [
+      "crosslink-spectrum-match",
+      "site-localization",
+      "protein-inference"
+    ],
+    "refs": [
+      "struct-xl-dsso",
+      "struct-xl-community"
+    ]
+  },
+  {
+    "slug": "crosslink-spectrum-match",
+    "title": "Crosslink-spectrum match",
+    "zh_title": "交联–谱图匹配",
+    "summary": "A proposed spectrum-to-crosslink assignment; its confidence does not automatically transfer to residue or protein pairs.",
+    "zh_summary": "候选的谱图与交联对应关系；其置信度不会自动转移到残基对或蛋白质对。",
+    "related_guides": [
+      "crosslinking-ms-principles"
+    ],
+    "related_terms": [
+      "crosslinked-peptide",
+      "peptide-spectrum-match",
+      "false-discovery-rate"
+    ],
+    "refs": [
+      "struct-xl-target-decoy",
+      "struct-xl-error-levels"
+    ]
+  },
+  {
+    "slug": "glycopeptide",
+    "title": "Glycopeptide",
+    "zh_title": "糖肽",
+    "summary": "A peptide carrying one or more glycans, with distinct evidence needs for sequence, composition, and attachment.",
+    "zh_summary": "携带一条或多条糖链的肽段，其序列、组成和连接位置各有不同证据需求。",
+    "related_guides": [
+      "glycoproteomics-evidence-ambiguity",
+      "ptm-analysis-site-localization"
+    ],
+    "related_terms": [
+      "glycoform",
+      "site-localization",
+      "post-translational-modification"
+    ],
+    "refs": [
+      "struct-glyco-fragmentation",
+      "struct-glyco-opair"
+    ]
+  },
+  {
+    "slug": "glycoform",
+    "title": "Glycoform",
+    "zh_title": "糖型",
+    "summary": "A glycoprotein form distinguished by its glycosylation pattern; peptide observations may resolve only part of that pattern.",
+    "zh_summary": "由糖基化模式区别的糖蛋白形式；肽段观察可能只解析该模式的一部分。",
+    "related_guides": [
+      "glycoproteomics-evidence-ambiguity"
+    ],
+    "related_terms": [
+      "glycopeptide",
+      "site-occupancy",
+      "isomer"
+    ],
+    "refs": [
+      "struct-glyco-glycoform",
+      "struct-glyco-mirage"
+    ]
+  },
+  {
+    "slug": "phosphosite",
+    "title": "Phosphosite",
+    "zh_title": "磷酸化位点",
+    "summary": "A residue position bearing a phosphate modification, reported with sequence context and localization evidence.",
+    "zh_summary": "携带磷酸修饰的残基位置，应结合序列背景和定位证据报告。",
+    "related_guides": [
+      "phosphoproteomics-workflow",
+      "ptm-analysis-site-localization"
+    ],
+    "related_terms": [
+      "site-localization",
+      "site-occupancy",
+      "post-translational-modification"
+    ],
+    "refs": [
+      "prot-ascore",
+      "struct-phospho-flr"
+    ]
+  },
+  {
+    "slug": "site-occupancy",
+    "title": "Site occupancy",
+    "zh_title": "位点占有率",
+    "summary": "The fraction of an explicitly defined molecular population modified at a specified site.",
+    "zh_summary": "明确定义的分子群体中，在指定位点发生修饰的比例。",
+    "related_guides": [
+      "phosphoproteomics-workflow",
+      "glycoproteomics-evidence-ambiguity",
+      "ptm-analysis-site-localization"
+    ],
+    "related_terms": [
+      "phosphosite",
+      "glycoform",
+      "site-localization"
+    ],
+    "refs": [
+      "prot-stoichiometry",
+      "struct-phospho-protein-adjustment"
+    ]
+  }
+]

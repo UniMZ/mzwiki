@@ -1,0 +1,86 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "ecca2688d1c33ce5485e8497b6c3e8f498376cb3",
+  "status": "Prepared content-only packet; not applied, built or published",
+  "baseline_inventory": {
+    "guides": 20,
+    "terms": 44
+  },
+  "package_additions": {
+    "guides": 2,
+    "terms": 4,
+    "language_pairs": 6,
+    "fragment_files": 12
+  },
+  "add_complete_fragments": [
+    "content/en/mass-spectrometry-imaging.html",
+    "content/en/single-cell-proteomics.html",
+    "content/terms/en/carrier-channel.html",
+    "content/terms/en/ion-image.html",
+    "content/terms/en/limit-of-blank.html",
+    "content/terms/en/spatial-resolution.html",
+    "content/terms/zh/carrier-channel.html",
+    "content/terms/zh/ion-image.html",
+    "content/terms/zh/limit-of-blank.html",
+    "content/terms/zh/spatial-resolution.html",
+    "content/zh/mass-spectrometry-imaging.html",
+    "content/zh/single-cell-proteomics.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "Append these two unique Guide objects, preserving prerequisite order and existing content; reconcile with other approved packets.",
+      "payload": "metadata/articles.additions.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "Append these four unique term objects after checking current slugs; keep terminology separate from Guides.",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "Merge these 15 new spatial-prefixed reference objects. Stop and reconcile any new key collision or equivalent existing reference.",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "reused_reference_keys": [
+    "missingness-benchmark"
+  ],
+  "fixture_proposal": {
+    "destination": "tests/fixtures/spatial.json",
+    "payload": "tests/fixtures/spatial.json",
+    "note": "Twelve original arithmetic/logic fixtures. Later engineering must add or adapt a repository checker; no existing checker is claimed to consume them."
+  },
+  "scope_guards": [
+    "Do not replace existing Guide or term fragments",
+    "Do not create duplicate LOD, LOQ, missing-value or biological-replicate entries",
+    "Only baseline or within-packet internal links",
+    "All nontranslation metadata remains English",
+    "Synthetic examples are not experimental benchmarks or recommended operating thresholds",
+    "No disease atlas, clinical, software-performance or instrument-ranking claims"
+  ],
+  "application_preconditions": [
+    "Re-read current main and reconcile changes since baseline",
+    "Recheck all six new slugs and new reference identities",
+    "Merge metadata narrowly and add exactly 12 full fragments",
+    "Rebuild and run every existing check plus adapted scientific fixtures",
+    "Verify generated routes, references, search, sitemap, language switching, navigation counts and term backlinks",
+    "Inspect desktop/mobile readability, units, symbols and keyboard/accessibility behavior before publication"
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "inspection/",
+    "review/"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit or push",
+    "No repository build or deployment",
+    "No live-site verification"
+  ]
+}
