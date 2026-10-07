@@ -53,4 +53,4 @@
 .footer-notice{margin:12px 0 0;font-size:13px;line-height:1.6}
 
 /* Paint the current section without changing existing link spacing. */
-.topnav a[aria-current]{background:#e7eee5;color:#153b3b;border-radius:4px;font-weight:700;box-shadow:0 0 0 4px #e7eee5}
+.header .topnav a[aria-current]{background:#e7eee5;color:#153b3b;border-radius:4px;box-shadow:0 0 0 4px #e7eee5}

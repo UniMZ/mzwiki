@@ -27,7 +27,7 @@ def check_header(target, path):
     expect(active).to_have_attribute('aria-current', value)
     expect(nav.locator('.repo-nav')).not_to_have_attribute('aria-current', re.compile('.+'))
     style = active.evaluate('(el) => {const s=getComputedStyle(el); return [s.backgroundColor,s.color,s.borderRadius,s.fontWeight]}')
-    assert style == ['rgb(231, 238, 229)', 'rgb(21, 59, 59)', '4px', '700'], (path, style)
+    assert style == ['rgb(231, 238, 229)', 'rgb(21, 59, 59)', '4px', '600'], (path, style)
 
 count=0
 with sync_playwright() as p:
