@@ -49,3 +49,5 @@
 .sidebar .term-nav-views a,.mobile-index .term-nav-views a{display:flex;align-items:center;min-height:44px;padding:7px 10px;border:1px solid var(--line);border-radius:4px}
 @media(max-width:1000px){.term-topic-grid,.term-alphabetical{columns:2}}
 @media(max-width:600px){.term-topic-grid,.term-alphabetical{columns:1}.terminology-index{padding-top:28px}.terminology-index h1{font-size:38px}.term-topic{margin-bottom:24px}.term-view-switch{margin-bottom:24px}.term-list a{font-size:15px}}
+
+.footer-notice{margin:12px 0 0;font-size:13px;line-height:1.6}

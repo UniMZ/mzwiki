@@ -38,7 +38,9 @@ HEADER = f'''<a class="skip" href="#main">Skip to content</a>
 <span class="tagline">A mass spectrometry<br>knowledge commons</span>
 <nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/terms/">Terminology</a><a class="about-nav" href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search <span aria-hidden="true">/</span></a></nav>
 </div></header>'''
-FOOTER = f'''<footer lang="en"><div class="container footer-inner"><span><strong>mzwiki</strong> · A UniMZ knowledge project</span><div class="footer-links"><a href="/about/">About &amp; editorial approach</a><a href="{REPO}/blob/main/CONTRIBUTING.md">Contribute</a><a href="{REPO}">Source →</a></div></div></footer>'''
+def footer(lang):
+    notice = '包含社区及 AI 内容，请审慎阅读。' if lang == 'zh' else 'Includes community and AI content. Read critically.'
+    return f'''<footer lang="en"><div class="container footer-inner"><span><strong>mzwiki</strong> · A UniMZ knowledge project</span><div class="footer-links"><a href="/about/">About &amp; editorial approach</a><a href="{REPO}/blob/main/CONTRIBUTING.md">Contribute</a><a href="{REPO}">Source →</a></div></div><div class="container"><p class="footer-notice" lang="{lang}">{notice}</p></div></footer>'''
 
 def page(title, description, body, path='/', lang='en', alternates=''):
     return f'''<!doctype html>
@@ -47,7 +49,7 @@ def page(title, description, body, path='/', lang='en', alternates=''):
 <link rel="canonical" href="{SITE}{path}">{alternates}<meta name="theme-color" content="#176052">
 <meta property="og:title" content="{e(title, quote=True)} · mzwiki"><meta property="og:description" content="{e(description, quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{SITE}{path}">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script defer src="/assets/site.js"></script></head>
-<body>{HEADER}{body}{FOOTER}</body></html>\n'''
+<body>{HEADER}{body}{footer(lang)}</body></html>\n'''
 
 def guide_groups():
     groups = {}
