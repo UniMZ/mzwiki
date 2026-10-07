@@ -38,7 +38,7 @@ HEADER = f'''<a class="skip" href="#main">Skip to content</a>
 <header class="header" lang="en"><div class="header-inner">
 <a class="brand" href="/" aria-label="mzwiki home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><em>mz</em>wiki</span></a>
 <span class="tagline">Mass spectrometry<br>knowledge commons by UniMZ</span>
-<nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/terms/">Terminology</a><a class="about-nav" href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search <span aria-hidden="true">/</span></a></nav>
+<nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/terms/">Terminology</a><a class="about-nav" href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search</a></nav>
 </div></header>'''
 def header(path):
     route = path.removeprefix('/zh')
@@ -60,7 +60,7 @@ def footer(lang):
 def page(title, description, body, path='/', lang='en', alternates=''):
     return f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)} · mzwiki</title><meta name="description" content="{e(description, quote=True)}">
+<title>mzwiki</title><meta name="description" content="{e(description, quote=True)}">
 <link rel="canonical" href="{SITE}{path}">{alternates}<meta name="theme-color" content="#176052">
 <meta property="og:title" content="{e(title, quote=True)} · mzwiki"><meta property="og:description" content="{e(description, quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{SITE}{path}">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v={STYLE_VERSION}"><script defer src="/assets/site.js"></script></head>
