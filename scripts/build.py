@@ -2,10 +2,12 @@
 """Build the committed static website using only the Python standard library."""
 from pathlib import Path
 import html
+import hashlib
 import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+STYLE_VERSION = hashlib.sha256((ROOT / 'assets/style.css').read_bytes()).hexdigest()[:12]
 SITE = 'https://mzwiki.unimz.org'
 REPO = 'https://github.com/UniMZ/mzwiki'
 ARTICLES = json.loads((ROOT / 'content/articles.json').read_text())
@@ -61,7 +63,7 @@ def page(title, description, body, path='/', lang='en', alternates=''):
 <title>{e(title)} · mzwiki</title><meta name="description" content="{e(description, quote=True)}">
 <link rel="canonical" href="{SITE}{path}">{alternates}<meta name="theme-color" content="#176052">
 <meta property="og:title" content="{e(title, quote=True)} · mzwiki"><meta property="og:description" content="{e(description, quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{SITE}{path}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script defer src="/assets/site.js"></script></head>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v={STYLE_VERSION}"><script defer src="/assets/site.js"></script></head>
 <body>{header(path)}{body}{footer(lang)}</body></html>\n'''
 
 def guide_groups():
