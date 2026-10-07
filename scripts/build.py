@@ -38,7 +38,7 @@ HEADER = f'''<a class="skip" href="#main">Skip to content</a>
 <header class="header" lang="en"><div class="header-inner">
 <a class="brand" href="/" aria-label="mzwiki home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><em>mz</em>wiki</span></a>
 <span class="tagline">Mass spectrometry<br>knowledge commons by UniMZ</span>
-<nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/terms/">Terminology</a><a class="about-nav" href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search <span aria-hidden="true">/</span></a></nav>
+<nav class="topnav" aria-label="Main navigation"><a href="/#guides">Explore</a><a href="/terms/">Terminology</a><a class="about-nav" href="/about/">About</a><a class="repo-nav" href="{REPO}">GitHub →</a><a class="search-link" href="/search/">Search</a></nav>
 </div></header>'''
 def header(path):
     route = path.removeprefix('/zh')
