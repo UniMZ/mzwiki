@@ -10,6 +10,25 @@ BASE=os.environ.get('MZWIKI_BASE_URL','http://127.0.0.1:8000').rstrip('/')
 OUT=Path('/tmp/mzwiki-checks');OUT.mkdir(exist_ok=True)
 articles=json.loads((ROOT/'content/articles.json').read_text())
 terms=json.loads((ROOT/'content/terms.json').read_text())
+def check_header(target, path):
+    nav = target.get_by_role('navigation', name='Main navigation')
+    active = nav.locator('[aria-current]')
+    if path == '/404.html':
+        expect(active).to_have_count(0)
+        return
+    if path.startswith(('/terms/', '/zh/terms/')):
+        href, value = '/terms/', 'page' if path == '/terms/' else 'location'
+    elif path in ('/about/', '/search/'):
+        href, value = path, 'page'
+    else:
+        href, value = '/#guides', 'location'
+    expect(active).to_have_count(1)
+    expect(active).to_have_attribute('href', href)
+    expect(active).to_have_attribute('aria-current', value)
+    expect(nav.locator('.repo-nav')).not_to_have_attribute('aria-current', re.compile('.+'))
+    style = active.evaluate('(el) => {const s=getComputedStyle(el); return [s.backgroundColor,s.color,s.borderRadius,s.fontWeight]}')
+    assert style == ['rgb(231, 238, 229)', 'rgb(21, 59, 59)', '4px', '700'], (path, style)
+
 count=0
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path=os.environ.get('MZWIKI_CHROMIUM','/usr/bin/chromium'),headless=True,args=['--no-sandbox'])
@@ -23,6 +42,7 @@ with sync_playwright() as p:
         for path in paths:
             response=page.goto(BASE+path)
             assert response.status==200,(path,response.status)
+            check_header(page, path)
             expect(page.locator('h1')).to_be_visible()
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(path,width,'horizontal overflow')
             if '/guides/' in path or (path.startswith(('/terms/','/zh/terms/')) and path not in ('/terms/','/terms/az/')):
@@ -33,6 +53,31 @@ with sync_playwright() as p:
         page.screenshot(path=str(OUT/f'home-{width}.png'),full_page=True)
         page.goto(BASE+'/guides/mz-charge-isotopes/')
         page.screenshot(path=str(OUT/f'article-{width}.png'),full_page=True)
+    # Header state is rendered into HTML and works without JavaScript or a mouse.
+    for javascript in (True, False):
+        header_context = browser.new_context(java_script_enabled=javascript, reduced_motion='reduce')
+        header_page = header_context.new_page()
+        for width in (1440, 390, 320):
+            header_page.set_viewport_size({'width': width, 'height': 844})
+            for path in ('/', '/#guides', '/terms/', '/terms/az/', '/about/', '/search/', '/guides/what-ms-measures/', '/zh/guides/what-ms-measures/', '/terms/detector/', '/zh/terms/detector/', '/404.html'):
+                header_page.goto(BASE + path)
+                check_header(header_page, path)
+                assert header_page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (path, width)
+                nav = header_page.get_by_role('navigation', name='Main navigation')
+                for link in nav.locator('a:visible').all():
+                    link.focus()
+                    expect(link).to_be_focused()
+                    assert link.evaluate('getComputedStyle(document.activeElement).outlineStyle') != 'none'
+                count += 1
+            header_page.goto(BASE + '/terms/')
+            explore = header_page.get_by_role('navigation', name='Main navigation').get_by_role('link', name='Explore', exact=True)
+            explore.focus(); header_page.keyboard.press('Enter')
+            expect(header_page).to_have_url(BASE + '/#guides')
+            check_header(header_page, '/#guides')
+            expect(header_page.locator('#guides')).to_be_in_viewport()
+            header_page.screenshot(path=str(OUT / f'header-{javascript}-{width}.png'))
+            count += 1
+        header_context.close()
     # Terminology views use native URLs and remain complete without JavaScript.
     taxonomy=json.loads((ROOT/'content/term-topics.json').read_text())
     def term_key(term):
