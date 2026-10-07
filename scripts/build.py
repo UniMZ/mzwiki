@@ -11,6 +11,12 @@ REPO = 'https://github.com/UniMZ/mzwiki'
 ARTICLES = json.loads((ROOT / 'content/articles.json').read_text())
 TERMS = json.loads((ROOT / 'content/terms.json').read_text())
 TERM_BY_SLUG = {a['slug']: a for a in TERMS}
+TERM_TOPICS = json.loads((ROOT / 'content/term-topics.json').read_text())
+assert set(TERM_TOPICS['assignments']) == set(TERM_BY_SLUG)
+assert len({t['id'] for t in TERM_TOPICS['topics']}) == len(TERM_TOPICS['topics'])
+assert len({t['label'] for t in TERM_TOPICS['topics']}) == len(TERM_TOPICS['topics'])
+assert set(TERM_TOPICS['assignments'].values()) == {t['label'] for t in TERM_TOPICS['topics']}
+assert 'az' not in TERM_BY_SLUG, 'Reserved terminology browsing route'
 REFS = json.loads((ROOT / 'content/references.json').read_text())
 BY_SLUG = {a['slug']: a for a in ARTICLES}
 e = html.escape
@@ -49,6 +55,14 @@ def guide_groups():
         groups.setdefault(article['group'], []).append(article)
     return groups
 
+def term_sort_key(term):
+    # Canonical English titles, natural numeric ordering, deterministic slug tie-break.
+    parts = tuple((1, int(p)) if p.isdigit() else (0, p) for p in re.split(r'(\d+)', term['title'].casefold()))
+    return parts, term['slug']
+
+def term_groups():
+    return [(topic, sorted((t for t in TERMS if TERM_TOPICS['assignments'][t['slug']] == topic['label']), key=term_sort_key)) for topic in TERM_TOPICS['topics']]
+
 def navigation(active='', kind='guide'):
     parts = ['<a class="browse-all" href="/#guides">All Guides</a>']
     for group, articles in guide_groups().items():
@@ -58,17 +72,14 @@ def navigation(active='', kind='guide'):
             attrs = ' class="active" aria-current="page"' if kind == 'guide' and a['slug'] == active else ''
             links.append(f'<a{attrs} href="{url(a["slug"])}">{e(a["title"])}</a>')
         parts.append(f'<details class="nav-group"{opened}><summary>{e(group)} <span>{len(articles)}</span></summary>{"".join(links)}</details>')
-    parts.append('<a class="browse-all" href="/terms/">All terminology</a>')
-    for label, lower, upper in [('A–F','a','f'),('G–M','g','m'),('N–S','n','s'),('T–Z','t','z')]:
-        entries = sorted((t for t in TERMS if lower <= t['title'][0].lower() <= upper), key=lambda t:t['title'].lower())
-        if not entries:
-            continue
+    parts.append('<p class="nav-collection-title">Terminology</p><div class="term-nav-views"><a href="/terms/">By topic</a><a href="/terms/az/">A–Z</a></div>')
+    for topic, entries in term_groups():
         opened = ' open' if kind == 'term' and any(t['slug'] == active for t in entries) else ''
         links = []
         for t in entries:
             attrs = ' class="active" aria-current="page"' if kind == 'term' and t['slug'] == active else ''
             links.append(f'<a{attrs} href="{url(t["slug"],kind="term")}">{e(t["title"])}</a>')
-        parts.append(f'<details class="nav-group"{opened}><summary>Terms {label} <span>{len(entries)}</span></summary>{"".join(links)}</details>')
+        parts.append(f'<details class="nav-group term-nav-group" data-topic="{e(topic["id"])}"{opened}><summary>{e(topic["label"])} <span>{len(entries)}</span></summary>{"".join(links)}</details>')
     return ''.join(parts)
 
 spectrum='''<figure class="spectrum-card"><div class="figure-top"><span>Reading the invisible</span><span class="figure-tag">MS / 001</span></div>
@@ -119,9 +130,18 @@ for kind,a in [('guide',a) for a in ARTICLES]+[('term',t) for t in TERMS]:
         article=f'''<div class="page-layout"><aside class="sidebar" lang="en" aria-label="Knowledge navigation"><p class="sidebar-title">Explore the wiki</p>{navigation(slug,kind)}</aside><main id="main" class="article"><details class="mobile-index"><summary>Guides &amp; terminology</summary>{navigation(slug,kind)}</details><div class="breadcrumb"><a href="/">Home</a> / <a href="{collection_url}">{collection}</a></div><div class="eyebrow">{eyebrow}</div><h1 lang="{lang}">{e(title)}</h1><p class="article-lead" lang="{lang}">{e(summary)}</p><div class="article-meta" lang="en"><span>{"TERM ENTRY" if kind=="term" else "FOUNDATIONAL GUIDE"} · OCT 2026</span><nav class="language" aria-label="Article language">{languages}</nav></div>{prereq_section}<div class="prose" lang="{lang}">{body}</div><section class="references" lang="en" aria-labelledby="references"><h2 id="references">References &amp; further reading</h2><ol>{refs}</ol></section>{related_section}<div class="article-end"><span>Help make this article clearer.</span><a href="{REPO}/edit/main/{source.as_posix()}">Edit this article →</a><a href="{REPO}/issues/new?template=content.yml">Suggest a correction →</a></div></main><aside class="toc" aria-label="On this page"><p class="sidebar-title">On this page</p>{toc}<a href="#references">References</a></aside></div>'''
         write(url(slug,lang,kind).strip('/')+'/index.html',page(title,summary,article,url(slug,lang,kind),lang,alternates))
         search_index.append(dict(title=title,summary=summary,url=url(slug,lang,kind),lang=lang,group=a.get('group','Terminology'),kind=kind,text=plain(body)))
-term_cards=''.join(f'<a class="article-card term-card" href="{url(t["slug"],kind="term")}"><div><h3>{e(t["title"])}</h3><p>{e(t["summary"])}</p><small>TERM · EN + ZH ARTICLES</small></div><span class="arrow" aria-hidden="true">→</span></a>' for t in TERMS)
-term_index=f'<main id="main" class="simple"><div class="eyebrow">Look up a concept</div><h1>Terminology</h1><p class="lead">Short definitions and examples, connected to the <a href="/#guides">Guides</a>. Each entry has a matching Chinese translation.</p><div class="article-grid">{term_cards}</div></main>'
-write('terms/index.html',page('Terminology','Mass spectrometry terms with definitions, examples, and links to the Guides.',term_index,'/terms/'))
+def term_list(entries, alphabetical=False):
+    items = ''.join(f'<li><a href="{url(t["slug"],kind="term")}">{e(t["title"])}</a></li>' for t in entries)
+    return f'<ul class="term-list{" term-alphabetical" if alphabetical else ""}">{items}</ul>'
+
+for mode, path, label in [('topic','/terms/','By topic'),('az','/terms/az/','A–Z')]:
+    switches = ''.join(f'<a href="{route}"'+(' aria-current="page"' if view==mode else '')+f'>{title}</a>' for view,route,title in [('topic','/terms/','By topic'),('az','/terms/az/','A–Z')])
+    if mode == 'topic':
+        entries = '<div class="term-topic-grid">'+''.join(f'<section class="term-topic" data-topic="{e(topic["id"])}" aria-labelledby="topic-{e(topic["id"])}"><h2 id="topic-{e(topic["id"])}">{e(topic["label"])} <span>{len(terms)}</span></h2>{term_list(terms)}</section>' for topic,terms in term_groups())+'</div>'
+    else:
+        entries = '<h2 class="sr-only">All terms in alphabetical order</h2>'+term_list(sorted(TERMS,key=term_sort_key),True)
+    term_index = f'<main id="main" class="container terminology-index" data-term-view="{mode}"><div class="eyebrow">Look up a concept</div><h1>Terminology</h1><p class="term-intro">{len(TERMS)} terms, with definitions, examples and matching Chinese articles. Browse by topic or find a name in A–Z.</p><nav class="term-view-switch" aria-label="Terminology views">{switches}</nav>{entries}</main>'
+    write(path.strip('/')+'/index.html',page('Terminology — '+label,'Browse mass spectrometry terminology '+('by topic' if mode=='topic' else 'alphabetically')+'.',term_index,path))
 write('assets/search-index.json',json.dumps(search_index,ensure_ascii=False,separators=(',',':'))+'\n')
 search='''<main id="main" class="simple"><div class="eyebrow">Find a concept</div><h1>Search the wiki</h1><p class="lead">Search titles and full article text. Try “isotopes”, “DIA”, or “false discovery”.</p><form class="search-form" role="search"><label class="sr-only" for="query">Search articles</label><input id="query" type="search" name="q" placeholder="What would you like to understand?" autocomplete="off"><label class="sr-only" for="language-filter">Article language</label><select id="language-filter" name="lang"><option value="en">English articles</option><option value="zh">Chinese articles</option><option value="all">All articles</option></select><label class="sr-only" for="kind-filter">Content type</label><select id="kind-filter" name="kind"><option value="all">Guides and terms</option><option value="guide">Guides</option><option value="term">Terminology</option></select></form><p id="search-status" class="search-status" role="status" aria-live="polite">Loading the article index…</p><ul id="search-results" class="search-results"></ul><noscript><p>Search requires JavaScript. Browse the <a href="/#guides">Guides</a> or <a href="/terms/">Terminology index</a>.</p></noscript></main>'''
 write('search/index.html',page('Search','Search all mass spectrometry guides in English and Chinese.',search,'/search/'))
@@ -131,6 +151,6 @@ write('404.html',page('Page not found','Find your way back to the mass spectrome
 write('CNAME','mzwiki.unimz.org\n')
 write('.nojekyll','')
 write('robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-paths=['/','/about/','/search/','/terms/']+[url(a['slug'],l,k) for k,collection in [('guide',ARTICLES),('term',TERMS)] for a in collection for l in ('en','zh')]
+paths=['/','/about/','/search/','/terms/','/terms/az/']+[url(a['slug'],l,k) for k,collection in [('guide',ARTICLES),('term',TERMS)] for a in collection for l in ('en','zh')]
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{SITE}{p}</loc></url>' for p in paths)+'</urlset>\n')
 print(f'Built {len(ARTICLES)} paired guides, {len(TERMS)} paired terms, {len(paths)+1} HTML pages, and {len(search_index)} search records.')

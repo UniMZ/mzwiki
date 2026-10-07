@@ -27,3 +27,25 @@
 @media(max-width:760px){.mobile-index[open]{max-height:65dvh;overflow-y:auto;overscroll-behavior:contain}.mobile-index .nav-group a{padding:8px 12px}.mobile-index .browse-all{font-weight:600}.guide-group{margin-top:26px}}
 /* Long reference URLs and article titles must wrap on narrow reading views. */
 .references,.article h1{overflow-wrap:anywhere}
+
+/* Compact terminology browsing; article reading typography remains unchanged. */
+.terminology-index{padding-top:40px;padding-bottom:60px}
+.terminology-index h1{font-size:46px;margin:16px 0 12px}
+.term-intro{max-width:700px;color:var(--muted);font-size:15px;margin-bottom:20px}
+.term-view-switch{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:7px;margin-bottom:30px}
+.term-view-switch a{display:flex;align-items:center;min-height:44px;padding:8px 20px;border-radius:4px;text-decoration:none;font-size:14px;font-weight:650}
+.term-view-switch a[aria-current="page"]{background:var(--green);color:white}
+.term-topic-grid{columns:3;column-gap:34px}
+.term-topic{break-inside:avoid;margin:0 0 26px}
+.term-topic h2{font-size:17px;line-height:1.4;letter-spacing:0;margin:0 0 8px;overflow-wrap:anywhere}
+.term-topic h2 span{font:11px var(--mono);color:var(--muted);margin-left:6px}
+.term-list{list-style:none;padding:0;margin:0}
+.term-list li{break-inside:avoid;border-bottom:1px solid var(--line)}
+.term-list a{display:flex;align-items:center;min-height:44px;padding:8px 2px;font-size:14px;line-height:1.5;text-decoration:none;overflow-wrap:anywhere}
+.term-list a:hover{background:var(--mint);text-decoration:underline}
+.term-alphabetical{columns:3;column-gap:34px}
+.nav-collection-title{font:11px var(--mono);margin:24px 4px 6px;color:var(--muted)}
+.term-nav-views{display:flex;gap:8px;margin-bottom:10px}
+.sidebar .term-nav-views a,.mobile-index .term-nav-views a{display:flex;align-items:center;min-height:44px;padding:7px 10px;border:1px solid var(--line);border-radius:4px}
+@media(max-width:1000px){.term-topic-grid,.term-alphabetical{columns:2}}
+@media(max-width:600px){.term-topic-grid,.term-alphabetical{columns:1}.terminology-index{padding-top:28px}.terminology-index h1{font-size:38px}.term-topic{margin-bottom:24px}.term-view-switch{margin-bottom:24px}.term-list a{font-size:15px}}

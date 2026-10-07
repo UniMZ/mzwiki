@@ -1,0 +1,116 @@
+{
+  "topics": [
+    {
+      "id": "mass-charge-spectra",
+      "label": "Mass, charge & spectra"
+    },
+    {
+      "id": "instruments-signal",
+      "label": "Instruments & signal"
+    },
+    {
+      "id": "acquisition-fragmentation",
+      "label": "Acquisition & fragmentation"
+    },
+    {
+      "id": "sample-preparation-separation",
+      "label": "Sample preparation & separation"
+    },
+    {
+      "id": "ion-mobility",
+      "label": "Ion mobility"
+    },
+    {
+      "id": "quantification-study-design",
+      "label": "Quantification & study design"
+    },
+    {
+      "id": "data-analysis-computation",
+      "label": "Data analysis & computation"
+    },
+    {
+      "id": "proteomics",
+      "label": "Proteomics"
+    },
+    {
+      "id": "ptms-crosslinking",
+      "label": "PTMs & crosslinking"
+    },
+    {
+      "id": "small-molecules-lipids",
+      "label": "Small molecules & lipids"
+    },
+    {
+      "id": "imaging",
+      "label": "Imaging"
+    }
+  ],
+  "assignments": {
+    "acquisition-cycle": "Acquisition & fragmentation",
+    "adduct-ion": "Mass, charge & spectra",
+    "base-peak": "Mass, charge & spectra",
+    "batch-effect": "Quantification & study design",
+    "biological-replicate": "Quantification & study design",
+    "blank": "Sample preparation & separation",
+    "calibration-curve": "Quantification & study design",
+    "carrier-channel": "Proteomics",
+    "carryover": "Sample preparation & separation",
+    "charge-state": "Mass, charge & spectra",
+    "chromatographic-peak": "Sample preparation & separation",
+    "collision-cross-section": "Ion mobility",
+    "controlled-vocabulary": "Data analysis & computation",
+    "crosslink-spectrum-match": "PTMs & crosslinking",
+    "crosslinked-peptide": "PTMs & crosslinking",
+    "data-leakage": "Data analysis & computation",
+    "extracted-ion-chromatogram": "Sample preparation & separation",
+    "false-discovery-rate": "Data analysis & computation",
+    "feature": "Data analysis & computation",
+    "glycoform": "PTMs & crosslinking",
+    "glycopeptide": "PTMs & crosslinking",
+    "internal-standard": "Quantification & study design",
+    "ion-image": "Imaging",
+    "ion-mobility": "Ion mobility",
+    "isolation-window": "Acquisition & fragmentation",
+    "isomer": "Small molecules & lipids",
+    "isotopologue": "Mass, charge & spectra",
+    "limit-of-blank": "Quantification & study design",
+    "limit-of-detection": "Quantification & study design",
+    "limit-of-quantification": "Quantification & study design",
+    "lipid-shorthand-notation": "Small molecules & lipids",
+    "mass-accuracy": "Instruments & signal",
+    "mass-analyzer": "Instruments & signal",
+    "mass-spectrum": "Mass, charge & spectra",
+    "matrix-effect": "Sample preparation & separation",
+    "missing-value": "Data analysis & computation",
+    "molecular-formula": "Small molecules & lipids",
+    "monoisotopic-mass": "Mass, charge & spectra",
+    "mz": "Mass, charge & spectra",
+    "neutral-loss": "Acquisition & fragmentation",
+    "peptide-spectrum-match": "Proteomics",
+    "phosphosite": "PTMs & crosslinking",
+    "post-translational-modification": "PTMs & crosslinking",
+    "precursor-ion": "Acquisition & fragmentation",
+    "product-ion": "Acquisition & fragmentation",
+    "protein-inference": "Proteomics",
+    "proteotypic-peptide": "Proteomics",
+    "provenance": "Data analysis & computation",
+    "recovery": "Sample preparation & separation",
+    "resolving-power": "Instruments & signal",
+    "retention-time": "Sample preparation & separation",
+    "retention-time-prediction": "Data analysis & computation",
+    "sequence-coverage": "Proteomics",
+    "site-localization": "PTMs & crosslinking",
+    "site-occupancy": "PTMs & crosslinking",
+    "spatial-resolution": "Imaging",
+    "spectral-library": "Data analysis & computation",
+    "spectral-similarity": "Data analysis & computation",
+    "target-decoy-competition": "Data analysis & computation",
+    "transient": "Instruments & signal",
+    "detector": "Instruments & signal",
+    "electron-multiplier": "Instruments & signal",
+    "image-current": "Instruments & signal",
+    "profile-spectrum": "Instruments & signal",
+    "centroid-spectrum": "Instruments & signal",
+    "signal-to-noise-ratio": "Instruments & signal"
+  }
+}

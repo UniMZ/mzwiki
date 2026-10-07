@@ -23,7 +23,7 @@ Use `content/ARTICLE_TEMPLATE.html` as a structure, not as text to publish uncha
 
 Edit the paired fragments in `content/terms/en/` and `content/terms/zh/`, with matching section IDs. Use `content/terms.json` for titles, summaries, ordered references, `related_guides`, and `related_terms`. Keep terms out of the numbered Guide array. The builder generates the English `/terms/` index, separate language views, reciprocal Guide links, and search classifications.
 
-Run the build, structural checks, all scientific fixture checks (`check_science.py`, `check_ionization.py`, `check_terms.py`, `check_analyzers.py`, `check_fragmentation.py`, `check_acquisition.py`, `check_data_analysis.py`, `check_reading_bridge.py`, `check_expansion.py`, and `check_advanced_expansion.py`), and the browser checks after collection changes. Commit source and generated output together.
+Run the build, structural checks, all scientific fixture checks (`check_science.py`, `check_ionization.py`, `check_terms.py`, `check_analyzers.py`, `check_fragmentation.py`, `check_acquisition.py`, `check_data_analysis.py`, `check_reading_bridge.py`, `check_expansion.py`, `check_advanced_expansion.py`, `check_signal.py`, and `check_terminology.py`), and the browser checks after collection changes. Commit source and generated output together.
 
 ## Scientific standards
 
@@ -42,3 +42,5 @@ Check scientific accuracy, translation equivalence, readable examples, source va
 ## Report a problem
 
 Use the content issue template for an incorrect claim, translation mismatch, or broken reference. Use the site issue template for layout and search defects. Include the article URL and a reproducible example where possible. Do not include private data, credentials, or identifiable sample information.
+
+When adding terminology, add exactly one assignment in `content/term-topics.json` using an existing editorial label or an explicitly ordered new topic. Both terminology directories and article navigation use this mapping; do not hand-edit their generated lists. Keep `az` reserved for the alphabetical browsing route.

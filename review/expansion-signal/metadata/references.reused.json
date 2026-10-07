@@ -1,0 +1,7 @@
+{
+  "psi-ms-representation": {
+    "title": "HUPO-PSI. PSI-MS controlled vocabulary: peak picking, centroid spectrum, and profile spectrum.",
+    "url": "https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo",
+    "note": "Official controlled vocabulary, inspected data version 4.2.2 (2026-09-18). Entries MS:1000035, MS:1000127, and MS:1000128 support representation boundaries; no universal centroid-intensity algorithm is inferred."
+  }
+}

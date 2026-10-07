@@ -1,0 +1,14 @@
+{
+  "status": "Proposal for parent consolidation; not part of the current content/terms.json schema",
+  "topic": "Instruments & signal",
+  "terms": [
+    "detector",
+    "electron-multiplier",
+    "image-current",
+    "profile-spectrum",
+    "centroid-spectrum",
+    "signal-to-noise-ratio"
+  ],
+  "confirmed_with_taxonomy_worker": true,
+  "note": "Keep this proposal separate from term additions. Later authorized index work decides and applies the final schema and topic map."
+}

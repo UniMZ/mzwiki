@@ -1,0 +1,740 @@
+{
+  "status": "passed",
+  "scope": "Content-packet checks only; not repository build or publication verification",
+  "checks_passed": 179,
+  "guide_count": 2,
+  "term_count": 6,
+  "language_pairs": 8,
+  "fragment_count": 16,
+  "new_reference_count": 13,
+  "reused_reference_count": 1,
+  "fixture_count": 12,
+  "english_word_counts": {
+    "ion-detection-signal": 951,
+    "profile-centroid-processing": 963,
+    "detector": 179,
+    "electron-multiplier": 174,
+    "image-current": 184,
+    "profile-spectrum": 183,
+    "centroid-spectrum": 182,
+    "signal-to-noise-ratio": 178
+  },
+  "checks": [
+    {
+      "check": "baseline inventory verified",
+      "passed": true
+    },
+    {
+      "check": "exact content additions",
+      "passed": true
+    },
+    {
+      "check": "unique new guide slugs",
+      "passed": true
+    },
+    {
+      "check": "unique new term slugs",
+      "passed": true
+    },
+    {
+      "check": "new reference namespace",
+      "passed": true
+    },
+    {
+      "check": "reference keys additive",
+      "passed": true
+    },
+    {
+      "check": "reused reference copied unchanged",
+      "passed": true
+    },
+    {
+      "check": "new reference URLs not duplicate baseline URLs",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal section parity",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal complete text",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal code parity",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal target length",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal known references",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal internal /terms/detector/",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal internal /guides/analyzers/",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal internal /terms/electron-multiplier/",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal internal /terms/image-current/",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal internal /terms/transient/",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal internal /guides/quantitative-calibration/",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-faraday",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-charge",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-multiplier",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-detector-families",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-dual-mode",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-tof-readout",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-image-detection",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal citation number signal-poisson",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal metadata related",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "ion-detection-signal metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing section parity",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing complete text",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing code parity",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing target length",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing known references",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing internal /terms/profile-spectrum/",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing internal /terms/centroid-spectrum/",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing internal /guides/data-analysis/",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing internal /terms/signal-to-noise-ratio/",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing internal /terms/feature/",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number psi-ms-representation",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number signal-hires-picker",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number psi-ms-representation",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number signal-smoothing",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number signal-snr-definition",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number signal-icis-noise",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing citation number signal-filter-order",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing metadata related",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "profile-centroid-processing metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "detector balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "detector section parity",
+      "passed": true
+    },
+    {
+      "check": "detector complete text",
+      "passed": true
+    },
+    {
+      "check": "detector code parity",
+      "passed": true
+    },
+    {
+      "check": "detector normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "detector numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "detector target length",
+      "passed": true
+    },
+    {
+      "check": "detector known references",
+      "passed": true
+    },
+    {
+      "check": "detector internal /terms/mass-analyzer/",
+      "passed": true
+    },
+    {
+      "check": "detector internal /terms/image-current/",
+      "passed": true
+    },
+    {
+      "check": "detector internal /guides/ion-detection-signal/",
+      "passed": true
+    },
+    {
+      "check": "detector exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "detector citation number signal-faraday",
+      "passed": true
+    },
+    {
+      "check": "detector citation number signal-image-detection",
+      "passed": true
+    },
+    {
+      "check": "detector citation number signal-detector-families",
+      "passed": true
+    },
+    {
+      "check": "detector metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "detector metadata related",
+      "passed": true
+    },
+    {
+      "check": "detector metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "detector metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier section parity",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier complete text",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier code parity",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier target length",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier known references",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier internal /guides/ion-detection-signal/",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier internal /terms/detector/",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier citation number signal-multiplier",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier citation number signal-dual-mode",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier citation number signal-tof-readout",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier metadata related",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "electron-multiplier metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "image-current balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "image-current section parity",
+      "passed": true
+    },
+    {
+      "check": "image-current complete text",
+      "passed": true
+    },
+    {
+      "check": "image-current code parity",
+      "passed": true
+    },
+    {
+      "check": "image-current normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "image-current numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "image-current target length",
+      "passed": true
+    },
+    {
+      "check": "image-current known references",
+      "passed": true
+    },
+    {
+      "check": "image-current internal /terms/transient/",
+      "passed": true
+    },
+    {
+      "check": "image-current internal /guides/ion-detection-signal/",
+      "passed": true
+    },
+    {
+      "check": "image-current exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "image-current citation number signal-image-detection",
+      "passed": true
+    },
+    {
+      "check": "image-current metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "image-current metadata related",
+      "passed": true
+    },
+    {
+      "check": "image-current metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "image-current metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum section parity",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum complete text",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum code parity",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum target length",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum known references",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum internal /terms/centroid-spectrum/",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum internal /terms/transient/",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum internal /terms/resolving-power/",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum citation number psi-ms-representation",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum citation number signal-hires-picker",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum metadata related",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "profile-spectrum metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum section parity",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum complete text",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum code parity",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum target length",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum known references",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum internal /terms/profile-spectrum/",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum internal /guides/profile-centroid-processing/",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum citation number psi-ms-representation",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum citation number signal-hires-picker",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum metadata related",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "centroid-spectrum metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio balanced HTML",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio section parity",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio complete text",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio code parity",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio normalized link parity",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio numeric sequence parity",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio target length",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio known references",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio internal /terms/limit-of-detection/",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio internal /terms/limit-of-quantification/",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio exact citation membership",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio citation number signal-snr-definition",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio citation number signal-icis-noise",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio metadata prereqs",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio metadata related",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio metadata related_guides",
+      "passed": true
+    },
+    {
+      "check": "signal-to-noise-ratio metadata related_terms",
+      "passed": true
+    },
+    {
+      "check": "all references used",
+      "passed": true
+    },
+    {
+      "check": "all 16 fragments",
+      "passed": true
+    },
+    {
+      "check": "fixture current-complete-collection",
+      "passed": true
+    },
+    {
+      "check": "fixture charge-current-scaling",
+      "passed": true
+    },
+    {
+      "check": "fixture multiplier-gain",
+      "passed": true
+    },
+    {
+      "check": "fixture clipping-ratio",
+      "passed": true
+    },
+    {
+      "check": "fixture phase-addition",
+      "passed": true
+    },
+    {
+      "check": "fixture poisson-relative-uncertainty",
+      "passed": true
+    },
+    {
+      "check": "fixture weighted-centroid",
+      "passed": true
+    },
+    {
+      "check": "fixture baseline-pulls-estimator",
+      "passed": true
+    },
+    {
+      "check": "fixture moving-average-height",
+      "passed": true
+    },
+    {
+      "check": "fixture noise-denominator-choice",
+      "passed": true
+    },
+    {
+      "check": "fixture snr-term-conventions",
+      "passed": true
+    },
+    {
+      "check": "semantic fixture values",
+      "passed": true
+    }
+  ]
+}

@@ -1215,5 +1215,128 @@
       "comp-prov",
       "comp-px-guidelines"
     ]
+  },
+  {
+    "slug": "detector",
+    "title": "Detector",
+    "zh_title": "检测器",
+    "summary": "A system converting ions or their electrical influence into observations whose readout convention must be specified.",
+    "zh_summary": "将离子或其电学影响转换为观测的系统，需要说明读出约定。",
+    "related_guides": [
+      "ion-detection-signal",
+      "analyzers"
+    ],
+    "related_terms": [
+      "mass-analyzer",
+      "electron-multiplier",
+      "image-current"
+    ],
+    "refs": [
+      "signal-faraday",
+      "signal-image-detection",
+      "signal-detector-families"
+    ]
+  },
+  {
+    "slug": "electron-multiplier",
+    "title": "Electron multiplier",
+    "zh_title": "电子倍增器",
+    "summary": "Secondary-electron amplification, distinct from the choice of analog or pulse-counting readout.",
+    "zh_summary": "通过二次电子发射进行放大，与选择模拟或脉冲计数读出是不同问题。",
+    "related_guides": [
+      "ion-detection-signal"
+    ],
+    "related_terms": [
+      "detector",
+      "image-current",
+      "signal-to-noise-ratio"
+    ],
+    "refs": [
+      "signal-multiplier",
+      "signal-dual-mode",
+      "signal-tof-readout"
+    ]
+  },
+  {
+    "slug": "image-current",
+    "title": "Image current",
+    "zh_title": "镜像电流",
+    "summary": "An induced electrical signal from moving charge, without requiring destructive ion impact for each observation.",
+    "zh_summary": "运动电荷感应出的电学信号，每次观测不要求离子发生破坏性撞击。",
+    "related_guides": [
+      "ion-detection-signal",
+      "analyzers"
+    ],
+    "related_terms": [
+      "detector",
+      "transient",
+      "profile-spectrum"
+    ],
+    "refs": [
+      "signal-image-detection"
+    ]
+  },
+  {
+    "slug": "profile-spectrum",
+    "title": "Profile spectrum",
+    "zh_title": "轮廓质谱",
+    "summary": "A spectral representation retaining intensity samples across peaks, without implying an unprocessed detector waveform.",
+    "zh_summary": "保留跨谱峰强度采样值的谱图表示，不意味着未经处理的检测器波形。",
+    "related_guides": [
+      "profile-centroid-processing",
+      "data-analysis",
+      "analyzers"
+    ],
+    "related_terms": [
+      "centroid-spectrum",
+      "mass-spectrum",
+      "resolving-power",
+      "transient"
+    ],
+    "refs": [
+      "psi-ms-representation",
+      "signal-hires-picker"
+    ]
+  },
+  {
+    "slug": "centroid-spectrum",
+    "title": "Centroid spectrum",
+    "zh_title": "质心质谱",
+    "summary": "A coordinate–intensity pair for each reported spectral peak, with algorithm-dependent position and intensity meaning.",
+    "zh_summary": "为每个报告的谱峰提供坐标与强度对，其位置和强度含义取决于算法。",
+    "related_guides": [
+      "profile-centroid-processing",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "profile-spectrum",
+      "feature",
+      "mass-spectrum"
+    ],
+    "refs": [
+      "psi-ms-representation",
+      "signal-hires-picker"
+    ]
+  },
+  {
+    "slug": "signal-to-noise-ratio",
+    "title": "Signal-to-noise ratio",
+    "zh_title": "信噪比",
+    "summary": "A ratio requiring explicit signal, noise, region, and processing definitions; no universal threshold proves analytical validity.",
+    "zh_summary": "需要明确信号、噪声、区域和处理定义的比值；不存在可证明分析有效性的普适阈值。",
+    "related_guides": [
+      "profile-centroid-processing",
+      "ion-detection-signal",
+      "quantitative-calibration"
+    ],
+    "related_terms": [
+      "profile-spectrum",
+      "limit-of-detection",
+      "limit-of-quantification"
+    ],
+    "refs": [
+      "signal-snr-definition",
+      "signal-icis-noise"
+    ]
   }
 ]

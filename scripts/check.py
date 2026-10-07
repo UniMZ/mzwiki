@@ -42,7 +42,7 @@ terms=json.loads((ROOT/'content/terms.json').read_text())
 refs=json.loads((ROOT/'content/references.json').read_text())
 index=json.loads((ROOT/'assets/search-index.json').read_text())
 assert articles and len(index)==2*(len(articles)+len(terms))
-assert len(pages)==5+2*(len(articles)+len(terms))
+assert len(pages)==6+2*(len(articles)+len(terms))
 slugs={a['slug'] for a in articles}
 assert len(slugs)==len(articles)
 # Prerequisites must remain a usable acyclic learning path as collections grow.
@@ -83,7 +83,7 @@ assert not re.search(r'[\u4e00-\u9fff]',(ROOT/'index.html').read_text()),'Homepa
 from xml.etree import ElementTree as ET
 sitemap=ET.parse(ROOT/'sitemap.xml')
 locations={n.text for n in sitemap.findall('.//{*}loc')}
-expected={'https://mzwiki.unimz.org'+r['url'] for r in index}|{'https://mzwiki.unimz.org'+p for p in ('/','/about/','/search/','/terms/')}
+expected={'https://mzwiki.unimz.org'+r['url'] for r in index}|{'https://mzwiki.unimz.org'+p for p in ('/','/about/','/search/','/terms/','/terms/az/')}
 assert locations==expected
 assert len({r['url'] for r in index})==len(index)
 assert not re.search(r'[\u3400-\u9fff]',(ROOT/'terms/index.html').read_text())
