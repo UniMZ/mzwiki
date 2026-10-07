@@ -1,0 +1,12 @@
+<h2 id="definition">定义</h2>
+<p><strong>校正 p 值</strong>把某项检验结果表达在指定多重检验程序及检验族的阈值尺度上。方法很重要：Holm 以家族错误率为控制目标，Benjamini–Hochberg（BH）则在合适假设下以错误发现率为控制目标。R 的 <code>p.adjust</code> 实现了这些及其他程序。应报告方法与检验族，而非只写“校正后显著”。<a href="#ref-stats-r-p-adjust">[1]</a></p>
+<h2 id="example">简单例子</h2>
+<p><strong>虚构的三个检验：</strong>排序后的 p 值为 [0.01, 0.04, 0.05]。先计算 BH 缩放值：<code>[3 × 0.01 / 1, 3 × 0.04 / 2, 3 × 0.05 / 3] = [0.03, 0.06, 0.05]</code>。由后向前取累积最小值，得到校正值 <code>[0.03, 0.05, 0.05]</code>。按事先设定的 ≤0.05 规则，三项都通过。向前回取最小值这一步不可省略；只把每个 p 值乘检验数是 Bonferroni 校正，不是 BH。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>校正 p 值为 0.03，不表示这一项发现为假的后验概率是 3%。FDR 是关于一个程序所拒绝假设集合的期望量，不是单项结果的正确概率。<a href="#ref-fdr-original">[2]</a> 校正也不能修复混杂、伪重复或无效的原始 p 值。</p>
+<p>BH 支持独立性或合适的正依赖，例如 PRDS；不能因为特征相关，就声称任意依赖都适用。Benjamini–Yekutieli 修正更保守，可在其假设下处理一般依赖。<a href="#ref-stats-by-dependence">[3]</a></p>
+<p>“q 值”不是没有歧义的同义词。Storey 类型的 q 值估计相关的、以最小 FDR 为尺度的显著性量，通常包含对零假设比例的估计。有些软件把 BH 校正 p 值也标作 q 值；应核对实现并报告实际方法。两者都不是局部后验错误概率。<a href="#ref-stats-qvalue">[4]</a></p>
+<h2 id="practice">检查理解</h2>
+<details><summary>能否只校正原始 p 值低于 0.05 的行？</summary><p>不能。应对预先定义的检验族应用程序，而非只对按小 p 值筛出的集合校正。</p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/differential-abundance-analysis/#bh-example">完成五个检验的 BH 计算</a></li></ul>

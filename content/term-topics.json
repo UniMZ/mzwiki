@@ -111,6 +111,18 @@
     "image-current": "Instruments & signal",
     "profile-spectrum": "Instruments & signal",
     "centroid-spectrum": "Instruments & signal",
-    "signal-to-noise-ratio": "Instruments & signal"
+    "signal-to-noise-ratio": "Instruments & signal",
+    "mass-trace": "Data analysis & computation",
+    "peak-integration": "Data analysis & computation",
+    "retention-time-alignment": "Data analysis & computation",
+    "gap-filling": "Data analysis & computation",
+    "library-match": "Data analysis & computation",
+    "analog-search": "Data analysis & computation",
+    "molecular-network": "Data analysis & computation",
+    "ion-identity-networking": "Small molecules & lipids",
+    "imputation": "Data analysis & computation",
+    "left-censoring": "Data analysis & computation",
+    "fold-change": "Quantification & study design",
+    "adjusted-p-value": "Quantification & study design"
   }
 }

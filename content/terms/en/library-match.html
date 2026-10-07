@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>library match</strong> links a query spectrum to a reference entry after a search's candidate and acceptance rules have been applied. The useful result includes the reference accession, score definition, matched-peak count, precursor relationship, and experimental metadata. It is more informative than a compound name copied from the first result row. Search tools can expose several hits per spectrum; retaining alternatives makes review possible. <a href="#ref-search-gnps-library">[1]</a></p>
+<h2 id="example">One result, several questions</h2>
+<p><strong>Hypothetical example:</strong> a positive-mode [M+H]<sup>+</sup> query returns candidate A at cosine 0.92 with six matched peaks and candidate B at 0.90 with seven. A is first under that scoring rule. The small difference does not establish that A is uniquely correct, and a greater matched-peak count does not automatically make B preferable. Inspect which peaks distinguish them, unmatched signal, adduct compatibility, and possible mixed spectra.</p>
+<p>Keep separate records for the raw comparison and the interpretation: “A passed the search threshold” is not equivalent to “A was confirmed with an authentic standard.” If the real compound is missing from the searched collection, the highest-scoring available entry can still be wrong.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A cosine of 0.92 does not mean 92% correctness. Error estimation depends on the method, data, candidate collection, and accepted set; research on small-molecule matching demonstrates project-dependent behavior. <a href="#ref-search-significance">[2]</a> State an exact-compound or analog search explicitly, and preserve unresolved alternatives.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>What should accompany a reported name?</summary><p>The query identifier, reference accession and release, ion assignment, search settings, supporting spectrum, alternatives, and evidence-specific confidence statement.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/spectral-library-search/#confidence">Review a match beyond its rank</a></li></ul>

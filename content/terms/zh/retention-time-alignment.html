@@ -1,0 +1,11 @@
+<h2 id="definition">定义</h2>
+<p><strong>保留时间对齐</strong>估计不同色谱运行之间、或某次运行与参考之间的时间坐标变换，帮助在存在时间漂移时比较信号。方法可以利用共同标志峰或更广泛的信号模式，其假设及所需输入各不相同。<a href="#ref-feat-alignment-docs">[1]</a>应同时保留采集时间和调整后的坐标。</p>
+<h2 id="example">简单例子</h2>
+<p><strong>假设的双标志模型：</strong>参考峰位于 100、300 s，运行 B 中的对应峰位于 110、330 s。假定区间内采用线性映射，则 B = 220 s 映射为 <code>100 + (220 − 110) × 200 / 220 = 200 s</code>。如果只是减去第一个标志的 10 s 延迟，则会得到 210 s。</p>
+<p>该计算假定标志配对正确，且二者之间的关系为线性。它不能支持区间外的外推，也不能证明两个标志足以处理复杂实验。应保留局部不匹配的可见性，而非用平均校正把它掩盖。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>对齐改变坐标的比较方式；<strong>对应关系分析</strong>把被认为代表同一特征的跨运行信号归为一组。xcms 将两者作为不同步骤。<a href="#ref-feat-correspondence-docs">[2]</a>二者都不等于分子鉴定。对齐也不同于根据候选结构预测保留时间，更不同于校正丰度漂移。</p>
+<h2 id="practice">检查理解</h2>
+<details><summary>两个不同化合物能否具有相同的调整后保留时间？</summary><p>可以。时间只是一个坐标；仍须考虑质量、其他证据及可能的歧义。</p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/cross-run-alignment-matching/#worked-alignment">计算非恒定的时间校正</a></li><li><a href="/zh/guides/lc-separation/">回顾保留的含义</a></li></ul>

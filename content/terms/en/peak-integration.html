@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Peak integration</strong> estimates signal area across chosen boundaries. For a chromatographic peak, the integration axis is time and the area is defined relative to a baseline. <a href="#ref-sep-peak-area">[1]</a> A reported result therefore depends on the bounds, baseline, sampled signal, and numerical rule. Integration across m/z in one spectrum is a different operation and must not be confused with time integration.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed trace:</strong> at times 0, 2, and 5 s, baseline-subtracted intensities are 0, 6, and 0. Assume straight lines between points. Trapezoidal integration gives <code>(0 + 6) / 2 × 2 + (6 + 0) / 2 × 3 = 15</code> intensity-unit·s. The height is 6 intensity units, and the unweighted intensity sum is also 6; neither is the time-integrated area.</p>
+<p>If the measured trace additionally contains a constant baseline of 2, integrating it without subtraction adds <code>2 × 5 = 10</code>, producing 25. That difference comes entirely from the background assumption, not a change in the hypothetical analyte signal.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Software may offer intensity sums and several numerical integration methods under related labels. OpenMS documents these options separately. <a href="#ref-feat-integration-docs">[2]</a> Inspect field definitions before comparing exports. A larger area does not establish a larger concentration unless response and calibration assumptions support that interpretation. Drawing boundaries around an overlap also does not establish selectivity.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does moving the integration boundary leave abundance unchanged?</summary><p>No. It changes which signal contributes. Record and review boundaries along with the area.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/lc-ms-feature-detection/#worked-integration">Calculate and inspect an integrated area</a></li><li><a href="/guides/quantitative-calibration/">Connect response to concentration</a></li></ul>

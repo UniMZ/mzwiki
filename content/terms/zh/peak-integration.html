@@ -1,0 +1,11 @@
+<h2 id="definition">定义</h2>
+<p><strong>峰积分</strong>估计选定边界内的信号面积。对于色谱峰，积分轴是时间，面积以基线为参照。<a href="#ref-sep-peak-area">[1]</a>因此，报告值取决于边界、基线、采样信号及数值规则。在单张谱图中沿 m/z 积分是另一种操作，不能与时间积分混淆。</p>
+<h2 id="example">简单例子</h2>
+<p><strong>构造的轨迹：</strong>0、2、5 s 时，扣除基线后的强度分别为 0、6、0。假定点间用直线连接。梯形积分得到 <code>(0 + 6) / 2 × 2 + (6 + 0) / 2 × 3 = 15</code> 强度单位·s。峰高是 6 个强度单位，不加权的强度和也为 6；两者都不是沿时间积分的面积。</p>
+<p>如果测量轨迹还含有恒定的 2 单位基线，不扣基线就积分会多出 <code>2 × 5 = 10</code>，结果为 25。这一差别完全来自背景假设，而非假设分析物信号发生了变化。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>软件可能以相关名称提供强度求和及多种数值积分方法。OpenMS 文档分别列出了这些选项。<a href="#ref-feat-integration-docs">[2]</a>比较导出结果前，应检查字段定义。除非响应与校准假设支持相应解释，否则面积更大不能证明浓度更大。给重叠信号画出边界也不能证明测量具有选择性。</p>
+<h2 id="practice">检查理解</h2>
+<details><summary>移动积分边界是否不会改变丰度？</summary><p>会改变。边界决定哪些信号参与计算。应把边界和面积一起记录并审查。</p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/lc-ms-feature-detection/#worked-integration">计算并检查积分面积</a></li><li><a href="/zh/guides/quantitative-calibration/">把响应与浓度联系起来</a></li></ul>

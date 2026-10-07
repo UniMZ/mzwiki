@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>molecular network</strong>, in MS/MS analysis, is a graph whose nodes represent spectra or features with associated spectra and whose edges encode selected relationships. In feature-based molecular networking, feature detection and alignment retain chromatographic context and link representative MS/MS to quantitative information. Separate measured features can remain separate even when their spectra resemble one another. <a href="#ref-network-fbmn">[1]</a></p>
+<h2 id="example">A chain does not establish endpoint identity</h2>
+<p><strong>Hypothetical example:</strong> A–B scores 0.85, B–C scores 0.81, and A–C scores 0.40. A chosen 0.75 cutoff, with other requirements satisfied, produces the chain A–B–C. All three belong to one connected component, but the first and last spectra are not a high-scoring pair. A supported annotation at A does not identify C.</p>
+<p>Network construction may also impose minimum matched peaks, reciprocal neighbor rankings, or component-size restrictions. An above-threshold pair can disappear after these additional rules. Preserve the edge list and settings rather than relying on a screenshot. <a href="#ref-network-parameters">[2]</a></p>
+<h2 id="confusion">Common confusion</h2>
+<p>An edge is not a chemical bond or proof of a metabolic conversion. A node need not be a unique neutral molecule: several adducts may produce several nodes. Layout proximity is not a calibrated structural distance, and a large drawn node means only what its visual encoding specifies. Missing edges can reflect missing MS/MS, filtering, or incompatible fragmentation rather than unrelated chemistry.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>What makes a network interpretable?</summary><p>Explicit node and edge definitions, traceable spectra and feature mapping, a clear visual legend, and annotations that retain their evidence and uncertainty.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/molecular-networking/#edges">Read network edge rules</a></li></ul>

@@ -1,0 +1,12 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Left-censoring</strong> means an observation is known only to lie below a specified boundary, rather than being measured exactly. For a nonnegative abundance X with an idealized reporting limit L, a censored result supplies <code>0 ≤ X &lt; L</code>. Statistical software can represent left-censored observations as intervals instead of substituted point values. <a href="#ref-stats-surv-censoring">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed hard-threshold example:</strong> an assay reports exact values of 8 and 12 units, and one result “below 5.” The third observation is not 0 or 2.5. Under the stated nonnegative range, the three-value arithmetic mean lies from <code>(8 + 12 + 0) / 3 ≈ 6.67</code> up to, but excluding, <code>(8 + 12 + 5) / 3 ≈ 8.33</code>. Replacing it with 2.5 picks a mean of 7.5 without establishing that value.</p>
+<p>For a continuous model, that censored observation contributes the probability <code>P(X &lt; 5)</code> to its likelihood, rather than a density evaluated at an invented exact measurement. The distributional model still needs justification.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Real MS detection is often probabilistic and affected by interference, sampling, and processing; the example assumes a hard boundary solely to teach the idea. An unavailable peak does not by itself establish any bound. A detection limit, a quantification limit, and a software reporting cutoff are different quantities. Limits can also differ among analytes or runs.</p>
+<p>Abundance-dependent missingness can motivate a censoring model, but it does not establish that every gap is left-censored. Record the limit and censoring flag when genuinely known; preserve ordinary missingness separately. <a href="#ref-missingness-benchmark">[2]</a></p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does “not acquired” mean “below the detection limit”?</summary><p>No. No acquisition supplies no such measurement bound. A censoring analysis needs evidence for its observation rule.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/missing-data-handling/#options">Represent bounds rather than arbitrary replacements</a></li></ul>

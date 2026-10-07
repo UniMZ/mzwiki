@@ -1028,5 +1028,125 @@
     "title": "ProteoWizard. Technical Documentation: Filters.",
     "url": "https://proteowizard.sourceforge.io/tools/filters.html",
     "note": "Official direct filter documentation inspected. Supports sequential operations and distinction between vendor-specific and alternative peak picking. The existing msconvert-filters reference points to a different overview page; this additive reference identifies the directly inspected filter-order source. No command recipe or unstable default is prescribed."
+  },
+  "feat-centwave-primary": {
+    "title": "Tautenhahn R, Böttcher C, Neumann S. Highly sensitive feature detection for high resolution LC/MS. BMC Bioinformatics. 2008;9:504.",
+    "url": "https://doi.org/10.1186/1471-2105-9-504",
+    "note": "Primary centWave method paper. Title, authors, year, DOI and abstract verified against PubMed PMID 19040729 on 2026-10-07. Supports candidate mass traces followed by chromatographic wavelet detection; historical comparisons are not presented as current rankings."
+  },
+  "feat-centwave-docs": {
+    "title": "xcms. Chromatographic peak detection using the centWave method.",
+    "url": "https://sneumann.github.io/xcms/reference/findChromPeaks-centWave.html",
+    "note": "Official developer documentation inspected 2026-10-07, showing version 4.11.4. Distinguishes trace-building m/z tolerance, chromatographic width in seconds, signal-to-noise and observation-count/intensity prefilters. No documented default is prescribed as a universal setting."
+  },
+  "feat-integration-docs": {
+    "title": "OpenMS. PeakIntegrator class reference.",
+    "url": "https://www.openms.org/doxygen/nightly/html/classOpenMS_1_1PeakIntegrator.html",
+    "note": "Official developer documentation inspected 2026-10-07. Lists intensity summation, trapezoidal and Simpson integration as distinct methods and separate background estimation. Used to establish implementation differences; all numerical traces in these entries are original constructed examples."
+  },
+  "feat-alignment-docs": {
+    "title": "xcms. Alignment: retention time correction methods.",
+    "url": "https://sneumann.github.io/xcms/reference/adjustRtime.html",
+    "note": "Official developer documentation inspected 2026-10-07, showing version 4.11.4. Describes signal-pattern and peak-group alignment methods with different input dependencies. Teaching mappings are original arithmetic examples, not recommended landmark counts."
+  },
+  "feat-correspondence-docs": {
+    "title": "xcms. Correspondence: group chromatographic peaks across samples.",
+    "url": "https://sneumann.github.io/xcms/reference/groupChromPeaks.html",
+    "note": "Official developer documentation inspected 2026-10-07, showing version 4.11.4. Separates correspondence from alignment and describes grouping criteria, including a detection fraction within at least one sample group. Used as an implementation example, not a universal feature definition."
+  },
+  "feat-gapfill-docs": {
+    "title": "xcms. Gap filling: fillChromPeaks.",
+    "url": "https://sneumann.github.io/xcms/reference/fillChromPeaks.html",
+    "note": "Official developer documentation inspected 2026-10-07, showing version 4.11.4. Supports re-extraction from feature-informed m/z–time regions, is_filled flags, and remaining missing results where no signal exists. Does not establish new molecular identifications."
+  },
+  "search-gnps-library": {
+    "title": "GNPS. Spectral Library Search documentation.",
+    "url": "https://ccms-ucsd.github.io/GNPSDocumentation/librarysearch/",
+    "note": "Official documentation checked 7 October 2026. Supports distinct precursor/fragment tolerances, peak filters, score and matched-peak requirements, and exact versus analog search options. Interface defaults are not recommended as universal scientific thresholds."
+  },
+  "search-analog-alignment": {
+    "title": "GNPS. Molecular Networking Theory: spectrum alignment.",
+    "url": "https://ccms-ucsd.github.io/GNPSDocumentation/massspecbackground/networkingtheory/",
+    "note": "Official explanation of unshifted and precursor-difference-shifted peak alignment and its limitations. The packet uses original hypothetical spectra, not the source illustrations; a mass shift does not locate a modification or establish a unique structure."
+  },
+  "search-significance": {
+    "title": "Scheubert et al. (2017). Significance estimation for large scale metabolomics annotations by spectral matching. Nature Communications 8, 1494.",
+    "url": "https://doi.org/10.1038/s41467-017-01318-5",
+    "note": "Primary publisher-indexed discussion and methods checked; a later direct open encountered an authentication redirect. Supports project-dependent score/error relationships and method-specific significance estimation. No fixed cosine cutoff, universal FDR, or guarantee of isomer identification is transferred."
+  },
+  "network-fbmn": {
+    "title": "Nothias et al. (2020). Feature-based molecular networking in the GNPS analysis environment. Nature Methods 17, 905–908.",
+    "url": "https://doi.org/10.1038/s41592-020-0933-6",
+    "note": "Primary publisher metadata and indexed author manuscript introduction and methods checked. Supports feature-based nodes, quantitative feature tables, and preserving chromatographically or mobility-resolved isomers. Does not imply that unresolved isomers are separated computationally."
+  },
+  "network-fbmn-docs": {
+    "title": "GNPS. Feature-Based Molecular Networking workflow documentation.",
+    "url": "https://ccms-ucsd.github.io/GNPSDocumentation/featurebasedmolecularnetworking/",
+    "note": "Official input and workflow documentation checked 7 October 2026. Supports matching feature identifiers across quantitative and representative-spectrum exports, and explicit graph-generation parameters. No software-version-specific default is prescribed."
+  },
+  "network-parameters": {
+    "title": "GNPS. Molecular Networking documentation: clustering, network and filtering options.",
+    "url": "https://ccms-ucsd.github.io/GNPSDocumentation/networking/",
+    "note": "Official parameter definitions checked 7 October 2026. Supports spectral consensus nodes, minimum matched peaks, reciprocal TopK filtering and component-size limits. Displayed defaults are not identification guarantees."
+  },
+  "network-iimn": {
+    "title": "Schmid et al. (2021). Ion identity molecular networking for mass spectrometry-based metabolomics in the GNPS environment. Nature Communications 12, 3832.",
+    "url": "https://doi.org/10.1038/s41467-021-23953-9",
+    "note": "Primary publisher-indexed introduction, results and workflow details checked; a later direct open encountered an authentication redirect. Supports connecting ion species using chromatographic and MS1 relationships, distinct from MS/MS similarity edges, and adduct-dependent fragmentation. Ion grouping is not independent proof of a chemical structure."
+  },
+  "network-iin-docs": {
+    "title": "GNPS. Ion Identity Molecular Networking workflow documentation.",
+    "url": "https://ccms-ucsd.github.io/GNPSDocumentation/fbmn-iin/",
+    "note": "Official documentation checked 7 October 2026. Supports explicit edge types and separate uncollapsed and collapsed network representations; the original feature-to-node mapping must remain available."
+  },
+  "stats-xcms-gapfill": {
+    "title": "xcms. Gap Filling: fillChromPeaks documentation.",
+    "url": "https://sneumann.github.io/xcms/reference/fillChromPeaks.html",
+    "note": "Official documentation inspected 2026-10-07. Describes integration of acquired signal in a feature m/z–retention-time region, is_filled flags, and retained NA when no signal is present. Used to distinguish signal re-extraction from statistical imputation; no current defaults or universal parameter settings are prescribed."
+  },
+  "stats-missing-rubin": {
+    "title": "Rubin, D. B. (1976). Inference and missing data. Biometrika 63(3), 581–592.",
+    "url": "https://doi.org/10.1093/biomet/63.3.581",
+    "note": "Foundational missing-data mechanism and ignorability framework. Harvard institutional record and abstract verified; publisher direct access failed, and an accessible scanned paper did not expose extractable text. The precise observed/unobserved distinction is additionally checked against the fully inspected Lee et al. 2023 primary methodological paper; no claim that a table pattern diagnoses MAR or MNAR is made."
+  },
+  "stats-missing-assumptions": {
+    "title": "Lee, Carlin, Simpson & Moreno-Betancur (2023). Assumptions and analysis planning in studies with missing data in multiple variables: moving beyond the MCAR/MAR/MNAR classification. International Journal of Epidemiology 52(4), 1268–1275.",
+    "url": "https://doi.org/10.1093/ije/dyad008",
+    "note": "Publisher full text inspected. Original methodological framework supports distinguishing missingness-pattern assumptions from a method-selection rule and conditioning on what is observed for a pattern. Applied only to general statistical reasoning; epidemiological case-study results are not transferred to mass spectrometry."
+  },
+  "stats-surv-censoring": {
+    "title": "R survival package. Surv: Create a Survival Object.",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/survival/html/Surv.html",
+    "note": "Official documentation inspected for interval representation of left-censored versus exact observations. The hard-threshold abundance example and its mean bounds are independently constructed and explicitly idealized; actual mass-spectrometric detection is not assumed deterministic."
+  },
+  "stats-mice-pooling": {
+    "title": "mice. Combine estimates by pooling rules: pool documentation.",
+    "url": "https://amices.org/mice/reference/pool.html",
+    "note": "Official documentation inspected, including separate imputation, model fitting, and estimate/standard-error pooling and the within/between-imputation variance rule. The associated van Buuren & Groothuis-Oudshoorn (2011) JSS paper metadata and abstract were also checked. Supports uncertainty propagation, not a recommendation that chained equations solve every proteomics missingness mechanism."
+  },
+  "stats-sklearn-leakage": {
+    "title": "scikit-learn. Common pitfalls and recommended practices: Data leakage.",
+    "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+    "note": "Official documentation inspected 2026-10-07. Supports fitting transformations only on training data, including SimpleImputer and scaling, and using pipelines within cross-validation. Biological-unit splitting is a design-aware application rather than a claim about automatic software behavior."
+  },
+  "stats-limma-models": {
+    "title": "Smyth et al. limma: Linear Models for Microarray and RNA-Seq Data, User’s Guide.",
+    "url": "https://bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf",
+    "note": "Official guide inspected, revision 19 May 2026, especially paired samples (section 9.4.1), moderated statistics and multiple contrasts (chapter 13). Supports design matrices, contrasts, geometric/log-scale interpretation, and empirical-Bayes variance moderation. Teaching calculations use an ordinary paired t-test, not limma output; gene-expression examples are not MS validation."
+  },
+  "stats-r-p-adjust": {
+    "title": "R stats package. p.adjust: Adjust P-values for Multiple Comparisons.",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html",
+    "note": "Official documentation inspected 2026-10-07. Confirms BH/fdr, BY and family-wise error methods and family-size semantics. Both numerical BH examples are independently calculated, with backward cumulative minima and capping at one, not copied software output."
+  },
+  "stats-by-dependence": {
+    "title": "Benjamini & Yekutieli (2001). The control of the false discovery rate in multiple testing under dependency. Annals of Statistics 29(4), 1165–1188.",
+    "url": "https://doi.org/10.1214/aos/1013699998",
+    "note": "Authors’ Tel Aviv University record and full abstract inspected; official R documentation independently confirms BY general-dependence adjustment. Supports BH under suitable positive regression dependence and a distinct conservative modification for general dependence. Direct publisher page yielded no text and author PDF timed out; no claim that arbitrary feature correlation suffices for BH is made."
+  },
+  "stats-qvalue": {
+    "title": "Storey & Tibshirani (2003). Statistical significance for genomewide studies. Proceedings of the National Academy of Sciences 100(16), 9440–9445.",
+    "url": "https://doi.org/10.1073/pnas.1530509100",
+    "note": "Primary full text inspected at PMC170937, including the q-value construction and null-proportion estimation. Used to distinguish Storey-style estimated q-values from BH-adjusted p-values and from individual posterior error probabilities. No genomewide biological findings or performance claims are transferred to MS."
   }
 }

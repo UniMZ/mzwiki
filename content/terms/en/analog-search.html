@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p>An <strong>analog search</strong> seeks reference compounds related to a query rather than requiring the same molecular identity. In a common modified spectral alignment, products can match directly or after a shift associated with the precursor difference. This can recognize fragments retaining a changed part of a molecule alongside fragments that do not. The permitted shift, charge assumptions, and scoring implementation must be stated. <a href="#ref-search-analog-alignment">[1]</a></p>
+<h2 id="example">Unchanged and shifted fragments</h2>
+<p><strong>Hypothetical example:</strong> two singly charged precursors with the same proposed adduct differ by 14.0157 in m/z. Their spectra contain one common peak, plus a pair at 150.0000 and 164.0157. A modified alignment may count both the direct match and the shifted pair. An ordinary unshifted comparison may miss the second relationship.</p>
+<p>That arithmetic does not establish where a chemical difference occurs. Before proposing a structural change, verify precursor assignment, charge, adduct, and mass accuracy. A different adduct can cause a precursor shift without a different neutral molecule; different fragment charges also complicate simple shift interpretation.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A returned analog name is a reference point for a hypothesis, not the query's confirmed name. Nor does a missing exact hit prove that the query is novel. GNPS separates the analog-search option and its allowed mass difference from ordinary search controls. <a href="#ref-search-gnps-library">[2]</a> Save the search mode with each result rather than pooling all names into one identification column.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does a matching precursor difference locate the modification?</summary><p>No. Several structures or ion assignments may explain it. Additional diagnostic fragments or orthogonal experiments must distinguish them.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/spectral-library-search/#analogs">Handle a query absent from the library</a></li></ul>

@@ -1,0 +1,11 @@
+<h2 id="definition">定义</h2>
+<p><strong>插补</strong>是依据模型，为数据集中不可获得的单元提供估计值。可以使用固定规则、样本或特征之间的关系，或概率模型。得到的数字是估计，并非新的测量。蛋白质组学基准研究表明，效果取决于下游任务；矩阵完整并不证明推断得到了改善。<a href="#ref-missingness-benchmark">[1]</a></p>
+<h2 id="example">简单例子</h2>
+<p><strong>假设峰面积：</strong>对照组为 [100，缺失，120]，比较组均值为 220。填入 110 后，对照均值为 110，比较组/对照组之比为 2。填入 20 后，均值变成 80，比值为 2.75。测量没有改变，改变的是对缺失值的假设。这里比较的是算术均值。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>信号再提取常被称为<a href="/zh/terms/gap-filling/">缺峰回填</a>，它返回已采集的数据，对初次检测未找到合格峰的区域进行积分。统计插补则根据其他信息预测表格单元。两者应分别标记。xcms 官方文档说明了再提取及其填补峰标记。<a href="#ref-stats-xcms-gapfill">[2]</a></p>
+<p>单次插补后若把估计当成观测，可能低估不确定性。多重插补分析多个按合适方式生成的数据集，合并估计时同时考虑各次插补内部及插补之间的不确定性。它要求相容的模型及合并规则，不能只反复任意随机填数。<a href="#ref-stats-mice-pooling">[3]</a></p>
+<h2 id="practice">检查理解</h2>
+<details><summary>能否在评估前，用全部数据拟合依赖数据的插补模型？</summary><p>不应该。应在每个训练折内学习插补，再用于留出数据。按目标独立单位将相关样本放在同一侧，否则信息可能泄漏到评估中。<a href="#ref-stats-sklearn-leakage">[4]</a></p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/missing-data-handling/">选择假设并比较敏感性</a></li><li><a href="/zh/guides/differential-abundance-analysis/">把不确定性带入丰度比较</a></li></ul>
