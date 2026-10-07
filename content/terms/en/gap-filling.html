@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p>In LC-MS processing, <strong>gap filling</strong> revisits source data for a run lacking a detected member of a cross-run feature group. It estimates abundance by extracting signal in an expected m/z–retention-time region. xcms implements this operation and marks the resulting entries as filled. <a href="#ref-feat-gapfill-docs">[1]</a> Exact region definitions and acceptance rules are software-dependent.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Hypothetical matrix:</strong> areas in runs A, B, and C are <code>[80, 100, missing]</code>. A group-informed extraction from C's source trace returns 9. That is a new extraction result from existing measurements. Replacing the missing cell with the observed mean 90 would be a different operation: statistical imputation using the matrix.</p>
+<p>The value 9 might include weak analyte signal, background, or interference. The extraction alone cannot choose among those explanations. Review the region and preserve its filled status. If the region has no usable observations, do not manufacture a measured zero simply to complete the row; xcms can leave such entries missing. <a href="#ref-feat-gapfill-docs">[1]</a></p>
+<h2 id="confusion">Common confusion</h2>
+<p>Gap filling is not a new acquisition, proof of a chromatographic peak, or a new molecular identification. It uses other runs to decide where to examine the current run, so an incorrect correspondence can direct extraction to the wrong region. A full matrix may therefore contain less trustworthy entries than its appearance suggests.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Should a filled value automatically be treated exactly like an initially detected peak?</summary><p>No. Preserve how it was obtained and apply appropriate quality checks. A nonzero integral does not establish equivalent evidence.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/cross-run-alignment-matching/#gap-filling">Separate correspondence from targeted re-extraction</a></li><li><a href="/guides/data-analysis/#missingness">Interpret missingness before replacing values</a></li></ul>

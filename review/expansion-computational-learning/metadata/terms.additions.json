@@ -1,0 +1,254 @@
+[
+  {
+    "slug": "mass-trace",
+    "title": "Mass trace",
+    "zh_title": "质量轨迹",
+    "summary": "A sequence of compatible m/z observations across scans, used to locate chromatographic structure before assigning chemical meaning.",
+    "zh_summary": "把不同扫描中相容的 m/z 观测连接为序列，在赋予化学意义前定位色谱结构。",
+    "related_guides": [
+      "lc-ms-feature-detection",
+      "profile-centroid-processing"
+    ],
+    "related_terms": [
+      "feature",
+      "extracted-ion-chromatogram",
+      "chromatographic-peak",
+      "peak-integration"
+    ],
+    "refs": [
+      "feat-centwave-primary",
+      "feature-finding"
+    ]
+  },
+  {
+    "slug": "peak-integration",
+    "title": "Peak integration",
+    "zh_title": "峰积分",
+    "summary": "Estimate signal area with explicit boundaries, baseline, coordinate intervals, and numerical method.",
+    "zh_summary": "在明确边界、基线、坐标间隔及数值方法的条件下估计信号面积。",
+    "related_guides": [
+      "lc-ms-feature-detection",
+      "quantitative-calibration"
+    ],
+    "related_terms": [
+      "chromatographic-peak",
+      "mass-trace",
+      "extracted-ion-chromatogram",
+      "feature"
+    ],
+    "refs": [
+      "sep-peak-area",
+      "feat-integration-docs"
+    ]
+  },
+  {
+    "slug": "retention-time-alignment",
+    "title": "Retention-time alignment",
+    "zh_title": "保留时间对齐",
+    "summary": "Transform retention-time coordinates between runs without treating the correction itself as a match or identification.",
+    "zh_summary": "变换不同运行之间的保留时间坐标，不把校正本身当作匹配或鉴定。",
+    "related_guides": [
+      "cross-run-alignment-matching",
+      "lc-separation"
+    ],
+    "related_terms": [
+      "retention-time",
+      "feature",
+      "retention-time-prediction",
+      "gap-filling"
+    ],
+    "refs": [
+      "feat-alignment-docs",
+      "feat-correspondence-docs"
+    ]
+  },
+  {
+    "slug": "gap-filling",
+    "title": "Gap filling",
+    "zh_title": "缺峰回填",
+    "summary": "Re-extract existing signal in an expected feature region while preserving how the value was obtained and what remains uncertain.",
+    "zh_summary": "从预期特征区域重新提取已有信号，同时保留数值获取方式及尚存的不确定性。",
+    "related_guides": [
+      "cross-run-alignment-matching",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "feature",
+      "missing-value",
+      "peak-integration",
+      "retention-time-alignment"
+    ],
+    "refs": [
+      "feat-gapfill-docs"
+    ]
+  },
+  {
+    "slug": "library-match",
+    "title": "Library match",
+    "zh_title": "谱库匹配",
+    "summary": "A query–reference comparison accepted under stated rules, with evidence that must remain distinct from an identity claim.",
+    "zh_summary": "在明确规则下接受的待查谱图与参考谱图比较，其证据必须与分子身份结论区分。",
+    "related_guides": [
+      "spectral-library-search",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "spectral-library",
+      "spectral-similarity",
+      "analog-search"
+    ],
+    "refs": [
+      "search-gnps-library",
+      "search-significance"
+    ]
+  },
+  {
+    "slug": "analog-search",
+    "title": "Analog search",
+    "zh_title": "类似物检索",
+    "summary": "A search for related reference compounds, often allowing precursor-dependent fragment shifts, that yields relationship hypotheses.",
+    "zh_summary": "寻找相关参考化合物的检索，常允许与前体差相关的碎片位移，结果用于提出关系假说。",
+    "related_guides": [
+      "spectral-library-search",
+      "molecular-networking"
+    ],
+    "related_terms": [
+      "library-match",
+      "spectral-similarity",
+      "adduct-ion",
+      "neutral-loss"
+    ],
+    "refs": [
+      "search-analog-alignment",
+      "search-gnps-library"
+    ]
+  },
+  {
+    "slug": "molecular-network",
+    "title": "Molecular network",
+    "zh_title": "分子网络",
+    "summary": "A graph of spectra or MS-linked features whose edges encode selected comparisons rather than proven structures or reactions.",
+    "zh_summary": "由谱图或关联质谱的特征构成的图，边表示选定的比较关系，并非已证实的结构或反应。",
+    "related_guides": [
+      "molecular-networking",
+      "spectral-library-search"
+    ],
+    "related_terms": [
+      "feature",
+      "spectral-similarity",
+      "ion-identity-networking",
+      "library-match"
+    ],
+    "refs": [
+      "network-fbmn",
+      "network-parameters"
+    ]
+  },
+  {
+    "slug": "ion-identity-networking",
+    "title": "Ion identity networking",
+    "zh_title": "离子身份网络",
+    "summary": "Grouping features as candidate ion forms of the same neutral molecule using chromatographic and ion-mass evidence.",
+    "zh_summary": "利用色谱与离子质量证据，将特征分组为可能来自同一中性分子的不同离子形式。",
+    "related_guides": [
+      "molecular-networking",
+      "small-molecule-annotation",
+      "mz-charge-isotopes"
+    ],
+    "related_terms": [
+      "adduct-ion",
+      "feature",
+      "molecular-network",
+      "isotopologue"
+    ],
+    "refs": [
+      "network-iimn",
+      "network-iin-docs"
+    ]
+  },
+  {
+    "slug": "imputation",
+    "title": "Imputation",
+    "zh_title": "插补",
+    "summary": "Model-based estimates for missing entries, with assumptions and uncertainty that remain part of the analysis.",
+    "zh_summary": "为缺失单元提供基于模型的估计，其假设与不确定性仍是分析的一部分。",
+    "related_guides": [
+      "missing-data-handling",
+      "differential-abundance-analysis"
+    ],
+    "related_terms": [
+      "missing-value",
+      "left-censoring",
+      "gap-filling",
+      "data-leakage"
+    ],
+    "refs": [
+      "missingness-benchmark",
+      "stats-xcms-gapfill",
+      "stats-mice-pooling",
+      "stats-sklearn-leakage"
+    ]
+  },
+  {
+    "slug": "left-censoring",
+    "title": "Left-censoring",
+    "zh_title": "左删失",
+    "summary": "An observation known to be below a justified boundary, rather than an exact value or an unexplained gap.",
+    "zh_summary": "只知道某观测低于有依据的界限，而非得到精确数值或原因不明的缺失。",
+    "related_guides": [
+      "missing-data-handling",
+      "quantitative-calibration"
+    ],
+    "related_terms": [
+      "missing-value",
+      "imputation",
+      "limit-of-detection",
+      "limit-of-quantification"
+    ],
+    "refs": [
+      "stats-surv-censoring",
+      "missingness-benchmark"
+    ]
+  },
+  {
+    "slug": "fold-change",
+    "title": "Fold change",
+    "zh_title": "倍数变化",
+    "summary": "A ratio relative to a named reference, whose direction, summary, and normalization scale must be explicit.",
+    "zh_summary": "相对于指定参照的比值，必须明确方向、汇总方式及归一化尺度。",
+    "related_guides": [
+      "differential-abundance-analysis",
+      "experimental-design",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "adjusted-p-value",
+      "biological-replicate",
+      "internal-standard"
+    ],
+    "refs": [
+      "stats-limma-models"
+    ]
+  },
+  {
+    "slug": "adjusted-p-value",
+    "title": "Adjusted p-value",
+    "zh_title": "校正 p 值",
+    "summary": "A method-specific significance measure for a defined multiple-testing family, not a finding’s probability of being false.",
+    "zh_summary": "针对明确定义的多重检验集合、依赖具体方法的显著性量，并非单项发现为假的概率。",
+    "related_guides": [
+      "differential-abundance-analysis",
+      "data-analysis"
+    ],
+    "related_terms": [
+      "false-discovery-rate",
+      "fold-change"
+    ],
+    "refs": [
+      "stats-r-p-adjust",
+      "fdr-original",
+      "stats-by-dependence",
+      "stats-qvalue"
+    ]
+  }
+]

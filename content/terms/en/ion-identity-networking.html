@@ -1,0 +1,12 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Ion identity networking</strong> links measured features proposed to be different ion species of the same neutral molecule. Evidence can include coelution, correlated chromatographic peak shapes, and mass differences consistent with specified adducts, charge states, multimers, or in-source products. Combining these MS1-based relationships with MS/MS similarity creates ion identity molecular networking. The two edge types must remain distinguishable. <a href="#ref-network-iimn">[1]</a></p>
+<h2 id="example">One molecule can produce disconnected spectra</h2>
+<p><strong>Hypothetical example:</strong> features A and B coelute with similar peak shapes. Their mass relationship fits the analyst's [M+H]<sup>+</sup> and [M+Na]<sup>+</sup> hypotheses for one neutral molecule. Their MS/MS spectra differ strongly, so no spectral-similarity edge is retained. An ion-identity edge can nevertheless express the proposed relationship, with its supporting evidence and assumptions recorded.</p>
+<p>The calculation must account for charge and the number of neutral molecules: a dimer adduct cannot use the monomer conversion unchanged. Rejecting an implausible ion assignment may change group membership without changing any measured feature.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>“Ion identity” concerns relationships among ion forms; it does not mean the neutral chemical structure has been identified. Coeluting unrelated compounds and uncertain feature boundaries can create misleading groups. A correlation alone is insufficient.</p>
+<p>Some workflows collapse an ion-identity group into a displayed molecular node. Keep the original feature identifiers and assignments available, and document any intensity aggregation. GNPS provides both collapsed and uncollapsed representations. <a href="#ref-network-iin-docs">[2]</a> Neither representation turns raw summed ion response into validated concentration.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does an ion-identity link require high MS/MS similarity?</summary><p>No. It uses a different evidence layer. Its validity still depends on the chromatographic and ion-assignment evidence.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/molecular-networking/#ion-identity">Separate the two network layers</a></li></ul>

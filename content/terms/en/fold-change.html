@@ -1,0 +1,12 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Fold change</strong> is a ratio comparing a quantity with a specified reference. For positive values, define <code>FC = treated / control</code> and <code>log2FC = log2(treated) − log2(control)</code>. Always name the denominator, normalization scale, and summary being compared. A ratio of arithmetic group means and the exponentiated difference of mean log signals generally estimate different quantities.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Invented areas:</strong> treated 400 and control 100 give FC = 4 and log2FC = 2. Reversing the reference gives FC = 0.25 and log2FC = −2. A negative log2FC indicates a lower positive ratio, not negative abundance. FC = 1, equivalently log2FC = 0, means equal values on the chosen scale.</p>
+<p>For two hypothetical paired donors, controls [1, 100] and treated values [2, 100] give a ratio of arithmetic means <code>51 / 50.5 ≈ 1.010</code>. Their individual ratios are 2 and 1, whose geometric mean is <code>sqrt(2) ≈ 1.414</code>; the mean log2 ratio is 0.5. The donor weighting and estimand differ.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A model coefficient on a log2 scale can represent a condition contrast adjusted for other predictors; it need not equal a simple raw-group ratio. Read the design and contrast specification. Official limma documentation illustrates these distinctions through linear models. <a href="#ref-stats-limma-models">[1]</a></p>
+<p>Fold change alone has no measure of uncertainty. A large ratio with a small or unreliable denominator can be unstable. Missing is not zero; zero denominators make ordinary ratios undefined, and adding a pseudocount changes the estimand. Relative signal change is not automatically concentration change.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>What does log2FC = −1 mean for treated/control?</summary><p>FC = 0.5: the treated quantity is half the control quantity on the reported scale.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/differential-abundance-analysis/#paired-example">Calculate an effect with its uncertainty</a></li></ul>

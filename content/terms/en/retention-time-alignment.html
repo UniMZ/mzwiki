@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Retention-time alignment</strong> estimates a transformation between chromatographic time coordinates in different runs or against a reference. It helps compare signals despite time drift. Methods may use shared landmark peaks or broader signal patterns; their assumptions and required inputs differ. <a href="#ref-feat-alignment-docs">[1]</a> Keep the acquired times as well as the adjusted coordinates.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Hypothetical two-landmark model:</strong> reference peaks occur at 100 and 300 s; corresponding peaks in run B occur at 110 and 330 s. Assuming a linear mapping within that interval, B = 220 s maps to <code>100 + (220 − 110) × 200 / 220 = 200 s</code>. Merely subtracting the first landmark's 10 s delay would instead give 210 s.</p>
+<p>The calculation assumes the landmarks are correctly paired and the relation is linear between them. It provides no evidence for extrapolation beyond the interval or for treating two landmarks as sufficient in a complex experiment. A local mismatch should remain visible rather than being hidden by an average correction.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Alignment changes the coordinate comparison; <strong>correspondence</strong> groups signals thought to represent the same feature across runs. xcms treats these as distinct steps. <a href="#ref-feat-correspondence-docs">[2]</a> Neither operation is a molecular identification. Alignment is also different from predicting retention time from a proposed structure and from correcting abundance drift.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Can two different compounds have the same adjusted retention time?</summary><p>Yes. Time is only one coordinate. Mass, additional evidence, and possible ambiguity still matter.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/cross-run-alignment-matching/#worked-alignment">Work through a nonconstant time correction</a></li><li><a href="/guides/lc-separation/">Review the meaning of retention</a></li></ul>

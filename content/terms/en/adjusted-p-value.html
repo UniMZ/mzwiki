@@ -1,0 +1,12 @@
+<h2 id="definition">Definition</h2>
+<p>An <strong>adjusted p-value</strong> expresses a test's result on the threshold scale of a specified multiple-testing procedure and hypothesis family. The method matters: Holm targets family-wise error, whereas Benjamini–Hochberg (BH) targets false discovery rate under suitable assumptions. R's <code>p.adjust</code> implements these and other procedures. Report the method and family, not just “corrected significance.” <a href="#ref-stats-r-p-adjust">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Invented three-test family:</strong> sorted p-values [0.01, 0.04, 0.05] first give BH-scaled values <code>[3 × 0.01 / 1, 3 × 0.04 / 2, 3 × 0.05 / 3] = [0.03, 0.06, 0.05]</code>. Taking cumulative minima backward yields adjusted values <code>[0.03, 0.05, 0.05]</code>. All pass a prespecified ≤0.05 rule. The backward step is essential; multiplying each p-value by the number of tests is Bonferroni adjustment, not BH.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>An adjusted p-value of 0.03 is not a 3% posterior probability that this particular finding is false. FDR is an expectation about a procedure's rejected set, not an individual correctness probability. <a href="#ref-fdr-original">[2]</a> Nor does adjustment repair confounding, pseudoreplication, or invalid raw p-values.</p>
+<p>BH supports independence or appropriate positive dependence such as PRDS, not arbitrary dependence merely because features are correlated. The Benjamini–Yekutieli modification is more conservative and addresses general dependence under its assumptions. <a href="#ref-stats-by-dependence">[3]</a></p>
+<p>“q-value” is not an unambiguous synonym. Storey-style q-values estimate a related minimum FDR-based significance measure, commonly with an estimated null proportion. Software sometimes labels BH-adjusted p-values as q-values; check the implementation and report the actual method. Neither quantity is a local posterior error probability. <a href="#ref-stats-qvalue">[4]</a></p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>May you correct only rows whose raw p-values are below 0.05?</summary><p>No. Apply the procedure to the defined testing family, not a set preselected for small p-values.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/differential-abundance-analysis/#bh-example">Work through a five-test BH calculation</a></li></ul>

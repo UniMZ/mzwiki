@@ -797,5 +797,161 @@
       "signal-icis-noise",
       "signal-filter-order"
     ]
+  },
+  {
+    "slug": "lc-ms-feature-detection",
+    "title": "LC-MS feature detection and peak integration",
+    "zh_title": "LC-MS 特征检测与峰积分",
+    "summary": "Build mass traces, detect chromatographic signals, and inspect the boundaries, baseline, sampling, and numerical rule behind an integrated area.",
+    "zh_summary": "建立质量轨迹、检测色谱信号，并检查积分面积背后的边界、基线、采样与数值规则。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis",
+      "profile-centroid-processing",
+      "lc-separation"
+    ],
+    "related": [
+      "cross-run-alignment-matching",
+      "quantitative-calibration",
+      "acquisition"
+    ],
+    "refs": [
+      "feat-centwave-primary",
+      "feat-centwave-docs",
+      "feature-finding",
+      "sep-peak-area",
+      "feat-integration-docs"
+    ]
+  },
+  {
+    "slug": "cross-run-alignment-matching",
+    "title": "Cross-run alignment and feature correspondence",
+    "zh_title": "跨运行对齐与特征对应",
+    "summary": "Separate time-coordinate correction from matching, inspect ambiguous groups, and distinguish signal-based gap filling from identification and imputation.",
+    "zh_summary": "区分时间坐标校正与匹配，检查有歧义的分组，并区分基于信号的缺峰回填、鉴定和统计插补。",
+    "group": "Computation",
+    "prereqs": [
+      "lc-ms-feature-detection"
+    ],
+    "related": [
+      "data-analysis",
+      "qc-normalization",
+      "small-molecule-annotation"
+    ],
+    "refs": [
+      "feat-alignment-docs",
+      "feat-correspondence-docs",
+      "feat-gapfill-docs",
+      "mztab-m"
+    ]
+  },
+  {
+    "slug": "spectral-library-search",
+    "title": "Spectral library search: from query to defensible match",
+    "zh_title": "谱库检索：从待查谱图到可辩护的匹配",
+    "summary": "Build a reproducible small-molecule MS/MS search, inspect competing hits, and distinguish exact matches from analog hypotheses.",
+    "zh_summary": "构建可复现的小分子串联质谱检索，检查竞争候选，并区分同一化合物匹配与类似物假说。",
+    "group": "Computation",
+    "prereqs": [
+      "small-molecule-annotation",
+      "spectrum-interpretation"
+    ],
+    "related": [
+      "molecular-networking",
+      "spectrum-prediction-generalization",
+      "benchmarking-computational-ms",
+      "open-formats-provenance"
+    ],
+    "refs": [
+      "small-massbank",
+      "codata",
+      "sodium",
+      "search-gnps-library",
+      "search-analog-alignment",
+      "search-significance",
+      "msi-chemical-analysis"
+    ]
+  },
+  {
+    "slug": "molecular-networking",
+    "title": "Molecular networking: read connections as evidence",
+    "zh_title": "分子网络：把连接读成证据",
+    "summary": "Understand spectrum and feature nodes, build interpretable MS/MS edges, and separate structural relationships from ion-identity links.",
+    "zh_summary": "理解谱图节点与特征节点，构建可解释的 MS/MS 连边，并区分结构相关性与离子身份连接。",
+    "group": "Computation",
+    "prereqs": [
+      "spectral-library-search",
+      "data-analysis"
+    ],
+    "related": [
+      "small-molecule-annotation",
+      "lc-separation",
+      "open-formats-provenance",
+      "benchmarking-computational-ms"
+    ],
+    "refs": [
+      "network-parameters",
+      "network-fbmn",
+      "network-fbmn-docs",
+      "network-iimn",
+      "network-iin-docs",
+      "codata",
+      "sodium"
+    ]
+  },
+  {
+    "slug": "missing-data-handling",
+    "title": "Missing-data handling",
+    "zh_title": "缺失数据处理",
+    "summary": "Audit unavailable measurements, distinguish re-extraction from imputation, and test how missing-data assumptions change the answer.",
+    "zh_summary": "核查不可获得的测量，区分信号再提取与插补，并检验缺失数据假设怎样改变答案。",
+    "group": "Computation",
+    "prereqs": [
+      "data-analysis",
+      "experimental-design"
+    ],
+    "related": [
+      "cross-run-alignment-matching",
+      "qc-normalization",
+      "differential-abundance-analysis",
+      "single-cell-proteomics"
+    ],
+    "refs": [
+      "stats-xcms-gapfill",
+      "stats-missing-rubin",
+      "stats-missing-assumptions",
+      "stats-surv-censoring",
+      "stats-mice-pooling",
+      "missingness-benchmark",
+      "stats-sklearn-leakage",
+      "analysis-reporting"
+    ]
+  },
+  {
+    "slug": "differential-abundance-analysis",
+    "title": "Differential-abundance analysis",
+    "zh_title": "差异丰度分析",
+    "summary": "Define a design-aware contrast, calculate fold changes and uncertainty, and apply multiple-testing adjustment to an explicit hypothesis family.",
+    "zh_summary": "定义符合实验设计的对比，计算倍数变化及不确定性，并针对明确的假设集合进行多重检验校正。",
+    "group": "Computation",
+    "prereqs": [
+      "experimental-design",
+      "qc-normalization",
+      "missing-data-handling"
+    ],
+    "related": [
+      "data-analysis",
+      "single-cell-proteomics",
+      "quantitative-calibration"
+    ],
+    "refs": [
+      "analysis-reporting",
+      "quant-experimental-units",
+      "stats-limma-models",
+      "fdr-original",
+      "stats-r-p-adjust",
+      "stats-by-dependence",
+      "stats-qvalue"
+    ]
   }
 ]

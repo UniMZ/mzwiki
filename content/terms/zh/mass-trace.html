@@ -1,0 +1,11 @@
+<h2 id="definition">定义</h2>
+<p>在 LC-MS 特征检测中，<strong>质量轨迹</strong>是依据明确容差，把不同扫描中 m/z 相容的信号观测连接起来形成的序列。它追踪运行某一时段内的强度变化。centWave 先收集这类候选区域，再在其中寻找色谱峰。<a href="#ref-feat-centwave-primary">[1]</a>轨迹建立规则、允许的中断及中心估计方式取决于具体实现。</p>
+<h2 id="example">简单例子</h2>
+<p><strong>假设的观测：</strong>100、101、102 s 的扫描分别包含 m/z 400.0000、400.0008、399.9996 的质心，强度为 10、30、15。相对于固定中心 400.0000，三者都在 ±5 ppm，即 ±0.0020 范围内。因此，根据这里明确的规则，它们可作为同一轨迹的候选成员。该例子既不确定分子身份，也不推荐这一容差。</p>
+<p>若 200 s 附近出现另一个 m/z 相近的洗脱事件，不能自动把它纳入第一个事件的积分边界。除质量邻近程度外，还要考虑连续性规则和色谱结构。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>质量轨迹不是单个谱峰，不是已确认的分子，也不一定是完整的同位素包络。固定窗口的<a href="/zh/terms/extracted-ion-chromatogram/">提取离子色谱图</a>可能包含多个洗脱事件；算法建立的轨迹则可能跟随局部估计的 m/z 中心。OpenMS FeatureFinderMetabo 可进一步把相容的同位素轨迹组合为特征。<a href="#ref-feature-finding">[2]</a></p>
+<h2 id="practice">检查理解</h2>
+<details><summary>能否不考虑时间结构就对质量轨迹积分？</summary><p>可以算出一个数，但它可能混合分开的峰或干扰。应先明确要测量的色谱区域。</p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/lc-ms-feature-detection/#traces">测量峰之前先建立轨迹</a></li><li><a href="/zh/guides/profile-centroid-processing/">区分轨迹建立与质心化</a></li></ul>

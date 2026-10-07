@@ -1,0 +1,11 @@
+<h2 id="definition">定义</h2>
+<p>在 LC-MS 数据处理中，<strong>缺峰回填</strong>针对某次运行中未检测到跨运行特征组成员的位置，重新检查来源数据，并从预期的 m/z–保留时间区域提取信号以估计丰度。xcms 实现了这种操作，并把所得条目标记为回填。<a href="#ref-feat-gapfill-docs">[1]</a>区域如何定义及采用什么接受规则，取决于软件。</p>
+<h2 id="example">简单例子</h2>
+<p><strong>假设的矩阵：</strong>A、B、C 运行的面积为 <code>[80, 100, missing]</code>。根据组信息从 C 的来源轨迹提取得到 9。这是从已有测量产生的新提取结果。若用已观测平均值 90 替换空单元格，则是另一种操作：利用矩阵进行统计插补。</p>
+<p>数值 9 可能包含微弱分析物信号、背景或干扰。仅凭提取操作无法区分这些解释。应审查相应区域并保留回填状态。如果该区域没有可用观测，不能为了填满一行而制造“测得零值”；xcms 可让这类条目继续保持缺失。<a href="#ref-feat-gapfill-docs">[1]</a></p>
+<h2 id="confusion">常见混淆</h2>
+<p>缺峰回填不是新采集，不是色谱峰存在的证明，也不是新的分子鉴定。它借助其他运行决定在当前运行中检查哪里，因此错误的对应关系可能把提取导向错误区域。一个填满的矩阵，其条目的可信度可能低于外观所暗示的程度。</p>
+<h2 id="practice">检查理解</h2>
+<details><summary>回填值是否应自动与最初检测到的峰完全等同处理？</summary><p>不应。保留数值的获取方式，并进行适当质量检查。非零积分不能证明证据等价。</p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/cross-run-alignment-matching/#gap-filling">区分对应关系与定向重新提取</a></li><li><a href="/zh/guides/data-analysis/#missingness">替换数值前先理解缺失</a></li></ul>
