@@ -29,15 +29,22 @@ expected={
  'mass-accuracy':['250.0010','250.0000','+4 ppm'],
  'resolving-power':['200.000','0.005','40,000'],
 }
+practice_terms = {'mass-trace', 'peak-integration', 'retention-time-alignment', 'gap-filling', 'library-match', 'analog-search', 'molecular-network', 'ion-identity-networking', 'imputation', 'left-censoring', 'fold-change', 'adjusted-p-value'}
 terms=json.loads((ROOT/'content/terms.json').read_text())
 for term in terms:
  slug=term['slug'];texts=[]
  for lang in ('en','zh'):
   body=(ROOT/f'content/terms/{lang}/{slug}.html').read_text();texts.append(body)
   root=ET.fromstring('<article>'+body+'</article>')
-  assert [h.get('id') for h in root.findall('h2')] in (['definition','example','confusion','guides'], ['definition','example','limits'], ['definition','example','boundary'])
+  sections = [h.get('id') for h in root.findall('h2')]
+  if slug in practice_terms:
+   assert sections == ['definition','example','confusion','practice','guides'], (slug, lang, sections)
+  else:
+   assert sections in (['definition','example','confusion','guides'], ['definition','example','limits'], ['definition','example','boundary'])
   assert set(re.findall(r'href="#ref-([^"]+)"',body))==set(term['refs'])
   for v in expected.get(slug,[]):assert v in body,(slug,lang,v)
  assert Counter(re.findall(r'\d+(?:\.\d+)?',texts[0].replace('decreases by one','decreases by 1')))==Counter(re.findall(r'\d+(?:\.\d+)?',(texts[1].replace('一级','level-1') if slug=='spectral-library' else texts[1]))),slug
+ if slug == 'fold-change':
+  texts[1] = texts[1].replace('处理', 'treated').replace('对照', 'control')
  assert re.findall(r'<code>(.*?)</code>',texts[0])==re.findall(r'<code>(.*?)</code>',texts[1].replace('次进样', 'injections').replace('相对强度（%）=', 'relative intensity (%) =').replace('基峰强度', 'base-peak intensity').replace('峰强度', 'peak intensity').replace('\u4e2d\u6027\u8d28\u91cf','neutral mass').replace('\u524d\u4f53','precursor').replace('\u4ea7\u7269','product')),slug
 print(f'PASS: terminology Decimal fixtures and displayed rounding; {len(terms)} paired entries with balanced markup, matching numerical tokens, equations, sections and complete citations.')

@@ -11,6 +11,13 @@ OUT=Path('/tmp/mzwiki-checks');OUT.mkdir(exist_ok=True)
 articles=json.loads((ROOT/'content/articles.json').read_text())
 terms=json.loads((ROOT/'content/terms.json').read_text())
 def check_header(target, path):
+    assert target.title() == 'mzwiki', path
+    import hashlib
+    version = hashlib.sha256((ROOT/'assets/style.css').read_bytes()).hexdigest()[:12]
+    expect(target.locator('link[rel="stylesheet"]')).to_have_attribute('href', '/assets/style.css?v='+version)
+    expect(target.locator('.topnav .search-link')).to_have_text('Search')
+    notice = '包含社区及 AI 内容，请审慎阅读。' if path.startswith('/zh/') else 'Includes community and AI content. Read critically.'
+    expect(target.locator('.footer-notice')).to_have_text(notice)
     nav = target.get_by_role('navigation', name='Main navigation')
     active = nav.locator('[aria-current]')
     if path == '/404.html':
@@ -515,6 +522,7 @@ with sync_playwright() as p:
             expect(page.locator('#search-results a').first).to_have_attribute('href',prefix+route)
             count+=1
             reader.goto(BASE+prefix+route)
+            check_header(reader, prefix+route)
             expect(reader.locator('.prose')).to_be_visible()
             count+=1
     # Long navigation lists: every group opens by keyboard; links retain English labels.
