@@ -3,6 +3,7 @@
 from pathlib import Path
 import json
 import os
+import re
 from playwright.sync_api import sync_playwright, expect
 ROOT=Path(__file__).resolve().parents[1]
 BASE=os.environ.get('MZWIKI_BASE_URL','http://127.0.0.1:8000').rstrip('/')
@@ -15,7 +16,7 @@ with sync_playwright() as p:
     context=browser.new_context(reduced_motion='reduce')
     page=context.new_page();errors=[]
     page.on('pageerror',lambda err:errors.append(str(err)))
-    paths=['/','/about/','/search/','/404.html','/terms/']+[('/zh' if lang=='zh' else '')+'/guides/'+a['slug']+'/' for a in articles for lang in ('en','zh')]
+    paths=['/','/about/','/search/','/404.html','/terms/','/terms/az/']+[('/zh' if lang=='zh' else '')+'/guides/'+a['slug']+'/' for a in articles for lang in ('en','zh')]
     paths += [('/zh' if lang=='zh' else '')+'/terms/'+t['slug']+'/' for t in terms for lang in ('en','zh')]
     for width,height in [(1440,1000),(390,844)]:
         page.set_viewport_size({'width':width,'height':height})
@@ -24,7 +25,7 @@ with sync_playwright() as p:
             assert response.status==200,(path,response.status)
             expect(page.locator('h1')).to_be_visible()
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),(path,width,'horizontal overflow')
-            if '/guides/' in path or (path.startswith(('/terms/','/zh/terms/')) and path!='/terms/'):
+            if '/guides/' in path or (path.startswith(('/terms/','/zh/terms/')) and path not in ('/terms/','/terms/az/')):
                 expect(page.locator('.language')).to_be_visible()
                 expect(page.locator('.prose')).to_be_visible()
             count+=1
@@ -32,6 +33,65 @@ with sync_playwright() as p:
         page.screenshot(path=str(OUT/f'home-{width}.png'),full_page=True)
         page.goto(BASE+'/guides/mz-charge-isotopes/')
         page.screenshot(path=str(OUT/f'article-{width}.png'),full_page=True)
+    # Terminology views use native URLs and remain complete without JavaScript.
+    taxonomy=json.loads((ROOT/'content/term-topics.json').read_text())
+    def term_key(term):
+        return tuple((1,int(p)) if p.isdigit() else (0,p) for p in re.split(r'(\d+)',term['title'].casefold())),term['slug']
+    az_terms=sorted(terms,key=term_key)
+    topic_terms=[term for topic in taxonomy['topics'] for term in sorted((t for t in terms if taxonomy['assignments'][t['slug']]==topic['label']),key=term_key)]
+    def check_term_view(target,mode):
+        expect(target.locator('main')).to_have_attribute('data-term-view',mode)
+        links=target.locator('.term-list a')
+        expect(links).to_have_count(len(terms))
+        actual=links.evaluate_all('(links) => links.map(a => a.getAttribute("href"))')
+        expected=['/terms/'+t['slug']+'/' for t in (topic_terms if mode=='topic' else az_terms)]
+        assert actual==expected and len(set(actual))==len(terms)
+        for link in links.all():
+            expect(link).to_be_visible()
+            assert link.evaluate('(el) => el.getBoundingClientRect().height >= 44')
+        assert target.evaluate('document.documentElement.scrollWidth <= innerWidth')
+        switch=target.get_by_role('navigation',name='Terminology views')
+        expect(switch.locator('[aria-current="page"]')).to_have_text('By topic' if mode=='topic' else 'A–Z')
+        expect(switch.locator('[aria-current="page"]')).to_have_count(1)
+        if mode=='topic':
+            assert target.locator('.term-topic').evaluate_all('(items) => items.map(el => el.dataset.topic)')==[t['id'] for t in taxonomy['topics']]
+        links.first.focus()
+        target.keyboard.press('Tab')
+        expect(links.nth(1)).to_be_focused()
+    for javascript in (True,False):
+        browse_context=browser.new_context(java_script_enabled=javascript,reduced_motion='reduce')
+        browse=browse_context.new_page()
+        for width in (1440,390,320):
+            browse.set_viewport_size({'width':width,'height':844})
+            browse.goto(BASE+'/terms/')
+            check_term_view(browse,'topic');count+=1
+            for mode,label,route in [('az','A–Z','/terms/az/'),('topic','By topic','/terms/'),('az','A–Z','/terms/az/'),('topic','By topic','/terms/')]:
+                switch=browse.get_by_role('navigation',name='Terminology views').get_by_role('link',name=label,exact=True)
+                switch.focus();browse.keyboard.press('Enter')
+                expect(browse).to_have_url(BASE+route)
+                check_term_view(browse,mode);count+=1
+            browse.go_back();expect(browse).to_have_url(BASE+'/terms/az/');check_term_view(browse,'az');count+=1
+            browse.go_forward();expect(browse).to_have_url(BASE+'/terms/');check_term_view(browse,'topic');count+=1
+            for mode,route in [('topic','/terms/'),('az','/terms/az/')]:
+                browse.goto(BASE+route);browse.reload();check_term_view(browse,mode);count+=1
+                if javascript:
+                    browse.evaluate('scrollTo(0,0)')
+                    browse.screenshot(path=str(OUT/f'terminology-{mode}-{width}.png'),full_page=True)
+            browse.locator('.term-list a[href="/terms/signal-to-noise-ratio/"]').click()
+            expect(browse).to_have_url(BASE+'/terms/signal-to-noise-ratio/')
+            browse.go_back();expect(browse).to_have_url(BASE+'/terms/az/');check_term_view(browse,'az');count+=1
+            browse.goto(BASE+'/terms/#topic-instruments-signal')
+            expect(browse.locator('#topic-instruments-signal')).to_be_visible();count+=1
+            browse.goto(BASE+'/terms/detector/')
+            nav=browse.locator('.sidebar' if width==1440 else '.mobile-index')
+            if width!=1440:nav.locator(':scope > summary').click()
+            groups=nav.locator('.term-nav-group')
+            assert groups.evaluate_all('(items) => items.map(el => el.dataset.topic)')==[t['id'] for t in taxonomy['topics']]
+            assert sorted(groups.locator('a').evaluate_all('(links) => links.map(el => el.getAttribute("href"))'))==sorted('/terms/'+t['slug']+'/' for t in terms)
+            expect(nav.locator('a[aria-current="page"]')).to_be_visible()
+            nav.locator('.term-nav-views a').filter(has_text='A–Z').click()
+            expect(browse).to_have_url(BASE+'/terms/az/');check_term_view(browse,'az');count+=1
+        browse_context.close()
     # Same article and same section survive language switches in both directions.
     page.goto(BASE+'/guides/mz-charge-isotopes/#example')
     page.locator('[data-language-switch]').click()
@@ -41,7 +101,7 @@ with sync_playwright() as p:
     expect(page).to_have_url(BASE+'/guides/mz-charge-isotopes/#example');count+=2
     # Native mobile guide navigation and disclosure answer.
     page.locator('.mobile-index > summary').click()
-    page.locator('.mobile-index .nav-group').filter(has=page.locator('summary',has_text='Instruments')).locator('summary').click()
+    page.locator('.mobile-index .nav-group:not(.term-nav-group)').filter(has=page.locator('summary',has_text='Instruments')).locator('summary').click()
     page.locator('.mobile-index a').filter(has_text='How molecules become ions').click()
     expect(page).to_have_url(BASE+'/guides/ionization/')
     page.locator('.prose summary').first.click()
@@ -147,8 +207,8 @@ with sync_playwright() as p:
     for width,height in [(1440,1000),(390,844)]:
         page.set_viewport_size({'width':width,'height':height})
         page.goto(BASE+'/terms/')
-        expect(page.locator('.article-card')).to_have_count(len(terms))
-        page.locator('.article-card').first.click()
+        expect(page.locator('.term-list a')).to_have_count(len(terms))
+        page.locator('.term-list a[href="/terms/mz/"]').click()
         expect(page).to_have_url(BASE+'/terms/mz/')
         expect(page.locator('.eyebrow').last).to_have_text('Terminology')
         page.screenshot(path=str(OUT/f'term-{width}.png'),full_page=True)
@@ -183,7 +243,7 @@ with sync_playwright() as p:
     expect(page.locator('#search-results small').first).to_contain_text('Guide')
     count+=6
     reader.goto(BASE+'/terms/')
-    reader.locator('.article-card').first.click()
+    reader.locator('.term-list a[href="/terms/mz/"]').click()
     expect(reader).to_have_url(BASE+'/terms/mz/')
     reader.locator('[data-language-switch]').click()
     expect(reader).to_have_url(BASE+'/zh/terms/mz/')

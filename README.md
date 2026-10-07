@@ -6,7 +6,7 @@ An English-first mass spectrometry knowledge wiki for beginners and returning pr
 
 ## Learning collection
 
-Twenty-eight English Guides and 60 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
+Thirty English Guides and 66 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
 
 1. What mass spectrometry measures
 2. m/z, charge & isotopes
@@ -36,6 +36,8 @@ Twenty-eight English Guides and 60 terminology entries, each with a matched Chin
 26. Spectrum prediction and machine-learning generalization
 27. Benchmarking computational mass spectrometry
 28. Open data formats and analysis provenance
+29. Ion detection & signal formation
+30. Profile, centroid & signal processing
 
 The interface and project documentation are English. EN / ZH switches between separate views of the same article and preserves matching section anchors. Search defaults to English and can search Chinese or both languages.
 
@@ -65,6 +67,7 @@ Start the local server first. Set `MZWIKI_BASE_URL` and `MZWIKI_CHROMIUM` to ove
 - `content/en/*.html`, `content/zh/*.html`: trusted article-body HTML fragments. Edit these, not the generated pages.
 - `content/terms.json` and `content/terms/{en,zh}/*.html`: the separate Terminology collection and paired term bodies.
 - `terms/`, `zh/terms/`: generated terminology index and paired term pages.
+- `content/term-topics.json`: ordered editorial topics and exactly one topic assignment per term.
 - `content/references.json`: shared bibliography with verified source identifiers.
 - `scripts/build.py`: shared templates, homepage, article pages, sitemap, and search-index generation.
 - `assets/`: shared CSS, small progressive-enhancement script, favicon, and generated search index.
@@ -130,6 +133,8 @@ python3 scripts/check_data_analysis.py
 python3 scripts/check_reading_bridge.py
 python3 scripts/check_expansion.py
 python3 scripts/check_advanced_expansion.py
+python3 scripts/check_signal.py
+python3 scripts/check_terminology.py
 ```
 
 ## GitHub Pages deployment
@@ -143,3 +148,9 @@ The build output is already committed; no Jekyll or Actions build is required. I
 Each guide includes prerequisites, worked examples, limitations, references, and related concepts. Sources favor standards, official documentation, and primary methodological publications. The homepage spectrum is an original schematic, not measured data. Foundational examples are educational, not validated operating procedures. Scientific and translation improvements are welcome through issues and pull requests; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 This reconstructed first edition has a new commit history; it is not the inaccessible earlier implementation commit. No private workspace or Notion content is included. No analytics, external fonts, or client-side accounts are used.
+
+## Terminology browsing
+
+`/terms/` is the default By topic directory; `/terms/az/` is the complete A–Z directory. Native links preserve the chosen view in the URL, including refresh, Back/Forward and JavaScript-disabled browsing. Both views derive from the same term metadata. Titles use case-insensitive natural ordering, with slug as a stable tie-break. Topic ordering and membership come from `content/term-topics.json`; adding a term also requires an assignment there. Sidebar and mobile terminology navigation use the same topics and link to both directories.
+
+The directory uses compact multi-column text lists on desktop and single-column lists on narrow screens. Article reading typography is unchanged. `az` is reserved for the browsing route and cannot be used as a term slug.
