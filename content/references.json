@@ -963,5 +963,70 @@
     "title": "ProteomeXchange Consortium (2019). Data Submission Guidelines, version 3.0.1, 13 October 2019.",
     "url": "https://www.proteomexchange.org/docs/guidelines_px.pdf",
     "note": "Official published guidance distinguishing raw data, result files, and metadata and explaining linked submissions. Cited for durable concepts, not asserted to supersede current repository-specific requirements."
+  },
+  "signal-faraday": {
+    "title": "Stanford Research Systems (2026). RGA100, RGA200, and RGA300 Operating Manual and Programming Reference, revision 1.9: Ion Detector, sections 3-13–3-14.",
+    "url": "https://www.thinksrs.com/downloads/pdfs/manuals/RGAm.pdf",
+    "note": "Official manual, revision September 2026, PDF pages 57–58 inspected. Supports direct charge collection versus multiplied electron current. No pressure limits, universal mass-independent response, servicing advice, or product ranking is transferred."
+  },
+  "signal-charge": {
+    "title": "BIPM. The International System of Units (SI): Defining constants.",
+    "url": "https://www.bipm.org/en/measurement-units/si-defining-constants",
+    "note": "Official fixed elementary-charge value e = 1.602176634 × 10⁻¹⁹ C. The charge/current calculation is original and assumes complete collection with no secondary-electron loss or interfering current."
+  },
+  "signal-multiplier": {
+    "title": "IUPAC Gold Book. Secondary electron multiplier, entry S05517.",
+    "url": "https://goldbook.iupac.org/terms/view/S05517",
+    "note": "Official indexed/plain definition from IUPAC recommendations. Supports repeated secondary emission at successive electrodes or locations. The five-stage gain example is constructed; no fixed gain or unit detection efficiency is claimed."
+  },
+  "signal-detector-families": {
+    "title": "Hamamatsu Photonics. Mass spectrometry: detector technologies.",
+    "url": "https://www.hamamatsu.com/us/en/applications/analytical-equipment/mass-spectrometry.html",
+    "note": "Official manufacturer description of electron multipliers, microchannel plates and conversion arrangements. Used only for detector mechanisms and architectural variety, not comparative performance or purchasing guidance."
+  },
+  "signal-dual-mode": {
+    "title": "Hamamatsu Photonics. Electron multiplier R13733: dual-mode analog/counting design.",
+    "url": "https://www.hamamatsu.com/eu/en/product/optical-sensors/electron_ion-sensor/em/R13733.html",
+    "note": "Official product documentation confirms that electron multiplication does not prescribe one readout mode. Model-specific gain, voltage, timing and current specifications are deliberately not generalized."
+  },
+  "signal-tof-readout": {
+    "title": "Fjeldsted, J. (2003). Time-of-Flight Mass Spectrometry. Agilent Technologies technical overview 5989-0373EN.",
+    "url": "https://www.agilent.com/Library/technicaloverviews/Public/5989-0373EN%2011-Dec-2003.pdf",
+    "note": "Official technical overview, PDF pages 7–11, describes TDC/ADC readout, discrimination, recovery/dead-time losses and finite measurement range. Historical product comparisons, quantitative performance and one-ion-per-transient assumptions are not generalized. The clipping fixture is original, not an instrument model."
+  },
+  "signal-image-detection": {
+    "title": "Thermo Fisher Scientific. Orbitrap Astral Operating Manual: Ion detection.",
+    "url": "https://docs.thermofisher.com/r/Orbitrap-Astral-Operating-Manual/1780457227v2en-US",
+    "note": "Official functional-description page inspected. Supports differential split-electrode image-current detection, coherent axial motion, digitization and Fourier processing. This concerns the Orbitrap analyzer only; it does not describe the separate Astral analyzer detector or assert performance specifications."
+  },
+  "signal-poisson": {
+    "title": "NIST/SEMATECH. e-Handbook of Statistical Methods: Poisson Distribution, section 1.3.6.6.19.",
+    "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366j.htm",
+    "note": "Official distribution definition, mean, standard deviation and coefficient of variation. The 25/100-count examples are ideal repeated-measurement calculations, not claims that arbitrary mass-spectral intensities follow Poisson statistics."
+  },
+  "signal-hires-picker": {
+    "title": "OpenMS. PeakPickerHiRes class documentation.",
+    "url": "https://openms.de/documentation/html/classOpenMS_1_1PeakPickerHiRes.html",
+    "note": "Official developer documentation inspected 2026-10-07; generated page dated 2026-09-30. Describes cubic-spline peak reconstruction, reporting its maximum, optional width information and applicable data assumptions. No parameter defaults or universal algorithm recommendation is prescribed."
+  },
+  "signal-smoothing": {
+    "title": "OpenMS. Smoothing Raw Data: TOPPView user tutorial.",
+    "url": "https://openms.readthedocs.io/en/stable/tutorials/toppview-user-tutorial/smoothing-raw-data.html",
+    "note": "Official indexed tutorial verified; direct open returned an extraction error. Supports explicit Gaussian-width and Savitzky–Golay frame/order choices. The moving-average example is independently constructed, not an OpenMS output or a claim about these filters."
+  },
+  "signal-snr-definition": {
+    "title": "IUPAC Gold Book. Signal-to-noise ratio, entry 08282.",
+    "url": "https://goldbook.iupac.org/terms/view/08282",
+    "note": "Official indexed definition and notes inspected; direct opening returned 403. Source: Glossary of methods and terms used in analytical spectroscopy (IUPAC Recommendations 2019), published 2021. Supports distinguishing power and amplitude conventions. Height/RMS and peak-to-peak examples are explicitly stated analytical conventions, not restatements of a universal IUPAC formula."
+  },
+  "signal-icis-noise": {
+    "title": "Thermo Fisher Scientific. FreeStyle User Guide 1.8 SP3 QF1: ICIS Signal-to-noise estimation.",
+    "url": "https://docs.thermofisher.com/r/FreeStyle-User-guide-1.8-SP3-QF1/enGUID-BC29DB3C-15C3-4A2A-994C-A259FA23AE9F",
+    "note": "Official full page inspected. Documents neighboring-point and iterative chromatogram-noise estimates. Used to demonstrate algorithm dependence; its formulas, thresholds and defaults are not generalized to mass spectra or validated analytical limits."
+  },
+  "signal-filter-order": {
+    "title": "ProteoWizard. Technical Documentation: Filters.",
+    "url": "https://proteowizard.sourceforge.io/tools/filters.html",
+    "note": "Official direct filter documentation inspected. Supports sequential operations and distinction between vendor-specific and alternative peak picking. The existing msconvert-filters reference points to a different overview page; this additive reference identifies the directly inspected filter-order source. No command recipe or unstable default is prescribed."
   }
 }

@@ -1,0 +1,101 @@
+{
+  "repository": "UniMZ/mzwiki",
+  "baseline_commit": "31364d9d936eaf28c4a4e932026398101b645900",
+  "status": "Prepared content-only packet; not applied, built or published",
+  "baseline_inventory": {
+    "guides": 28,
+    "terms": 60
+  },
+  "package_additions": {
+    "guides": 2,
+    "terms": 6,
+    "language_pairs": 8,
+    "fragment_files": 16
+  },
+  "add_complete_fragments": [
+    "content/en/ion-detection-signal.html",
+    "content/en/profile-centroid-processing.html",
+    "content/terms/en/centroid-spectrum.html",
+    "content/terms/en/detector.html",
+    "content/terms/en/electron-multiplier.html",
+    "content/terms/en/image-current.html",
+    "content/terms/en/profile-spectrum.html",
+    "content/terms/en/signal-to-noise-ratio.html",
+    "content/terms/zh/centroid-spectrum.html",
+    "content/terms/zh/detector.html",
+    "content/terms/zh/electron-multiplier.html",
+    "content/terms/zh/image-current.html",
+    "content/terms/zh/profile-spectrum.html",
+    "content/terms/zh/signal-to-noise-ratio.html",
+    "content/zh/ion-detection-signal.html",
+    "content/zh/profile-centroid-processing.html"
+  ],
+  "metadata_operations": [
+    {
+      "destination": "content/articles.json",
+      "operation": "Append or insert these two unique Guide objects in prerequisite-appropriate order, preserving all existing objects.",
+      "payload": "metadata/articles.additions.json"
+    },
+    {
+      "destination": "content/terms.json",
+      "operation": "Append these six unique term objects after rechecking current slugs. Keep terms separate from the numbered Guide collection.",
+      "payload": "metadata/terms.additions.json"
+    },
+    {
+      "destination": "content/references.json",
+      "operation": "Merge thirteen new signal-prefixed reference objects; reconcile key or source-identity collisions explicitly.",
+      "payload": "metadata/references.additions.json"
+    }
+  ],
+  "reused_reference_keys": [
+    "psi-ms-representation"
+  ],
+  "topic_proposal": {
+    "payload": "metadata/term-topics.proposed.json",
+    "status": "Separate mapping proposal only; current term schema has no topic field",
+    "label": "Instruments & signal",
+    "note": "Consolidate with the independent taxonomy/index deliverable; no index implementation or term-schema changes in this packet"
+  },
+  "fixture_proposal": {
+    "destination": "tests/fixtures/signal.json",
+    "payload": "tests/fixtures/signal.json",
+    "note": "Twelve original arithmetic/logic fixtures. Later authorized engineering must adapt a checker; no current checker is claimed to consume them."
+  },
+  "scope_guards": [
+    "Add only new content; preserve existing Guide and term fragments",
+    "Do not replace analyzer equations or the existing data-analysis overview",
+    "Only pinned-baseline or within-packet internal links",
+    "Keep all nontranslation metadata and topic labels in English",
+    "No topic/A–Z functionality or production code supplied",
+    "No literal ion/molecule counts inferred from arbitrary spectral intensities",
+    "No universal S/N threshold or detector ranking",
+    "Synthetic examples are not measurements, specifications or recommended settings"
+  ],
+  "application_preconditions": [
+    "Reread current main and reconcile changes since the verified baseline",
+    "Recheck all eight slugs and reference identities",
+    "Consolidate final taxonomy with the separate terminology-index proposal",
+    "Merge metadata narrowly and add exactly sixteen full fragments",
+    "Adapt fixture integration and run the repository build and all existing checks",
+    "Inspect generated pages, references, search, sitemap, language switching, counts and backlinks",
+    "Review desktop/mobile readability and keyboard/accessibility behavior before publication"
+  ],
+  "package_only": [
+    "README.md",
+    "SOURCE-BOUNDARIES.md",
+    "QA.md",
+    "validation-results.json",
+    "packet-files.sha256.json",
+    "inspection/",
+    "review/",
+    "metadata/term-topics.proposed.json"
+  ],
+  "excluded_actions": [
+    "No repository mutation",
+    "No Codex or cloud coding task",
+    "No commit or push",
+    "No functional site code",
+    "No repository build or deployment",
+    "No live-site verification"
+  ]
+}

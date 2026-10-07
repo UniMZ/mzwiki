@@ -745,5 +745,57 @@
       "pwiz",
       "comp-px-guidelines"
     ]
+  },
+  {
+    "slug": "ion-detection-signal",
+    "title": "Ion detection & signal formation",
+    "zh_title": "离子检测与信号形成",
+    "summary": "Separate collected charge, electron multiplication, pulse counting, induced current, and processed spectral intensity.",
+    "zh_summary": "区分收集电荷、电子倍增、脉冲计数、感应电流与处理后的谱图强度。",
+    "group": "Instruments",
+    "prereqs": [
+      "what-ms-measures",
+      "analyzers"
+    ],
+    "related": [
+      "profile-centroid-processing",
+      "acquisition",
+      "quantitative-calibration"
+    ],
+    "refs": [
+      "signal-faraday",
+      "signal-charge",
+      "signal-multiplier",
+      "signal-detector-families",
+      "signal-dual-mode",
+      "signal-tof-readout",
+      "signal-image-detection",
+      "signal-poisson"
+    ]
+  },
+  {
+    "slug": "profile-centroid-processing",
+    "title": "Profile, centroid & signal processing",
+    "zh_title": "轮廓、质心与信号处理",
+    "summary": "Inspect estimator, baseline, smoothing, and noise choices before turning sampled spectral shapes into peak lists.",
+    "zh_summary": "在把采样谱峰转换为峰列表之前，检查估计方法、基线、平滑和噪声定义。",
+    "group": "Computation",
+    "prereqs": [
+      "spectrum-interpretation",
+      "ion-detection-signal"
+    ],
+    "related": [
+      "data-analysis",
+      "open-formats-provenance",
+      "analyzers"
+    ],
+    "refs": [
+      "psi-ms-representation",
+      "signal-hires-picker",
+      "signal-smoothing",
+      "signal-snr-definition",
+      "signal-icis-noise",
+      "signal-filter-order"
+    ]
   }
 ]

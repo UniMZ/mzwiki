@@ -1,0 +1,292 @@
+{
+  "provenance": "Original synthetic teaching fixtures; not experimental spectra, product specifications, recommended settings or validated analytical thresholds",
+  "numeric_tolerance": 1e-09,
+  "integration_status": "Proposed fixture payload; no claim that current repository checks consume it",
+  "fixtures": [
+    {
+      "id": "current-complete-collection",
+      "section": "ion-detection-signal#collection",
+      "inputs": {
+        "rate_per_second": 100000,
+        "charge_magnitude": 1,
+        "elementary_charge_C": 1.602176634e-19
+      },
+      "expected": {
+        "current_A": 1.602176634e-14,
+        "current_fA": 16.02176634
+      },
+      "assumptions": [
+        "Complete collection",
+        "No secondary-electron loss",
+        "No interfering current"
+      ],
+      "operation": "current_A = rate_per_second * charge_magnitude * elementary_charge_C; current_fA = current_A * 1e15"
+    },
+    {
+      "id": "charge-current-scaling",
+      "section": "ion-detection-signal#collection",
+      "inputs": {
+        "rate_per_second": 100000,
+        "charge_magnitudes": [
+          1,
+          2
+        ]
+      },
+      "expected": {
+        "current_ratio": 2
+      },
+      "assumptions": [
+        "Same arrival rate and collection conditions"
+      ],
+      "operation": "At fixed rate, mean current magnitude is proportional to charge magnitude"
+    },
+    {
+      "id": "multiplier-gain",
+      "section": "electron-multiplier#example",
+      "inputs": {
+        "mean_yield_per_stage": 4,
+        "stages": 5,
+        "initiating_electrons": 1
+      },
+      "expected": {
+        "mean_output_electrons": 1024
+      },
+      "assumptions": [
+        "Ideal cascade with stated mean yield at each stage",
+        "Output electrons are not independent incident-ion detections"
+      ],
+      "operation": "mean_output_electrons = initiating_electrons * mean_yield_per_stage ** stages"
+    },
+    {
+      "id": "clipping-ratio",
+      "section": "ion-detection-signal#readout",
+      "inputs": {
+        "input": [
+          80,
+          160
+        ],
+        "ceiling": 100
+      },
+      "expected": {
+        "output": [
+          80,
+          100
+        ],
+        "input_ratio": 2,
+        "output_ratio": 1.25
+      },
+      "assumptions": [
+        "Constructed hard-clipping transfer function",
+        "Not a real detector response model"
+      ],
+      "operation": "output = min(input, ceiling) for each input"
+    },
+    {
+      "id": "phase-addition",
+      "section": "ion-detection-signal#image-current",
+      "inputs": {
+        "equal_amplitudes": [
+          1,
+          1
+        ],
+        "phase_differences_radians": [
+          0,
+          3.141592653589793
+        ]
+      },
+      "expected": {
+        "resultant_amplitudes": [
+          2,
+          0
+        ]
+      },
+      "assumptions": [
+        "Equal-frequency ideal sinusoids",
+        "Phase-only illustration, not an instrument calibration"
+      ],
+      "operation": "resultant magnitude = abs(1 + exp(i * phase_difference))"
+    },
+    {
+      "id": "poisson-relative-uncertainty",
+      "section": "ion-detection-signal#statistics",
+      "inputs": {
+        "expected_counts": [
+          25,
+          100
+        ]
+      },
+      "expected": {
+        "standard_deviations": [
+          5,
+          10
+        ],
+        "relative_standard_deviations": [
+          0.2,
+          0.1
+        ]
+      },
+      "assumptions": [
+        "Independent detected events at constant mean rate",
+        "No dead-time, fluctuating-gain or background complication",
+        "Do not substitute arbitrary spectral intensity for a count"
+      ],
+      "operation": "sd = sqrt(lambda); relative_sd = 1/sqrt(lambda)"
+    },
+    {
+      "id": "weighted-centroid",
+      "section": "profile-centroid-processing#centroid",
+      "inputs": {
+        "coordinates": [
+          499.98,
+          499.99,
+          500,
+          500.01,
+          500.02
+        ],
+        "intensities": [
+          0,
+          2,
+          7,
+          3,
+          0
+        ]
+      },
+      "expected": {
+        "weighted_coordinate": 500.00083333333333,
+        "sample_apex_coordinate": 500,
+        "height": 7,
+        "sum": 12,
+        "trapezoidal_area": 0.12
+      },
+      "assumptions": [
+        "Explicit weighted-mean rule, not universal centroiding",
+        "Baseline-subtracted samples",
+        "Trapezoidal area over exactly supplied bounds; intensity-unit times coordinate-unit"
+      ],
+      "operation": "weighted = sum(x*y)/sum(y); area = sum((x[i+1]-x[i])*(y[i]+y[i+1])/2)"
+    },
+    {
+      "id": "baseline-pulls-estimator",
+      "section": "profile-centroid-processing#baseline",
+      "inputs": {
+        "coordinates": [
+          499.98,
+          499.99,
+          500,
+          500.01,
+          500.02
+        ],
+        "intensities": [
+          5,
+          7,
+          12,
+          8,
+          5
+        ]
+      },
+      "expected": {
+        "weighted_coordinate": 500.0002702702703,
+        "sum": 37
+      },
+      "assumptions": [
+        "Constant added baseline exactly 5",
+        "Same fixed integration window and weighted-mean rule"
+      ],
+      "operation": "weighted = sum(x*y)/sum(y)"
+    },
+    {
+      "id": "moving-average-height",
+      "section": "profile-centroid-processing#smoothing",
+      "inputs": {
+        "input": [
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        "width": 3
+      },
+      "expected": {
+        "output": [
+          0,
+          3,
+          3,
+          3,
+          0
+        ],
+        "input_sum": 9,
+        "output_sum": 9,
+        "input_maximum": 9,
+        "output_maximum": 3
+      },
+      "assumptions": [
+        "Centered arithmetic mean",
+        "Zeros beyond sequence boundaries",
+        "Original synthetic signal, not OpenMS output"
+      ],
+      "operation": "output[i] = (input[i-1]+input[i]+input[i+1])/3 with zero padding"
+    },
+    {
+      "id": "noise-denominator-choice",
+      "section": "profile-centroid-processing#noise",
+      "inputs": {
+        "height": 20,
+        "baseline_residuals": [
+          -2,
+          -1,
+          1,
+          2
+        ]
+      },
+      "expected": {
+        "rms_noise": 1.5811388300841898,
+        "peak_to_peak_noise": 4,
+        "height_over_rms": 12.649110640673516,
+        "height_over_peak_to_peak": 5
+      },
+      "assumptions": [
+        "RMS denominator is n = 4, not sample standard deviation with n-1",
+        "Residuals relative to stated baseline",
+        "Ratios are amplitude conventions, not power or decibel values"
+      ],
+      "operation": "rms = sqrt(sum(r*r)/len(r)); peak_to_peak = max(r)-min(r)"
+    },
+    {
+      "id": "snr-term-conventions",
+      "section": "signal-to-noise-ratio#example",
+      "inputs": {
+        "height": 20,
+        "rms_noise": 2,
+        "peak_to_peak_noise": 8
+      },
+      "expected": {
+        "height_over_rms": 10,
+        "height_over_peak_to_peak": 2.5
+      },
+      "assumptions": [
+        "Constructed noise summaries from the same hypothetical trace",
+        "No detection or quantification limit asserted"
+      ],
+      "operation": "divide stated height by each stated denominator"
+    },
+    {
+      "id": "representation-boundaries",
+      "section": "profile-centroid-processing#separation",
+      "inputs": {
+        "operation": "centroiding"
+      },
+      "expected": {
+        "does_identify_molecule": false,
+        "does_imply_chromatographic_integration": false,
+        "does_guarantee_unresolved_species_separation": false,
+        "does_recover_discarded_profile_exactly": false
+      },
+      "assumptions": [
+        "Ordinary spectral coordinate–intensity list",
+        "No additional inference or stored full profile"
+      ],
+      "operation": "Semantic checks; scientifically reviewed statements, not computed experimental outcomes"
+    }
+  ]
+}
