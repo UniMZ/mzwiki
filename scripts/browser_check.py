@@ -11,7 +11,7 @@ OUT=Path('/tmp/mzwiki-checks');OUT.mkdir(exist_ok=True)
 articles=json.loads((ROOT/'content/articles.json').read_text())
 terms=json.loads((ROOT/'content/terms.json').read_text())
 def check_header(target, path):
-    assert target.title() == 'mzwiki', path
+    expect(target).to_have_title('mzwiki')
     import hashlib
     version = hashlib.sha256((ROOT/'assets/style.css').read_bytes()).hexdigest()[:12]
     expect(target.locator('link[rel="stylesheet"]')).to_have_attribute('href', '/assets/style.css?v='+version)
@@ -551,4 +551,5 @@ with sync_playwright() as p:
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')
+
 
