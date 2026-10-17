@@ -1,0 +1,153 @@
+[
+  {
+    "slug": "gc-ms-ei-retention-index",
+    "title": "GC-MS: electron ionization and retention indices",
+    "zh_title": "GC-MS：电子电离与保留指数",
+    "summary": "Combine EI fragmentation patterns with method-matched retention indices, while separating molecular-ion assignments, library candidates, and identity claims.",
+    "zh_summary": "结合 EI 碎裂模式与方法匹配的保留指数，同时区分分子离子归属、谱库候选与身份结论。",
+    "group": "Methods",
+    "prereqs": [
+      "ionization",
+      "spectrum-interpretation"
+    ],
+    "related": [
+      "mixed-spectra-deconvolution",
+      "spectral-library-search",
+      "small-molecule-annotation"
+    ],
+    "refs": [
+      "gc-ei-definition",
+      "gc-ei-library",
+      "gc-retention-index",
+      "gc-retention-data",
+      "gc-amdis-overview"
+    ]
+  },
+  {
+    "slug": "mixed-spectra-deconvolution",
+    "title": "Mixed spectra and spectral deconvolution",
+    "zh_title": "混合谱图与谱图解卷积",
+    "summary": "Use chromatographic evidence to reconstruct component spectra, inspect non-unique solutions, and distinguish GC-EI mixtures from LC-MS/MS precursor attribution.",
+    "zh_summary": "利用色谱证据重建组分谱图，检查非唯一解，并区分 GC-EI 混合谱与 LC-MS/MS 前体归属问题。",
+    "group": "Computation",
+    "prereqs": [
+      "acquisition",
+      "lc-ms-feature-detection"
+    ],
+    "related": [
+      "gc-ms-ei-retention-index",
+      "spectral-library-search",
+      "lc-ms-feature-detection",
+      "benchmarking-computational-ms"
+    ],
+    "refs": [
+      "gc-amdis-method",
+      "coisolation-primary",
+      "mix-msdial",
+      "gc-amdis-overview"
+    ]
+  },
+  {
+    "slug": "molecular-formula-inference",
+    "title": "Molecular-formula inference from mass and isotope evidence",
+    "zh_title": "从质量与同位素证据推断分子式",
+    "summary": "Test ion assignments, exact-mass windows, elemental constraints, isotope patterns, and fragments without confusing a formula with a structure.",
+    "zh_summary": "检验离子归属、精确质量窗口、元素约束、同位素分布及碎片，避免混淆分子式与结构。",
+    "group": "Computation",
+    "prereqs": [
+      "mz-charge-isotopes",
+      "small-molecule-annotation",
+      "fragmentation"
+    ],
+    "related": [
+      "stable-isotope-tracing",
+      "spectrum-interpretation",
+      "spectral-library-search"
+    ],
+    "refs": [
+      "formula-adducts",
+      "carbon",
+      "hydrogen",
+      "nitrogen",
+      "oxygen",
+      "codata",
+      "small-formula-rules",
+      "formula-mass-defect",
+      "formula-dbe",
+      "formula-sirius4",
+      "formula-sirius-methods"
+    ]
+  },
+  {
+    "slug": "stable-isotope-tracing",
+    "title": "Stable-isotope tracing: from labeling patterns to metabolic questions",
+    "zh_title": "稳定同位素示踪：从标记分布到代谢问题",
+    "summary": "Design a tracer experiment, interpret corrected isotope-label distributions, and separate molecular labeling, atom enrichment, and metabolic flux.",
+    "zh_summary": "设计示踪实验、解释校正后的同位素标记分布，并区分分子标记比例、原子富集程度及代谢通量。",
+    "group": "Applications",
+    "prereqs": [
+      "mz-charge-isotopes",
+      "quantitative-calibration",
+      "experimental-design"
+    ],
+    "related": [
+      "molecular-formula-inference",
+      "sample-preparation",
+      "qc-normalization"
+    ],
+    "refs": [
+      "tracing-emu",
+      "carbon",
+      "tracing-isocor2019",
+      "tracing-isocor-docs",
+      "tracing-spectral-accuracy"
+    ]
+  },
+  {
+    "slug": "pca-scaling-exploration",
+    "title": "PCA and scaling: explore variation without overclaiming",
+    "zh_title": "PCA 与缩放：探索变异，避免过度解读",
+    "summary": "Read scores, loadings, and explained variance while checking how transformation, scaling, missingness, and study design shape the picture.",
+    "zh_summary": "理解得分、载荷与解释方差，并检查变换、缩放、缺失及实验设计如何塑造图中的模式。",
+    "group": "Computation",
+    "prereqs": [
+      "qc-normalization",
+      "missing-data-handling",
+      "experimental-design"
+    ],
+    "related": [
+      "differential-abundance-analysis",
+      "benchmarking-computational-ms",
+      "pathway-enrichment-interpretation"
+    ],
+    "refs": [
+      "explore-r-prcomp",
+      "explore-scaling-study",
+      "analysis-reporting"
+    ]
+  },
+  {
+    "slug": "pathway-enrichment-interpretation",
+    "title": "Pathway enrichment: connect measured changes to biological hypotheses",
+    "zh_title": "通路富集：从测量变化到生物学假说",
+    "summary": "Define compound identities, the tested background, and the enrichment question before interpreting a pathway result as biological evidence.",
+    "zh_summary": "在将通路结果解释为生物学证据前，明确化合物身份、检验背景与富集问题。",
+    "group": "Computation",
+    "prereqs": [
+      "small-molecule-annotation",
+      "differential-abundance-analysis"
+    ],
+    "related": [
+      "molecular-networking",
+      "pca-scaling-exploration",
+      "stable-isotope-tracing"
+    ],
+    "refs": [
+      "msi-chemical-analysis",
+      "pathway-ora-study",
+      "pathway-r-hypergeometric",
+      "pathway-msea",
+      "stats-r-p-adjust"
+    ]
+  }
+]

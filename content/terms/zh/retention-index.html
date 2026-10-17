@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p><strong>保留指数</strong>表示相对于参照化合物的色谱保留行为。在正构烷烃尺度上，含 n 个碳原子的烷烃指数为 100n。恒温 Kováts 约定对调整保留时间的对数进行插值；程序升温线性约定直接对总保留时间插值。<a href="#ref-gc-retention-index">[1]</a>应说明采用了哪一种约定。</p>
+<h2 id="example">简单示例</h2>
+<p><strong>构造的程序升温运行例子：</strong>在相同条件下，C10 在 5 min、C11 在 7 min、X 在 6 min 洗脱。线性插值得到 <code>I = 100[10 + (6 − 5)/(7 − 5)] = 1050</code>。该指数是无量纲量，并不意味着 X 含有 10.5 个碳原子。两个参照物位于分析物两侧；超出它们范围的外推属于另一种运算。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>RI 不是通用的分子常数，也不等同于保留时间。应比较指数类型、固定相和温度条件；NIST 的保留记录明确包含这些背景信息。<a href="#ref-gc-retention-data">[2]</a>仅凭相同指数不能区分所有异构体。与 EI 证据一致可以增强候选的可信度，但不存在能够保证身份的通用 RI 容差。</p>
+<h2 id="practice">检查理解</h2>
+<details><summary>能否把程序升温公式直接改名为恒温 Kováts 计算？</summary><p>不能。后者要求对调整保留时间取对数，而非直接对总保留时间插值。</p></details>
+<h2 id="guides">在指南中应用</h2>
+<p>完成<a href="/zh/guides/gc-ms-ei-retention-index/#example">两类 RI 计算</a>，再把<a href="/zh/guides/spectral-library-search/">谱库匹配推理</a>与<a href="/zh/terms/electron-ionization/">EI</a> 证据结合。</p>

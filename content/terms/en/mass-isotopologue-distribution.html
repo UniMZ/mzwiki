@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>mass isotopologue distribution</strong> (MID) is a vector of fractions grouped by specified isotope-label counts. Define the measured molecule or moiety, tracer element, included classes, and correction state. For corrected <sup>13</sup>C labeling of n carbons, <code>[f<sub>0</sub>, …, f<sub>n</sub>]</code> describes fractions assigned 0 through n tracer-derived labels, summing to 1. Raw isotope-peak fractions are not automatically the same quantity. <a href="#ref-tracing-isocor-docs">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p>For two carbons, the constructed MID <code>[0.25, 0.50, 0.25]</code> means 75% of molecules have at least one label. The mean number of labels is <code>0(0.25) + 1(0.50) + 2(0.25) = 1</code>; dividing by two carbons gives 50% mean carbon labeling. The vector <code>[0.50, 0, 0.50]</code> has the same mean but a different distribution. Neither vector is a flux measurement.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>The historical name “mass isotopomer distribution” appears in metabolic-flux literature. <a href="#ref-tracing-emu">[2]</a> It does not mean the measurement resolves positional isotopomers: either singly labeled position in a two-carbon molecule contributes to M+1. Likewise, an unresolved raw nominal-mass class can contain heavy isotopes of several elements. Specify whether reported M+i classes represent raw mass shifts or corrected counts for one tracer.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does M+1 reveal which carbon is labeled?</summary><p>No. That needs additional position-sensitive evidence, such as suitably interpreted fragments or another measurement.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/stable-isotope-tracing/#example">Interpret molecule and atom labeling</a></li><li><a href="/guides/mz-charge-isotopes/#distribution">Review isotope distributions</a></li></ul>

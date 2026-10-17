@@ -6,7 +6,7 @@ An English-first mass spectrometry knowledge wiki for beginners and returning pr
 
 ## Learning collection
 
-Thirty-six English Guides and 78 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
+Forty-two English Guides and 90 terminology entries, each with a matched Chinese translation. The original eight-Guide sequence is retained; topic navigation groups the expanded collection.
 
 1. What mass spectrometry measures
 2. m/z, charge & isotopes
@@ -44,6 +44,12 @@ Thirty-six English Guides and 78 terminology entries, each with a matched Chines
 34. Molecular networking: read connections as evidence
 35. Missing-data handling
 36. Differential-abundance analysis
+37. GC-MS: electron ionization and retention indices
+38. Mixed spectra and spectral deconvolution
+39. Molecular-formula inference from mass and isotope evidence
+40. Stable-isotope tracing: from labeling patterns to metabolic questions
+41. PCA and scaling: explore variation without overclaiming
+42. Pathway enrichment: connect measured changes to biological hypotheses
 
 The interface and project documentation are English. EN / ZH switches between separate views of the same article and preserves matching section anchors. Search defaults to English and can search Chinese or both languages.
 

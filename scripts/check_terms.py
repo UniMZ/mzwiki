@@ -30,6 +30,7 @@ expected={
  'resolving-power':['200.000','0.005','40,000'],
 }
 practice_terms = {'mass-trace', 'peak-integration', 'retention-time-alignment', 'gap-filling', 'library-match', 'analog-search', 'molecular-network', 'ion-identity-networking', 'imputation', 'left-censoring', 'fold-change', 'adjusted-p-value'}
+practice_terms |= {'electron-ionization', 'background-universe', 'chimeric-spectrum', 'autoscaling', 'mass-defect', 'double-bond-equivalent', 'mass-isotopologue-distribution', 'principal-component-analysis', 'over-representation-analysis', 'retention-index', 'spectral-deconvolution', 'natural-abundance-correction'}
 terms=json.loads((ROOT/'content/terms.json').read_text())
 for term in terms:
  slug=term['slug'];texts=[]
@@ -44,6 +45,10 @@ for term in terms:
   assert set(re.findall(r'href="#ref-([^"]+)"',body))==set(term['refs'])
   for v in expected.get(slug,[]):assert v in body,(slug,lang,v)
  assert Counter(re.findall(r'\d+(?:\.\d+)?',texts[0].replace('decreases by one','decreases by 1')))==Counter(re.findall(r'\d+(?:\.\d+)?',(texts[1].replace('一级','level-1') if slug=='spectral-library' else texts[1]))),slug
+ if slug == 'mass-defect':
+  texts[1] = texts[1].replace('单同位素质量', 'monoisotopic mass').replace('标称质量', 'nominal mass')
+ if slug == 'autoscaling':
+  texts[1] = texts[1].replace('均值', 'mean')
  if slug == 'fold-change':
   texts[1] = texts[1].replace('处理', 'treated').replace('对照', 'control')
  assert re.findall(r'<code>(.*?)</code>',texts[0])==re.findall(r'<code>(.*?)</code>',texts[1].replace('次进样', 'injections').replace('相对强度（%）=', 'relative intensity (%) =').replace('基峰强度', 'base-peak intensity').replace('峰强度', 'peak intensity').replace('\u4e2d\u6027\u8d28\u91cf','neutral mass').replace('\u524d\u4f53','precursor').replace('\u4ea7\u7269','product')),slug

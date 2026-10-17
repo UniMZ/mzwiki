@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p>在这里的色谱背景下，<strong>谱图解卷积</strong>从重叠的质谱信号中重建组分贡献。一种方法把各离子轨迹拟合到组分洗脱轮廓，再把拟合贡献组合为组分谱图。GC-MS 模型峰方法与 LC-DIA MS-DIAL 展示了在不同采集约束下的相关推理。<a href="#ref-gc-amdis-method">[1]</a> <a href="#ref-mix-msdial">[2]</a></p>
+<h2 id="example">简单示例</h2>
+<p><strong>构造的无噪声例子：</strong>已知轮廓为 <code>A = [1, 2, 1]</code> 和 <code>B = [0, 1, 2]</code>。共享离子轨迹 <code>[3, 8, 7]</code> 等于 <code>3A + 2B</code>。第二个实测强度 8 包含贡献 6 和 2。把整个通道只归给一个组分，会丢掉这种混合结构。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>重建谱图是依赖模型的证据，并非对已分离化合物的测量。如果 A 和 B 完全相同，仅凭时间轮廓只能得到系数之和。因此，完美拟合不一定具有唯一解。还应把本任务与电荷态解卷积区分，后者把电荷包络映射到推断的中性质量；名称相同并不意味着问题等价。</p>
+<h2 id="practice">检查理解</h2>
+<details><summary>重建是否确定了化合物身份？</summary><p>没有。重建估计信号归属；鉴定需要另外的参考或结构证据，并评估不确定性。</p></details>
+<h2 id="guides">在指南中应用</h2>
+<p>学习<a href="/zh/guides/lc-ms-feature-detection/">特征检测</a>后，探索<a href="/zh/guides/mixed-spectra-deconvolution/#model">混合模型</a>，并把<a href="/zh/guides/gc-ms-ei-retention-index/">GC-EI 证据</a>与不同的<a href="/zh/terms/chimeric-spectrum/">嵌合 MS/MS</a> 问题联系起来。</p>

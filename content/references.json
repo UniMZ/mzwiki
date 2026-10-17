@@ -1148,5 +1148,120 @@
     "title": "Storey & Tibshirani (2003). Statistical significance for genomewide studies. Proceedings of the National Academy of Sciences 100(16), 9440–9445.",
     "url": "https://doi.org/10.1073/pnas.1530509100",
     "note": "Primary full text inspected at PMC170937, including the q-value construction and null-proportion estimation. Used to distinguish Storey-style estimated q-values from BH-adjusted p-values and from individual posterior error probabilities. No genomewide biological findings or performance claims are transferred to MS."
+  },
+  "formula-adducts": {
+    "title": "SIRIUS. Adduct Handling in SIRIUS.",
+    "url": "https://v6.docs.sirius-ms.io/adducts/",
+    "note": "Official documentation inspected 2026-10-17. Supports distinguishing neutral compounds, ionization, adducts, losses, and measured ion formulas. Software defaults are not prescribed as universal settings."
+  },
+  "formula-mass-defect": {
+    "title": "IUPAC Gold Book. Mass defect (in mass spectrometry), entry 12478.",
+    "url": "https://goldbook.iupac.org/terms/view/12478",
+    "note": "Official indexed definition inspected 2026-10-17; direct plain-page access returned 403. Supports comparison of nominal and monoisotopic mass and positive or negative values. These lessons explicitly choose monoisotopic minus nominal mass, rather than infer a subtraction order from the definition."
+  },
+  "formula-dbe": {
+    "title": "IUPAC Gold Book. Ring and double bond equivalent, entry 12561.",
+    "url": "https://goldbook.iupac.org/terms/view/12561",
+    "note": "Official indexed plain definition inspected 2026-10-17; direct access returned 403. The lessons use a deliberately restricted C/H/N/O/halogen, connected closed-shell neutral model with declared valences; no universal variable-valence or ion rule is claimed."
+  },
+  "formula-sirius4": {
+    "title": "Dührkop et al. (2019). SIRIUS 4: a rapid tool for turning tandem mass spectra into metabolite structure information. Nature Methods 16, 299–302.",
+    "url": "https://doi.org/10.1038/s41592-019-0344-8",
+    "note": "Publisher-indexed metadata and supplementary descriptions verified 2026-10-17 against PubMed PMID 30886413. Supports molecular-formula candidates and fragmentation-tree-based analysis; mechanism details are additionally checked against official SIRIUS documentation. No historical benchmark rate is generalized."
+  },
+  "formula-sirius-methods": {
+    "title": "SIRIUS. Methods and algorithms: molecular formula identification.",
+    "url": "https://v6.docs.sirius-ms.io/methods-background/",
+    "note": "Official documentation inspected 2026-10-17. Supports candidate generation and combination of isotope-pattern and fragmentation-tree evidence. A tree is not asserted to be a unique molecular structure or a directly observed fragmentation pathway."
+  },
+  "formula-nuclear-defect": {
+    "title": "U.S. Department of Energy (1993). DOE Fundamentals Handbook: Nuclear Physics and Reactor Theory, Volume 1, DOE-HDBK-1019/1-93. Mass Defect and Binding Energy.",
+    "url": "https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1019-93_VOL1.pdf",
+    "note": "Official handbook text inspected 2026-10-17, section NP-01, page 17. Used only to distinguish the bound-system versus separated-constituent definition from the mass-spectrometric nominal/monoisotopic convention. Its historical numerical constants are not used."
+  },
+  "tracing-emu": {
+    "title": "Antoniewicz, Kelleher & Stephanopoulos (2007). Elementary Metabolite Units (EMU): a novel framework for modeling isotopic distributions. Metabolic Engineering 9(1), 68–86.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1994654/",
+    "note": "Primary author manuscript inspected 2026-10-17; DOI 10.1016/j.ymben.2006.09.001, issue date January 2007. Supports atom-transition models, forward simulation, inverse flux fitting, and historical mass-isotopomer wording. The two-carbon teaching distributions are original; no flux uniqueness is inferred."
+  },
+  "tracing-isocor2019": {
+    "title": "Millard et al. (2019). IsoCor: isotope correction for high-resolution MS labeling experiments. Bioinformatics 35(21), 4484–4487.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30903185/",
+    "note": "Primary abstract and bibliographic record inspected 2026-10-17; DOI 10.1093/bioinformatics/btz209. Supports resolution-dependent isotope correction. Broad software performance claims are not adopted, and correction is not presented as repairing arbitrary interference or proving flux."
+  },
+  "tracing-isocor-docs": {
+    "title": "IsoCor. Tutorials: correction parameters, output files, and declaration of elemental formulas.",
+    "url": "https://isocor.readthedocs.io/en/latest/tutorials.html",
+    "note": "Official documentation inspected 2026-10-17, including natural abundance at unlabeled positions, tracer isotopic purity, charge, resolving conditions, measured moieties, and separate derivatization atoms. The accompanying overview and Definitions pages were also checked. Defaults are not scientific recommendations."
+  },
+  "tracing-spectral-accuracy": {
+    "title": "Su, Lu & Rabinowitz (2017). Metabolite Spectral Accuracy on Orbitraps. Analytical Chemistry 89(11), 5940–5948.",
+    "url": "https://doi.org/10.1021/acs.analchem.7b00396",
+    "note": "Primary publisher-indexed abstract and metadata inspected 2026-10-17. Supports separating isotope-abundance accuracy from m/z accuracy and accounting for resolution in correction. Historical instrument-specific bias magnitudes and scan-range settings are not generalized."
+  },
+  "gc-ei-definition": {
+    "title": "IUPAC Gold Book. Electron ionization, E01999.",
+    "url": "https://goldbook.iupac.org/terms/view/E01999",
+    "note": "Definition and electron-removal reaction for molecules and atoms. DOI: 10.1351/goldbook.E01999."
+  },
+  "gc-ei-library": {
+    "title": "NIST. NIST 14 Mass Spectral Library and Search Program v.2.2: Appendix 7, Contributing EI Mass Spectra to the NIST/EPA/NIH Mass Spectral Library.",
+    "url": "https://www.nist.gov/system/files/documents/srd/NIST1aVer22Man.pdf",
+    "note": "Official historical contribution guidance supporting the 70 eV library convention and the importance of source, inlet, impurity, and retention metadata; not a claim about the current software release."
+  },
+  "gc-retention-index": {
+    "title": "IUPAC Gold Book. Retention index, R05360.",
+    "url": "https://goldbook.iupac.org/terms/view/R05360/plain",
+    "note": "Distinguishes isothermal Kováts interpolation with adjusted times and logarithms from temperature-programmed linear interpolation with total times. DOI: 10.1351/goldbook.R05360."
+  },
+  "gc-retention-data": {
+    "title": "NIST Chemistry WebBook, SRD 69. Gas Chromatographic Retention Data.",
+    "url": "https://webbook.nist.gov/chemistry/gc-ri/",
+    "note": "Official retention-index equations and records of stationary phase, column, carrier gas, temperature conditions, and literature source; RI comparisons require the appropriate index type and method context."
+  },
+  "gc-amdis-overview": {
+    "title": "Stein, S. E. NIST. An Overview of Automated GC/MS Identification.",
+    "url": "https://chemdata.nist.gov/mass-spc/amdis/docs/auto-gc.html",
+    "note": "Official explanation of background contamination, coelution, model-peak reconstruction, and separate library identification. Historical algorithm discussion is not a universal claim about current software."
+  },
+  "gc-amdis-method": {
+    "title": "Stein (1999). An integrated method for spectrum extraction and compound identification from gas chromatography/mass spectrometry data. Journal of the American Society for Mass Spectrometry 10, 770–781.",
+    "url": "https://chemdata.nist.gov/mass-spc/amdis/docs/method.pdf",
+    "note": "Primary method paper on model-peak spectrum extraction, neighboring-component contributions, and uncertainty flags. DOI: 10.1016/S1044-0305(99)00047-1; citation metadata also listed by the publisher and NIST."
+  },
+  "mix-msdial": {
+    "title": "Tsugawa et al. (2015). MS-DIAL: data-independent MS/MS deconvolution for comprehensive metabolome analysis. Nature Methods 12, 523–526.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25938372/",
+    "note": "Primary LC-DIA small-molecule study using chromatogram extraction, model peaks, and spectrum reconstruction. DOI: 10.1038/nmeth.3393. Does not establish universal separation of coeluting contributors."
+  },
+  "pathway-ora-study": {
+    "title": "Wieder et al. (2021). Pathway analysis in metabolomics: Recommendations for the use of over-representation analysis. PLOS Computational Biology 17(9), e1009105.",
+    "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009105",
+    "note": "Primary analysis using five metabolomics datasets to evaluate background, selection, pathway database, identification, and assay-bias effects. Supports sensitivity and reporting cautions, not a universal correction for all pathway methods."
+  },
+  "pathway-r-hypergeometric": {
+    "title": "R stats package. Hypergeometric: The Hypergeometric Distribution.",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Hypergeometric.html",
+    "note": "Official sampling-without-replacement probability and upper-tail definitions. Constructed examples independently enumerate combinations; article symbols N, K, n, and k are defined locally rather than copied from software argument names."
+  },
+  "pathway-msea": {
+    "title": "Xia & Wishart (2010). MSEA: a web-based tool to identify biologically meaningful patterns in quantitative metabolomic data. Nucleic Acids Research 38, W71–W77.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2896187/",
+    "note": "Primary method publication describing distinct over-representation and quantitative enrichment approaches. DOI: 10.1093/nar/gkq329. Used to distinguish analysis questions, not to prescribe current service defaults."
+  },
+  "explore-r-prcomp": {
+    "title": "R stats package. prcomp: Principal Components Analysis.",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/prcomp.html",
+    "note": "Official documentation for centering, optional unit-variance scaling, singular-value decomposition, score and loading definitions, sample-variance divisor, and arbitrary component signs. The constructed example is calculated independently."
+  },
+  "explore-scaling-study": {
+    "title": "van den Berg et al. (2006). Centering, scaling, and transformations: improving the biological information content of metabolomics data. BMC Genomics 7, 142.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1534033/",
+    "note": "Primary comparison of preprocessing choices on a metabolomics dataset. DOI: 10.1186/1471-2164-7-142. Supports the effect of variable weighting and noise amplification; does not establish one universally preferred scaling method."
+  },
+  "explore-nist-pca": {
+    "title": "NIST/SEMATECH e-Handbook of Statistical Methods. 6.5.5: Principal Components.",
+    "url": "https://www.itl.nist.gov/div898/handbook/pmc/section5/pmc55.htm",
+    "note": "Official explanation of a reduced linear representation and variance-maximizing component directions. Its standardized-data presentation is not treated as a requirement that every PCA use unit-variance scaling."
   }
 }

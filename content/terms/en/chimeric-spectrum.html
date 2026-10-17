@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>chimeric spectrum</strong>, as used here, is an MS/MS spectrum containing product ions from more than one precursor species. Coisolation followed by cofragmentation can create such spectra even when DDA selects a single target. <a href="#ref-coisolation-primary">[1]</a> A target label in a scan header does not establish that every product came from that target.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed positive-ion example:</strong> an idealized isolation interval of m/z 500.0–502.0 contains precursor species at 500.4 and 501.6. If both are transmitted and fragmented, their products can coexist in the resulting spectrum. A strong product at m/z 200.0 cannot be assigned to the 500.4 precursor solely because that precursor was selected as the target. Real transmission edges are not perfectly rectangular.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>A large number of peaks does not prove chimericity: one precursor can generate many products. Conversely, a visually simple spectrum may still be mixed. DIA intentionally records windows that can contain several precursors, and suitable processing can use chromatographic evidence to reconstruct contributions, as illustrated by MS-DIAL. <a href="#ref-mix-msdial">[2]</a> Mixed GC-EI scans arise without the same precursor-isolation mechanism.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does narrowing the isolation window guarantee a pure spectrum?</summary><p>No. Distinct precursor species may still fall inside the transmitted interval or be insufficiently separated by the isolation process.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<p>Connect <a href="/guides/acquisition/">acquisition choices</a> to <a href="/guides/mixed-spectra-deconvolution/#scope">mixture interpretation</a> and the limits of <a href="/terms/spectral-deconvolution/">spectral deconvolution</a>.</p>

@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Autoscaling</strong>, or unit-variance scaling, subtracts each variable's mean and divides the result by that variable's standard deviation: <code>z = (x − mean) / SD</code>. Here SD is the sample standard deviation, with divisor n − 1. Applied to each complete, nonconstant feature column, this gives mean zero and sample variance one. It changes relative variable weighting. <a href="#ref-explore-scaling-study">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed signal values:</strong> [10, 12, 14] have mean 12 and sample SD 2. Their scaled values are [−1, 0, 1]. A second column [100, 120, 140] produces exactly the same scaled values. The original tenfold response difference is intentionally removed from this representation.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Column-wise autoscaling is not sample-total normalization, concentration calibration, or batch correction. It gives equal variance, not equal measurement reliability. A weak noisy feature may be amplified; a constant column has SD zero and cannot be scaled by this formula. Handle exclusions and missing values explicitly rather than silently producing invalid numbers. R's PCA documentation identifies the constant-variable restriction. <a href="#ref-explore-r-prcomp">[2]</a></p>
+<p>For held-out prediction, reuse the means and standard deviations estimated from the training data. Recalculating them on each test set changes the transformation and can leak evaluation information.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does a scaled value of −1 mean negative concentration?</summary><p>No. It means one training or analysis-set standard deviation below the corresponding mean, under the declared scaling convention.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/pca-scaling-exploration/#matrix">Choose and record preprocessing</a></li></ul>

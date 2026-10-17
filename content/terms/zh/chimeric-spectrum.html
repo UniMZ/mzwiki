@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p>这里的<strong>嵌合谱图</strong>是包含多个前体物种产物离子的 MS/MS 谱图。共同隔离后再共同碎裂，就可能产生这种谱图，即便 DDA 只选择了一个目标。<a href="#ref-coisolation-primary">[1]</a>扫描头中的目标标签，并不能证明每个产物都来自该目标。</p>
+<h2 id="example">简单示例</h2>
+<p><strong>构造的正离子例子：</strong>理想化隔离区间 m/z 500.0–502.0 内有两个前体物种，分别位于 500.4 和 501.6。如果两者都被传输并碎裂，它们的产物就可以共存于得到的谱图中。不能仅因 500.4 前体被选为目标，就把 m/z 200.0 的强产物峰归给它。真实传输边缘并非完美矩形。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>峰很多并不能证明谱图是嵌合的，因为一个前体也能产生许多产物。反过来，视觉上简单的谱图仍可能是混合谱。DIA 有意采集可能包含多个前体的窗口，合适的处理可以利用色谱证据重建贡献，MS-DIAL 就提供了这样的实例。<a href="#ref-mix-msdial">[2]</a>混合 GC-EI 扫描的形成不经过同样的前体隔离机制。</p>
+<h2 id="practice">检查理解</h2>
+<details><summary>缩窄隔离窗口能否保证谱图纯净？</summary><p>不能。不同前体物种仍可能落在传输区间内，或未被隔离过程充分区分。</p></details>
+<h2 id="guides">在指南中应用</h2>
+<p>把<a href="/zh/guides/acquisition/">采集选择</a>与<a href="/zh/guides/mixed-spectra-deconvolution/#scope">混合谱解释</a>及<a href="/zh/terms/spectral-deconvolution/">谱图解卷积</a>的局限联系起来。</p>

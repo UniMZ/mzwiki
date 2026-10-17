@@ -11,7 +11,7 @@ OUT=Path('/tmp/mzwiki-checks');OUT.mkdir(exist_ok=True)
 articles=json.loads((ROOT/'content/articles.json').read_text())
 terms=json.loads((ROOT/'content/terms.json').read_text())
 def check_header(target, path):
-    assert target.title() == 'mzwiki', path
+    expect(target).to_have_title('mzwiki')
     import hashlib
     version = hashlib.sha256((ROOT/'assets/style.css').read_bytes()).hexdigest()[:12]
     expect(target.locator('link[rel="stylesheet"]')).to_have_attribute('href', '/assets/style.css?v='+version)
@@ -69,7 +69,7 @@ with sync_playwright() as p:
             for path in ('/', '/#guides', '/terms/', '/terms/az/', '/about/', '/search/', '/guides/what-ms-measures/', '/zh/guides/what-ms-measures/', '/terms/detector/', '/zh/terms/detector/', '/404.html'):
                 header_page.goto(BASE + path)
                 check_header(header_page, path)
-                assert header_page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (path, width)
+                assert header_page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (path, width, header_page.evaluate("Array.from(document.querySelectorAll('body *')).map(e=>({tag:e.tagName,cls:e.className,text:(e.textContent||'').slice(0,100),left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right})).filter(e=>e.right>innerWidth+1||e.left< -1).slice(0,20)"))
                 nav = header_page.get_by_role('navigation', name='Main navigation')
                 for link in nav.locator('a:visible').all():
                     link.focus()
@@ -551,3 +551,5 @@ with sync_playwright() as p:
     assert not errors,errors
     browser.close()
 print(f'PASS: {count} browser scenarios; desktop/mobile pages, search, paired-language anchors, keyboard access, no-JavaScript reading; no script errors. Screenshots: {OUT}')
+
+

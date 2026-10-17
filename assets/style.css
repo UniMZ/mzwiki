@@ -54,3 +54,6 @@
 
 /* Paint the current section without changing existing link spacing. */
 .header .topnav a[aria-current]{background:#e7eee5;color:#153b3b;border-radius:4px;box-shadow:0 0 0 4px #e7eee5}
+
+/* Keep the compact brand row within the narrowest supported viewport. */
+@media(max-width:380px){.topnav .search-link{padding-inline:8px}}
