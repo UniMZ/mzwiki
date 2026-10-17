@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>background universe</strong> defines the eligible entities against which a selected list is compared. In simple over-representation analysis, the list is treated under the null as a fixed-size subset of this universe. Background membership can therefore change the expected overlap and the p-value, even when the selected observations stay unchanged. <a href="#ref-pathway-ora-study">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed counts:</strong> four selected compounds are compared with 20 eligible compounds, five of which belong to pathway P. Expected pathway overlap is <code>4 × 5/20 = 1</code>. Expanding the background to 100 while keeping five pathway members changes it to <code>4 × 5/100 = 0.2</code>. These expectations follow the simple hypergeometric null. <a href="#ref-pathway-r-hypergeometric">[2]</a> Adding compounds that could never be selected creates an inappropriate comparison, not additional evidence.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>The entire database is not automatically the correct universe. Neither is the selected list itself. For the workflow in the linked Guide, define distinct measured compounds eligible under the declared filtering, mapping, and selection procedure; intersect pathway membership with that same set. Document excluded, unmapped, and uncertain entities.</p>
+<p>An assay-appropriate universe still does not ensure that all members have equal selection probability. Differences in detectability, annotation coverage, and statistical power can remain. Define the universe before viewing results and inspect defensible alternatives rather than optimizing significance.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does a larger background necessarily mean a better analysis?</summary><p>No. Eligibility must follow the experiment and analysis. Extra ineligible entries can distort the comparison.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/pathway-enrichment-interpretation/#background">Define an eligible background</a></li></ul>

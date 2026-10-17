@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Natural-abundance correction</strong> models naturally occurring heavy-isotope contributions to a measured labeling pattern so that tracer-related fractions can be estimated. The model depends on composition and on which isotope species the measurement resolves. It is not a universal background percentage to subtract from each channel. Tracer isotopic-purity correction is a related, distinct adjustment often included in the same workflow. <a href="#ref-tracing-isocor2019">[1]</a> <a href="#ref-tracing-isocor-docs">[2]</a></p>
+<h2 id="example">A simple example</h2>
+<p>Construct a one-carbon model with perfect tracer purity, natural <sup>13</sup>C fraction p = 0.0107, no other heavy-isotope contributions, and equal response. <a href="#ref-carbon">[3]</a> Let f be the fraction carrying tracer-derived label. The raw heavy-carbon fraction is <code>y<sub>1</sub> = f + (1−f)p</code>. If <code>y<sub>1</sub> = 0.10963</code>, then <code>f = (0.10963 − 0.0107)/(1 − 0.0107) = 0.10</code>. Thus 10.963% raw heavy signal corresponds to 10% tracer labeling in this deliberately simple model.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Multiple atoms require a distribution model, typically expressed with a correction matrix. Declare the measured moiety, charge, isotope abundances, tracer purity, derivatization atoms, and resolution. Inspect residuals and uncertain inputs. Correction cannot recover an unrecorded measurement, remove arbitrary coeluting interference, or prove metabolic flux. Normalizing the result to 1 does not validate the model.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Can an unlabeled control have a genuine M+1 signal?</summary><p>Yes. Natural heavy isotopes generate it; “unlabeled” means no supplied tracer, not absence of heavy isotopes.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/stable-isotope-tracing/#correction">Correct and interpret labeling data</a></li></ul>

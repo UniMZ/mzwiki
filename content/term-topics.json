@@ -123,6 +123,18 @@
     "imputation": "Data analysis & computation",
     "left-censoring": "Data analysis & computation",
     "fold-change": "Quantification & study design",
-    "adjusted-p-value": "Quantification & study design"
+    "adjusted-p-value": "Quantification & study design",
+    "mass-defect": "Mass, charge & spectra",
+    "double-bond-equivalent": "Small molecules & lipids",
+    "mass-isotopologue-distribution": "Mass, charge & spectra",
+    "natural-abundance-correction": "Data analysis & computation",
+    "electron-ionization": "Acquisition & fragmentation",
+    "retention-index": "Sample preparation & separation",
+    "spectral-deconvolution": "Data analysis & computation",
+    "chimeric-spectrum": "Acquisition & fragmentation",
+    "over-representation-analysis": "Data analysis & computation",
+    "background-universe": "Data analysis & computation",
+    "principal-component-analysis": "Data analysis & computation",
+    "autoscaling": "Data analysis & computation"
   }
 }

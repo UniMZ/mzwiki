@@ -1,0 +1,11 @@
+<h2 id="definition">Definition</h2>
+<p><strong>Principal component analysis (PCA)</strong> forms linear combinations of variables, ordered to capture decreasing variance with mutually orthogonal component directions. This entry uses mean-centered PCA, which describes variation around the column means. The input transformation and optional scaling define which variation counts. PCA is unsupervised: ordinary PCA does not use condition labels to find directions. <a href="#ref-explore-nist-pca">[1]</a></p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed centered coordinates:</strong> A = [−1, −1, 1, 1] and B = [−10, 10, −10, 10] have zero covariance. Their sample variances are 4/3 and 400/3. Without scaling, the first component follows B and explains 100/101 ≈ 99.01% of total variance. After unit-variance scaling, both directions have variance 1; each component explains 50%, and the axes within their plane are not unique.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>Scores are sample coordinates; in the convention used here, each component's loadings form a unit-length vector of variable coefficients defining its direction. Other software may rescale the displayed loadings. Simultaneous sign reversal of scores and loadings is harmless. R documents these definitions and its arbitrary component signs. <a href="#ref-explore-r-prcomp">[2]</a></p>
+<p>High explained variance is not high biological relevance. Large loadings do not constitute significance tests, and plotted separation is not a validated prediction result. Uncorrelated component scores need not be statistically independent.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Does changing the sign of PC1 change the reconstructed observations?</summary><p>No, if its scores and loadings are both reversed. Their contribution to reconstruction is unchanged.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<ul><li><a href="/guides/pca-scaling-exploration/#worked-example">Follow the variance calculation</a></li></ul>

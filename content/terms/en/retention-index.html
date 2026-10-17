@@ -1,0 +1,10 @@
+<h2 id="definition">Definition</h2>
+<p>A <strong>retention index</strong> expresses chromatographic retention relative to reference compounds. On an n-alkane scale, an alkane containing n carbon atoms has index 100n. The isothermal Kováts convention interpolates logarithms of adjusted retention times; the temperature-programmed linear convention interpolates total times directly. <a href="#ref-gc-retention-index">[1]</a> State which convention you used.</p>
+<h2 id="example">A simple example</h2>
+<p><strong>Constructed programmed-run example:</strong> C10 elutes at 5 min, C11 at 7 min, and X at 6 min under the same conditions. Linear interpolation gives <code>I = 100[10 + (6 − 5)/(7 − 5)] = 1050</code>. The index is dimensionless and does not imply 10.5 carbon atoms in X. Both references bracket the analyte; extrapolation beyond them is a different operation.</p>
+<h2 id="confusion">Common confusion</h2>
+<p>RI is not a universal molecular constant or the same thing as retention time. Compare index type, stationary phase, and temperature conditions; NIST's retention records explicitly carry such context. <a href="#ref-gc-retention-data">[2]</a> Equal indices alone do not distinguish every isomer. Agreement with EI evidence can strengthen a candidate, but no universal RI tolerance guarantees identity.</p>
+<h2 id="practice">Check your understanding</h2>
+<details><summary>Can the programmed-run formula be relabeled as an isothermal Kováts calculation?</summary><p>No. The latter requires the adjusted-time logarithmic convention, not direct interpolation of total times.</p></details>
+<h2 id="guides">Use it in a Guide</h2>
+<p>Work through <a href="/guides/gc-ms-ei-retention-index/#example">both RI calculations</a>, then apply <a href="/guides/spectral-library-search/">library-match reasoning</a> alongside <a href="/terms/electron-ionization/">EI</a> evidence.</p>

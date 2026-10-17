@@ -1,0 +1,10 @@
+<h2 id="definition">定义</h2>
+<p><strong>质量同位素体分布</strong>（MID）是按指定同位素标记数分组的分数向量。应定义所测分子或分子部分、示踪元素、纳入的类别及校正状态。对于 n 个碳校正后的 <sup>13</sup>C 标记，<code>[f<sub>0</sub>, …, f<sub>n</sub>]</code>表示被归为含有 0 至 n 个示踪来源标记的分子分数，其和为 1。原始同位素峰分数并不自动等于这一量。<a href="#ref-tracing-isocor-docs">[1]</a></p>
+<h2 id="example">简单示例</h2>
+<p>对于两个碳，构造的 MID <code>[0.25, 0.50, 0.25]</code>意味着 75% 的分子至少带一个标记。平均标记数为 <code>0(0.25) + 1(0.50) + 2(0.25) = 1</code>；再除以两个碳，得到 50% 的平均碳标记。向量 <code>[0.50, 0, 0.50]</code>具有相同平均值，但分布不同。两个向量都不是通量测量。</p>
+<h2 id="confusion">常见混淆</h2>
+<p>代谢通量文献中使用过“mass isotopomer distribution”这一历史名称。<a href="#ref-tracing-emu">[2]</a>它不意味着测量能够区分位置同位素异构体：两碳分子中任一位置的单标记都进入 M+1。同样，未分辨的原始标称质量类别可能包含多种元素的重同位素。应说明所报告的 M+i 类别表示原始质量位移，还是针对某一种示踪剂校正后的标记数。</p>
+<h2 id="practice">检查你的理解</h2>
+<details><summary>M+1 能指出哪一个碳带有标记吗？</summary><p>不能。这需要对位置敏感的额外证据，例如经过恰当解释的碎片或另一种测量。</p></details>
+<h2 id="guides">在指南中使用</h2>
+<ul><li><a href="/zh/guides/stable-isotope-tracing/#example">解释分子与原子的标记</a></li><li><a href="/zh/guides/mz-charge-isotopes/#distribution">回顾同位素分布</a></li></ul>
