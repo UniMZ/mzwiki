@@ -1,0 +1,244 @@
+[
+  {
+    "slug": "mass-defect",
+    "title": "Mass defect",
+    "zh_title": "质量亏损",
+    "summary": "The signed difference between monoisotopic and nominal mass under an explicitly stated subtraction convention.",
+    "zh_summary": "在明确相减顺序下，单同位素质量与标称质量之间的带符号差值。",
+    "related_guides": [
+      "molecular-formula-inference",
+      "mz-charge-isotopes"
+    ],
+    "related_terms": [
+      "monoisotopic-mass",
+      "molecular-formula",
+      "mass-accuracy",
+      "double-bond-equivalent"
+    ],
+    "refs": [
+      "formula-mass-defect",
+      "hydrogen",
+      "oxygen",
+      "formula-nuclear-defect"
+    ]
+  },
+  {
+    "slug": "double-bond-equivalent",
+    "title": "Double bond equivalent",
+    "zh_title": "双键当量",
+    "summary": "A formula-based unsaturation constraint that depends on neutral-molecule and valence assumptions, not a count of double bonds alone.",
+    "zh_summary": "基于分子式的不饱和程度约束，依赖中性分子及价态假设，并非只计数双键。",
+    "related_guides": [
+      "molecular-formula-inference",
+      "small-molecule-annotation"
+    ],
+    "related_terms": [
+      "molecular-formula",
+      "isomer",
+      "mass-defect"
+    ],
+    "refs": [
+      "formula-dbe",
+      "small-formula-rules"
+    ]
+  },
+  {
+    "slug": "mass-isotopologue-distribution",
+    "title": "Mass isotopologue distribution",
+    "zh_title": "质量同位素体分布",
+    "summary": "Fractions grouped by specified isotope-label counts, with the measured atom set and correction state made explicit.",
+    "zh_summary": "按指定同位素标记数分组的分数，需明确所测原子集合及校正状态。",
+    "related_guides": [
+      "stable-isotope-tracing",
+      "mz-charge-isotopes"
+    ],
+    "related_terms": [
+      "isotopologue",
+      "natural-abundance-correction"
+    ],
+    "refs": [
+      "tracing-isocor-docs",
+      "tracing-emu"
+    ]
+  },
+  {
+    "slug": "natural-abundance-correction",
+    "title": "Natural-abundance correction",
+    "zh_title": "天然同位素丰度校正",
+    "summary": "A composition- and resolution-aware calculation separating modeled natural-isotope contributions from tracer labeling.",
+    "zh_summary": "结合组成及分辨本领，通过模型区分天然同位素贡献与示踪标记的计算。",
+    "related_guides": [
+      "stable-isotope-tracing"
+    ],
+    "related_terms": [
+      "mass-isotopologue-distribution",
+      "isotopologue"
+    ],
+    "refs": [
+      "tracing-isocor2019",
+      "tracing-isocor-docs",
+      "carbon"
+    ]
+  },
+  {
+    "slug": "electron-ionization",
+    "title": "Electron ionization",
+    "zh_title": "电子电离",
+    "summary": "Electrons ionize gas-phase species; molecular radical cations and fragments require different interpretations from protonated molecules.",
+    "zh_summary": "电子使气相物种电离；分子自由基阳离子及碎片的解释不同于质子化分子。",
+    "related_guides": [
+      "gc-ms-ei-retention-index",
+      "ionization"
+    ],
+    "related_terms": [
+      "retention-index",
+      "mass-spectrum",
+      "base-peak"
+    ],
+    "refs": [
+      "gc-ei-definition",
+      "gc-ei-library"
+    ]
+  },
+  {
+    "slug": "retention-index",
+    "title": "Retention index",
+    "zh_title": "保留指数",
+    "summary": "A reference-relative retention coordinate whose calculation and comparison depend on the chromatographic conditions.",
+    "zh_summary": "相对于参照物的保留坐标，其计算和比较依赖色谱条件。",
+    "related_guides": [
+      "gc-ms-ei-retention-index",
+      "spectral-library-search"
+    ],
+    "related_terms": [
+      "electron-ionization",
+      "retention-time",
+      "library-match"
+    ],
+    "refs": [
+      "gc-retention-index",
+      "gc-retention-data"
+    ]
+  },
+  {
+    "slug": "spectral-deconvolution",
+    "title": "Spectral deconvolution",
+    "zh_title": "谱图解卷积",
+    "summary": "A model-based reconstruction of component contributions from mixed measurements, with assumptions and potentially non-unique solutions.",
+    "zh_summary": "依据模型从混合测量中重建组分贡献，需要明确假设，并可能存在非唯一解。",
+    "related_guides": [
+      "mixed-spectra-deconvolution",
+      "gc-ms-ei-retention-index",
+      "lc-ms-feature-detection"
+    ],
+    "related_terms": [
+      "chimeric-spectrum",
+      "extracted-ion-chromatogram",
+      "spectral-library"
+    ],
+    "refs": [
+      "gc-amdis-method",
+      "mix-msdial"
+    ]
+  },
+  {
+    "slug": "chimeric-spectrum",
+    "title": "Chimeric spectrum",
+    "zh_title": "嵌合谱图",
+    "summary": "An MS/MS spectrum containing products from more than one precursor species; a selected target does not guarantee a pure spectrum.",
+    "zh_summary": "包含多个前体物种产物的 MS/MS 谱图；选择一个目标并不保证谱图纯净。",
+    "related_guides": [
+      "mixed-spectra-deconvolution",
+      "acquisition"
+    ],
+    "related_terms": [
+      "spectral-deconvolution",
+      "isolation-window",
+      "precursor-ion"
+    ],
+    "refs": [
+      "coisolation-primary",
+      "mix-msdial"
+    ]
+  },
+  {
+    "slug": "over-representation-analysis",
+    "title": "Over-representation analysis",
+    "zh_title": "过度富集分析",
+    "summary": "A set-overlap test asking whether a selected list contains more members of an annotated set than expected under a specified background and null model.",
+    "zh_summary": "一种集合重叠检验，判断所选列表中某注释集合的成员是否多于指定背景及零模型下的预期。",
+    "related_guides": [
+      "pathway-enrichment-interpretation",
+      "differential-abundance-analysis"
+    ],
+    "related_terms": [
+      "background-universe",
+      "adjusted-p-value",
+      "molecular-formula"
+    ],
+    "refs": [
+      "pathway-ora-study",
+      "pathway-r-hypergeometric"
+    ]
+  },
+  {
+    "slug": "background-universe",
+    "title": "Background universe",
+    "zh_title": "背景集合",
+    "summary": "The eligible entities from which an analysis treats its selected list as drawn, defining the denominator and the null comparison.",
+    "zh_summary": "分析将所选列表视为从中抽出的合格实体集合，它定义分母及零模型的比较范围。",
+    "related_guides": [
+      "pathway-enrichment-interpretation",
+      "experimental-design"
+    ],
+    "related_terms": [
+      "over-representation-analysis",
+      "adjusted-p-value",
+      "feature"
+    ],
+    "refs": [
+      "pathway-ora-study",
+      "pathway-r-hypergeometric"
+    ]
+  },
+  {
+    "slug": "principal-component-analysis",
+    "title": "Principal component analysis",
+    "zh_title": "主成分分析",
+    "summary": "An unsupervised linear summary that orders orthogonal directions by variation in a specified, preprocessed data matrix.",
+    "zh_summary": "一种无监督线性汇总方法，按经过指定预处理的数据矩阵中的变异大小排列正交方向。",
+    "related_guides": [
+      "pca-scaling-exploration",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "autoscaling",
+      "batch-effect",
+      "missing-value"
+    ],
+    "refs": [
+      "explore-nist-pca",
+      "explore-r-prcomp"
+    ]
+  },
+  {
+    "slug": "autoscaling",
+    "title": "Autoscaling",
+    "zh_title": "单位方差缩放",
+    "summary": "Centering each variable and dividing by its standard deviation, changing the relative weighting of variables rather than correcting every measurement bias.",
+    "zh_summary": "对每个变量减去均值并除以其标准差，改变变量间的相对权重，而非校正所有测量偏差。",
+    "related_guides": [
+      "pca-scaling-exploration",
+      "qc-normalization"
+    ],
+    "related_terms": [
+      "principal-component-analysis",
+      "batch-effect",
+      "missing-value"
+    ],
+    "refs": [
+      "explore-scaling-study",
+      "explore-r-prcomp"
+    ]
+  }
+]
